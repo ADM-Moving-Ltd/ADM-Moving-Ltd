@@ -11,7 +11,7 @@
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background:#f4f6f8;
+background:linear-gradient(135deg,#eef4ff,#dbeafe,#f8fafc);
 color:#1f2937;
 scroll-behavior:smooth;
 }
@@ -98,7 +98,7 @@ transition:0.3s;
 background:#16a34a;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section{
 padding:70px 10%;
@@ -259,7 +259,7 @@ gap:20px;
 
 .review{
 background:white;
-padding:25px;
+padding:20px;
 border-radius:14px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
@@ -352,7 +352,7 @@ font-size:30px;
 <a href="#services">Services</a>
 <a href="#work">Our Work</a>
 <a href="#booking">Book Move</a>
-<a href="#reviews">Reviews</a>
+<a href="#reviews">Recent Moves</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -385,22 +385,33 @@ Safe, affordable and stress-free moving with ADM Moving LTD.
 
 <div class="card">
 <h3>🏠 House Removals</h3>
-<p>Professional home removals for flats, apartments and large houses across the UK.</p>
+<p>
+Professional home removals across the UK for flats, apartments and houses.
+</p>
 </div>
 
 <div class="card">
-<h3>📦 Packing Services</h3>
-<p>We provide professional packing materials and complete packing assistance.</p>
+<h3>📦 Packing Service</h3>
+<p>
+Unlimited moving boxes included when booking our full packing service.
+Professional wrapping and protection for all furniture and fragile items.
+</p>
 </div>
 
 <div class="card">
-<h3>🔧 Furniture Assembly</h3>
-<p>Dismantling and rebuilding wardrobes, beds, desks and furniture.</p>
+<h3>🔧 Dismantle & Assembly</h3>
+<p>
+Furniture dismantling and rebuilding service available at
+<strong>£25 per item</strong>.
+</p>
 </div>
 
 <div class="card">
-<h3>🚚 Nationwide Transport</h3>
-<p>Long-distance and local removals anywhere in the United Kingdom.</p>
+<h3>🚚 Nationwide Moves</h3>
+<p>
+Long-distance and local removals with transport charged at
+<strong>£1.25 per mile</strong>.
+</p>
 </div>
 
 </div>
@@ -481,6 +492,16 @@ Safe, affordable and stress-free moving with ADM Moving LTD.
 <div>
 <label>Moving To</label>
 <input type="text" name="to" required>
+</div>
+
+<div>
+<label>Total Distance (Miles)</label>
+<input type="number" id="miles" placeholder="Example: 120">
+</div>
+
+<div>
+<label>Dismantle & Assemble Items</label>
+<input type="number" id="assembly" placeholder="How many items?">
 </div>
 
 </div>
@@ -579,12 +600,22 @@ Safe, affordable and stress-free moving with ADM Moving LTD.
 <div class="result-box">
 
 <button type="button" onclick="calculateVolume()">
-Calculate Moving Price
+Calculate Full Moving Price
 </button>
 
 <h3 id="result"></h3>
 
 <div class="price" id="priceResult"></div>
+
+<p id="breakdown"
+style="
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+font-weight:bold;
+color:#1a365d;
+">
+</p>
 
 </div>
 
@@ -598,27 +629,63 @@ Request Booking
 
 </section>
 
-<!-- REVIEWS -->
+<!-- REAL CUSTOMER MOVES -->
 
 <section id="reviews">
 
-<h2>Customer Reviews</h2>
+<h2>Recent Customer Moves</h2>
 
 <div class="reviews">
 
 <div class="review">
-<h3>⭐⭐⭐⭐⭐ John M.</h3>
-<p>Very professional and fast moving service. Everything arrived safely.</p>
+
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
+
+<h3>House Move - London to Manchester</h3>
+
+<p>
+3 Bedroom house moved safely with full packing service and furniture assembly.
+</p>
+
+<p>
+⭐⭐⭐⭐⭐ Verified Customer
+</p>
+
 </div>
 
 <div class="review">
-<h3>⭐⭐⭐⭐⭐ Sarah L.</h3>
-<p>Excellent communication and friendly movers. Highly recommended.</p>
+
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
+
+<h3>Apartment Move - Birmingham</h3>
+
+<p>
+Complete apartment relocation with same-day delivery and unpacking service.
+</p>
+
+<p>
+⭐⭐⭐⭐⭐ Verified Customer
+</p>
+
 </div>
 
 <div class="review">
-<h3>⭐⭐⭐⭐⭐ David K.</h3>
-<p>Best moving company experience I had in the UK.</p>
+
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
+
+<h3>Office Relocation - Leeds</h3>
+
+<p>
+Office furniture dismantled, transported and rebuilt professionally.
+</p>
+
+<p>
+⭐⭐⭐⭐⭐ Verified Customer
+</p>
+
 </div>
 
 </div>
@@ -681,13 +748,33 @@ total += document.getElementById('smallBox').value * 0.1;
 total += document.getElementById('mediumBox').value * 0.15;
 total += document.getElementById('largeBox').value * 0.25;
 
-let price = total * 25;
+let cubicPrice = total * 25;
+
+let miles =
+parseFloat(document.getElementById('miles').value) || 0;
+
+let mileagePrice = miles * 1.25;
+
+let assembly =
+parseFloat(document.getElementById('assembly').value) || 0;
+
+let assemblyPrice = assembly * 25;
+
+let finalPrice =
+cubicPrice + mileagePrice + assemblyPrice;
 
 document.getElementById('result').innerHTML =
 "Estimated Volume: " + total.toFixed(2) + " m³";
 
 document.getElementById('priceResult').innerHTML =
-"Estimated Moving Price: £" + price.toFixed(2);
+"Estimated Total Price: £" + finalPrice.toFixed(2);
+
+document.getElementById('breakdown').innerHTML =
+`
+Cubic Metre Cost: £${cubicPrice.toFixed(2)} <br>
+Mileage Cost (£1.25/mile): £${mileagePrice.toFixed(2)} <br>
+Dismantle & Assembly (£25/item): £${assemblyPrice.toFixed(2)}
+`;
 
 }
 
@@ -701,6 +788,7 @@ this.reset();
 
 document.getElementById('result').innerHTML = "";
 document.getElementById('priceResult').innerHTML = "";
+document.getElementById('breakdown').innerHTML = "";
 
 });
 
