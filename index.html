@@ -5,33 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ADM Moving LTD | UK Professional Removals Company</title>
-
-<meta name="description" content="ADM Moving LTD provides professional house removals, office relocations, packing and furniture assembly across the UK. Based in Corby.">
-<meta name="keywords" content="removals UK, house movers, moving company UK, office relocation, packing service, Corby removals">
-
-<!-- BASIC SEO STRUCTURE -->
-<meta name="author" content="ADM Moving LTD">
-
-<!-- GOOGLE STYLE BUSINESS DATA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MovingCompany",
-  "name": "ADM Moving LTD",
-  "email": "admmoving@yahoo.com",
-  "telephone": "+447312814746",
-  "areaServed": "United Kingdom",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Corby",
-    "addressCountry": "UK"
-  }
-}
-</script>
+<title>ADM Moving LTD | Professional Removals UK</title>
+<meta name="description" content="ADM Moving LTD offers professional house removals, office moves, packing and assembly services across the UK.">
+<meta name="keywords" content="removals UK, moving company, house moves, office relocation, packing service UK">
 
 <style>
 
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -40,14 +20,14 @@
 }
 
 body{
-    background:#f5f7fb;
+    background:#f8fafc;
     color:#111;
 }
 
 /* NAV */
 nav{
-    background:#0b1220;
-    padding:16px;
+    background:#0f172a;
+    padding:15px;
     text-align:center;
     position:sticky;
     top:0;
@@ -58,22 +38,24 @@ nav a{
     color:white;
     margin:0 12px;
     text-decoration:none;
-    font-weight:600;
+    font-weight:bold;
 }
 
-nav a:hover{color:#22c55e;}
+nav a:hover{
+    color:#22c55e;
+}
 
 /* HERO */
 .hero{
-    height:92vh;
+    height:90vh;
     background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url('https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg');
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.pexels.com/photos/4246268/pexels-photo-4246268.jpeg');
     background-size:cover;
     background-position:center;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
     color:white;
     padding:20px;
@@ -86,45 +68,46 @@ nav a:hover{color:#22c55e;}
 .hero p{
     font-size:1.3rem;
     margin:15px 0;
-    opacity:0.9;
-}
-
-.cta-row{
-    margin-top:20px;
 }
 
 .btn{
     background:#22c55e;
     color:white;
-    padding:14px 26px;
-    border-radius:10px;
+    padding:14px 28px;
+    border-radius:8px;
     text-decoration:none;
     font-weight:bold;
-    margin:5px;
     display:inline-block;
 }
 
-.btn.secondary{
-    background:#2563eb;
+.btn:hover{
+    background:#16a34a;
 }
 
-/* SECTIONS */
+/* SECTIONS ANIMATION */
 section{
     padding:80px 10%;
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeIn 1s forwards;
 }
 
-/* TRUST BAR */
-.trust{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+section:nth-child(odd){
+    animation-delay:0.2s;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* TITLES */
+.section-title{
     text-align:center;
-    background:white;
-    padding:40px 10%;
-}
-
-.trust div{
-    font-weight:bold;
+    font-size:2.5rem;
+    margin-bottom:40px;
 }
 
 /* SERVICES */
@@ -137,8 +120,13 @@ section{
 .card{
     background:white;
     padding:25px;
-    border-radius:14px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
 }
 
 /* GALLERY */
@@ -152,29 +140,29 @@ section{
     width:100%;
     height:240px;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:10px;
 }
 
 /* QUOTE */
 .quote{
-    background:#0b1220;
+    background:#0f172a;
     color:white;
 }
 
 .quote-form{
+    background:white;
+    color:black;
     max-width:650px;
     margin:auto;
-    background:white;
     padding:30px;
-    border-radius:14px;
-    color:black;
+    border-radius:12px;
 }
 
 input,textarea{
     width:100%;
     padding:12px;
     margin-bottom:12px;
-    border-radius:8px;
+    border-radius:6px;
     border:1px solid #ccc;
 }
 
@@ -191,11 +179,11 @@ input,textarea{
     width:60px;
     height:60px;
     background:#25d366;
+    color:white;
     border-radius:50%;
     text-align:center;
-    line-height:60px;
     font-size:28px;
-    color:white;
+    line-height:60px;
     text-decoration:none;
 }
 
@@ -214,63 +202,45 @@ input,textarea{
 
 <!-- HERO -->
 <section class="hero" id="home">
-
 <div>
 <h1>ADM Moving LTD</h1>
-<p>Professional UK Removals • Fully Insured • Fast & Reliable</p>
-
-<div class="cta-row">
-<a class="btn" href="#quote">Get Instant Quote</a>
-<a class="btn secondary" href="tel:07312814746">Call Now</a>
+<p>Reliable & Professional Removals Across the UK</p>
+<a href="#quote" class="btn">Get Free Quote</a>
 </div>
-
-</div>
-
-</section>
-
-<!-- TRUST BAR -->
-<section class="trust">
-<div>✔ Fully Insured</div>
-<div>✔ Same Day Moves</div>
-<div>✔ UK Wide Coverage</div>
-<div>✔ 5★ Service Focus</div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2 style="text-align:center;margin-bottom:40px;">Our Services</h2>
+<h2 class="section-title">Our Services</h2>
 
 <div class="grid">
 
-<div class="card">House Removals</div>
-<div class="card">Office Relocations</div>
-<div class="card">Packing Service</div>
-<div class="card">Furniture Assembly</div>
+<div class="card">🏠 House Removals</div>
+<div class="card">🚚 Office Moves</div>
+<div class="card">📦 Packing Service</div>
+<div class="card">🔧 Furniture Assembly</div>
 
 </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
-<h2 style="text-align:center;margin-bottom:40px;">Our Work</h2>
+<h2 class="section-title">Our Work</h2>
 
 <div class="gallery-grid">
-
 <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg">
 <img src="https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg">
 <img src="https://images.pexels.com/photos/4569340/pexels-photo-4569340.jpeg">
 <img src="https://images.pexels.com/photos/4246205/pexels-photo-4246205.jpeg">
-
 </div>
 </section>
 
 <!-- QUOTE -->
 <section class="quote" id="quote">
-
-<h2 style="text-align:center;margin-bottom:20px;">Request a Quote</h2>
+<h2 class="section-title">Get Your Free Quote</h2>
 
 <p style="text-align:center;margin-bottom:20px;">
-Email: <b>admmoving@yahoo.com</b>
+Send directly to: <b>admmoving@yahoo.com</b>
 </p>
 
 <form class="quote-form"
@@ -278,25 +248,22 @@ id="quoteForm"
 action="https://formspree.io/f/xayzkqyb"
 method="POST">
 
-<input name="name" placeholder="Name" required>
-<input name="phone" placeholder="Phone" required>
-<input name="email" placeholder="Email" required>
-<input name="from" placeholder="From" required>
-<input name="to" placeholder="To" required>
+<input type="text" name="name" placeholder="Name" required>
+<input type="tel" name="phone" placeholder="Phone" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="text" name="from" placeholder="From" required>
+<input type="text" name="to" placeholder="To" required>
 <textarea name="details" placeholder="Details" required></textarea>
 
 <button class="btn" type="submit">Send Quote</button>
-
 </form>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
-
-<h2>Contact</h2>
+<section id="contact">
+<h2 class="section-title">Contact</h2>
 <p>📞 07312 814746</p>
 <p>📧 admmoving@yahoo.com</p>
-
 </section>
 
 <!-- WHATSAPP -->
@@ -317,7 +284,7 @@ const from = document.querySelector('[name="from"]').value;
 const to = document.querySelector('[name="to"]').value;
 
 const msg =
-`New Lead:
+`New Quote:
 Name: ${name}
 Phone: ${phone}
 From: ${from}
