@@ -1,26 +1,56 @@
-<!-- MOVE INVENTORY TABLE -->
+<!-- INVENTORY & PRICE LIST -->
 <section style="padding:60px 10%; background:white;">
 
-<h2 style="text-align:center;">Moving Inventory List</h2>
+<style>
+table input,
+table select{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+table textarea{
+border:1px solid #ccc;
+font-family:Arial;
+}
+
+table tr:hover{
+background:#dbeafe;
+transition:0.2s;
+}
+
+table th{
+font-size:16px;
+}
+
+table td{
+font-size:15px;
+}
+</style>
+
+<h2 style="text-align:center; color:#1a365d;">
+Moving Inventory & Estimated Prices
+</h2>
 
 <p style="text-align:center; margin-bottom:25px;">
-Select the items you would like us to move.
+Select the items you would like us to move. Prices are estimated and may vary depending on distance, access and packing requirements.
 </p>
 
-<div style="max-width:900px; margin:auto; overflow-x:auto;">
+<div style="max-width:1000px; margin:auto; overflow-x:auto;">
 
 <table style="width:100%; border-collapse:collapse; background:#f8fafc; border-radius:12px; overflow:hidden;">
 
 <tr style="background:#1a365d; color:white;">
 <th style="padding:14px; text-align:left;">Item</th>
 <th style="padding:14px;">Quantity</th>
-<th style="padding:14px;">Need Packing?</th>
+<th style="padding:14px;">Packing Needed</th>
+<th style="padding:14px;">Estimated Price</th>
 </tr>
 
 <tr>
-<td style="padding:12px;">Sofa</td>
+<td style="padding:12px;">🛋️ Sofa</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -28,12 +58,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£40 - £80</td>
 </tr>
 
 <tr style="background:#eef2f7;">
-<td style="padding:12px;">Bed</td>
+<td style="padding:12px;">🛏️ Bed</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -41,12 +72,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£30 - £60</td>
 </tr>
 
 <tr>
-<td style="padding:12px;">Wardrobe</td>
+<td style="padding:12px;">🚪 Wardrobe</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -54,12 +86,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£40 - £90</td>
 </tr>
 
 <tr style="background:#eef2f7;">
-<td style="padding:12px;">Dining Table</td>
+<td style="padding:12px;">📺 TV</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -67,12 +100,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£20 - £50</td>
 </tr>
 
 <tr>
-<td style="padding:12px;">Chairs</td>
+<td style="padding:12px;">🪑 Chairs</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -80,12 +114,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£5 - £15 each</td>
 </tr>
 
 <tr style="background:#eef2f7;">
-<td style="padding:12px;">TV</td>
+<td style="padding:12px;">🍽️ Dining Table</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -93,12 +128,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£25 - £60</td>
 </tr>
 
 <tr>
-<td style="padding:12px;">Washing Machine</td>
+<td style="padding:12px;">🧺 Washing Machine</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -106,12 +142,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£35 - £70</td>
 </tr>
 
 <tr style="background:#eef2f7;">
-<td style="padding:12px;">Fridge / Freezer</td>
+<td style="padding:12px;">❄️ Fridge / Freezer</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -119,12 +156,13 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£40 - £90</td>
 </tr>
 
 <tr>
-<td style="padding:12px;">Boxes</td>
+<td style="padding:12px;">📦 Small Boxes</td>
 <td style="padding:12px;">
-<input type="number" min="0" value="0" style="width:80px;">
+<input type="number" min="0" value="0" style="width:70px;">
 </td>
 <td style="padding:12px;">
 <select>
@@ -132,11 +170,40 @@ Select the items you would like us to move.
 <option>Yes</option>
 </select>
 </td>
+<td style="padding:12px;">£2 each</td>
 </tr>
 
 <tr style="background:#eef2f7;">
-<td style="padding:12px;">Other Items</td>
-<td colspan="2" style="padding:12px;">
+<td style="padding:12px;">📦 Medium Boxes</td>
+<td style="padding:12px;">
+<input type="number" min="0" value="0" style="width:70px;">
+</td>
+<td style="padding:12px;">
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</td>
+<td style="padding:12px;">£3 each</td>
+</tr>
+
+<tr>
+<td style="padding:12px;">📦 Large Boxes</td>
+<td style="padding:12px;">
+<input type="number" min="0" value="0" style="width:70px;">
+</td>
+<td style="padding:12px;">
+<select>
+<option>No</option>
+<option>Yes</option>
+</select>
+</td>
+<td style="padding:12px;">£5 each</td>
+</tr>
+
+<tr style="background:#eef2f7;">
+<td style="padding:12px;">📝 Other Items</td>
+<td colspan="3" style="padding:12px;">
 <textarea placeholder="Write additional items here..." style="width:100%; padding:10px; border-radius:8px;"></textarea>
 </td>
 </tr>
