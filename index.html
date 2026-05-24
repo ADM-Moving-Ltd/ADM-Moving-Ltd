@@ -30,11 +30,16 @@
         .card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: center; }
         .card h3 { color: #1a365d; margin-bottom: 1rem; }
 
-        .about { padding: 3rem 5%; background: #f1f5f9; text-align: center; }
+        .gallery { padding: 3rem 5%; background: #f1f5f9; }
+        .gallery h2 { text-align: center; color: #1a365d; margin-bottom: 2rem; font-size: 2.2rem; }
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .photo-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
+
+        .about { padding: 3rem 5%; background: white; text-align: center; }
         .about h2 { color: #1a365d; margin-bottom: 1rem; }
         .about p { max-width: 800px; margin: auto; font-size: 1.1rem; }
 
-        .contact { padding: 3rem 5%; background: white; text-align: center; }
+        .contact { padding: 3rem 5%; background: #f1f5f9; text-align: center; }
         .contact h2 { color: #1a365d; margin-bottom: 1rem; }
         .contact p { font-size: 1.2rem; margin: 0.5rem 0; }
 
@@ -51,6 +56,7 @@
     <nav>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -59,7 +65,7 @@
         <div>
             <h1>Reliable Moving Solutions</h1>
             <p>Local • National • Fully Insured • Based in Corby</p>
-            <a href="#contact" class="btn">Get Free Quote</a>
+            <a href="mailto:Admmoving@yahoo.com?subject=Request Free Quote&body=Hello ADM Moving LTD,%0D%0AI would like a free quote for my move.%0D%0APlease contact me.%0D%0AThank you!" class="btn">Get Free Quote</a>
         </div>
     </section>
 
@@ -82,6 +88,16 @@
                 <h3>🚛 Full Removals</h3>
                 <p>Office moves, single items, or full loads — we cover every type of removal service.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2>Our Work & Vehicles</h2>
+        <div class="photo-grid">
+            <img src="https://images.unsplash.com/photo-1581579438747-189382392289?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Removal Van">
+            <img src="https://images.unsplash.com/photo-1600518464436-8f2051de1199?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Loading Truck">
+            <img src="https://images.unsplash.com/photo-1558618662-8290281d5d7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Packing Service">
+            <img src="https://images.unsplash.com/photo-1523362627385-ed3849298e4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Furniture Moving">
         </div>
     </section>
 
@@ -109,3 +125,4 @@
 
 </body>
 </html>
+Fix button=add gallery
