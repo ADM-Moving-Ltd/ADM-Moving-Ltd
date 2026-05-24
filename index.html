@@ -6,44 +6,60 @@
 
 <title>ADM Moving LTD | Professional UK Removals</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#eef4ff,#dbeafe,#f8fafc);
-color:#1f2937;
+padding:0;
+box-sizing:border-box;
 scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#edf4ff,#f8fbff,#eef5ff);
+color:#1f2937;
 }
 
 /* HEADER */
 
 header{
-background:#0b1f3a;
-color:white;
+background:#081c3a;
 padding:20px;
 text-align:center;
+color:white;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
 header h1{
-margin:0;
 font-size:38px;
 }
 
+header p{
+margin-top:8px;
+font-size:17px;
+}
+
+/* NAV */
+
 nav{
-background:#122b4d;
+background:#10284d;
 padding:14px;
-text-align:center;
 position:sticky;
 top:0;
 z-index:999;
+text-align:center;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin:0 15px;
-font-weight:bold;
+font-weight:600;
+font-size:15px;
 }
 
 nav a:hover{
@@ -53,10 +69,10 @@ color:#22c55e;
 /* HERO */
 
 .hero{
-height:80vh;
+height:90vh;
 background:
 linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b');
+url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -68,62 +84,69 @@ color:white;
 }
 
 .hero-content{
-max-width:850px;
+max-width:900px;
 }
 
 .hero h1{
 font-size:60px;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:22px;
-line-height:1.6;
+font-size:20px;
+line-height:1.7;
+margin-bottom:25px;
 }
 
 .btn{
-display:inline-block;
-margin-top:20px;
-padding:15px 28px;
 background:#22c55e;
-color:white;
+padding:16px 35px;
+border-radius:12px;
 text-decoration:none;
-border-radius:10px;
-font-weight:bold;
-font-size:18px;
+color:white;
+font-weight:700;
+display:inline-block;
 transition:0.3s;
 }
 
 .btn:hover{
 background:#16a34a;
+transform:translateY(-2px);
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
-padding:70px 10%;
+padding:80px 10%;
 }
 
-h2{
+.section-title{
 text-align:center;
-font-size:38px;
-margin-bottom:40px;
-color:#1a365d;
+font-size:42px;
+margin-bottom:20px;
+color:#10284d;
+}
+
+.section-text{
+text-align:center;
+max-width:850px;
+margin:auto auto 50px;
+line-height:1.8;
 }
 
 /* SERVICES */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .card{
 background:white;
-padding:25px;
-border-radius:14px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
@@ -132,8 +155,8 @@ transform:translateY(-5px);
 }
 
 .card h3{
-margin-top:0;
-color:#1a365d;
+margin-bottom:15px;
+color:#10284d;
 }
 
 /* GALLERY */
@@ -141,29 +164,25 @@ color:#1a365d;
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+gap:18px;
 }
 
 .gallery img{
 width:100%;
 height:240px;
 object-fit:cover;
-border-radius:14px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
 
 /* BOOKING */
 
-.booking{
-background:#e8f0fe;
-}
-
 .booking-box{
 background:white;
 padding:35px;
-border-radius:16px;
+border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -173,14 +192,20 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-input,select,textarea{
+label{
+font-weight:600;
+display:block;
+margin-bottom:8px;
+}
+
+input,
+select,
+textarea{
 width:100%;
 padding:14px;
 border-radius:10px;
-border:1px solid #ccc;
-margin-top:5px;
-font-size:15px;
-box-sizing:border-box;
+border:1px solid #cbd5e1;
+font-family:'Poppins',sans-serif;
 }
 
 textarea{
@@ -188,136 +213,147 @@ min-height:120px;
 resize:vertical;
 }
 
-button{
-padding:16px;
-background:#22c55e;
-color:white;
-border:none;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-width:100%;
-margin-top:20px;
-}
-
-button:hover{
-background:#16a34a;
-}
-
-/* TABLE */
-
 table{
 width:100%;
-border-collapse:collapse;
 margin-top:30px;
+border-collapse:collapse;
 background:#f8fafc;
-border-radius:12px;
 overflow:hidden;
+border-radius:14px;
 }
 
 th{
-background:#1a365d;
+background:#10284d;
 color:white;
 padding:15px;
 }
 
 td{
 padding:14px;
-border-bottom:1px solid #e5e7eb;
+border-bottom:1px solid #e2e8f0;
 }
 
 tr:nth-child(even){
-background:#eef2f7;
+background:#eef4ff;
 }
-
-/* RESULT */
 
 .result-box{
 text-align:center;
-margin-top:35px;
+margin-top:40px;
 }
 
-.result-box h3{
+.result-box button{
+background:#22c55e;
+color:white;
+border:none;
+padding:18px 35px;
+border-radius:12px;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+}
+
+.result-box button:hover{
+background:#16a34a;
+}
+
+#result{
+margin-top:25px;
 font-size:30px;
-margin-bottom:10px;
+color:#10284d;
 }
 
-.price{
-font-size:35px;
-font-weight:bold;
+#priceResult{
+font-size:42px;
+font-weight:700;
+margin-top:10px;
 color:#22c55e;
 }
 
-/* REVIEWS */
+.submit-btn{
+margin-top:35px;
+width:100%;
+padding:18px;
+border:none;
+border-radius:12px;
+background:#10284d;
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+}
 
-.reviews{
+/* CUSTOMER MOVES */
+
+.moves{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 
-.review{
+.move-card{
 background:white;
-padding:20px;
-border-radius:14px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* MAP */
-
-.map iframe{
+.move-card img{
 width:100%;
-height:350px;
-border:0;
-border-radius:14px;
+height:220px;
+object-fit:cover;
 }
 
-/* FLOATING BUTTONS */
+.move-card div{
+padding:20px;
+}
+
+/* CONTACT FLOATS */
 
 .whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
+background:#25d366;
 width:60px;
 height:60px;
-background:#25d366;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:30px;
-color:white;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+color:white;
 z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,0.25);
 }
 
 .email-float{
 position:fixed;
 bottom:90px;
 right:20px;
+background:#2563eb;
 width:60px;
 height:60px;
-background:#2563eb;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:26px;
-color:white;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+color:white;
 z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,0.25);
 }
 
 /* FOOTER */
 
 footer{
-background:#0b1f3a;
+background:#081c3a;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
+margin-top:70px;
 }
 
 /* MOBILE */
@@ -325,15 +361,15 @@ padding:20px;
 @media(max-width:768px){
 
 .hero h1{
-font-size:40px;
+font-size:38px;
 }
 
 .hero p{
-font-size:18px;
+font-size:16px;
 }
 
-h2{
-font-size:30px;
+.section-title{
+font-size:32px;
 }
 
 }
@@ -345,14 +381,13 @@ font-size:30px;
 
 <header>
 <h1>🚚 ADM Moving LTD</h1>
-<p>Professional House Removals Across The UK</p>
+<p>Professional House Removals • Packing • Storage • Nationwide UK Moves</p>
 </header>
 
 <nav>
 <a href="#services">Services</a>
-<a href="#work">Our Work</a>
-<a href="#booking">Book Move</a>
-<a href="#reviews">Recent Moves</a>
+<a href="#moves">Recent Moves</a>
+<a href="#booking">Book Your Move</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -362,11 +397,12 @@ font-size:30px;
 
 <div class="hero-content">
 
-<h1>Reliable & Professional Moving Services</h1>
+<h1>Stress-Free Moving Across The UK</h1>
 
 <p>
-House removals, packing services, furniture assembly and nationwide moving solutions across the UK.
-Safe, affordable and stress-free moving with ADM Moving LTD.
+Reliable removals company offering professional house moves,
+packing services, furniture dismantling, storage moves,
+office relocations and nationwide transport.
 </p>
 
 <a href="#booking" class="btn">Book Your Move</a>
@@ -379,64 +415,70 @@ Safe, affordable and stress-free moving with ADM Moving LTD.
 
 <section id="services">
 
-<h2>Our Services</h2>
+<h2 class="section-title">What We Provide</h2>
+
+<p class="section-text">
+Professional removal services tailored for homes, flats, offices and storage moves.
+Our experienced team handles every move safely and efficiently.
+</p>
 
 <div class="grid">
 
 <div class="card">
 <h3>🏠 House Removals</h3>
-<p>
-Professional home removals across the UK for flats, apartments and houses.
-</p>
+<p>Complete local and nationwide home moving services across the UK.</p>
 </div>
 
 <div class="card">
 <h3>📦 Packing Service</h3>
-<p>
-Unlimited moving boxes included when booking our full packing service.
-Professional wrapping and protection for all furniture and fragile items.
-</p>
+<p>Unlimited packing boxes included with our professional packing service.</p>
 </div>
 
 <div class="card">
 <h3>🔧 Dismantle & Assembly</h3>
-<p>
-Furniture dismantling and rebuilding service available at
-<strong>£25 per item</strong>.
-</p>
+<p>We dismantle and rebuild beds, wardrobes, desks and furniture.</p>
 </div>
 
 <div class="card">
-<h3>🚚 Nationwide Moves</h3>
-<p>
-Long-distance and local removals with transport charged at
-<strong>£1.25 per mile</strong>.
-</p>
+<h3>🚚 Office Relocations</h3>
+<p>Efficient office moving services with safe transport of equipment.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- GALLERY -->
+<!-- RECENT MOVES -->
 
-<section id="work">
+<section id="moves">
 
-<h2>Our Work</h2>
+<h2 class="section-title">Recent Customer Moves</h2>
 
-<div class="gallery">
+<div class="moves">
 
-<img src="https://images.unsplash.com/photo-1581579438747-189382392289">
+<div class="move-card">
+<img src="https://images.unsplash.com/photo-1581579438747-189382392289?auto=format&fit=crop&w=900&q=80">
+<div>
+<h3>London House Move</h3>
+<p>3-bedroom house moved safely from London to Birmingham.</p>
+</div>
+</div>
 
-<img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b">
+<div class="move-card">
+<img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=900&q=80">
+<div>
+<h3>Office Relocation</h3>
+<p>Professional office relocation completed within one day.</p>
+</div>
+</div>
 
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64">
-
-<img src="https://images.unsplash.com/photo-1523362628745-0c100150b504">
-
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
-
-<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858">
+<div class="move-card">
+<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80">
+<div>
+<h3>Storage Move</h3>
+<p>Secure storage delivery with full packing and furniture protection.</p>
+</div>
+</div>
 
 </div>
 
@@ -444,9 +486,9 @@ Long-distance and local removals with transport charged at
 
 <!-- BOOKING -->
 
-<section class="booking" id="booking">
+<section id="booking">
 
-<h2>Book Your Move</h2>
+<h2 class="section-title">Book Your Move</h2>
 
 <div class="booking-box">
 
@@ -456,170 +498,132 @@ Long-distance and local removals with transport charged at
 
 <div>
 <label>Full Name</label>
-<input type="text" name="name" required>
+<input type="text" required>
 </div>
 
 <div>
 <label>Phone Number</label>
-<input type="text" name="phone" required>
+<input type="text" required>
 </div>
 
 <div>
 <label>Email Address</label>
-<input type="email" name="email" required>
+<input type="email" required>
 </div>
 
 <div>
 <label>Moving Date</label>
-<input type="date" name="date" required>
+<input type="date" id="moveDate" required>
 </div>
 
 <div>
-<label>Time Slot</label>
-<select name="slot" required>
-<option value="">Choose Time</option>
-<option>Morning</option>
-<option>Afternoon</option>
-<option>Evening</option>
+<label>Property Type</label>
+<select required>
+<option value="">Select Property</option>
+<option>1 Bedroom Flat</option>
+<option>2 Bedroom Flat</option>
+<option>2 Bedroom House</option>
+<option>3 Bedroom House</option>
+<option>4 Bedroom House</option>
+<option>Office Move</option>
+<option>Storage Move</option>
 </select>
 </div>
 
 <div>
-<label>Moving From</label>
-<input type="text" name="from" required>
+<label>Move Type</label>
+<select required>
+<option value="">Select Move Type</option>
+<option>House Move</option>
+<option>Flat Move</option>
+<option>Storage Move</option>
+<option>Office Relocation</option>
+</select>
 </div>
 
 <div>
-<label>Moving To</label>
-<input type="text" name="to" required>
+<label>Moving From Address</label>
+<input type="text" id="fromAddress" required>
 </div>
 
 <div>
-<label>Total Distance (Miles)</label>
-<input type="number" id="miles" placeholder="Example: 120">
-</div>
-
-<div>
-<label>Dismantle & Assemble Items</label>
-<input type="number" id="assembly" placeholder="How many items?">
+<label>Delivery Address</label>
+<input type="text" id="toAddress" required>
 </div>
 
 </div>
 
-<div style="margin-top:20px;">
+<div style="margin-top:25px;">
 <label>Extra Details</label>
-<textarea name="details"></textarea>
+<textarea placeholder="Parking, stairs, lift access, special requests etc"></textarea>
+</div>
+
+<!-- MAP -->
+
+<div style="margin-top:45px;">
+
+<h2 style="margin-bottom:20px;color:#10284d;">Move Route</h2>
+
+<iframe
+id="mapFrame"
+width="100%"
+height="350"
+style="border:0;border-radius:18px;"
+loading="lazy"
+allowfullscreen
+src="https://maps.google.com/maps?q=UK&output=embed">
+</iframe>
+
 </div>
 
 <!-- INVENTORY -->
 
-<h2 style="margin-top:60px;">Moving Inventory & Cubic Metre Calculator</h2>
+<h2 style="margin-top:50px;color:#10284d;">Inventory List</h2>
 
 <table>
 
 <tr>
 <th>Item</th>
 <th>Quantity</th>
-<th>m³ Per Item</th>
+<th>m³</th>
 </tr>
 
-<tr>
-<td>🛋️ 2-Seater Sofa</td>
-<td><input type="number" id="sofa2" min="0" value="0"></td>
-<td>1.5</td>
-</tr>
-
-<tr>
-<td>🛋️ Corner Sofa</td>
-<td><input type="number" id="cornerSofa" min="0" value="0"></td>
-<td>3.0</td>
-</tr>
-
-<tr>
-<td>🛏️ Double Bed</td>
-<td><input type="number" id="bed" min="0" value="0"></td>
-<td>1.2</td>
-</tr>
-
-<tr>
-<td>🚪 Wardrobe</td>
-<td><input type="number" id="wardrobe" min="0" value="0"></td>
-<td>2.0</td>
-</tr>
-
-<tr>
-<td>📺 TV</td>
-<td><input type="number" id="tv" min="0" value="0"></td>
-<td>0.3</td>
-</tr>
-
-<tr>
-<td>🍽️ Dining Table</td>
-<td><input type="number" id="table" min="0" value="0"></td>
-<td>1.5</td>
-</tr>
-
-<tr>
-<td>🪑 Dining Chair</td>
-<td><input type="number" id="chair" min="0" value="0"></td>
-<td>0.2</td>
-</tr>
-
-<tr>
-<td>🧺 Washing Machine</td>
-<td><input type="number" id="washing" min="0" value="0"></td>
-<td>0.6</td>
-</tr>
-
-<tr>
-<td>❄️ Fridge Freezer</td>
-<td><input type="number" id="fridge" min="0" value="0"></td>
-<td>1.0</td>
-</tr>
-
-<tr>
-<td>📦 Small Box</td>
-<td><input type="number" id="smallBox" min="0" value="0"></td>
-<td>0.1</td>
-</tr>
-
-<tr>
-<td>📦 Medium Box</td>
-<td><input type="number" id="mediumBox" min="0" value="0"></td>
-<td>0.15</td>
-</tr>
-
-<tr>
-<td>📦 Large Box</td>
-<td><input type="number" id="largeBox" min="0" value="0"></td>
-<td>0.25</td>
-</tr>
+<tr><td>🛋️ 2-Seater Sofa</td><td><input type="number" id="sofa2" min="0" value="0"></td><td>1.5</td></tr>
+<tr><td>🛋️ Corner Sofa</td><td><input type="number" id="cornerSofa" min="0" value="0"></td><td>3.0</td></tr>
+<tr><td>🪑 Armchair</td><td><input type="number" id="armchair" min="0" value="0"></td><td>0.5</td></tr>
+<tr><td>🛏️ Double Bed</td><td><input type="number" id="bed" min="0" value="0"></td><td>1.2</td></tr>
+<tr><td>🛏️ Single Bed</td><td><input type="number" id="singleBed" min="0" value="0"></td><td>0.8</td></tr>
+<tr><td>🚪 Wardrobe</td><td><input type="number" id="wardrobe" min="0" value="0"></td><td>2.0</td></tr>
+<tr><td>📺 TV</td><td><input type="number" id="tv" min="0" value="0"></td><td>0.3</td></tr>
+<tr><td>🍽️ Dining Table</td><td><input type="number" id="table" min="0" value="0"></td><td>1.5</td></tr>
+<tr><td>🪑 Dining Chairs</td><td><input type="number" id="chair" min="0" value="0"></td><td>0.2</td></tr>
+<tr><td>🧺 Washing Machine</td><td><input type="number" id="washing" min="0" value="0"></td><td>0.6</td></tr>
+<tr><td>❄️ Fridge Freezer</td><td><input type="number" id="fridge" min="0" value="0"></td><td>1.0</td></tr>
+<tr><td>📚 Bookcase</td><td><input type="number" id="bookcase" min="0" value="0"></td><td>1.3</td></tr>
+<tr><td>🧑‍💻 Office Desk</td><td><input type="number" id="desk" min="0" value="0"></td><td>1.0</td></tr>
+<tr><td>🚲 Bicycle</td><td><input type="number" id="bike" min="0" value="0"></td><td>0.4</td></tr>
+<tr><td>🧳 Suitcases</td><td><input type="number" id="case" min="0" value="0"></td><td>0.15</td></tr>
+<tr><td>📦 Small Boxes</td><td><input type="number" id="smallBox" min="0" value="0"></td><td>0.1</td></tr>
+<tr><td>📦 Medium Boxes</td><td><input type="number" id="mediumBox" min="0" value="0"></td><td>0.15</td></tr>
+<tr><td>📦 Large Boxes</td><td><input type="number" id="largeBox" min="0" value="0"></td><td>0.25</td></tr>
 
 </table>
+
+<!-- RESULT -->
 
 <div class="result-box">
 
 <button type="button" onclick="calculateVolume()">
-Calculate Full Moving Price
+Get My Moving Price
 </button>
 
-<h3 id="result"></h3>
+<h2 id="result"></h2>
 
-<div class="price" id="priceResult"></div>
-
-<p id="breakdown"
-style="
-margin-top:20px;
-font-size:18px;
-line-height:1.8;
-font-weight:bold;
-color:#1a365d;
-">
-</p>
+<div id="priceResult"></div>
 
 </div>
 
-<button type="submit">
+<button type="submit" class="submit-btn">
 Request Booking
 </button>
 
@@ -629,95 +633,22 @@ Request Booking
 
 </section>
 
-<!-- REAL CUSTOMER MOVES -->
-
-<section id="reviews">
-
-<h2>Recent Customer Moves</h2>
-
-<div class="reviews">
-
-<div class="review">
-
-<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
-style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
-
-<h3>House Move - London to Manchester</h3>
-
-<p>
-3 Bedroom house moved safely with full packing service and furniture assembly.
-</p>
-
-<p>
-⭐⭐⭐⭐⭐ Verified Customer
-</p>
-
-</div>
-
-<div class="review">
-
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
-style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
-
-<h3>Apartment Move - Birmingham</h3>
-
-<p>
-Complete apartment relocation with same-day delivery and unpacking service.
-</p>
-
-<p>
-⭐⭐⭐⭐⭐ Verified Customer
-</p>
-
-</div>
-
-<div class="review">
-
-<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
-style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
-
-<h3>Office Relocation - Leeds</h3>
-
-<p>
-Office furniture dismantled, transported and rebuilt professionally.
-</p>
-
-<p>
-⭐⭐⭐⭐⭐ Verified Customer
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- MAP -->
+<!-- CONTACT -->
 
 <section id="contact">
 
-<h2>Our Location</h2>
+<h2 class="section-title">Contact ADM Moving LTD</h2>
 
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=Corby&t=&z=13&ie=UTF8&iwloc=&output=embed">
-</iframe>
-
-</div>
+<p class="section-text">
+Phone: 07312 814746<br>
+Email: admmoving@yahoo.com<br>
+Covering all UK areas
+</p>
 
 </section>
 
 <footer>
-
-<p>
-© 2026 ADM Moving LTD | Professional UK Removals
-</p>
-
-<p>
-📞 07312 814746 | ✉️ admmoving@yahoo.com
-</p>
-
+© 2026 ADM Moving LTD — All Rights Reserved
 </footer>
 
 <!-- FLOATING BUTTONS -->
@@ -731,64 +662,90 @@ href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
+/* MAP */
+
+document.getElementById('fromAddress').addEventListener('change',updateMap);
+document.getElementById('toAddress').addEventListener('change',updateMap);
+
+function updateMap(){
+
+let from =
+document.getElementById('fromAddress').value;
+
+let to =
+document.getElementById('toAddress').value;
+
+if(from && to){
+
+document.getElementById('mapFrame').src =
+"https://www.google.com/maps?q=" +
+encodeURIComponent(from + " to " + to) +
+"&output=embed";
+
+}
+
+}
+
+/* CALCULATOR */
+
 function calculateVolume(){
 
 let total = 0;
 
 total += document.getElementById('sofa2').value * 1.5;
 total += document.getElementById('cornerSofa').value * 3.0;
+total += document.getElementById('armchair').value * 0.5;
 total += document.getElementById('bed').value * 1.2;
+total += document.getElementById('singleBed').value * 0.8;
 total += document.getElementById('wardrobe').value * 2.0;
 total += document.getElementById('tv').value * 0.3;
 total += document.getElementById('table').value * 1.5;
 total += document.getElementById('chair').value * 0.2;
 total += document.getElementById('washing').value * 0.6;
 total += document.getElementById('fridge').value * 1.0;
+total += document.getElementById('bookcase').value * 1.3;
+total += document.getElementById('desk').value * 1.0;
+total += document.getElementById('bike').value * 0.4;
+total += document.getElementById('case').value * 0.15;
 total += document.getElementById('smallBox').value * 0.1;
 total += document.getElementById('mediumBox').value * 0.15;
 total += document.getElementById('largeBox').value * 0.25;
 
-let cubicPrice = total * 25;
+/* HIDDEN BUSINESS PRICING */
 
-let miles =
-parseFloat(document.getElementById('miles').value) || 0;
+let finalPrice = total * 25;
 
-let mileagePrice = miles * 1.25;
+/* WEEKEND EXTRA */
 
-let assembly =
-parseFloat(document.getElementById('assembly').value) || 0;
+let selectedDate =
+new Date(document.getElementById('moveDate').value);
 
-let assemblyPrice = assembly * 25;
+let day =
+selectedDate.getDay();
 
-let finalPrice =
-cubicPrice + mileagePrice + assemblyPrice;
+if(day === 5 || day === 6){
+
+finalPrice += 50;
+
+}
 
 document.getElementById('result').innerHTML =
-"Estimated Volume: " + total.toFixed(2) + " m³";
+"Estimated Move Volume: " + total.toFixed(2) + " m³";
 
 document.getElementById('priceResult').innerHTML =
 "Estimated Total Price: £" + finalPrice.toFixed(2);
 
-document.getElementById('breakdown').innerHTML =
-`
-Cubic Metre Cost: £${cubicPrice.toFixed(2)} <br>
-Mileage Cost (£1.25/mile): £${mileagePrice.toFixed(2)} <br>
-Dismantle & Assembly (£25/item): £${assemblyPrice.toFixed(2)}
-`;
-
 }
 
-document.getElementById("form").addEventListener("submit", function(e){
+/* FORM */
+
+document.getElementById('form').addEventListener('submit',function(e){
 
 e.preventDefault();
 
-alert("Booking request sent successfully. ADM Moving LTD will contact you shortly.");
+alert("Thank you. Your booking request has been sent successfully.");
 
 this.reset();
-
-document.getElementById('result').innerHTML = "";
-document.getElementById('priceResult').innerHTML = "";
-document.getElementById('breakdown').innerHTML = "";
 
 });
 
