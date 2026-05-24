@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ADM Moving LTD | Professional Removals UK</title>
-<meta name="description" content="ADM Moving LTD offers professional house removals, office moves, packing and assembly services across the UK.">
-<meta name="keywords" content="removals UK, moving company, house moves, office relocation, packing service UK">
 
 <style>
 
-/* RESET */
 *{
     margin:0;
     padding:0;
@@ -19,14 +15,29 @@
     font-family:Arial,sans-serif;
 }
 
-body{
-    background:#f8fafc;
-    color:#111;
+html{
+    scroll-behavior:smooth;
 }
+
+body{
+    background:#f8f9fa;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#0f172a;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{font-size:2.5rem;}
+header p{color:#cbd5e1; margin-top:8px;}
 
 /* NAV */
 nav{
-    background:#0f172a;
+    background:#1e293b;
     padding:15px;
     text-align:center;
     position:sticky;
@@ -36,84 +47,58 @@ nav{
 
 nav a{
     color:white;
-    margin:0 12px;
+    margin:0 15px;
     text-decoration:none;
     font-weight:bold;
 }
 
-nav a:hover{
-    color:#22c55e;
-}
+nav a:hover{color:#22c55e;}
 
 /* HERO */
 .hero{
-    height:90vh;
+    height:95vh;
     background:
     linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
     url('https://images.pexels.com/photos/4246268/pexels-photo-4246268.jpeg');
     background-size:cover;
     background-position:center;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
     color:white;
     padding:20px;
 }
 
-.hero h1{
-    font-size:4rem;
-}
-
-.hero p{
-    font-size:1.3rem;
-    margin:15px 0;
-}
+.hero h2{font-size:3.5rem;}
+.hero p{font-size:1.3rem; margin:15px 0;}
 
 .btn{
     background:#22c55e;
     color:white;
-    padding:14px 28px;
+    padding:15px 30px;
     border-radius:8px;
     text-decoration:none;
-    font-weight:bold;
     display:inline-block;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
 }
 
-.btn:hover{
-    background:#16a34a;
-}
+.btn:hover{background:#16a34a;}
 
-/* SECTIONS ANIMATION */
-section{
-    padding:80px 10%;
-    opacity:0;
-    transform:translateY(40px);
-    animation:fadeIn 1s forwards;
-}
-
-section:nth-child(odd){
-    animation-delay:0.2s;
-}
-
-@keyframes fadeIn{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* TITLES */
+/* SECTIONS */
+section{padding:70px 8%;}
 .section-title{
     text-align:center;
-    font-size:2.5rem;
+    font-size:2.3rem;
     margin-bottom:40px;
 }
 
 /* SERVICES */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
@@ -121,29 +106,31 @@ section:nth-child(odd){
     background:white;
     padding:25px;
     border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* GALLERY */
 .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:15px;
 }
 
 .gallery-grid img{
     width:100%;
-    height:240px;
+    height:230px;
     object-fit:cover;
     border-radius:10px;
 }
 
-/* QUOTE */
+/* REVIEWS */
+.review{
+    background:#f1f5f9;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* FORM */
 .quote{
     background:#0f172a;
     color:white;
@@ -152,23 +139,29 @@ section:nth-child(odd){
 .quote-form{
     background:white;
     color:black;
-    max-width:650px;
+    max-width:700px;
     margin:auto;
     padding:30px;
     border-radius:12px;
 }
 
+.form-group{
+    margin-bottom:15px;
+}
+
 input,textarea{
     width:100%;
     padding:12px;
-    margin-bottom:12px;
-    border-radius:6px;
     border:1px solid #ccc;
+    border-radius:6px;
 }
 
-/* CONTACT */
-.contact{
-    text-align:center;
+/* MAP */
+.map iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:10px;
 }
 
 /* WHATSAPP */
@@ -176,14 +169,14 @@ input,textarea{
     position:fixed;
     bottom:20px;
     right:20px;
-    width:60px;
-    height:60px;
     background:#25d366;
     color:white;
-    border-radius:50%;
+    font-size:30px;
+    width:60px;
+    height:60px;
     text-align:center;
-    font-size:28px;
     line-height:60px;
+    border-radius:50%;
     text-decoration:none;
 }
 
@@ -192,54 +185,54 @@ input,textarea{
 
 <body>
 
+<header>
+<h1>🚚 ADM Moving LTD</h1>
+<p>Professional Removals Across UK</p>
+</header>
+
 <nav>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
-<a href="#gallery">Work</a>
+<a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
 <a href="#quote">Quote</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
 <div>
-<h1>ADM Moving LTD</h1>
-<p>Reliable & Professional Removals Across the UK</p>
+<h2>Reliable Moving Service</h2>
+<p>House • Office • Packing • Assembly</p>
 <a href="#quote" class="btn">Get Free Quote</a>
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
-<h2 class="section-title">Our Services</h2>
-
+<h2 class="section-title">Services</h2>
 <div class="grid">
-
-<div class="card">🏠 House Removals</div>
-<div class="card">🚚 Office Moves</div>
-<div class="card">📦 Packing Service</div>
-<div class="card">🔧 Furniture Assembly</div>
-
+<div class="card">House Removals</div>
+<div class="card">Office Moves</div>
+<div class="card">Packing Service</div>
+<div class="card">Furniture Assembly</div>
 </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
 <h2 class="section-title">Our Work</h2>
-
 <div class="gallery-grid">
+
 <img src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg">
 <img src="https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg">
 <img src="https://images.pexels.com/photos/4569340/pexels-photo-4569340.jpeg">
 <img src="https://images.pexels.com/photos/4246205/pexels-photo-4246205.jpeg">
+
 </div>
 </section>
 
-<!-- QUOTE -->
 <section class="quote" id="quote">
-<h2 class="section-title">Get Your Free Quote</h2>
+<h2 class="section-title">Request Quote</h2>
 
-<p style="text-align:center;margin-bottom:20px;">
+<p style="text-align:center; margin-bottom:20px;">
 Send directly to: <b>admmoving@yahoo.com</b>
 </p>
 
@@ -248,28 +241,57 @@ id="quoteForm"
 action="https://formspree.io/f/xayzkqyb"
 method="POST">
 
+<div class="form-group">
 <input type="text" name="name" placeholder="Name" required>
+</div>
+
+<div class="form-group">
 <input type="tel" name="phone" placeholder="Phone" required>
+</div>
+
+<div class="form-group">
 <input type="email" name="email" placeholder="Email" required>
+</div>
+
+<div class="form-group">
 <input type="text" name="from" placeholder="From" required>
+</div>
+
+<div class="form-group">
 <input type="text" name="to" placeholder="To" required>
+</div>
+
+<div class="form-group">
 <textarea name="details" placeholder="Details" required></textarea>
+</div>
 
 <button class="btn" type="submit">Send Quote</button>
 </form>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="section-title">Contact</h2>
-<p>📞 07312 814746</p>
-<p>📧 admmoving@yahoo.com</p>
+<section id="reviews">
+<h2 class="section-title">Reviews</h2>
+
+<div class="grid">
+<div class="review">⭐⭐⭐⭐⭐ Great service!</div>
+<div class="review">⭐⭐⭐⭐⭐ Very professional!</div>
+<div class="review">⭐⭐⭐⭐⭐ Fast and safe move!</div>
+</div>
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp"
-href="https://wa.me/447312814746?text=Hello%20I%20need%20a%20quote"
-target="_blank">
+<section class="map">
+<h2 class="section-title">Location</h2>
+<iframe src="https://www.google.com/maps?q=Corby UK&output=embed"></iframe>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<p style="text-align:center;">📞 07312 814746</p>
+<p style="text-align:center;">📧 admmoving@yahoo.com</p>
+</section>
+
+<a class="whatsapp" target="_blank"
+href="https://wa.me/447312814746?text=Hello%20I%20want%20a%20quote">
 💬
 </a>
 
@@ -295,7 +317,7 @@ window.open(
 "_blank"
 );
 
-}, 1200);
+}, 1000);
 
 });
 </script>
