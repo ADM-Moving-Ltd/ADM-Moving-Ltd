@@ -38,7 +38,6 @@ background:white;
 padding:20px;
 border-radius:12px;
 margin-top:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 input,select,textarea{
@@ -46,8 +45,6 @@ width:100%;
 padding:10px;
 margin-top:5px;
 margin-bottom:15px;
-border-radius:8px;
-border:1px solid #ccc;
 }
 
 button{
@@ -78,7 +75,7 @@ border-radius:12px;
 
 <div class="hero">
 <h1>Fast & Reliable Moving Service</h1>
-<p>Instant quote + booking sent directly to email</p>
+<p>Get instant quote + booking sent directly to email</p>
 </div>
 
 <section>
@@ -89,6 +86,7 @@ border-radius:12px;
 
 <input id="from" placeholder="Moving From Address">
 <input id="to" placeholder="Moving To Address">
+
 <input type="date" id="date">
 
 <h3>Inventory</h3>
@@ -111,17 +109,13 @@ Boxes <input type="number" id="boxes" value="0">
 </section>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 
-/* EMAILJS INIT (YOUR KEYS) */
-emailjs.init("rWnJNR9pMWg8bBMLM");
+emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
 
-const SERVICE_ID = "service_kihe2k3";
-const TEMPLATE_ID = "template_01mylzs";
-
-/* MAP */
 let map = L.map('map').setView([51.5, -0.12], 6);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
@@ -131,7 +125,6 @@ attribution:'OpenStreetMap'
 let lastPrice = 0;
 let lastDistance = 0;
 
-/* GET COORDINATES */
 async function getCoords(address){
 let res = await fetch("https://nominatim.openstreetmap.org/search?format=json&q=" + address);
 let data = await res.json();
@@ -139,7 +132,6 @@ if(data.length === 0) return null;
 return [parseFloat(data[0].lat), parseFloat(data[0].lon)];
 }
 
-/* DISTANCE CALC */
 function distance(lat1, lon1, lat2, lon2){
 const R = 3959;
 const dLat = (lat2-lat1)*Math.PI/180;
@@ -155,7 +147,6 @@ const c = 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 return R*c;
 }
 
-/* CALCULATE */
 async function calculate(){
 
 let a = await getCoords(from.value);
@@ -182,27 +173,22 @@ document.getElementById("result").innerHTML =
 " | Distance: " + miles.toFixed(1) + " miles";
 }
 
-/* SEND EMAIL */
-function sendBooking(){
+async function sendBooking(){
 
 let templateParams = {
 from_address: from.value,
 to_address: to.value,
-move_date: date.value,
-price: lastPrice.toFixed(2),
-distance: lastDistance.toFixed(1),
-sofa: sofa.value,
-bed: bed.value,
-wardrobe: wardrobe.value,
-boxes: boxes.value
+date: date.value,
+price: lastPrice,
+distance: lastDistance
 };
 
-emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",templateParams)
 .then(() => {
-alert("Booking sent successfully to email!");
+alert("Booking sent to email successfully!");
 })
 .catch((err) => {
-alert("Error sending booking email");
+alert("Error sending email");
 console.log(err);
 });
 
