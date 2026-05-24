@@ -113,6 +113,8 @@ nav a:hover{
     border-radius:8px;
     font-weight:bold;
     transition:0.3s;
+    border:none;
+    cursor:pointer;
 }
 
 .btn:hover{
@@ -206,7 +208,6 @@ section{
 /* PREMIUM BANNER */
 
 .premium-banner{
-
     height:55vh;
 
     background:
@@ -263,7 +264,7 @@ section{
     color:#0f172a;
 }
 
-/* FORM */
+/* QUOTE FORM */
 
 .quote{
     background:#0f172a;
@@ -546,7 +547,7 @@ Everything arrived safely and on time.
 
 </section>
 
-<!-- QUOTE -->
+<!-- QUOTE FORM -->
 
 <section class="quote" id="quote">
 
@@ -555,6 +556,10 @@ Everything arrived safely and on time.
 <form class="quote-form"
 action="https://formspree.io/f/xayzkqyb"
 method="POST">
+
+<input type="hidden"
+name="_subject"
+value="New Quote Request - ADM Moving LTD">
 
 <div class="form-group">
 <label>Your Name</label>
@@ -583,7 +588,7 @@ method="POST">
 
 <div class="form-group">
 <label>Details</label>
-<textarea name="details"></textarea>
+<textarea name="details" required></textarea>
 </div>
 
 <button type="submit" class="btn">
