@@ -69,18 +69,25 @@ nav a:hover{
 /* HERO */
 
 .hero{
-    height:90vh;
+    height:95vh;
+
     background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1600518464436-8f2051de1199?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')
-    center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
+    url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+
     color:white;
     padding:20px;
+
+    position:relative;
 }
 
 .hero-content{
@@ -193,6 +200,42 @@ section{
 
 .gallery-grid img:hover{
     transform:scale(1.03);
+}
+
+/* PREMIUM BANNER */
+
+.premium-banner{
+
+    height:55vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:20px;
+}
+
+.banner-overlay{
+    max-width:800px;
+    color:white;
+}
+
+.banner-overlay h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.banner-overlay p{
+    font-size:1.3rem;
+    line-height:1.6;
 }
 
 /* REVIEWS */
@@ -333,6 +376,10 @@ footer{
         margin:10px 0;
     }
 
+    .banner-overlay h2{
+        font-size:2rem;
+    }
+
 }
 
 </style>
@@ -359,6 +406,7 @@ footer{
 <section class="hero" id="home">
 
 <div class="hero-content">
+
     <h2>Professional Moving Services Across The UK</h2>
 
     <p>
@@ -366,6 +414,7 @@ footer{
     </p>
 
     <a href="#quote" class="btn">Get Free Quote</a>
+
 </div>
 
 <div class="van">🚛</div>
@@ -424,6 +473,23 @@ footer{
 
 </section>
 
+<!-- PREMIUM BANNER -->
+
+<section class="premium-banner">
+
+<div class="banner-overlay">
+
+<h2>Trusted Moving Experts Across The UK</h2>
+
+<p>
+Reliable removals, secure transport,
+professional packing and stress-free moving services.
+</p>
+
+</div>
+
+</section>
+
 <!-- REVIEWS -->
 
 <section class="reviews" id="reviews">
@@ -433,30 +499,30 @@ footer{
 <div class="review-grid">
 
 <div class="review-card">
-    ⭐⭐⭐⭐⭐
-    <p>
-        Very professional team. Fast and careful with all furniture.
-        Highly recommended.
-    </p>
-    <h4>— Sarah M.</h4>
+⭐⭐⭐⭐⭐
+<p>
+Very professional team. Fast and careful with all furniture.
+Highly recommended.
+</p>
+<h4>— Sarah M.</h4>
 </div>
 
 <div class="review-card">
-    ⭐⭐⭐⭐⭐
-    <p>
-        Excellent service from start to finish.
-        Friendly staff and affordable prices.
-    </p>
-    <h4>— Daniel R.</h4>
+⭐⭐⭐⭐⭐
+<p>
+Excellent service from start to finish.
+Friendly staff and affordable prices.
+</p>
+<h4>— Daniel R.</h4>
 </div>
 
 <div class="review-card">
-    ⭐⭐⭐⭐⭐
-    <p>
-        Best moving company we used.
-        Everything arrived safely and on time.
-    </p>
-    <h4>— Jessica T.</h4>
+⭐⭐⭐⭐⭐
+<p>
+Best moving company we used.
+Everything arrived safely and on time.
+</p>
+<h4>— Jessica T.</h4>
 </div>
 
 </div>
@@ -517,17 +583,11 @@ Send Quote Request
 
 <h2 class="section-title">Contact ADM Moving LTD</h2>
 
-<p>
-📞 <strong>07312 814746</strong>
-</p>
+<p>📞 <strong>07312 814746</strong></p>
 
-<p>
-📧 admmoving@yahoo.com
-</p>
+<p>📧 admmoving@yahoo.com</p>
 
-<p>
-📍 Based in Corby — Covering ALL UK
-</p>
+<p>📍 Based in Corby — Covering ALL UK</p>
 
 <a href="tel:07312814746" class="btn">
 Call Now
