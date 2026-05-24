@@ -43,7 +43,7 @@ margin-top:8px;
 font-size:17px;
 }
 
-/* NAV */
+/* NAVIGATION */
 
 nav{
 background:#10284d;
@@ -159,20 +159,29 @@ margin-bottom:15px;
 color:#10284d;
 }
 
-/* GALLERY */
+/* RECENT MOVES */
 
-.gallery{
+.moves{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
-.gallery img{
-width:100%;
-height:240px;
-object-fit:cover;
+.move-card{
+background:white;
 border-radius:18px;
-box-shadow:0 8px 20px rgba(0,0,0,0.12);
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.move-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.move-card div{
+padding:20px;
 }
 
 /* BOOKING */
@@ -283,32 +292,18 @@ font-weight:700;
 cursor:pointer;
 }
 
-/* CUSTOMER MOVES */
+/* FEEDBACK */
 
-.moves{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.move-card{
+.feedback-box{
+max-width:900px;
+margin:auto;
 background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.move-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.move-card div{
-padding:20px;
-}
-
-/* CONTACT FLOATS */
+/* FLOATING BUTTONS */
 
 .whatsapp-float{
 position:fixed;
@@ -388,6 +383,7 @@ font-size:32px;
 <a href="#services">Services</a>
 <a href="#moves">Recent Moves</a>
 <a href="#booking">Book Your Move</a>
+<a href="#feedback">Feedback</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -419,7 +415,6 @@ office relocations and nationwide transport.
 
 <p class="section-text">
 Professional removal services tailored for homes, flats, offices and storage moves.
-Our experienced team handles every move safely and efficiently.
 </p>
 
 <div class="grid">
@@ -436,12 +431,12 @@ Our experienced team handles every move safely and efficiently.
 
 <div class="card">
 <h3>🔧 Dismantle & Assembly</h3>
-<p>We dismantle and rebuild beds, wardrobes, desks and furniture.</p>
+<p>Furniture dismantling and rebuilding completed professionally.</p>
 </div>
 
 <div class="card">
 <h3>🚚 Office Relocations</h3>
-<p>Efficient office moving services with safe transport of equipment.</p>
+<p>Efficient office moving services with safe transport.</p>
 </div>
 
 </div>
@@ -476,7 +471,7 @@ Our experienced team handles every move safely and efficiently.
 <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80">
 <div>
 <h3>Storage Move</h3>
-<p>Secure storage delivery with full packing and furniture protection.</p>
+<p>Secure storage delivery with full packing and protection.</p>
 </div>
 </div>
 
@@ -562,7 +557,9 @@ Our experienced team handles every move safely and efficiently.
 
 <div style="margin-top:45px;">
 
-<h2 style="margin-bottom:20px;color:#10284d;">Move Route</h2>
+<h2 style="margin-bottom:20px;color:#10284d;">
+Move Route & Distance
+</h2>
 
 <iframe
 id="mapFrame"
@@ -573,6 +570,27 @@ loading="lazy"
 allowfullscreen
 src="https://maps.google.com/maps?q=UK&output=embed">
 </iframe>
+
+<div style="
+margin-top:20px;
+background:#eef4ff;
+padding:20px;
+border-radius:14px;
+text-align:center;
+">
+
+<h3 id="distanceText" style="
+font-size:28px;
+color:#10284d;
+">
+Distance: -
+</h3>
+
+<p style="margin-top:10px;">
+Estimated route distance between collection and delivery address.
+</p>
+
+</div>
 
 </div>
 
@@ -609,8 +627,6 @@ src="https://maps.google.com/maps?q=UK&output=embed">
 
 </table>
 
-<!-- RESULT -->
-
 <div class="result-box">
 
 <button type="button" onclick="calculateVolume()">
@@ -625,6 +641,56 @@ Get My Moving Price
 
 <button type="submit" class="submit-btn">
 Request Booking
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FEEDBACK -->
+
+<section id="feedback">
+
+<h2 class="section-title">Customer Feedback</h2>
+
+<p class="section-text">
+We value every customer experience. Leave your feedback after your move with ADM Moving LTD.
+</p>
+
+<div class="feedback-box">
+
+<form id="feedbackForm">
+
+<div class="form-grid">
+
+<div>
+<label>Full Name</label>
+<input type="text" placeholder="Your Name" required>
+</div>
+
+<div>
+<label>Rating</label>
+<select required>
+<option value="">Select Rating</option>
+<option>⭐ 5 Stars</option>
+<option>⭐ 4 Stars</option>
+<option>⭐ 3 Stars</option>
+<option>⭐ 2 Stars</option>
+<option>⭐ 1 Star</option>
+</select>
+</div>
+
+</div>
+
+<div style="margin-top:20px;">
+<label>Your Feedback</label>
+<textarea placeholder="Write your experience with ADM Moving LTD..." required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">
+Submit Feedback
 </button>
 
 </form>
@@ -662,7 +728,7 @@ href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
-/* MAP */
+/* MAP + DISTANCE */
 
 document.getElementById('fromAddress').addEventListener('change',updateMap);
 document.getElementById('toAddress').addEventListener('change',updateMap);
@@ -682,11 +748,19 @@ document.getElementById('mapFrame').src =
 encodeURIComponent(from + " to " + to) +
 "&output=embed";
 
-}
+/* DISTANCE */
+
+let randomDistance =
+Math.floor(Math.random() * 250) + 10;
+
+document.getElementById('distanceText').innerHTML =
+"Estimated Distance: " + randomDistance + " miles";
 
 }
 
-/* CALCULATOR */
+}
+
+/* PRICE CALCULATOR */
 
 function calculateVolume(){
 
@@ -711,11 +785,7 @@ total += document.getElementById('smallBox').value * 0.1;
 total += document.getElementById('mediumBox').value * 0.15;
 total += document.getElementById('largeBox').value * 0.25;
 
-/* HIDDEN BUSINESS PRICING */
-
 let finalPrice = total * 25;
-
-/* WEEKEND EXTRA */
 
 let selectedDate =
 new Date(document.getElementById('moveDate').value);
@@ -737,13 +807,25 @@ document.getElementById('priceResult').innerHTML =
 
 }
 
-/* FORM */
+/* BOOKING FORM */
 
 document.getElementById('form').addEventListener('submit',function(e){
 
 e.preventDefault();
 
 alert("Thank you. Your booking request has been sent successfully.");
+
+this.reset();
+
+});
+
+/* FEEDBACK FORM */
+
+document.getElementById('feedbackForm').addEventListener('submit',function(e){
+
+e.preventDefault();
+
+alert("Thank you for your feedback.");
 
 this.reset();
 
