@@ -3,40 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD - Booking System</title>
+<title>ADM Moving LTD</title>
 
 <style>
-body{
-font-family:Arial;
-background:#f5f7fb;
-margin:0;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
-header{
-background:#0b1220;
+body{background:#f8f9fa;color:#333;}
+
+header{background:#1a365d;color:white;text-align:center;padding:20px;}
+
+nav{background:#2c4b7c;text-align:center;padding:10px;}
+
+nav a{color:white;margin:0 12px;text-decoration:none;font-weight:bold;}
+
+.hero{
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1569944333018-97f81a397f8c');
+background-size:cover;
+height:60vh;
+display:flex;
+align-items:center;
+justify-content:center;
 color:white;
 text-align:center;
-padding:20px;
 }
 
-.container{
-max-width:600px;
-margin:auto;
-padding:20px;
-}
+section{padding:50px 10%;}
 
-h1{
-text-align:center;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
 
-input,select,textarea{
-width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:14px;
-}
+.card{background:#f1f5f9;padding:20px;border-radius:10px;}
+
+.booking{background:#e8f0fe;padding:60px 10%;}
+
+.form-box{max-width:600px;margin:auto;background:white;padding:25px;border-radius:10px;}
+
+input,select,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;}
 
 button{
 width:100%;
@@ -49,8 +51,15 @@ font-weight:bold;
 cursor:pointer;
 }
 
-button:hover{
-background:#16a34a;
+button:hover{background:#16a34a;}
+
+.pay-box{
+display:none;
+text-align:center;
+margin-top:15px;
+padding:15px;
+background:#fff;
+border-radius:10px;
 }
 
 .success{
@@ -63,28 +72,48 @@ text-align:center;
 margin-bottom:10px;
 }
 
-.note{
-text-align:center;
-color:#555;
-margin-bottom:10px;
-}
+footer{background:#1a365d;color:white;text-align:center;padding:15px;}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h2>🚚 ADM Moving LTD</h2>
-<p>Fast UK Removals Booking System</p>
+<h1>🚚 ADM Moving LTD</h1>
+<p>Professional UK Removals</p>
 </header>
 
-<div class="container">
+<nav>
+<a href="#services">Services</a>
+<a href="#booking">Book</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<h1>Book Your Move</h1>
+<div class="hero">
+<div>
+<h1>Fast & Reliable Moving Service</h1>
+</div>
+</div>
 
-<p class="note">Select date and time. We confirm within 1 hour.</p>
+<section id="services">
+<h2>Services</h2>
+<div class="grid">
+<div class="card">House Moving</div>
+<div class="card">Packing</div>
+<div class="card">Furniture Assembly</div>
+<div class="card">UK Wide Moves</div>
+</div>
+</section>
 
-<div class="success" id="success">Booking sent successfully</div>
+<!-- BOOKING -->
+<section class="booking" id="booking">
+
+<h2 style="text-align:center;">Book Your Move</h2>
+
+<div class="form-box">
+
+<div class="success" id="successMsg">Booking sent successfully</div>
 
 <form id="form">
 
@@ -100,8 +129,8 @@ margin-bottom:10px;
 <option>Afternoon</option>
 </select>
 
-<input name="from" placeholder="Moving From" required>
-<input name="to" placeholder="Moving To" required>
+<input name="from" placeholder="From" required>
+<input name="to" placeholder="To" required>
 
 <textarea name="details" placeholder="Details" required></textarea>
 
@@ -109,11 +138,36 @@ margin-bottom:10px;
 
 </form>
 
+<!-- PAYMENT BOX -->
+<div class="pay-box" id="payBox">
+
+<h3>Secure Deposit Required</h3>
+<p>To confirm your booking, pay the deposit below.</p>
+
+<a id="payLink" href="#" target="_blank">
+<button type="button">Pay Deposit</button>
+</a>
+
 </div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>📞 07312 814746</p>
+<p>📧 admmoving@yahoo.com</p>
+</section>
+
+<footer>
+© 2026 ADM Moving LTD
+</footer>
 
 <script>
 
 const API_URL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
+const STRIPE_LINK = "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE";
+const WHATSAPP_NUMBER = "447312814746";
 
 document.getElementById("form").addEventListener("submit", async function(e){
 e.preventDefault();
@@ -131,19 +185,40 @@ to: f.to.value,
 details: f.details.value
 };
 
-const res = await fetch(API_URL, {
-method: "POST",
+const res = await fetch(API_URL,{
+method:"POST",
 body: JSON.stringify(data)
 });
 
 const result = await res.json();
 
 if(result.status === "error"){
-alert("This slot is already booked. Choose another time.");
+alert("Slot already booked");
 return;
 }
 
-document.getElementById("success").style.display = "block";
+// SHOW SUCCESS
+document.getElementById("successMsg").style.display = "block";
+
+// SHOW PAYMENT BUTTON
+document.getElementById("payBox").style.display = "block";
+document.getElementById("payLink").href = STRIPE_LINK;
+
+// SEND WHATSAPP MESSAGE
+const msg =
+`New Booking Request:
+Name: ${data.name}
+Phone: ${data.phone}
+Date: ${data.date}
+Slot: ${data.slot}
+From: ${data.from}
+To: ${data.to}`;
+
+const whatsappURL =
+`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+window.open(whatsappURL, "_blank");
+
 f.reset();
 
 });
