@@ -21,7 +21,7 @@
         }
         .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
         .hero p { font-size: 1.3rem; margin-bottom: 1.5rem; }
-        .btn { background: #ffc107; color: black; padding: 0.9rem 2rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; }
+        .btn { background: #ffc107; color: black; padding: 0.9rem 2rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; border: none; cursor: pointer; font-size: 1rem; }
         .btn:hover { background: #ff9800; }
 
         .services { padding: 3rem 5%; background: white; }
@@ -30,6 +30,7 @@
         .card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: center; }
         .card h3 { color: #1a365d; margin-bottom: 1rem; }
 
+        /* ✅ GALLERY - YOUR PICTURES ✅ */
         .gallery { padding: 3rem 5%; background: #f1f5f9; }
         .gallery h2 { text-align: center; color: #1a365d; margin-bottom: 2rem; font-size: 2.2rem; }
         .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -38,6 +39,15 @@
         .about { padding: 3rem 5%; background: white; text-align: center; }
         .about h2 { color: #1a365d; margin-bottom: 1rem; }
         .about p { max-width: 800px; margin: auto; font-size: 1.1rem; }
+
+        /* ✅ QUOTE FORM ✅ */
+        .quote { padding: 3rem 5%; background: #e8f0fe; }
+        .quote h2 { text-align: center; color: #1a365d; margin-bottom: 2rem; font-size: 2.2rem; }
+        .quote-form { max-width: 600px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 3px 12px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1.2rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1a365d; }
+        input, textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+        textarea { resize: vertical; min-height: 120px; }
 
         .contact { padding: 3rem 5%; background: #f1f5f9; text-align: center; }
         .contact h2 { color: #1a365d; margin-bottom: 1rem; }
@@ -56,7 +66,8 @@
     <nav>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#gallery">Our Work</a>
+        <a href="#quote">Get Quote</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -65,7 +76,7 @@
         <div>
             <h1>Reliable Moving Solutions</h1>
             <p>Local • National • Fully Insured • Based in Corby</p>
-            <a href="mailto:Admmoving@yahoo.com?subject=Request Free Quote&body=Hello ADM Moving LTD,%0D%0AI would like a free quote for my move.%0D%0APlease contact me.%0D%0AThank you!" class="btn">Get Free Quote</a>
+            <a href="#quote" class="btn">Get Free Quote Now</a>
         </div>
     </section>
 
@@ -91,14 +102,48 @@
         </div>
     </section>
 
+    <!-- ✅ YOUR PICTURES HERE ✅ -->
     <section class="gallery" id="gallery">
         <h2>Our Work & Vehicles</h2>
         <div class="photo-grid">
-            <img src="https://images.unsplash.com/photo-1581579438747-189382392289?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Removal Van">
-            <img src="https://images.unsplash.com/photo-1600518464436-8f2051de1199?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Loading Truck">
-            <img src="https://images.unsplash.com/photo-1558618662-8290281d5d7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Packing Service">
-            <img src="https://images.unsplash.com/photo-1523362627385-ed3849298e4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Furniture Moving">
+            <!-- ↓↓↓ REPLACE THESE WITH YOUR OWN FILE NAMES ↓↓↓ -->
+            <img src="van1.jpg" alt="Our Removal Van">
+            <img src="team1.jpg" alt="Our Team Working">
+            <img src="packing1.jpg" alt="Professional Packing">
+            <img src="furniture1.jpg" alt="Moving Furniture">
         </div>
+    </section>
+
+    <!-- ✅ NEW QUOTE FORM ✅ -->
+    <section class="quote" id="quote">
+        <h2>Request Your Free Quote</h2>
+        <form class="quote-form" action="https://formspree.io/f/xayzkqyb" method="POST">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label>Move From (Postcode / Town)</label>
+                <input type="text" name="from" required>
+            </div>
+            <div class="form-group">
+                <label>Move To (Postcode / Town)</label>
+                <input type="text" name="to" required>
+            </div>
+            <div class="form-group">
+                <label>Details (Size of house, date, extra help...)</label>
+                <textarea name="details" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Quote Request</button>
+        </form>
     </section>
 
     <section class="about" id="about">
@@ -125,4 +170,3 @@
 
 </body>
 </html>
-Fix button=add gallery
