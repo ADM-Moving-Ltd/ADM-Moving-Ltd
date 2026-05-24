@@ -17,66 +17,80 @@ scroll-behavior:smooth;
 }
 
 /* HEADER */
+
 header{
 background:#0b1f3a;
 color:white;
-padding:18px;
+padding:20px;
 text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:38px;
 }
 
 nav{
 background:#122b4d;
+padding:14px;
 text-align:center;
-padding:12px;
 position:sticky;
 top:0;
-z-index:1000;
+z-index:999;
 }
 
 nav a{
 color:white;
-margin:0 15px;
 text-decoration:none;
+margin:0 15px;
 font-weight:bold;
 }
 
+nav a:hover{
+color:#22c55e;
+}
+
 /* HERO */
+
 .hero{
 height:80vh;
 background:
 linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1600&q=80');
+url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b');
 background-size:cover;
 background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:white;
 padding:20px;
+color:white;
+}
+
+.hero-content{
+max-width:850px;
 }
 
 .hero h1{
-font-size:3.5rem;
-margin-bottom:10px;
+font-size:60px;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:1.3rem;
-max-width:700px;
-margin:auto;
+font-size:22px;
+line-height:1.6;
 }
 
-/* BUTTON */
 .btn{
-background:#22c55e;
-color:white;
-padding:14px 24px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
 display:inline-block;
 margin-top:20px;
+padding:15px 28px;
+background:#22c55e;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+font-size:18px;
 transition:0.3s;
 }
 
@@ -84,15 +98,24 @@ transition:0.3s;
 background:#16a34a;
 }
 
-/* SECTIONS */
+/* SECTION */
+
 section{
-padding:60px 10%;
+padding:70px 10%;
+}
+
+h2{
+text-align:center;
+font-size:38px;
+margin-bottom:40px;
+color:#1a365d;
 }
 
 /* SERVICES */
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
 }
 
@@ -100,7 +123,7 @@ gap:20px;
 background:white;
 padding:25px;
 border-radius:14px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
@@ -109,96 +132,149 @@ transform:translateY(-5px);
 }
 
 .card h3{
-color:#0b1f3a;
+margin-top:0;
+color:#1a365d;
 }
 
 /* GALLERY */
+
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-margin-top:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
 
 .gallery img{
 width:100%;
-height:220px;
+height:240px;
 object-fit:cover;
 border-radius:14px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
 /* BOOKING */
+
 .booking{
 background:#e8f0fe;
 }
 
-.form-box{
-max-width:700px;
-margin:auto;
+.booking-box{
 background:white;
-padding:30px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+padding:35px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+max-width:1100px;
+margin:auto;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 input,select,textarea{
 width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:8px;
+padding:14px;
+border-radius:10px;
 border:1px solid #ccc;
+margin-top:5px;
 font-size:15px;
+box-sizing:border-box;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
 }
 
 button{
-width:100%;
-padding:14px;
+padding:16px;
 background:#22c55e;
 color:white;
 border:none;
 border-radius:10px;
-font-size:16px;
+font-size:18px;
 font-weight:bold;
 cursor:pointer;
+width:100%;
+margin-top:20px;
 }
 
 button:hover{
 background:#16a34a;
 }
 
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:30px;
+background:#f8fafc;
+border-radius:12px;
+overflow:hidden;
+}
+
+th{
+background:#1a365d;
+color:white;
+padding:15px;
+}
+
+td{
+padding:14px;
+border-bottom:1px solid #e5e7eb;
+}
+
+tr:nth-child(even){
+background:#eef2f7;
+}
+
+/* RESULT */
+
+.result-box{
+text-align:center;
+margin-top:35px;
+}
+
+.result-box h3{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.price{
+font-size:35px;
+font-weight:bold;
+color:#22c55e;
+}
+
 /* REVIEWS */
+
 .reviews{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
 .review{
 background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+padding:25px;
+border-radius:14px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-/* INVENTORY TABLE */
-table input,
-table select{
-padding:8px;
-border-radius:6px;
-border:1px solid #ccc;
-}
+/* MAP */
 
-table textarea{
-border:1px solid #ccc;
-font-family:Arial;
-}
-
-table tr:hover{
-background:#dbeafe;
-transition:0.2s;
+.map iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:14px;
 }
 
 /* FLOATING BUTTONS */
+
 .whatsapp-float{
 position:fixed;
 bottom:20px;
@@ -206,12 +282,12 @@ right:20px;
 width:60px;
 height:60px;
 background:#25d366;
-color:white;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:28px;
+font-size:30px;
+color:white;
 text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
 z-index:999;
@@ -224,16 +300,18 @@ right:20px;
 width:60px;
 height:60px;
 background:#2563eb;
-color:white;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:24px;
+font-size:26px;
+color:white;
 text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
 z-index:999;
 }
+
+/* FOOTER */
 
 footer{
 background:#0b1f3a;
@@ -242,19 +320,20 @@ text-align:center;
 padding:20px;
 }
 
+/* MOBILE */
+
 @media(max-width:768px){
 
 .hero h1{
-font-size:2.2rem;
+font-size:40px;
 }
 
 .hero p{
-font-size:1rem;
+font-size:18px;
 }
 
-nav a{
-display:block;
-margin:10px 0;
+h2{
+font-size:30px;
 }
 
 }
@@ -266,353 +345,322 @@ margin:10px 0;
 
 <header>
 <h1>🚚 ADM Moving LTD</h1>
-<p>Professional House Removals Across the UK</p>
+<p>Professional House Removals Across The UK</p>
 </header>
 
 <nav>
 <a href="#services">Services</a>
-<a href="#about">About</a>
 <a href="#work">Our Work</a>
-<a href="#booking">Book</a>
-<a href="#inventory">Inventory</a>
+<a href="#booking">Book Move</a>
 <a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-<div>
-<h1>Stress-Free Moving Service</h1>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Reliable & Professional Moving Services</h1>
+
 <p>
-Professional removals company covering all UK areas.
-Packing, transport, dismantling and assembly included.
+House removals, packing services, furniture assembly and nationwide moving solutions across the UK.
+Safe, affordable and stress-free moving with ADM Moving LTD.
 </p>
 
-<a class="btn" href="#booking">Book Your Move</a>
+<a href="#booking" class="btn">Book Your Move</a>
+
 </div>
-</div>
+
+</section>
 
 <!-- SERVICES -->
+
 <section id="services">
 
-<h2>What We Provide</h2>
+<h2>Our Services</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>🏠 House Removals</h3>
-<p>Complete house and flat removals with safe transportation.</p>
+<p>Professional home removals for flats, apartments and large houses across the UK.</p>
 </div>
 
 <div class="card">
-<h3>📦 Packing Service</h3>
-<p>Professional packing materials and full packing assistance.</p>
+<h3>📦 Packing Services</h3>
+<p>We provide professional packing materials and complete packing assistance.</p>
 </div>
 
 <div class="card">
 <h3>🔧 Furniture Assembly</h3>
-<p>Dismantling and rebuilding beds, wardrobes and furniture.</p>
+<p>Dismantling and rebuilding wardrobes, beds, desks and furniture.</p>
 </div>
 
 <div class="card">
-<h3>🚚 Nationwide Moving</h3>
-<p>Local and long-distance removals across the UK.</p>
+<h3>🚚 Nationwide Transport</h3>
+<p>Long-distance and local removals anywhere in the United Kingdom.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- GALLERY -->
 
-<h2>Why Choose ADM Moving LTD</h2>
-
-<p>
-We provide reliable and professional moving services with experienced staff,
-fully insured transport and careful handling of your belongings.
-Our goal is to make every move simple, safe and stress-free.
-</p>
-
-</section>
-
-<!-- WORK -->
 <section id="work">
 
 <h2>Our Work</h2>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1581579438747-189382392289?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1581579438747-189382392289">
 
-<img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b">
 
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64">
 
-<img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1523362628745-0c100150b504">
 
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
 
-<img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858">
 
 </div>
 
 </section>
 
 <!-- BOOKING -->
+
 <section class="booking" id="booking">
 
-<h2 style="text-align:center;">Book Your Move</h2>
+<h2>Book Your Move</h2>
 
-<div class="form-box">
+<div class="booking-box">
 
 <form id="form">
 
-<input name="name" placeholder="Full Name" required>
+<div class="form-grid">
 
-<input name="phone" placeholder="Phone Number" required>
+<div>
+<label>Full Name</label>
+<input type="text" name="name" required>
+</div>
 
-<input name="email" placeholder="Email Address" required>
+<div>
+<label>Phone Number</label>
+<input type="text" name="phone" required>
+</div>
 
+<div>
+<label>Email Address</label>
+<input type="email" name="email" required>
+</div>
+
+<div>
+<label>Moving Date</label>
 <input type="date" name="date" required>
+</div>
 
+<div>
+<label>Time Slot</label>
 <select name="slot" required>
-<option value="">Select Time Slot</option>
+<option value="">Choose Time</option>
 <option>Morning</option>
 <option>Afternoon</option>
+<option>Evening</option>
 </select>
+</div>
 
-<input name="from" placeholder="Moving From" required>
+<div>
+<label>Moving From</label>
+<input type="text" name="from" required>
+</div>
 
-<input name="to" placeholder="Moving To" required>
+<div>
+<label>Moving To</label>
+<input type="text" name="to" required>
+</div>
 
-<textarea name="details" placeholder="Extra Details" required></textarea>
+</div>
 
-<button type="submit">Request Booking</button>
+<div style="margin-top:20px;">
+<label>Extra Details</label>
+<textarea name="details"></textarea>
+</div>
+
+<!-- INVENTORY -->
+
+<h2 style="margin-top:60px;">Moving Inventory & Cubic Metre Calculator</h2>
+
+<table>
+
+<tr>
+<th>Item</th>
+<th>Quantity</th>
+<th>m³ Per Item</th>
+</tr>
+
+<tr>
+<td>🛋️ 2-Seater Sofa</td>
+<td><input type="number" id="sofa2" min="0" value="0"></td>
+<td>1.5</td>
+</tr>
+
+<tr>
+<td>🛋️ Corner Sofa</td>
+<td><input type="number" id="cornerSofa" min="0" value="0"></td>
+<td>3.0</td>
+</tr>
+
+<tr>
+<td>🛏️ Double Bed</td>
+<td><input type="number" id="bed" min="0" value="0"></td>
+<td>1.2</td>
+</tr>
+
+<tr>
+<td>🚪 Wardrobe</td>
+<td><input type="number" id="wardrobe" min="0" value="0"></td>
+<td>2.0</td>
+</tr>
+
+<tr>
+<td>📺 TV</td>
+<td><input type="number" id="tv" min="0" value="0"></td>
+<td>0.3</td>
+</tr>
+
+<tr>
+<td>🍽️ Dining Table</td>
+<td><input type="number" id="table" min="0" value="0"></td>
+<td>1.5</td>
+</tr>
+
+<tr>
+<td>🪑 Dining Chair</td>
+<td><input type="number" id="chair" min="0" value="0"></td>
+<td>0.2</td>
+</tr>
+
+<tr>
+<td>🧺 Washing Machine</td>
+<td><input type="number" id="washing" min="0" value="0"></td>
+<td>0.6</td>
+</tr>
+
+<tr>
+<td>❄️ Fridge Freezer</td>
+<td><input type="number" id="fridge" min="0" value="0"></td>
+<td>1.0</td>
+</tr>
+
+<tr>
+<td>📦 Small Box</td>
+<td><input type="number" id="smallBox" min="0" value="0"></td>
+<td>0.1</td>
+</tr>
+
+<tr>
+<td>📦 Medium Box</td>
+<td><input type="number" id="mediumBox" min="0" value="0"></td>
+<td>0.15</td>
+</tr>
+
+<tr>
+<td>📦 Large Box</td>
+<td><input type="number" id="largeBox" min="0" value="0"></td>
+<td>0.25</td>
+</tr>
+
+</table>
+
+<div class="result-box">
+
+<button type="button" onclick="calculateVolume()">
+Calculate Moving Price
+</button>
+
+<h3 id="result"></h3>
+
+<div class="price" id="priceResult"></div>
+
+</div>
+
+<button type="submit">
+Request Booking
+</button>
 
 </form>
 
 </div>
 
 </section>
-  <!-- INVENTORY -->
-<section id="inventory" style="background:white; padding:60px 10%;">
 
-<h2 style="text-align:center; color:#1a365d;">
-Moving Inventory & Cubic Metre Calculator
-</h2>
+<!-- REVIEWS -->
 
-<p style="text-align:center; margin-bottom:25px;">
-Select your items to calculate the estimated cubic metres needed for your move.
-</p>
+<section id="reviews">
 
-<div style="max-width:1100px; margin:auto; overflow-x:auto;">
+<h2>Customer Reviews</h2>
 
-<table style="width:100%; border-collapse:collapse; background:#f8fafc; border-radius:12px; overflow:hidden;">
+<div class="reviews">
 
-<tr style="background:#1a365d; color:white;">
-<th style="padding:14px;">Item</th>
-<th style="padding:14px;">Quantity</th>
-<th style="padding:14px;">Packing Needed</th>
-<th style="padding:14px;">m³ Per Item</th>
-</tr>
+<div class="review">
+<h3>⭐⭐⭐⭐⭐ John M.</h3>
+<p>Very professional and fast moving service. Everything arrived safely.</p>
+</div>
 
-<tr>
-<td style="padding:12px;">🛋️ 2-Seater Sofa</td>
-<td style="padding:12px;">
-<input type="number" id="sofa2" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">1.5</td>
-</tr>
+<div class="review">
+<h3>⭐⭐⭐⭐⭐ Sarah L.</h3>
+<p>Excellent communication and friendly movers. Highly recommended.</p>
+</div>
 
-<tr style="background:#eef2f7;">
-<td style="padding:12px;">🛋️ Corner Sofa</td>
-<td style="padding:12px;">
-<input type="number" id="cornerSofa" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">3.0</td>
-</tr>
-
-<tr>
-<td style="padding:12px;">🛏️ Double Bed</td>
-<td style="padding:12px;">
-<input type="number" id="bed" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">1.2</td>
-</tr>
-
-<tr style="background:#eef2f7;">
-<td style="padding:12px;">🚪 Wardrobe</td>
-<td style="padding:12px;">
-<input type="number" id="wardrobe" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">2.0</td>
-</tr>
-
-<tr>
-<td style="padding:12px;">📺 TV</td>
-<td style="padding:12px;">
-<input type="number" id="tv" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">0.3</td>
-</tr>
-
-<tr style="background:#eef2f7;">
-<td style="padding:12px;">🍽️ Dining Table</td>
-<td style="padding:12px;">
-<input type="number" id="table" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">1.5</td>
-</tr>
-
-<tr>
-<td style="padding:12px;">🪑 Dining Chair</td>
-<td style="padding:12px;">
-<input type="number" id="chair" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">0.2</td>
-</tr>
-
-<tr style="background:#eef2f7;">
-<td style="padding:12px;">🧺 Washing Machine</td>
-<td style="padding:12px;">
-<input type="number" id="washing" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">0.6</td>
-</tr>
-
-<tr>
-<td style="padding:12px;">❄️ Fridge Freezer</td>
-<td style="padding:12px;">
-<input type="number" id="fridge" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">1.0</td>
-</tr>
-
-<tr style="background:#eef2f7;">
-<td style="padding:12px;">📦 Small Box</td>
-<td style="padding:12px;">
-<input type="number" id="smallBox" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">0.1</td>
-</tr>
-
-<tr>
-<td style="padding:12px;">📦 Medium Box</td>
-<td style="padding:12px;">
-<input type="number" id="mediumBox" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">0.15</td>
-</tr>
-
-<tr style="background:#eef2f7;">
-<td style="padding:12px;">📦 Large Box</td>
-<td style="padding:12px;">
-<input type="number" id="largeBox" min="0" value="0">
-</td>
-<td style="padding:12px;">
-<select>
-<option>No</option>
-<option>Yes</option>
-</select>
-</td>
-<td style="padding:12px;">0.25</td>
-</tr>
-
-</table>
-
-<div style="text-align:center; margin-top:30px;">
-
-<button onclick="calculateVolume()" style="
-background:#22c55e;
-color:white;
-padding:15px 30px;
-border:none;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-">
-Calculate Total Cubic Metres
-</button>
-
-<h3 id="result" style="
-margin-top:25px;
-font-size:28px;
-color:#1a365d;
-">
-</h3>
-
+<div class="review">
+<h3>⭐⭐⭐⭐⭐ David K.</h3>
+<p>Best moving company experience I had in the UK.</p>
 </div>
 
 </div>
 
 </section>
+
+<!-- MAP -->
+
+<section id="contact">
+
+<h2>Our Location</h2>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=Corby&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 ADM Moving LTD | Professional UK Removals
+</p>
+
+<p>
+📞 07312 814746 | ✉️ admmoving@yahoo.com
+</p>
+
+</footer>
+
+<!-- FLOATING BUTTONS -->
+
+<a class="whatsapp-float"
+href="https://wa.me/447312814746?text=Hello%20I%20would%20like%20a%20moving%20quote"
+target="_blank">💬</a>
+
+<a class="email-float"
+href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
@@ -633,90 +681,26 @@ total += document.getElementById('smallBox').value * 0.1;
 total += document.getElementById('mediumBox').value * 0.15;
 total += document.getElementById('largeBox').value * 0.25;
 
+let price = total * 25;
+
 document.getElementById('result').innerHTML =
-"Estimated Total Volume: <span style='color:#22c55e'>" +
-total.toFixed(2) +
-" m³</span>";
+"Estimated Volume: " + total.toFixed(2) + " m³";
+
+document.getElementById('priceResult').innerHTML =
+"Estimated Moving Price: £" + price.toFixed(2);
 
 }
 
-</script>
-
-
-<!-- REVIEWS -->
-<section id="reviews">
-
-<h2>Customer Reviews</h2>
-
-<div class="reviews">
-
-<div class="review">
-<strong>John M.</strong>
-<p>“Very professional service. Everything went smoothly.”</p>
-</div>
-
-<div class="review">
-<strong>Sarah L.</strong>
-<p>“Fast, friendly and reliable. Highly recommended.”</p>
-</div>
-
-<div class="review">
-<strong>David K.</strong>
-<p>“Best moving company I used in the UK.”</p>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>📞 07312 814746</p>
-<p>📧 admmoving@yahoo.com</p>
-
-<p>
-© 2026 ADM Moving LTD - All Rights Reserved
-</p>
-
-</footer>
-
-<!-- FLOATING BUTTONS -->
-<a class="whatsapp-float"
-href="https://wa.me/447312814746?text=Hello%20I%20want%20a%20quote%20for%20moving"
-target="_blank">💬</a>
-
-<a class="email-float"
-href="mailto:admmoving@yahoo.com">✉️</a>
-
-<script>
-
-const API_URL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
-
-document.getElementById("form").addEventListener("submit", async function(e){
+document.getElementById("form").addEventListener("submit", function(e){
 
 e.preventDefault();
 
-const f = e.target;
+alert("Booking request sent successfully. ADM Moving LTD will contact you shortly.");
 
-const data = {
-name:f.name.value,
-phone:f.phone.value,
-email:f.email.value,
-date:f.date.value,
-slot:f.slot.value,
-from:f.from.value,
-to:f.to.value,
-details:f.details.value
-};
+this.reset();
 
-await fetch(API_URL,{
-method:"POST",
-body:JSON.stringify(data)
-});
-
-alert("Booking received. We will contact you shortly.");
-
-f.reset();
+document.getElementById('result').innerHTML = "";
+document.getElementById('priceResult').innerHTML = "";
 
 });
 
