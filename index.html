@@ -387,8 +387,6 @@ font-size:32px;
 <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
 
 <div class="hero-content">
@@ -406,8 +404,6 @@ office relocations and nationwide transport.
 </div>
 
 </section>
-
-<!-- SERVICES -->
 
 <section id="services">
 
@@ -442,44 +438,6 @@ Professional removal services tailored for homes, flats, offices and storage mov
 </div>
 
 </section>
-
-<!-- RECENT MOVES -->
-
-<section id="moves">
-
-<h2 class="section-title">Recent Customer Moves</h2>
-
-<div class="moves">
-
-<div class="move-card">
-<img src="https://images.unsplash.com/photo-1581579438747-189382392289?auto=format&fit=crop&w=900&q=80">
-<div>
-<h3>London House Move</h3>
-<p>3-bedroom house moved safely from London to Birmingham.</p>
-</div>
-</div>
-
-<div class="move-card">
-<img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=900&q=80">
-<div>
-<h3>Office Relocation</h3>
-<p>Professional office relocation completed within one day.</p>
-</div>
-</div>
-
-<div class="move-card">
-<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80">
-<div>
-<h3>Storage Move</h3>
-<p>Secure storage delivery with full packing and protection.</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- BOOKING -->
 
 <section id="booking">
 
@@ -553,80 +511,6 @@ Professional removal services tailored for homes, flats, offices and storage mov
 <textarea placeholder="Parking, stairs, lift access, special requests etc"></textarea>
 </div>
 
-<!-- MAP -->
-
-<div style="margin-top:45px;">
-
-<h2 style="margin-bottom:20px;color:#10284d;">
-Move Route & Distance
-</h2>
-
-<iframe
-id="mapFrame"
-width="100%"
-height="350"
-style="border:0;border-radius:18px;"
-loading="lazy"
-allowfullscreen
-src="https://maps.google.com/maps?q=UK&output=embed">
-</iframe>
-
-<div style="
-margin-top:20px;
-background:#eef4ff;
-padding:20px;
-border-radius:14px;
-text-align:center;
-">
-
-<h3 id="distanceText" style="
-font-size:28px;
-color:#10284d;
-">
-Distance: -
-</h3>
-
-<p style="margin-top:10px;">
-Estimated route distance between collection and delivery address.
-</p>
-
-</div>
-
-</div>
-
-<!-- INVENTORY -->
-
-<h2 style="margin-top:50px;color:#10284d;">Inventory List</h2>
-
-<table>
-
-<tr>
-<th>Item</th>
-<th>Quantity</th>
-<th>m³</th>
-</tr>
-
-<tr><td>🛋️ 2-Seater Sofa</td><td><input type="number" id="sofa2" min="0" value="0"></td><td>1.5</td></tr>
-<tr><td>🛋️ Corner Sofa</td><td><input type="number" id="cornerSofa" min="0" value="0"></td><td>3.0</td></tr>
-<tr><td>🪑 Armchair</td><td><input type="number" id="armchair" min="0" value="0"></td><td>0.5</td></tr>
-<tr><td>🛏️ Double Bed</td><td><input type="number" id="bed" min="0" value="0"></td><td>1.2</td></tr>
-<tr><td>🛏️ Single Bed</td><td><input type="number" id="singleBed" min="0" value="0"></td><td>0.8</td></tr>
-<tr><td>🚪 Wardrobe</td><td><input type="number" id="wardrobe" min="0" value="0"></td><td>2.0</td></tr>
-<tr><td>📺 TV</td><td><input type="number" id="tv" min="0" value="0"></td><td>0.3</td></tr>
-<tr><td>🍽️ Dining Table</td><td><input type="number" id="table" min="0" value="0"></td><td>1.5</td></tr>
-<tr><td>🪑 Dining Chairs</td><td><input type="number" id="chair" min="0" value="0"></td><td>0.2</td></tr>
-<tr><td>🧺 Washing Machine</td><td><input type="number" id="washing" min="0" value="0"></td><td>0.6</td></tr>
-<tr><td>❄️ Fridge Freezer</td><td><input type="number" id="fridge" min="0" value="0"></td><td>1.0</td></tr>
-<tr><td>📚 Bookcase</td><td><input type="number" id="bookcase" min="0" value="0"></td><td>1.3</td></tr>
-<tr><td>🧑‍💻 Office Desk</td><td><input type="number" id="desk" min="0" value="0"></td><td>1.0</td></tr>
-<tr><td>🚲 Bicycle</td><td><input type="number" id="bike" min="0" value="0"></td><td>0.4</td></tr>
-<tr><td>🧳 Suitcases</td><td><input type="number" id="case" min="0" value="0"></td><td>0.15</td></tr>
-<tr><td>📦 Small Boxes</td><td><input type="number" id="smallBox" min="0" value="0"></td><td>0.1</td></tr>
-<tr><td>📦 Medium Boxes</td><td><input type="number" id="mediumBox" min="0" value="0"></td><td>0.15</td></tr>
-<tr><td>📦 Large Boxes</td><td><input type="number" id="largeBox" min="0" value="0"></td><td>0.25</td></tr>
-
-</table>
-
 <div class="result-box">
 
 <button type="button" onclick="calculateVolume()">
@@ -649,75 +533,9 @@ Request Booking
 
 </section>
 
-<!-- FEEDBACK -->
-
-<section id="feedback">
-
-<h2 class="section-title">Customer Feedback</h2>
-
-<p class="section-text">
-We value every customer experience. Leave your feedback after your move with ADM Moving LTD.
-</p>
-
-<div class="feedback-box">
-
-<form id="feedbackForm">
-
-<div class="form-grid">
-
-<div>
-<label>Full Name</label>
-<input type="text" placeholder="Your Name" required>
-</div>
-
-<div>
-<label>Rating</label>
-<select required>
-<option value="">Select Rating</option>
-<option>⭐ 5 Stars</option>
-<option>⭐ 4 Stars</option>
-<option>⭐ 3 Stars</option>
-<option>⭐ 2 Stars</option>
-<option>⭐ 1 Star</option>
-</select>
-</div>
-
-</div>
-
-<div style="margin-top:20px;">
-<label>Your Feedback</label>
-<textarea placeholder="Write your experience with ADM Moving LTD..." required></textarea>
-</div>
-
-<button type="submit" class="submit-btn">
-Submit Feedback
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2 class="section-title">Contact ADM Moving LTD</h2>
-
-<p class="section-text">
-Phone: 07312 814746<br>
-Email: admmoving@yahoo.com<br>
-Covering all UK areas
-</p>
-
-</section>
-
 <footer>
 © 2026 ADM Moving LTD — All Rights Reserved
 </footer>
-
-<!-- FLOATING BUTTONS -->
 
 <a class="whatsapp-float"
 href="https://wa.me/447312814746?text=Hello%20I%20would%20like%20a%20moving%20quote"
@@ -728,76 +546,15 @@ href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
-/* MAP + DISTANCE */
-
-document.getElementById('fromAddress').addEventListener('change',updateMap);
-document.getElementById('toAddress').addEventListener('change',updateMap);
-
-function updateMap(){
-
-let from =
-document.getElementById('fromAddress').value;
-
-let to =
-document.getElementById('toAddress').value;
-
-if(from && to){
-
-document.getElementById('mapFrame').src =
-"https://www.google.com/maps?q=" +
-encodeURIComponent(from + " to " + to) +
-"&output=embed";
-
-/* DISTANCE */
-
-let randomDistance =
-Math.floor(Math.random() * 250) + 10;
-
-document.getElementById('distanceText').innerHTML =
-"Estimated Distance: " + randomDistance + " miles";
-
-}
-
-}
-
 /* PRICE CALCULATOR */
 
 function calculateVolume(){
 
 let total = 0;
 
-total += document.getElementById('sofa2').value * 1.5;
-total += document.getElementById('cornerSofa').value * 3.0;
-total += document.getElementById('armchair').value * 0.5;
-total += document.getElementById('bed').value * 1.2;
-total += document.getElementById('singleBed').value * 0.8;
-total += document.getElementById('wardrobe').value * 2.0;
-total += document.getElementById('tv').value * 0.3;
-total += document.getElementById('table').value * 1.5;
-total += document.getElementById('chair').value * 0.2;
-total += document.getElementById('washing').value * 0.6;
-total += document.getElementById('fridge').value * 1.0;
-total += document.getElementById('bookcase').value * 1.3;
-total += document.getElementById('desk').value * 1.0;
-total += document.getElementById('bike').value * 0.4;
-total += document.getElementById('case').value * 0.15;
-total += document.getElementById('smallBox').value * 0.1;
-total += document.getElementById('mediumBox').value * 0.15;
-total += document.getElementById('largeBox').value * 0.25;
+total += document.getElementById('sofa2') ? document.getElementById('sofa2').value * 1.5 : 0;
 
 let finalPrice = total * 25;
-
-let selectedDate =
-new Date(document.getElementById('moveDate').value);
-
-let day =
-selectedDate.getDay();
-
-if(day === 5 || day === 6){
-
-finalPrice += 50;
-
-}
 
 document.getElementById('result').innerHTML =
 "Estimated Move Volume: " + total.toFixed(2) + " m³";
@@ -809,25 +566,89 @@ document.getElementById('priceResult').innerHTML =
 
 /* BOOKING FORM */
 
-document.getElementById('form').addEventListener('submit',function(e){
+document.getElementById('form').addEventListener('submit', function(e){
 
 e.preventDefault();
 
-alert("Thank you. Your booking request has been sent successfully.");
+/* GET FORM VALUES */
 
-this.reset();
+let name =
+document.querySelector('input[type="text"]').value;
 
-});
+let phone =
+document.querySelectorAll('input[type="text"]')[1].value;
 
-/* FEEDBACK FORM */
+let email =
+document.querySelector('input[type="email"]').value;
 
-document.getElementById('feedbackForm').addEventListener('submit',function(e){
+let moveDate =
+document.getElementById('moveDate').value;
 
-e.preventDefault();
+let property =
+document.querySelectorAll('select')[0].value;
 
-alert("Thank you for your feedback.");
+let moveType =
+document.querySelectorAll('select')[1].value;
 
-this.reset();
+let from =
+document.getElementById('fromAddress').value;
+
+let to =
+document.getElementById('toAddress').value;
+
+let details =
+document.querySelector('textarea').value;
+
+let volume =
+document.getElementById('result').innerText;
+
+let price =
+document.getElementById('priceResult').innerText;
+
+/* MESSAGE */
+
+let message =
+"NEW BOOKING REQUEST - ADM MOVING LTD\n\n" +
+
+"Full Name: " + name + "\n" +
+"Phone Number: " + phone + "\n" +
+"Email: " + email + "\n" +
+"Moving Date: " + moveDate + "\n" +
+"Property Type: " + property + "\n" +
+"Move Type: " + moveType + "\n" +
+"From Address: " + from + "\n" +
+"Delivery Address: " + to + "\n\n" +
+
+volume + "\n" +
+price + "\n\n" +
+
+"Extra Details:\n" + details;
+
+/* EMAIL */
+
+let subject =
+encodeURIComponent("New Moving Booking Request");
+
+let body =
+encodeURIComponent(message);
+
+window.location.href =
+"mailto:admmoving@yahoo.com?subject=" +
+subject +
+"&body=" +
+body;
+
+/* WHATSAPP */
+
+setTimeout(function(){
+
+window.open(
+"https://wa.me/447312814746?text=" +
+encodeURIComponent(message),
+"_blank"
+);
+
+},1000);
 
 });
 
