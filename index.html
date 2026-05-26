@@ -24,8 +24,6 @@ background:linear-gradient(to bottom,#edf4ff,#f8fbff,#eef5ff);
 color:#1f2937;
 }
 
-/* HEADER */
-
 header{
 background:#081c3a;
 padding:20px;
@@ -42,8 +40,6 @@ header p{
 margin-top:8px;
 font-size:17px;
 }
-
-/* NAVIGATION */
 
 nav{
 background:#10284d;
@@ -65,8 +61,6 @@ font-size:15px;
 nav a:hover{
 color:#22c55e;
 }
-
-/* HERO */
 
 .hero{
 height:90vh;
@@ -114,8 +108,6 @@ background:#16a34a;
 transform:translateY(-2px);
 }
 
-/* SECTION */
-
 section{
 padding:80px 10%;
 }
@@ -133,8 +125,6 @@ max-width:850px;
 margin:auto auto 50px;
 line-height:1.8;
 }
-
-/* SERVICES */
 
 .grid{
 display:grid;
@@ -158,33 +148,6 @@ transform:translateY(-5px);
 margin-bottom:15px;
 color:#10284d;
 }
-
-/* RECENT MOVES */
-
-.moves{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.move-card{
-background:white;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.move-card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.move-card div{
-padding:20px;
-}
-
-/* BOOKING */
 
 .booking-box{
 background:white;
@@ -222,63 +185,6 @@ min-height:120px;
 resize:vertical;
 }
 
-table{
-width:100%;
-margin-top:30px;
-border-collapse:collapse;
-background:#f8fafc;
-overflow:hidden;
-border-radius:14px;
-}
-
-th{
-background:#10284d;
-color:white;
-padding:15px;
-}
-
-td{
-padding:14px;
-border-bottom:1px solid #e2e8f0;
-}
-
-tr:nth-child(even){
-background:#eef4ff;
-}
-
-.result-box{
-text-align:center;
-margin-top:40px;
-}
-
-.result-box button{
-background:#22c55e;
-color:white;
-border:none;
-padding:18px 35px;
-border-radius:12px;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-}
-
-.result-box button:hover{
-background:#16a34a;
-}
-
-#result{
-margin-top:25px;
-font-size:30px;
-color:#10284d;
-}
-
-#priceResult{
-font-size:42px;
-font-weight:700;
-margin-top:10px;
-color:#22c55e;
-}
-
 .submit-btn{
 margin-top:35px;
 width:100%;
@@ -292,18 +198,9 @@ font-weight:700;
 cursor:pointer;
 }
 
-/* FEEDBACK */
-
-.feedback-box{
-max-width:900px;
-margin:auto;
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+.submit-btn:hover{
+background:#081c3a;
 }
-
-/* FLOATING BUTTONS */
 
 .whatsapp-float{
 position:fixed;
@@ -341,8 +238,6 @@ z-index:999;
 box-shadow:0 5px 20px rgba(0,0,0,0.25);
 }
 
-/* FOOTER */
-
 footer{
 background:#081c3a;
 color:white;
@@ -350,8 +245,6 @@ text-align:center;
 padding:25px;
 margin-top:70px;
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -381,9 +274,7 @@ font-size:32px;
 
 <nav>
 <a href="#services">Services</a>
-<a href="#moves">Recent Moves</a>
 <a href="#booking">Book Your Move</a>
-<a href="#feedback">Feedback</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -422,12 +313,12 @@ Professional removal services tailored for homes, flats, offices and storage mov
 
 <div class="card">
 <h3>📦 Packing Service</h3>
-<p>Unlimited packing boxes included with our professional packing service.</p>
+<p>Professional packing and unpacking services available.</p>
 </div>
 
 <div class="card">
 <h3>🔧 Dismantle & Assembly</h3>
-<p>Furniture dismantling and rebuilding completed professionally.</p>
+<p>Furniture dismantling and reassembly completed professionally.</p>
 </div>
 
 <div class="card">
@@ -511,18 +402,6 @@ Professional removal services tailored for homes, flats, offices and storage mov
 <textarea placeholder="Parking, stairs, lift access, special requests etc"></textarea>
 </div>
 
-<div class="result-box">
-
-<button type="button" onclick="calculateVolume()">
-Get My Moving Price
-</button>
-
-<h2 id="result"></h2>
-
-<div id="priceResult"></div>
-
-</div>
-
 <button type="submit" class="submit-btn">
 Request Booking
 </button>
@@ -530,6 +409,18 @@ Request Booking
 </form>
 
 </div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact ADM Moving LTD</h2>
+
+<p class="section-text">
+Phone: 07312 814746<br>
+Email: admmoving@yahoo.com<br>
+Covering all UK areas
+</p>
 
 </section>
 
@@ -546,109 +437,51 @@ href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
-/* PRICE CALCULATOR */
-
-function calculateVolume(){
-
-let total = 0;
-
-total += document.getElementById('sofa2') ? document.getElementById('sofa2').value * 1.5 : 0;
-
-let finalPrice = total * 25;
-
-document.getElementById('result').innerHTML =
-"Estimated Move Volume: " + total.toFixed(2) + " m³";
-
-document.getElementById('priceResult').innerHTML =
-"Estimated Total Price: £" + finalPrice.toFixed(2);
-
-}
-
 /* BOOKING FORM */
 
 document.getElementById('form').addEventListener('submit', function(e){
 
 e.preventDefault();
 
-/* GET FORM VALUES */
+let inputs = document.querySelectorAll('input');
+let selects = document.querySelectorAll('select');
+let textarea = document.querySelector('textarea');
 
-let name =
-document.querySelector('input[type="text"]').value;
-
-let phone =
-document.querySelectorAll('input[type="text"]')[1].value;
-
-let email =
-document.querySelector('input[type="email"]').value;
-
-let moveDate =
-document.getElementById('moveDate').value;
-
-let property =
-document.querySelectorAll('select')[0].value;
-
-let moveType =
-document.querySelectorAll('select')[1].value;
-
-let from =
-document.getElementById('fromAddress').value;
-
-let to =
-document.getElementById('toAddress').value;
-
-let details =
-document.querySelector('textarea').value;
-
-let volume =
-document.getElementById('result').innerText;
-
-let price =
-document.getElementById('priceResult').innerText;
-
-/* MESSAGE */
+let name = inputs[0].value;
+let phone = inputs[1].value;
+let email = inputs[2].value;
+let moveDate = document.getElementById('moveDate').value;
+let property = selects[0].value;
+let moveType = selects[1].value;
+let from = document.getElementById('fromAddress').value;
+let to = document.getElementById('toAddress').value;
+let details = textarea.value;
 
 let message =
-"NEW BOOKING REQUEST - ADM MOVING LTD\n\n" +
+"NEW BOOKING REQUEST - ADM MOVING LTD%0A%0A" +
 
-"Full Name: " + name + "\n" +
-"Phone Number: " + phone + "\n" +
-"Email: " + email + "\n" +
-"Moving Date: " + moveDate + "\n" +
-"Property Type: " + property + "\n" +
-"Move Type: " + moveType + "\n" +
-"From Address: " + from + "\n" +
-"Delivery Address: " + to + "\n\n" +
+"Full Name: " + name + "%0A" +
+"Phone Number: " + phone + "%0A" +
+"Email: " + email + "%0A" +
+"Moving Date: " + moveDate + "%0A" +
+"Property Type: " + property + "%0A" +
+"Move Type: " + moveType + "%0A" +
+"From Address: " + from + "%0A" +
+"Delivery Address: " + to + "%0A%0A" +
 
-volume + "\n" +
-price + "\n\n" +
-
-"Extra Details:\n" + details;
-
-/* EMAIL */
-
-let subject =
-encodeURIComponent("New Moving Booking Request");
-
-let body =
-encodeURIComponent(message);
-
-window.location.href =
-"mailto:admmoving@yahoo.com?subject=" +
-subject +
-"&body=" +
-body;
+"Extra Details:%0A" + details;
 
 /* WHATSAPP */
 
-setTimeout(function(){
-
 window.open(
-"https://wa.me/447312814746?text=" +
-encodeURIComponent(message),
+"https://wa.me/447312814746?text=" + message,
 "_blank"
 );
 
-},1000);
+/* EMAIL */
+
+window.location.href =
+"mailto:admmoving@yahoo.com?subject=New Moving Booking Request&body=" + message;
 
 });
 
