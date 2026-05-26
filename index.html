@@ -1,472 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADM Moving LTD</title>
 
-<title>ADM Moving LTD | Professional UK Removals</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,#edf4ff,#f8fbff,#eef5ff);
+margin:0;
+font-family:Arial;
+background:#eef3fb;
 color:#1f2937;
 }
 
 header{
-background:#081c3a;
+background:#0b1f3a;
+color:white;
+text-align:center;
 padding:20px;
-text-align:center;
-color:white;
-box-shadow:0 4px 15px rgba(0,0,0,0.2);
-}
-
-header h1{
-font-size:38px;
-}
-
-header p{
-margin-top:8px;
-font-size:17px;
-}
-
-nav{
-background:#10284d;
-padding:14px;
-position:sticky;
-top:0;
-z-index:999;
-text-align:center;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
-font-weight:600;
-font-size:15px;
-}
-
-nav a:hover{
-color:#22c55e;
 }
 
 .hero{
-height:90vh;
-background:
-linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
-
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
+background:url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b') center/cover;
+color:white;
+padding:80px 20px;
 text-align:center;
-padding:20px;
-color:white;
-}
-
-.hero-content{
-max-width:900px;
-}
-
-.hero h1{
-font-size:60px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-line-height:1.7;
-margin-bottom:25px;
-}
-
-.btn{
-background:#22c55e;
-padding:16px 35px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-weight:700;
-display:inline-block;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#16a34a;
-transform:translateY(-2px);
 }
 
 section{
-padding:80px 10%;
-}
-
-.section-title{
-text-align:center;
-font-size:42px;
-margin-bottom:20px;
-color:#10284d;
-}
-
-.section-text{
-text-align:center;
-max-width:850px;
-margin:auto auto 50px;
-line-height:1.8;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+padding:50px 10%;
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card h3{
-margin-bottom:15px;
-color:#10284d;
-}
-
-.booking-box{
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-max-width:1200px;
-margin:auto;
-}
-
-.form-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-label{
-font-weight:600;
-display:block;
-margin-bottom:8px;
-}
-
-input,
-select,
-textarea{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #cbd5e1;
-font-family:'Poppins',sans-serif;
-}
-
-textarea{
-min-height:120px;
-resize:vertical;
-}
-
-.submit-btn{
-margin-top:35px;
-width:100%;
-padding:18px;
-border:none;
+padding:20px;
 border-radius:12px;
-background:#10284d;
+margin-top:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+background:#22c55e;
 color:white;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-}
-
-.submit-btn:hover{
-background:#081c3a;
-}
-
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-color:white;
-z-index:999;
-box-shadow:0 5px 20px rgba(0,0,0,0.25);
-}
-
-footer{
-background:#081c3a;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:70px;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
+padding:15px;
+border:none;
+width:100%;
 font-size:16px;
+cursor:pointer;
+border-radius:10px;
 }
 
-.section-title{
-font-size:32px;
+#map{
+height:350px;
+margin-top:20px;
+border-radius:12px;
 }
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-<h1>🚚 ADM Moving LTD</h1>
-<p>Professional House Removals • Packing • Storage • Nationwide UK Moves</p>
+<h2>ADM MOVING LTD</h2>
+<p>UK Removals • Packing • Furniture Assembly</p>
 </header>
 
-<nav>
-<a href="#services">Services</a>
-<a href="#booking">Book Your Move</a>
-<a href="#contact">Contact</a>
-</nav>
+<div class="hero">
+<h1>Fast & Reliable Moving Service</h1>
+<p>Instant quote + booking sent directly to email</p>
+</div>
 
-<section class="hero">
+<section>
 
-<div class="hero-content">
+<h2>Book Your Move</h2>
 
-<h1>Stress-Free Moving Across The UK</h1>
+<div class="card">
 
-<p>
-Reliable removals company offering professional house moves,
-packing services, furniture dismantling, storage moves,
-office relocations and nationwide transport.
-</p>
+<input id="from" placeholder="Moving From Address">
+<input id="to" placeholder="Moving To Address">
+<input type="date" id="date">
 
-<a href="#booking" class="btn">Book Your Move</a>
+<h3>Inventory</h3>
+
+Sofa <input type="number" id="sofa" value="0">
+Bed <input type="number" id="bed" value="0">
+Wardrobe <input type="number" id="wardrobe" value="0">
+Boxes <input type="number" id="boxes" value="0">
+
+<button onclick="calculate()">Calculate Price</button>
+
+<h3 id="result"></h3>
+
+<button onclick="sendBooking()">Request Booking</button>
+
+<div id="map"></div>
 
 </div>
 
 </section>
 
-<section id="services">
-
-<h2 class="section-title">What We Provide</h2>
-
-<p class="section-text">
-Professional removal services tailored for homes, flats, offices and storage moves.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>🏠 House Removals</h3>
-<p>Complete local and nationwide home moving services across the UK.</p>
-</div>
-
-<div class="card">
-<h3>📦 Packing Service</h3>
-<p>Professional packing and unpacking services available.</p>
-</div>
-
-<div class="card">
-<h3>🔧 Dismantle & Assembly</h3>
-<p>Furniture dismantling and reassembly completed professionally.</p>
-</div>
-
-<div class="card">
-<h3>🚚 Office Relocations</h3>
-<p>Efficient office moving services with safe transport.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="booking">
-
-<h2 class="section-title">Book Your Move</h2>
-
-<div class="booking-box">
-
-<form id="form">
-
-<div class="form-grid">
-
-<div>
-<label>Full Name</label>
-<input type="text" required>
-</div>
-
-<div>
-<label>Phone Number</label>
-<input type="text" required>
-</div>
-
-<div>
-<label>Email Address</label>
-<input type="email" required>
-</div>
-
-<div>
-<label>Moving Date</label>
-<input type="date" id="moveDate" required>
-</div>
-
-<div>
-<label>Property Type</label>
-
-<select required>
-<option value="">Select Property</option>
-<option>1 Bedroom Flat</option>
-<option>2 Bedroom Flat</option>
-<option>2 Bedroom House</option>
-<option>3 Bedroom House</option>
-<option>4 Bedroom House</option>
-<option>Office Move</option>
-<option>Storage Move</option>
-</select>
-
-</div>
-
-<div>
-
-<label>Move Type</label>
-
-<select required>
-<option value="">Select Move Type</option>
-<option>House Move</option>
-<option>Flat Move</option>
-<option>Storage Move</option>
-<option>Office Relocation</option>
-</select>
-
-</div>
-
-<div>
-<label>Moving From Address</label>
-<input type="text" id="fromAddress" required>
-</div>
-
-<div>
-<label>Delivery Address</label>
-<input type="text" id="toAddress" required>
-</div>
-
-</div>
-
-<div style="margin-top:25px;">
-<label>Extra Details</label>
-
-<textarea placeholder="Parking, stairs, lift access, special requests etc"></textarea>
-
-</div>
-
-<button type="submit" class="submit-btn">
-Request Booking
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2 class="section-title">Contact ADM Moving LTD</h2>
-
-<p class="section-text">
-Phone: 07312 814746<br>
-Email: admmoving@yahoo.com<br>
-Covering all UK areas
-</p>
-
-</section>
-
-<footer>
-© 2026 ADM Moving LTD — All Rights Reserved
-</footer>
-
-<a class="whatsapp-float"
-href="https://wa.me/447312814746"
-target="_blank">💬</a>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 
-document.getElementById('form').addEventListener('submit', function(e){
+/* EMAILJS INIT (YOUR KEYS) */
+emailjs.init("rWnJNR9pMWg8bBMLM");
 
-e.preventDefault();
+const SERVICE_ID = "service_kihe2k3";
+const TEMPLATE_ID = "template_01mylzs";
 
-let inputs = document.querySelectorAll('input');
-let selects = document.querySelectorAll('select');
-let textarea = document.querySelector('textarea');
+/* MAP */
+let map = L.map('map').setView([51.5, -0.12], 6);
 
-let name = inputs[0].value;
-let phone = inputs[1].value;
-let email = inputs[2].value;
-let moveDate = document.getElementById('moveDate').value;
-let property = selects[0].value;
-let moveType = selects[1].value;
-let from = document.getElementById('fromAddress').value;
-let to = document.getElementById('toAddress').value;
-let details = textarea.value;
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+attribution:'OpenStreetMap'
+}).addTo(map);
 
-let message =
-"NEW BOOKING REQUEST - ADM MOVING LTD\n\n" +
+let lastPrice = 0;
+let lastDistance = 0;
 
-"Full Name: " + name + "\n" +
-"Phone Number: " + phone + "\n" +
-"Email: " + email + "\n" +
-"Moving Date: " + moveDate + "\n" +
-"Property Type: " + property + "\n" +
-"Move Type: " + moveType + "\n" +
-"From Address: " + from + "\n" +
-"Delivery Address: " + to + "\n\n" +
+/* GET COORDINATES */
+async function getCoords(address){
+let res = await fetch("https://nominatim.openstreetmap.org/search?format=json&q=" + address);
+let data = await res.json();
+if(data.length === 0) return null;
+return [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+}
 
-"Extra Details:\n" + details;
+/* DISTANCE CALC */
+function distance(lat1, lon1, lat2, lon2){
+const R = 3959;
+const dLat = (lat2-lat1)*Math.PI/180;
+const dLon = (lon2-lon1)*Math.PI/180;
 
-let whatsappURL =
-"https://wa.me/447312814746?text=" +
-encodeURIComponent(message);
+const a =
+Math.sin(dLat/2)*Math.sin(dLat/2) +
+Math.cos(lat1*Math.PI/180) *
+Math.cos(lat2*Math.PI/180) *
+Math.sin(dLon/2)*Math.sin(dLon/2);
 
-window.location.href = whatsappURL;
+const c = 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+return R*c;
+}
 
+/* CALCULATE */
+async function calculate(){
+
+let a = await getCoords(from.value);
+let b = await getCoords(to.value);
+
+if(!a || !b){
+alert("Address not found");
+return;
+}
+
+let miles = distance(a[0],a[1],b[0],b[1]);
+
+let volume =
+parseInt(sofa.value)*1.5 +
+parseInt(bed.value)*1.2 +
+parseInt(wardrobe.value)*2 +
+parseInt(boxes.value)*0.1;
+
+lastDistance = miles;
+lastPrice = (volume * 25) + (miles * 1.25);
+
+document.getElementById("result").innerHTML =
+"Total Price: £" + lastPrice.toFixed(2) +
+" | Distance: " + miles.toFixed(1) + " miles";
+}
+
+/* SEND EMAIL */
+function sendBooking(){
+
+let templateParams = {
+from_address: from.value,
+to_address: to.value,
+move_date: date.value,
+price: lastPrice.toFixed(2),
+distance: lastDistance.toFixed(1),
+sofa: sofa.value,
+bed: bed.value,
+wardrobe: wardrobe.value,
+boxes: boxes.value
+};
+
+emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+.then(() => {
+alert("Booking sent successfully to email!");
+})
+.catch((err) => {
+alert("Error sending booking email");
+console.log(err);
 });
+
+}
 
 </script>
 
 </body>
-</html>0
+</html>
