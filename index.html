@@ -75,7 +75,7 @@ border-radius:12px;
 
 <div class="hero">
 <h1>Fast & Reliable Moving Service</h1>
-<p>Get instant quote + booking sent directly to email</p>
+<p>Get instant quote based on real distance + inventory</p>
 </div>
 
 <section>
@@ -89,7 +89,7 @@ border-radius:12px;
 
 <input type="date" id="date">
 
-<h3>Inventory</h3>
+<h3>Inventory (m³)</h3>
 
 Sofa <input type="number" id="sofa" value="0">
 Bed <input type="number" id="bed" value="0">
@@ -100,8 +100,6 @@ Boxes <input type="number" id="boxes" value="0">
 
 <h3 id="result"></h3>
 
-<button onclick="sendBooking()">Request Booking</button>
-
 <div id="map"></div>
 
 </div>
@@ -110,11 +108,7 @@ Boxes <input type="number" id="boxes" value="0">
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script>
-
-emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
 
 let map = L.map('map').setView([51.5, -0.12], 6);
 
@@ -122,8 +116,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
 attribution:'OpenStreetMap'
 }).addTo(map);
 
-let lastPrice = 0;
-let lastDistance = 0;
+let marker1, marker2, line;
 
 async function getCoords(address){
 let res = await fetch("https://nominatim.openstreetmap.org/search?format=json&q=" + address);
@@ -149,13 +142,27 @@ return R*c;
 
 async function calculate(){
 
-let a = await getCoords(from.value);
-let b = await getCoords(to.value);
+let from = document.getElementById("from").value;
+let to = document.getElementById("to").value;
+
+let a = await getCoords(from);
+let b = await getCoords(to);
 
 if(!a || !b){
 alert("Address not found");
 return;
 }
+
+if(marker1) map.removeLayer(marker1);
+if(marker2) map.removeLayer(marker2);
+if(line) map.removeLayer(line);
+
+marker1 = L.marker(a).addTo(map);
+marker2 = L.marker(b).addTo(map);
+
+line = L.polyline([a,b],{color:'blue'}).addTo(map);
+
+map.fitBounds(line.getBounds());
 
 let miles = distance(a[0],a[1],b[0],b[1]);
 
@@ -165,32 +172,11 @@ parseInt(bed.value)*1.2 +
 parseInt(wardrobe.value)*2 +
 parseInt(boxes.value)*0.1;
 
-lastDistance = miles;
-lastPrice = (volume * 25) + (miles * 1.25);
+let price =
+(volume * 25) + (miles * 1.25);
 
 document.getElementById("result").innerHTML =
-"Total Price: £" + lastPrice.toFixed(2) +
-" | Distance: " + miles.toFixed(1) + " miles";
-}
-
-async function sendBooking(){
-
-let templateParams = {
-from_address: from.value,
-to_address: to.value,
-date: date.value,
-price: lastPrice,
-distance: lastDistance
-};
-
-emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",templateParams)
-.then(() => {
-alert("Booking sent to email successfully!");
-})
-.catch((err) => {
-alert("Error sending email");
-console.log(err);
-});
+"Total: £" + price.toFixed(2) + " | Distance: " + miles.toFixed(1) + " miles";
 
 }
 
