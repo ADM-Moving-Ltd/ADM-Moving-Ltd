@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -67,6 +68,7 @@ height:90vh;
 background:
 linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
 url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
+
 background-size:cover;
 background-position:center;
 display:flex;
@@ -220,24 +222,6 @@ z-index:999;
 box-shadow:0 5px 20px rgba(0,0,0,0.25);
 }
 
-.email-float{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#2563eb;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:26px;
-text-decoration:none;
-color:white;
-z-index:999;
-box-shadow:0 5px 20px rgba(0,0,0,0.25);
-}
-
 footer{
 background:#081c3a;
 color:white;
@@ -263,6 +247,7 @@ font-size:32px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -362,6 +347,7 @@ Professional removal services tailored for homes, flats, offices and storage mov
 
 <div>
 <label>Property Type</label>
+
 <select required>
 <option value="">Select Property</option>
 <option>1 Bedroom Flat</option>
@@ -372,10 +358,13 @@ Professional removal services tailored for homes, flats, offices and storage mov
 <option>Office Move</option>
 <option>Storage Move</option>
 </select>
+
 </div>
 
 <div>
+
 <label>Move Type</label>
+
 <select required>
 <option value="">Select Move Type</option>
 <option>House Move</option>
@@ -383,6 +372,7 @@ Professional removal services tailored for homes, flats, offices and storage mov
 <option>Storage Move</option>
 <option>Office Relocation</option>
 </select>
+
 </div>
 
 <div>
@@ -399,7 +389,9 @@ Professional removal services tailored for homes, flats, offices and storage mov
 
 <div style="margin-top:25px;">
 <label>Extra Details</label>
+
 <textarea placeholder="Parking, stairs, lift access, special requests etc"></textarea>
+
 </div>
 
 <button type="submit" class="submit-btn">
@@ -429,15 +421,10 @@ Covering all UK areas
 </footer>
 
 <a class="whatsapp-float"
-href="https://wa.me/447312814746?text=Hello%20I%20would%20like%20a%20moving%20quote"
+href="https://wa.me/447312814746"
 target="_blank">💬</a>
 
-<a class="email-float"
-href="mailto:admmoving@yahoo.com">✉️</a>
-
 <script>
-
-/* BOOKING FORM */
 
 document.getElementById('form').addEventListener('submit', function(e){
 
@@ -458,30 +445,24 @@ let to = document.getElementById('toAddress').value;
 let details = textarea.value;
 
 let message =
-"NEW BOOKING REQUEST - ADM MOVING LTD%0A%0A" +
+"NEW BOOKING REQUEST - ADM MOVING LTD\n\n" +
 
-"Full Name: " + name + "%0A" +
-"Phone Number: " + phone + "%0A" +
-"Email: " + email + "%0A" +
-"Moving Date: " + moveDate + "%0A" +
-"Property Type: " + property + "%0A" +
-"Move Type: " + moveType + "%0A" +
-"From Address: " + from + "%0A" +
-"Delivery Address: " + to + "%0A%0A" +
+"Full Name: " + name + "\n" +
+"Phone Number: " + phone + "\n" +
+"Email: " + email + "\n" +
+"Moving Date: " + moveDate + "\n" +
+"Property Type: " + property + "\n" +
+"Move Type: " + moveType + "\n" +
+"From Address: " + from + "\n" +
+"Delivery Address: " + to + "\n\n" +
 
-"Extra Details:%0A" + details;
+"Extra Details:\n" + details;
 
-/* WHATSAPP */
+let whatsappURL =
+"https://wa.me/447312814746?text=" +
+encodeURIComponent(message);
 
-window.open(
-"https://wa.me/447312814746?text=" + message,
-"_blank"
-);
-
-/* EMAIL */
-
-window.location.href =
-"mailto:admmoving@yahoo.com?subject=New Moving Booking Request&body=" + message;
+window.location.href = whatsappURL;
 
 });
 
