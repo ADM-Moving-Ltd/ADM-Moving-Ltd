@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Business System V3</title>
+<title>ADM Moving LTD | Smart Booking System V4</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -19,7 +19,7 @@ color:#1f2937;
 header{
 background:#0b1f3a;
 color:white;
-padding:25px;
+padding:22px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -27,32 +27,27 @@ gap:15px;
 }
 
 .logo{
-width:55px;
-height:55px;
+width:50px;
+height:50px;
 border-radius:12px;
 background:#22c55e;
 display:flex;
 align-items:center;
 justify-content:center;
 font-weight:700;
-font-size:18px;
 }
 
-header h1{font-size:28px;}
-header p{font-size:13px;opacity:0.8;}
-
-/* NAV */
 nav{
 position:sticky;
 top:0;
 background:#10284d;
-padding:12px;
 text-align:center;
-z-index:999;
+padding:12px;
 }
+
 nav a{
 color:white;
-margin:0 12px;
+margin:0 10px;
 text-decoration:none;
 font-weight:600;
 font-size:14px;
@@ -60,9 +55,8 @@ font-size:14px;
 
 /* HERO */
 .hero{
-height:85vh;
-background:
-linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+height:80vh;
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
 url('https://images.unsplash.com/photo-1600585154526-990dced4db0d');
 background-size:cover;
 background-position:center;
@@ -74,55 +68,25 @@ color:white;
 padding:20px;
 }
 
-.hero h2{font-size:42px;margin-bottom:15px;}
-.hero p{max-width:700px;margin:auto;font-size:18px;}
-
-.btn{
-margin-top:20px;
-background:#22c55e;
-padding:14px 26px;
-border-radius:10px;
-display:inline-block;
-color:white;
-text-decoration:none;
-font-weight:700;
-}
+.hero h1{font-size:42px;}
+.hero p{margin-top:10px;max-width:700px;}
 
 /* SECTIONS */
-section{padding:70px 10%;}
+section{padding:60px 10%;}
 
-.title{
-text-align:center;
-font-size:34px;
-margin-bottom:20px;
-}
+.title{text-align:center;font-size:32px;margin-bottom:20px;}
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
+.inventory-section{
 background:white;
-padding:20px;
+padding:25px;
 border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* INVENTORY */
-.inventory-section{
-background:white;
-border-radius:15px;
-padding:25px;
-margin-top:20px;
-}
-
 .category{
-margin-top:25px;
+margin-top:20px;
 font-weight:700;
-color:#10284d;
+color:#0b1f3a;
 }
 
 .item{
@@ -136,41 +100,36 @@ width:70px;
 padding:6px;
 }
 
-/* PRICE BOX */
-.price-box{
-text-align:center;
-margin-top:30px;
-font-size:20px;
-}
-
-/* FORM */
-.form{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-input,select,textarea{
+/* TEXTAREA */
+textarea{
 width:100%;
-padding:12px;
-margin:8px 0;
-border:1px solid #ddd;
-border-radius:8px;
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-top:10px;
 }
 
+/* BUTTON */
 button{
 background:#0b1f3a;
 color:white;
 padding:14px;
+width:100%;
 border:none;
 border-radius:10px;
-width:100%;
 font-weight:700;
+margin-top:15px;
 cursor:pointer;
 }
 
-/* FLOAT */
+/* RESULT */
+#volumeResult,#priceResult{
+text-align:center;
+margin-top:15px;
+font-size:20px;
+}
+
+/* FLOATING BUTTONS */
 .float{
 position:fixed;
 right:20px;
@@ -185,14 +144,14 @@ font-size:22px;
 z-index:999;
 }
 .whatsapp{bottom:20px;background:#25d366;}
-.email{bottom:85px;background:#2563eb;}
+.email{bottom:90px;background:#2563eb;}
 
 footer{
-text-align:center;
-padding:20px;
 background:#0b1f3a;
 color:white;
-margin-top:50px;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
 </style>
 </head>
@@ -203,41 +162,30 @@ margin-top:50px;
 <div class="logo">ADM</div>
 <div>
 <h1>ADM Moving LTD</h1>
-<p>UK Removals • Packing • Storage</p>
+<p>Smart Moving System V4</p>
 </div>
 </header>
 
 <nav>
-<a href="#services">Services</a>
 <a href="#inventory">Inventory</a>
 <a href="#booking">Booking</a>
 </nav>
 
 <div class="hero">
 <div>
-<h2>Fast & Reliable Moving System</h2>
-<p>Get instant price based on distance + full house inventory volume calculation</p>
-<a class="btn" href="#booking">Get Quote</a>
+<h1>Fast Moving Quote System</h1>
+<p>Calculate volume + price instantly including smart item detection</p>
 </div>
 </div>
-
-<section id="services">
-<h2 class="title">Services</h2>
-<div class="grid">
-<div class="card">House Removals</div>
-<div class="card">Office Moves</div>
-<div class="card">Packing Service</div>
-<div class="card">Furniture Assembly</div>
-</div>
-</section>
 
 <section id="inventory">
-<h2 class="title">Inventory System</h2>
+<h2 class="title">Full Inventory System</h2>
 
 <div class="inventory-section">
 
 <div class="category">Living Room</div>
-<div class="item">Sofa <input id="sofa" type="number" value="0"></div>
+<div class="item">2-Seater Sofa <input id="sofa2" type="number" value="0"></div>
+<div class="item">Corner Sofa <input id="corner" type="number" value="0"></div>
 <div class="item">TV <input id="tv" type="number" value="0"></div>
 <div class="item">Coffee Table <input id="coffee" type="number" value="0"></div>
 
@@ -254,36 +202,27 @@ margin-top:50px;
 <div class="item">Chair <input id="chair" type="number" value="0"></div>
 
 <div class="category">Garden</div>
-<div class="item">Garden Furniture <input id="garden" type="number" value="0"></div>
+<div class="item">Garden Items <input id="garden" type="number" value="0"></div>
 
-<div class="price-box">
-<button onclick="calc()">Calculate Price</button>
-<h3 id="result"></h3>
-<h2 id="price"></h2>
-</div>
+<div class="category">Boxes</div>
+<div class="item">Small Boxes <input id="boxS" type="number" value="0"></div>
+<div class="item">Medium Boxes <input id="boxM" type="number" value="0"></div>
+<div class="item">Large Boxes <input id="boxL" type="number" value="0"></div>
 
-</div>
-</section>
+<div class="category">Other Items</div>
+<textarea id="otherItems"
+placeholder="Type: piano, 2 bikes, treadmill, suitcase..."></textarea>
 
-<section id="booking">
-<h2 class="title">Booking</h2>
+<button onclick="calc()">Calculate Volume & Price</button>
 
-<div class="form">
-<input id="from" placeholder="Moving From">
-<input id="to" placeholder="Moving To">
-<input type="date" id="date">
+<div id="volumeResult"></div>
+<div id="priceResult"></div>
 
-<select id="mode">
-<option value="fast">Fast Price (Fixed)</option>
-<option value="distance">Distance Based</option>
-</select>
-
-<button onclick="book()">Request Booking</button>
 </div>
 </section>
 
 <footer>
-© ADM Moving LTD V3 System
+© ADM Moving LTD
 </footer>
 
 <a class="float whatsapp" href="https://wa.me/447312814746">💬</a>
@@ -291,72 +230,64 @@ margin-top:50px;
 
 <script>
 
-/* VOLUME VALUES */
 const items = {
-sofa:1.8,tv:0.3,coffee:0.6,bed:1.5,wardrobe:2.2,
-fridge:1.4,wash:1.2,desk:1.0,chair:0.4,garden:2.0
+sofa2:1.6, corner:3.2, tv:0.3, coffee:0.6,
+bed:1.8, wardrobe:2.5,
+fridge:1.6, wash:1.2,
+desk:1.0, chair:0.4,
+garden:1.5,
+boxS:0.1, boxM:0.15, boxL:0.25
 };
+
+const smart = {
+bike:0.6, bikes:0.6,
+piano:3.0,
+treadmill:1.2,
+suitcase:0.15,
+wardrobe:2.5,
+bed:1.8
+};
+
+function parse(text){
+if(!text) return 0;
+
+let total = 0;
+let parts = text.toLowerCase().split(/,|\n/);
+
+for(let p of parts){
+p = p.trim();
+if(!p) continue;
+
+let m = p.match(/(\d+)\s*(\w+)/);
+
+if(m){
+let qty = parseInt(m[1]);
+let item = m[2];
+total += (smart[item] || 0.5) * qty;
+}else{
+total += smart[p] || 0.5;
+}
+}
+
+return total;
+}
 
 function calc(){
 let total = 0;
 
 for(let k in items){
-total += (document.getElementById(k).value||0)*items[k];
+total += (document.getElementById(k).value||0) * items[k];
 }
 
-let price = total * 28; // base price per m3
+total += parse(document.getElementById("otherItems").value);
 
-document.getElementById("result").innerText =
+let price = total * 28;
+
+document.getElementById("volumeResult").innerText =
 "Total Volume: " + total.toFixed(2) + " m³";
 
-document.getElementById("price").innerText =
+document.getElementById("priceResult").innerText =
 "Estimated Price: £" + price.toFixed(2);
-}
-
-/* DISTANCE */
-async function getCoords(place){
-let r = await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+place);
-let d = await r.json();
-if(!d[0]) return null;
-return [parseFloat(d[0].lat), parseFloat(d[0].lon)];
-}
-
-function haversine(a,b){
-const R=3959;
-const dLat=(b[0]-a[0])*Math.PI/180;
-const dLon=(b[1]-a[1])*Math.PI/180;
-const x=Math.sin(dLat/2)**2+
-Math.cos(a[0]*Math.PI/180)*
-Math.cos(b[0]*Math.PI/180)*
-Math.sin(dLon/2)**2;
-return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
-}
-
-async function book(){
-
-let from=document.getElementById("from").value;
-let to=document.getElementById("to").value;
-let mode=document.getElementById("mode").value;
-
-let basePrice = parseFloat(document.getElementById("price").innerText.replace(/[^\d.]/g,''))||200;
-
-if(mode==="fast"){
-alert("Booking sent. Estimated price: £"+basePrice);
-return;
-}
-
-let a=await getCoords(from);
-let b=await getCoords(to);
-
-if(!a||!b){
-alert("Address not found");
-return;
-}
-
-let miles=haversine(a,b);
-let final=basePrice+(miles*1.5);
-
-alert("Booking sent.\nDistance: "+miles.toFixed(1)+" miles\nPrice: £"+final.toFixed(2));
 }
 
 </script>
