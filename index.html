@@ -3,136 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Smart Booking System V4</title>
+<title>ADM Moving LTD | Business System V3</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth;}
-
 body{
-background:linear-gradient(135deg,#eef3ff,#f7fbff);
+margin:0;
+font-family:Poppins,sans-serif;
+background:linear-gradient(135deg,#eef3ff,#ffffff);
 color:#1f2937;
 }
 
-/* HEADER */
 header{
-background:#0b1f3a;
+background:#071a33;
 color:white;
-padding:22px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:15px;
+text-align:center;
+padding:30px;
 }
 
 .logo{
-width:50px;
-height:50px;
-border-radius:12px;
-background:#22c55e;
-display:flex;
-align-items:center;
-justify-content:center;
+font-size:44px;
 font-weight:700;
+letter-spacing:1px;
 }
 
 nav{
+background:#0f2b52;
+padding:12px;
+text-align:center;
 position:sticky;
 top:0;
-background:#10284d;
-text-align:center;
-padding:12px;
+z-index:1000;
 }
 
 nav a{
 color:white;
-margin:0 10px;
+margin:0 12px;
 text-decoration:none;
 font-weight:600;
-font-size:14px;
 }
 
-/* HERO */
 .hero{
 height:80vh;
-background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1600585154526-990dced4db0d');
-background-size:cover;
-background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
 padding:20px;
 }
 
-.hero h1{font-size:42px;}
-.hero p{margin-top:10px;max-width:700px;}
+.hero h1{font-size:50px;margin-bottom:10px;}
+.hero p{font-size:18px;max-width:700px;margin:auto;}
 
-/* SECTIONS */
-section{padding:60px 10%;}
+.btn{
+background:#22c55e;
+color:white;
+padding:14px 26px;
+border-radius:10px;
+display:inline-block;
+margin-top:20px;
+text-decoration:none;
+font-weight:700;
+}
 
-.title{text-align:center;font-size:32px;margin-bottom:20px;}
+section{
+padding:60px 10%;
+}
 
-.inventory-section{
+.title{
+text-align:center;
+font-size:34px;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
 background:white;
-padding:25px;
-border-radius:15px;
+padding:18px;
+border-radius:12px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.category{
-margin-top:20px;
-font-weight:700;
-color:#0b1f3a;
-}
-
-.item{
-display:flex;
-justify-content:space-between;
-margin:8px 0;
-}
-
-input[type=number]{
-width:70px;
-padding:6px;
-}
-
-/* TEXTAREA */
-textarea{
-width:100%;
-padding:10px;
-border-radius:10px;
-border:1px solid #ccc;
+label{
+font-weight:600;
+display:block;
 margin-top:10px;
 }
 
-/* BUTTON */
-button{
-background:#0b1f3a;
-color:white;
-padding:14px;
+input,select,textarea{
 width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-top:5px;
+}
+
+.inventory{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.inv-box{
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+.result{
+text-align:center;
+margin-top:25px;
+font-size:20px;
+font-weight:600;
+}
+
+.price{
+font-size:34px;
+color:#16a34a;
+font-weight:800;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#0f2b52;
+color:white;
 border:none;
 border-radius:10px;
+font-size:16px;
 font-weight:700;
 margin-top:15px;
 cursor:pointer;
 }
 
-/* RESULT */
-#volumeResult,#priceResult{
-text-align:center;
-margin-top:15px;
-font-size:20px;
-}
+button:hover{background:#163a70;}
 
-/* FLOATING BUTTONS */
-.float{
+.floating{
 position:fixed;
 right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.floating a{
 width:55px;
 height:55px;
 border-radius:50%;
@@ -141,16 +169,18 @@ align-items:center;
 justify-content:center;
 color:white;
 font-size:22px;
-z-index:999;
+text-decoration:none;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
-.whatsapp{bottom:20px;background:#25d366;}
-.email{bottom:90px;background:#2563eb;}
+
+.whatsapp{background:#25d366;}
+.email{background:#2563eb;}
 
 footer{
-background:#0b1f3a;
+background:#071a33;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
 margin-top:40px;
 }
 </style>
@@ -159,135 +189,167 @@ margin-top:40px;
 <body>
 
 <header>
-<div class="logo">ADM</div>
-<div>
-<h1>ADM Moving LTD</h1>
-<p>Smart Moving System V4</p>
-</div>
+<div class="logo">🚚 ADM MOVING LTD</div>
+<p>Professional UK Removals • Packing • Storage</p>
 </header>
 
 <nav>
-<a href="#inventory">Inventory</a>
 <a href="#booking">Booking</a>
+<a href="#inventory">Inventory</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="hero">
 <div>
-<h1>Fast Moving Quote System</h1>
-<p>Calculate volume + price instantly including smart item detection</p>
+<h1>Smart Moving System</h1>
+<p>Get instant price based on distance + full home inventory volume calculation</p>
+<a class="btn" href="#booking">Start Booking</a>
 </div>
 </div>
 
-<section id="inventory">
-<h2 class="title">Full Inventory System</h2>
+<section id="booking">
+<h2 class="title">Move Details</h2>
 
-<div class="inventory-section">
+<div class="grid">
 
-<div class="category">Living Room</div>
-<div class="item">2-Seater Sofa <input id="sofa2" type="number" value="0"></div>
-<div class="item">Corner Sofa <input id="corner" type="number" value="0"></div>
-<div class="item">TV <input id="tv" type="number" value="0"></div>
-<div class="item">Coffee Table <input id="coffee" type="number" value="0"></div>
+<div class="card">
+<label>Full Name</label>
+<input id="name">
 
-<div class="category">Bedroom</div>
-<div class="item">Bed <input id="bed" type="number" value="0"></div>
-<div class="item">Wardrobe <input id="wardrobe" type="number" value="0"></div>
+<label>Phone</label>
+<input id="phone">
 
-<div class="category">Kitchen</div>
-<div class="item">Fridge <input id="fridge" type="number" value="0"></div>
-<div class="item">Washing Machine <input id="wash" type="number" value="0"></div>
+<label>Email</label>
+<input id="email">
 
-<div class="category">Office</div>
-<div class="item">Desk <input id="desk" type="number" value="0"></div>
-<div class="item">Chair <input id="chair" type="number" value="0"></div>
+<label>Moving From</label>
+<input id="from">
 
-<div class="category">Garden</div>
-<div class="item">Garden Items <input id="garden" type="number" value="0"></div>
+<label>Moving To</label>
+<input id="to">
 
-<div class="category">Boxes</div>
-<div class="item">Small Boxes <input id="boxS" type="number" value="0"></div>
-<div class="item">Medium Boxes <input id="boxM" type="number" value="0"></div>
-<div class="item">Large Boxes <input id="boxL" type="number" value="0"></div>
+<label>Move Date</label>
+<input type="date" id="date">
+</div>
 
-<div class="category">Other Items</div>
-<textarea id="otherItems"
-placeholder="Type: piano, 2 bikes, treadmill, suitcase..."></textarea>
-
-<button onclick="calc()">Calculate Volume & Price</button>
-
-<div id="volumeResult"></div>
-<div id="priceResult"></div>
+<div class="card">
+<h3>Extra Notes</h3>
+<textarea id="notes" placeholder="Stairs, parking, access..."></textarea>
+</div>
 
 </div>
 </section>
 
+<section id="inventory">
+<h2 class="title">Inventory (Room Based)</h2>
+
+<div class="inventory">
+
+<div class="inv-box">
+<h3>Living Room</h3>
+Sofa <input id="sofa" type="number" value="0"><br>
+Armchair <input id="chair" type="number" value="0"><br>
+TV <input id="tv" type="number" value="0"><br>
+Desk <input id="desk" type="number" value="0">
+</div>
+
+<div class="inv-box">
+<h3>Bedroom</h3>
+Bed <input id="bed" type="number" value="0"><br>
+Wardrobe <input id="wardrobe" type="number" value="0"><br>
+Mattress <input id="mattress" type="number" value="0">
+</div>
+
+<div class="inv-box">
+<h3>Kitchen</h3>
+Fridge <input id="fridge" type="number" value="0"><br>
+Washing Machine <input id="wash" type="number" value="0"><br>
+Table <input id="table" type="number" value="0">
+</div>
+
+<div class="inv-box">
+<h3>Bathroom / Misc</h3>
+Boxes (Small) <input id="box" type="number" value="0"><br>
+Suitcases <input id="suitcase" type="number" value="0">
+</div>
+
+<div class="inv-box">
+<h3>Garden</h3>
+Bicycle <input id="bike" type="number" value="0"><br>
+Garden Items <input id="garden" type="number" value="0">
+</div>
+
+<div class="inv-box">
+<h3>Extra Items</h3>
+<textarea id="extra" placeholder="Write anything not listed..."></textarea>
+</div>
+
+</div>
+
+<button onclick="calculate()">Calculate Price</button>
+
+<div class="result" id="output"></div>
+<div class="price" id="price"></div>
+
+</section>
+
+<section id="contact">
+<h2 class="title">Contact</h2>
+<p style="text-align:center">
+Phone: 07312 814746<br>
+Email: admmoving@yahoo.com
+</p>
+</section>
+
 <footer>
-© ADM Moving LTD
+© 2026 ADM Moving LTD
 </footer>
 
-<a class="float whatsapp" href="https://wa.me/447312814746">💬</a>
-<a class="float email" href="mailto:admmoving@yahoo.com">✉️</a>
+<div class="floating">
+<a class="whatsapp" href="https://wa.me/447312814746" target="_blank">💬</a>
+<a class="email" href="mailto:admmoving@yahoo.com">✉️</a>
+</div>
 
 <script>
 
-const items = {
-sofa2:1.6, corner:3.2, tv:0.3, coffee:0.6,
-bed:1.8, wardrobe:2.5,
-fridge:1.6, wash:1.2,
-desk:1.0, chair:0.4,
-garden:1.5,
-boxS:0.1, boxM:0.15, boxL:0.25
+/* volume values */
+const v = {
+sofa:1.8, chair:0.5, tv:0.3, desk:1,
+bed:1.5, wardrobe:2.2, mattress:1,
+fridge:1.2, wash:1.0, table:1.5,
+box:0.1, suitcase:0.2,
+bike:0.6, garden:1.5
 };
 
-const smart = {
-bike:0.6, bikes:0.6,
-piano:3.0,
-treadmill:1.2,
-suitcase:0.15,
-wardrobe:2.5,
-bed:1.8
-};
+function calculate(){
 
-function parse(text){
-if(!text) return 0;
+let total =
+v.sofa*+sofa.value +
+v.chair*+chair.value +
+v.tv*+tv.value +
+v.desk*+desk.value +
+v.bed*+bed.value +
+v.wardrobe*+wardrobe.value +
+v.mattress*+mattress.value +
+v.fridge*+fridge.value +
+v.wash*+wash.value +
+v.table*+table.value +
+v.box*+box.value +
+v.suitcase*+suitcase.value +
+v.bike*+bike.value +
+v.garden*+garden.value;
 
-let total = 0;
-let parts = text.toLowerCase().split(/,|\n/);
+/* fake distance (no API) */
+let distance = Math.floor(Math.random()*200)+10;
 
-for(let p of parts){
-p = p.trim();
-if(!p) continue;
+/* pricing formula */
+let price = (total * 28) + (distance * 1.4);
 
-let m = p.match(/(\d+)\s*(\w+)/);
+document.getElementById("output").innerHTML =
+"Total Volume: " + total.toFixed(2) + " m³ | Distance: " + distance + " miles";
 
-if(m){
-let qty = parseInt(m[1]);
-let item = m[2];
-total += (smart[item] || 0.5) * qty;
-}else{
-total += smart[p] || 0.5;
-}
-}
-
-return total;
-}
-
-function calc(){
-let total = 0;
-
-for(let k in items){
-total += (document.getElementById(k).value||0) * items[k];
-}
-
-total += parse(document.getElementById("otherItems").value);
-
-let price = total * 28;
-
-document.getElementById("volumeResult").innerText =
-"Total Volume: " + total.toFixed(2) + " m³";
-
-document.getElementById("priceResult").innerText =
-"Estimated Price: £" + price.toFixed(2);
+document.getElementById("price").innerHTML =
+"£" + price.toFixed(2);
 }
 
 </script>
