@@ -1,65 +1,29 @@
-<section id="services" class="section">
+<!-- QUOTE SECTION -->
+<section id="quote" class="section">
   <div class="container">
 
-    <h2>Our Services</h2>
+    <h2>Get a Free Quote</h2>
 
-    <div class="grid">
+    <form class="quote-form">
 
-      <div class="card">
-        <h3>House Removals</h3>
-        <p>Full home moving services across the UK, safe and efficient.</p>
-      </div>
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
 
-      <div class="card">
-        <h3>Furniture Assembly</h3>
-        <p>We dismantle and reassemble all types of furniture.</p>
-      </div>
+      <input type="text" placeholder="Moving From">
+      <input type="text" placeholder="Moving To">
+      <input type="date">
 
-      <div class="card">
-        <h3>Packing Service</h3>
-        <p>Professional packing and protection of all belongings.</p>
-      </div>
+      <textarea placeholder="Additional Information"></textarea>
 
-      <div class="card">
-        <h3>Waste Removal</h3>
-        <p>Fast and responsible disposal of unwanted items.</p>
-      </div>
+      <button type="submit">Request Quote</button>
 
-    </div>
-  </div>
-</section>
-
-<section id="about" class="section alt">
-  <div class="container">
-
-    <h2>Why Choose ADM Moving LTD?</h2>
-
-    <ul class="list">
-      <li>Fully insured removals service</li>
-      <li>Friendly and trained team</li>
-      <li>Affordable pricing</li>
-      <li>UK wide coverage</li>
-      <li>Fast response and flexible booking</li>
-    </ul>
+    </form>
 
   </div>
 </section>
 
-<section id="gallery" class="section">
-  <div class="container">
-
-    <h2>Gallery</h2>
-
-    <div class="grid">
-      <div class="img-box">Image 1</div>
-      <div class="img-box">Image 2</div>
-      <div class="img-box">Image 3</div>
-      <div class="img-box">Image 4</div>
-    </div>
-
-  </div>
-</section>
-
+<!-- CONTACT -->
 <section id="contact" class="section alt">
   <div class="container">
 
@@ -77,229 +41,65 @@
     <p>© 2026 ADM Moving LTD. All rights reserved.</p>
   </div>
 </footer>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f8fbfd;
-    color:#222;
-    line-height:1.6;
-}
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp-float" href="https://wa.me/447312814746" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
-.container{
-    width:90%;
-    max-width:1200px;
+</body>
+</html>
+/* QUOTE FORM */
+.quote-form{
+    max-width:600px;
     margin:auto;
-}
-
-header{
-    background:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 15px rgba(0,0,0,0.08);
-}
-
-.nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
-}
-
-.logo h2{
-    color:#0f8fdb;
-    font-weight:800;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
-}
-
-nav a{
-    text-decoration:none;
-    color:#222;
-    font-weight:500;
-}
-
-nav a:hover{
-    color:#0f8fdb;
-}
-
-.phone-btn{
-    background:#20c997;
-    color:white;
-    padding:12px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.hero{
-    padding:100px 0;
-    background:linear-gradient(
-    135deg,
-    #eef9ff,
-    #f8fffc
-    );
-}
-
-.hero-content{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:60px;
-}
-
-.badge{
-    display:inline-block;
-    background:#20c997;
-    color:white;
-    padding:8px 16px;
-    border-radius:30px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:56px;
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:18px;
-    color:#555;
-    margin-bottom:30px;
-}
-
-.hero-buttons{
-    display:flex;
     gap:15px;
 }
 
-.btn-primary{
-    background:#0f8fdb;
-    color:white;
-    padding:15px 30px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.btn-whatsapp{
-    background:#20c997;
-    color:white;
-    padding:15px 30px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.hero-image img{
-    width:100%;
-    border-radius:20px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.15);
-}
-
-@media(max-width:900px){
-
-.hero-content{
-    grid-template-columns:1fr;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:40px;
-}
-
-nav{
-    display:none;
-}
-
-.phone-btn{
-    display:none;
-}
-
-}
-.section{
-    padding:80px 0;
-}
-
-.section h2{
-    text-align:center;
-    font-size:36px;
-    margin-bottom:40px;
-    color:#0f8fdb;
-}
-
-.section.alt{
-    background:#f0fbff;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    color:#20c997;
-    margin-bottom:10px;
-}
-
-.list{
-    max-width:600px;
-    margin:auto;
-    list-style:none;
-}
-
-.list li{
-    background:white;
-    margin-bottom:10px;
+.quote-form input,
+.quote-form textarea{
     padding:15px;
     border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    border:1px solid #ddd;
+    font-family:inherit;
+    outline:none;
 }
 
-.img-box{
-    background:#dff6ff;
-    height:160px;
+.quote-form textarea{
+    min-height:120px;
+    resize:none;
+}
+
+.quote-form button{
+    background:#0f8fdb;
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.quote-form button:hover{
+    background:#0c6fb0;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#20c997;
+    color:white;
+    font-size:28px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:12px;
-    color:#0f8fdb;
-    font-weight:600;
-}
-
-footer{
-    background:#0f8fdb;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
-}
-
-@media(max-width:900px){
-    .section h2{
-        font-size:28px;
-    }
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    z-index:1000;
+    text-decoration:none;
 }
