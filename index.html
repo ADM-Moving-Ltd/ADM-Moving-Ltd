@@ -3,156 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | V3 Smart System</title>
+<title>ADM Moving LTD | Business System V3</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth;}
+
 body{
-font-family:Poppins,sans-serif;
-background:#f3f6ff;
+background:linear-gradient(135deg,#eef3ff,#f7fbff);
 color:#1f2937;
 }
 
 /* HEADER */
 header{
-background:linear-gradient(135deg,#061a33,#0b2f5c);
+background:#0b1f3a;
 color:white;
-padding:25px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo-box{
-width:75px;
-height:75px;
-background:#22c55e;
-border-radius:18px;
+padding:25px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:28px;
-font-weight:800;
+gap:15px;
 }
 
+.logo{
+width:55px;
+height:55px;
+border-radius:12px;
+background:#22c55e;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+font-size:18px;
+}
+
+header h1{font-size:28px;}
+header p{font-size:13px;opacity:0.8;}
+
+/* NAV */
+nav{
+position:sticky;
+top:0;
+background:#10284d;
+padding:12px;
+text-align:center;
+z-index:999;
+}
 nav a{
 color:white;
 margin:0 12px;
 text-decoration:none;
 font-weight:600;
+font-size:14px;
 }
 
 /* HERO */
 .hero{
 height:85vh;
-background:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80') center/cover;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1600585154526-990dced4db0d');
+background-size:cover;
+background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-position:relative;
+padding:20px;
 }
 
-.hero::before{
-content:'';
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-}
+.hero h2{font-size:42px;margin-bottom:15px;}
+.hero p{max-width:700px;margin:auto;font-size:18px;}
 
-.hero-content{
-position:relative;
-max-width:900px;
-}
-
-.hero h1{
-font-size:54px;
-}
-
-.hero p{
-margin-top:10px;
-opacity:0.9;
-}
-
-/* BUTTON */
 .btn{
 margin-top:20px;
-padding:14px 26px;
 background:#22c55e;
-border:none;
-color:white;
-font-weight:700;
+padding:14px 26px;
 border-radius:10px;
-cursor:pointer;
+display:inline-block;
+color:white;
+text-decoration:none;
+font-weight:700;
 }
 
 /* SECTIONS */
-section{
-padding:70px 8%;
-}
+section{padding:70px 10%;}
 
 .title{
 text-align:center;
 font-size:34px;
-margin-bottom:25px;
-color:#0b2f5c;
+margin-bottom:20px;
 }
 
-/* INPUTS */
-input{
-width:100%;
-padding:12px;
-margin:6px 0;
-border-radius:8px;
-border:1px solid #ccc;
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-/* CATEGORY */
-.category{
+.card{
 background:white;
-padding:18px;
-margin-bottom:18px;
-border-radius:12px;
+padding:20px;
+border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.category h3{
-margin-bottom:10px;
-color:#0b2f5c;
+/* INVENTORY */
+.inventory-section{
+background:white;
+border-radius:15px;
+padding:25px;
+margin-top:20px;
+}
+
+.category{
+margin-top:25px;
+font-weight:700;
+color:#10284d;
 }
 
 .item{
 display:flex;
 justify-content:space-between;
-padding:8px 0;
-border-bottom:1px solid #eee;
+margin:8px 0;
 }
 
-.item input{
+input[type=number]{
 width:70px;
+padding:6px;
 }
 
-/* RESULT */
-.result{
+/* PRICE BOX */
+.price-box{
+text-align:center;
+margin-top:30px;
 font-size:20px;
-font-weight:700;
-margin-top:20px;
-color:#0b2f5c;
 }
 
-/* FLOATING */
-.floating{
+/* FORM */
+.form{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+button{
+background:#0b1f3a;
+color:white;
+padding:14px;
+border:none;
+border-radius:10px;
+width:100%;
+font-weight:700;
+cursor:pointer;
+}
+
+/* FLOAT */
+.float{
 position:fixed;
-right:18px;
+right:20px;
 width:55px;
 height:55px;
 border-radius:50%;
@@ -161,172 +182,182 @@ align-items:center;
 justify-content:center;
 color:white;
 font-size:22px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.25);
+z-index:999;
 }
+.whatsapp{bottom:20px;background:#25d366;}
+.email{bottom:85px;background:#2563eb;}
 
-.whatsapp{bottom:20px;background:#25d366}
-.email{bottom:90px;background:#2563eb}
-
-/* ADMIN */
-.admin{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-margin-top:15px;
+footer{
+text-align:center;
+padding:20px;
+background:#0b1f3a;
+color:white;
+margin-top:50px;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">
-<div class="logo-box">ADM</div>
+<div class="logo">ADM</div>
 <div>
-<h2>ADM Moving LTD</h2>
-<small>AnyVan-style Smart Quote System</small>
+<h1>ADM Moving LTD</h1>
+<p>UK Removals • Packing • Storage</p>
 </div>
-</div>
-
-<nav>
-<a href="#booking">Booking</a>
-<a href="#admin">Admin</a>
-</nav>
 </header>
 
-<section class="hero">
-<div class="hero-content">
-<h1>Instant Moving Quote</h1>
-<p>Fast estimate based on distance + full household inventory</p>
-<button class="btn" onclick="document.getElementById('booking').scrollIntoView()">Start Quote</button>
+<nav>
+<a href="#services">Services</a>
+<a href="#inventory">Inventory</a>
+<a href="#booking">Booking</a>
+</nav>
+
+<div class="hero">
+<div>
+<h2>Fast & Reliable Moving System</h2>
+<p>Get instant price based on distance + full house inventory volume calculation</p>
+<a class="btn" href="#booking">Get Quote</a>
+</div>
+</div>
+
+<section id="services">
+<h2 class="title">Services</h2>
+<div class="grid">
+<div class="card">House Removals</div>
+<div class="card">Office Moves</div>
+<div class="card">Packing Service</div>
+<div class="card">Furniture Assembly</div>
+</div>
+</section>
+
+<section id="inventory">
+<h2 class="title">Inventory System</h2>
+
+<div class="inventory-section">
+
+<div class="category">Living Room</div>
+<div class="item">Sofa <input id="sofa" type="number" value="0"></div>
+<div class="item">TV <input id="tv" type="number" value="0"></div>
+<div class="item">Coffee Table <input id="coffee" type="number" value="0"></div>
+
+<div class="category">Bedroom</div>
+<div class="item">Bed <input id="bed" type="number" value="0"></div>
+<div class="item">Wardrobe <input id="wardrobe" type="number" value="0"></div>
+
+<div class="category">Kitchen</div>
+<div class="item">Fridge <input id="fridge" type="number" value="0"></div>
+<div class="item">Washing Machine <input id="wash" type="number" value="0"></div>
+
+<div class="category">Office</div>
+<div class="item">Desk <input id="desk" type="number" value="0"></div>
+<div class="item">Chair <input id="chair" type="number" value="0"></div>
+
+<div class="category">Garden</div>
+<div class="item">Garden Furniture <input id="garden" type="number" value="0"></div>
+
+<div class="price-box">
+<button onclick="calc()">Calculate Price</button>
+<h3 id="result"></h3>
+<h2 id="price"></h2>
+</div>
+
 </div>
 </section>
 
 <section id="booking">
-<h2 class="title">Smart Booking System</h2>
+<h2 class="title">Booking</h2>
 
-<input id="from" placeholder="Moving From (postcode or city)">
-<input id="to" placeholder="Moving To (postcode or city)">
-<input id="name" placeholder="Full Name">
-<input id="phone" placeholder="Phone">
-<input id="email" placeholder="Email">
+<div class="form">
+<input id="from" placeholder="Moving From">
+<input id="to" placeholder="Moving To">
+<input type="date" id="date">
 
-<h3 style="margin-top:20px;">Inventory (All Rooms)</h3>
+<select id="mode">
+<option value="fast">Fast Price (Fixed)</option>
+<option value="distance">Distance Based</option>
+</select>
 
-<div class="category">
-<h3>Living Room</h3>
-<div class="item">Sofa <input id="sofa" type="number" value="0"></div>
-<div class="item">TV <input id="tv" type="number" value="0"></div>
-<div class="item">Coffee Table <input id="coffee" type="number" value="0"></div>
-<div class="item">Armchair <input id="chair" type="number" value="0"></div>
+<button onclick="book()">Request Booking</button>
 </div>
-
-<div class="category">
-<h3>Kitchen</h3>
-<div class="item">Fridge <input id="fridge" type="number" value="0"></div>
-<div class="item">Washing Machine <input id="wash" type="number" value="0"></div>
-<div class="item">Dining Table <input id="table" type="number" value="0"></div>
-<div class="item">Chairs <input id="dchairs" type="number" value="0"></div>
-</div>
-
-<div class="category">
-<h3>Bedroom</h3>
-<div class="item">Bed <input id="bed" type="number" value="0"></div>
-<div class="item">Wardrobe <input id="wardrobe" type="number" value="0"></div>
-<div class="item">Drawers <input id="drawers" type="number" value="0"></div>
-</div>
-
-<div class="category">
-<h3>Garden</h3>
-<div class="item">Garden Table <input id="gtable" type="number" value="0"></div>
-<div class="item">BBQ <input id="bbq" type="number" value="0"></div>
-<div class="item">Bike <input id="bike" type="number" value="0"></div>
-</div>
-
-<button class="btn" onclick="calculate()">Calculate Price</button>
-
-<div class="result" id="result"></div>
-
-<button class="btn" onclick="save()">Confirm Booking</button>
-
 </section>
 
-<section id="admin">
-<h2 class="title">Admin Dashboard</h2>
-<div id="adminList"></div>
-</section>
+<footer>
+© ADM Moving LTD V3 System
+</footer>
 
-<a class="floating whatsapp" href="https://wa.me/447312814746">💬</a>
-<a class="floating email" href="mailto:admmoving@yahoo.com">✉️</a>
+<a class="float whatsapp" href="https://wa.me/447312814746">💬</a>
+<a class="float email" href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
-/* SIMPLE DISTANCE MODEL (NO API) */
-function fakeDistance(a,b){
-return Math.max(5, (a.length + b.length) * 3);
+/* VOLUME VALUES */
+const items = {
+sofa:1.8,tv:0.3,coffee:0.6,bed:1.5,wardrobe:2.2,
+fridge:1.4,wash:1.2,desk:1.0,chair:0.4,garden:2.0
+};
+
+function calc(){
+let total = 0;
+
+for(let k in items){
+total += (document.getElementById(k).value||0)*items[k];
 }
 
-/* VOLUME + PRICE */
-let last={};
+let price = total * 28; // base price per m3
 
-function calculate(){
+document.getElementById("result").innerText =
+"Total Volume: " + total.toFixed(2) + " m³";
+
+document.getElementById("price").innerText =
+"Estimated Price: £" + price.toFixed(2);
+}
+
+/* DISTANCE */
+async function getCoords(place){
+let r = await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+place);
+let d = await r.json();
+if(!d[0]) return null;
+return [parseFloat(d[0].lat), parseFloat(d[0].lon)];
+}
+
+function haversine(a,b){
+const R=3959;
+const dLat=(b[0]-a[0])*Math.PI/180;
+const dLon=(b[1]-a[1])*Math.PI/180;
+const x=Math.sin(dLat/2)**2+
+Math.cos(a[0]*Math.PI/180)*
+Math.cos(b[0]*Math.PI/180)*
+Math.sin(dLon/2)**2;
+return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
+}
+
+async function book(){
 
 let from=document.getElementById("from").value;
 let to=document.getElementById("to").value;
+let mode=document.getElementById("mode").value;
 
-let distance=fakeDistance(from,to);
+let basePrice = parseFloat(document.getElementById("price").innerText.replace(/[^\d.]/g,''))||200;
 
-let volume=
-(sofa.value*1.5)+(tv.value*0.5)+(coffee.value*0.6)+(chair.value*0.5)+
-(fridge.value*1.5)+(wash.value*1.2)+(table.value*1.8)+(dchairs.value*0.2)+
-(bed.value*1.5)+(wardrobe.value*2)+(drawers.value*1.2)+
-(gtable.value*1.5)+(bbq.value*1.8)+(bike.value*0.5);
-
-let price=(volume*25)+(distance*2);
-
-result.innerHTML=
-"Distance: "+distance+" km (estimated) | Volume: "+volume.toFixed(2)+" m³ | Price: £"+price.toFixed(2);
-
-last={from,to,distance,volume,price};
+if(mode==="fast"){
+alert("Booking sent. Estimated price: £"+basePrice);
+return;
 }
 
-/* SAVE */
-function save(){
+let a=await getCoords(from);
+let b=await getCoords(to);
 
-let list=JSON.parse(localStorage.getItem("bookings")||"[]");
-
-list.push({
-name:name.value,
-phone:phone.value,
-email:email.value,
-from:last.from,
-to:last.to,
-price:last.price
-});
-
-localStorage.setItem("bookings",JSON.stringify(list));
-
-load();
-alert("Booking saved");
+if(!a||!b){
+alert("Address not found");
+return;
 }
 
-/* ADMIN */
-function load(){
-let list=JSON.parse(localStorage.getItem("bookings")||"[]");
+let miles=haversine(a,b);
+let final=basePrice+(miles*1.5);
 
-adminList.innerHTML=list.map(b=>
-`<div class="admin">
-<b>${b.name}</b><br>
-${b.from} → ${b.to}<br>
-Price: £${b.price.toFixed(2)}
-</div>`
-).join("");
+alert("Booking sent.\nDistance: "+miles.toFixed(1)+" miles\nPrice: £"+final.toFixed(2));
 }
-
-load();
 
 </script>
 
