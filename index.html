@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Premium Removals System</title>
+<title>ADM Moving LTD | V3 Smart System</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Poppins,sans-serif;
-background:#f4f7ff;
+background:#f3f6ff;
 color:#1f2937;
 }
 
 /* HEADER */
 header{
-background:linear-gradient(135deg,#071a33,#0b2f5c);
+background:linear-gradient(135deg,#061a33,#0b2f5c);
 color:white;
-padding:30px 8%;
+padding:25px 8%;
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 }
 
 .logo{
@@ -32,23 +32,22 @@ gap:15px;
 }
 
 .logo-box{
-width:70px;
-height:70px;
+width:75px;
+height:75px;
 background:#22c55e;
-border-radius:16px;
+border-radius:18px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:26px;
+font-size:28px;
 font-weight:800;
 }
 
-header h1{
-font-size:28px;
-}
-
-header small{
-opacity:0.8;
+nav a{
+color:white;
+margin:0 12px;
+text-decoration:none;
+font-weight:600;
 }
 
 /* HERO */
@@ -75,16 +74,16 @@ position:relative;
 max-width:900px;
 }
 
-.hero h2{
-font-size:56px;
-margin-bottom:15px;
+.hero h1{
+font-size:54px;
 }
 
 .hero p{
-font-size:18px;
+margin-top:10px;
 opacity:0.9;
 }
 
+/* BUTTON */
 .btn{
 margin-top:20px;
 padding:14px 26px;
@@ -103,44 +102,43 @@ padding:70px 8%;
 
 .title{
 text-align:center;
-font-size:36px;
-margin-bottom:30px;
+font-size:34px;
+margin-bottom:25px;
 color:#0b2f5c;
 }
 
-/* INVENTORY */
+/* INPUTS */
+input{
+width:100%;
+padding:12px;
+margin:6px 0;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+/* CATEGORY */
 .category{
-margin-bottom:35px;
 background:white;
-padding:20px;
-border-radius:14px;
+padding:18px;
+margin-bottom:18px;
+border-radius:12px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 .category h3{
-margin-bottom:15px;
+margin-bottom:10px;
 color:#0b2f5c;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:10px;
 }
 
 .item{
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:10px;
+padding:8px 0;
 border-bottom:1px solid #eee;
 }
 
-input{
-width:60px;
-padding:6px;
-border-radius:6px;
-border:1px solid #ccc;
+.item input{
+width:70px;
 }
 
 /* RESULT */
@@ -164,10 +162,20 @@ justify-content:center;
 color:white;
 font-size:22px;
 text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.25);
 }
 
 .whatsapp{bottom:20px;background:#25d366}
 .email{bottom:90px;background:#2563eb}
+
+/* ADMIN */
+.admin{
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+margin-top:15px;
+}
 
 </style>
 </head>
@@ -178,78 +186,63 @@ text-decoration:none;
 <div class="logo">
 <div class="logo-box">ADM</div>
 <div>
-<h1>ADM Moving LTD</h1>
-<small>Professional UK Removals & Packing Service</small>
+<h2>ADM Moving LTD</h2>
+<small>AnyVan-style Smart Quote System</small>
 </div>
 </div>
+
+<nav>
+<a href="#booking">Booking</a>
+<a href="#admin">Admin</a>
+</nav>
 </header>
 
 <section class="hero">
 <div class="hero-content">
-<h2>Fast & Reliable Moving Across The UK</h2>
-<p>Full household + garden inventory system with instant price calculation</p>
+<h1>Instant Moving Quote</h1>
+<p>Fast estimate based on distance + full household inventory</p>
 <button class="btn" onclick="document.getElementById('booking').scrollIntoView()">Start Quote</button>
 </div>
 </section>
 
 <section id="booking">
+<h2 class="title">Smart Booking System</h2>
 
-<h2 class="title">Full Inventory System</h2>
+<input id="from" placeholder="Moving From (postcode or city)">
+<input id="to" placeholder="Moving To (postcode or city)">
+<input id="name" placeholder="Full Name">
+<input id="phone" placeholder="Phone">
+<input id="email" placeholder="Email">
 
-<input id="from" placeholder="Moving From Address">
-<input id="to" placeholder="Moving To Address">
+<h3 style="margin-top:20px;">Inventory (All Rooms)</h3>
 
-<!-- LIVING ROOM -->
 <div class="category">
 <h3>Living Room</h3>
 <div class="item">Sofa <input id="sofa" type="number" value="0"></div>
-<div class="item">Corner Sofa <input id="corner" type="number" value="0"></div>
 <div class="item">TV <input id="tv" type="number" value="0"></div>
 <div class="item">Coffee Table <input id="coffee" type="number" value="0"></div>
 <div class="item">Armchair <input id="chair" type="number" value="0"></div>
 </div>
 
-<!-- KITCHEN -->
 <div class="category">
 <h3>Kitchen</h3>
 <div class="item">Fridge <input id="fridge" type="number" value="0"></div>
-<div class="item">Freezer <input id="freezer" type="number" value="0"></div>
-<div class="item">Dining Table <input id="table" type="number" value="0"></div>
-<div class="item">Dining Chairs <input id="dchairs" type="number" value="0"></div>
 <div class="item">Washing Machine <input id="wash" type="number" value="0"></div>
+<div class="item">Dining Table <input id="table" type="number" value="0"></div>
+<div class="item">Chairs <input id="dchairs" type="number" value="0"></div>
 </div>
 
-<!-- BEDROOM -->
 <div class="category">
 <h3>Bedroom</h3>
 <div class="item">Bed <input id="bed" type="number" value="0"></div>
 <div class="item">Wardrobe <input id="wardrobe" type="number" value="0"></div>
-<div class="item">Bedside Table <input id="side" type="number" value="0"></div>
-<div class="item">Chest of Drawers <input id="drawers" type="number" value="0"></div>
+<div class="item">Drawers <input id="drawers" type="number" value="0"></div>
 </div>
 
-<!-- BATHROOM -->
 <div class="category">
-<h3>Bathroom</h3>
-<div class="item">Cabinet <input id="bathcab" type="number" value="0"></div>
-<div class="item">Mirror <input id="mirror" type="number" value="0"></div>
-<div class="item">Laundry Basket <input id="laundry" type="number" value="0"></div>
-</div>
-
-<!-- OFFICE -->
-<div class="category">
-<h3>Office</h3>
-<div class="item">Desk <input id="desk" type="number" value="0"></div>
-<div class="item">Office Chair <input id="ochair" type="number" value="0"></div>
-<div class="item">PC Setup <input id="pc" type="number" value="0"></div>
-</div>
-
-<!-- GARDEN -->
-<div class="category">
-<h3>Garden / Outdoor</h3>
+<h3>Garden</h3>
 <div class="item">Garden Table <input id="gtable" type="number" value="0"></div>
 <div class="item">BBQ <input id="bbq" type="number" value="0"></div>
-<div class="item">Garden Chairs <input id="gchair" type="number" value="0"></div>
 <div class="item">Bike <input id="bike" type="number" value="0"></div>
 </div>
 
@@ -257,6 +250,13 @@ text-decoration:none;
 
 <div class="result" id="result"></div>
 
+<button class="btn" onclick="save()">Confirm Booking</button>
+
+</section>
+
+<section id="admin">
+<h2 class="title">Admin Dashboard</h2>
+<div id="adminList"></div>
 </section>
 
 <a class="floating whatsapp" href="https://wa.me/447312814746">💬</a>
@@ -264,43 +264,69 @@ text-decoration:none;
 
 <script>
 
-async function getCoords(a){
-let r=await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+a);
-let d=await r.json();
-if(!d[0])return null;
-return [parseFloat(d[0].lat),parseFloat(d[0].lon)];
+/* SIMPLE DISTANCE MODEL (NO API) */
+function fakeDistance(a,b){
+return Math.max(5, (a.length + b.length) * 3);
 }
 
-function km(a,b,c,d){
-const R=6371;
-let x=(c-a)*Math.PI/180;
-let y=(d-b)*Math.PI/180;
-let z=Math.sin(x/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)**2;
-return R*2*Math.atan2(Math.sqrt(z),Math.sqrt(1-z));
-}
+/* VOLUME + PRICE */
+let last={};
 
-async function calculate(){
+function calculate(){
 
-let a=await getCoords(from.value);
-let b=await getCoords(to.value);
+let from=document.getElementById("from").value;
+let to=document.getElementById("to").value;
 
-if(!a||!b){alert("Address not found");return;}
-
-let distance=km(a[0],a[1],b[0],b[1]);
+let distance=fakeDistance(from,to);
 
 let volume=
-(sofa.value*1.5)+(corner.value*3)+(tv.value*0.5)+(coffee.value*0.6)+(chair.value*0.5)+
-(fridge.value*1.5)+(freezer.value*1.5)+(table.value*1.8)+(dchairs.value*0.2)+(wash.value*1.2)+
-(bed.value*1.5)+(wardrobe.value*2)+(side.value*0.5)+(drawers.value*1.2)+
-(bathcab.value*0.6)+(mirror.value*0.2)+(laundry.value*0.4)+
-(desk.value*1.2)+(ochair.value*0.4)+(pc.value*0.8)+
-(gtable.value*1.5)+(bbq.value*1.8)+(gchair.value*0.3)+(bike.value*0.5);
+(sofa.value*1.5)+(tv.value*0.5)+(coffee.value*0.6)+(chair.value*0.5)+
+(fridge.value*1.5)+(wash.value*1.2)+(table.value*1.8)+(dchairs.value*0.2)+
+(bed.value*1.5)+(wardrobe.value*2)+(drawers.value*1.2)+
+(gtable.value*1.5)+(bbq.value*1.8)+(bike.value*0.5);
 
-let price=(volume*25)+(distance*1.6);
+let price=(volume*25)+(distance*2);
 
 result.innerHTML=
-"Distance: "+distance.toFixed(1)+" km | Volume: "+volume.toFixed(2)+" m³ | Price: £"+price.toFixed(2);
+"Distance: "+distance+" km (estimated) | Volume: "+volume.toFixed(2)+" m³ | Price: £"+price.toFixed(2);
+
+last={from,to,distance,volume,price};
 }
+
+/* SAVE */
+function save(){
+
+let list=JSON.parse(localStorage.getItem("bookings")||"[]");
+
+list.push({
+name:name.value,
+phone:phone.value,
+email:email.value,
+from:last.from,
+to:last.to,
+price:last.price
+});
+
+localStorage.setItem("bookings",JSON.stringify(list));
+
+load();
+alert("Booking saved");
+}
+
+/* ADMIN */
+function load(){
+let list=JSON.parse(localStorage.getItem("bookings")||"[]");
+
+adminList.innerHTML=list.map(b=>
+`<div class="admin">
+<b>${b.name}</b><br>
+${b.from} → ${b.to}<br>
+Price: £${b.price.toFixed(2)}
+</div>`
+).join("");
+}
+
+load();
 
 </script>
 
