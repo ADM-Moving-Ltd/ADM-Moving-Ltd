@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Booking System V5</title>
+<title>ADM Moving LTD | Professional Removals System V6</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -17,9 +17,9 @@ color:white;
 
 /* HERO IMAGE */
 .hero{
-height:320px;
+height:360px;
 background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
 url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
@@ -30,14 +30,15 @@ text-align:center;
 }
 
 .hero h1{
-font-size:40px;
+font-size:44px;
 }
 
 .hero p{
-opacity:0.8;
+opacity:0.85;
+margin-top:10px;
 }
 
-/* LOGO BAR */
+/* HEADER / LOGO */
 header{
 text-align:center;
 padding:20px;
@@ -45,9 +46,11 @@ background:#0f172a;
 }
 
 .logo{
-font-size:32px;
+font-size:34px;
 font-weight:700;
+letter-spacing:2px;
 }
+
 .logo span{color:#22c55e;}
 
 .container{
@@ -56,7 +59,7 @@ margin:auto;
 padding:20px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
 background:#111c33;
 padding:20px;
@@ -83,28 +86,29 @@ color:white;
 
 textarea{min-height:70px;}
 
+/* SECTION TITLE */
 .section-title{
 color:#22c55e;
 margin-bottom:10px;
 }
 
-/* INVENTORY TABLE */
+/* ROOM */
 .room{
 margin-top:10px;
-padding:10px;
+padding:12px;
 background:#0b1220;
 border-radius:10px;
 }
 
-.item-row{
+.item{
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin:6px 0;
 }
 
-.item-row input{
-width:70px;
+.item input{
+width:80px;
 text-align:center;
 }
 
@@ -120,6 +124,14 @@ cursor:pointer;
 .btn{background:#22c55e;color:white;}
 .btn:hover{background:#16a34a;}
 
+/* PRICE */
+.price{
+font-size:28px;
+font-weight:700;
+color:#22c55e;
+margin-top:10px;
+}
+
 /* FLOAT */
 .float{
 position:fixed;
@@ -131,51 +143,40 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:22px;
-color:white;
 text-decoration:none;
+color:white;
 }
 
 .whatsapp{bottom:20px;background:#25d366;}
 .email{bottom:90px;background:#3b82f6;}
 
-.price{
-font-size:26px;
-font-weight:700;
-color:#22c55e;
-margin-top:10px;
-}
-
 /* FOOTER */
 footer{
 margin-top:40px;
-padding:25px;
+padding:30px;
 background:#0f172a;
 text-align:center;
 }
 
-.small{
-font-size:13px;
-opacity:0.7;
-margin-top:8px;
-}
+.small{font-size:12px;opacity:0.7;margin-top:8px;}
 
 </style>
 </head>
 
 <body>
 
-<!-- HERO IMAGE -->
+<!-- HERO -->
 <div class="hero">
 <div>
-<h1>🚚 Professional UK Removals</h1>
-<p>Fast • Safe • Reliable Moving Service</p>
+<h1>🚚 Professional UK Removals Service</h1>
+<p>Fast • Safe • Reliable House & Office Moving</p>
 </div>
 </div>
 
 <!-- HEADER -->
 <header>
 <div class="logo">ADM <span>MOVING LTD</span></div>
-<p>Booking & Inventory System</p>
+<p>Full Booking & Inventory System</p>
 </header>
 
 <div class="container">
@@ -193,44 +194,40 @@ margin-top:8px;
 
 <!-- INVENTORY -->
 <div class="card">
-<h2 class="section-title">Inventory (Enter Quantity)</h2>
+<h2 class="section-title">Inventory (Rooms + Items Quantity)</h2>
 
 <div class="room">
 <h3>Living Room</h3>
-
-<div class="item-row">Sofa <input id="sofa" type="number" value="0"></div>
-<div class="item-row">Chairs <input id="chairs" type="number" value="0"></div>
-<div class="item-row">TV <input id="tv" type="number" value="0"></div>
-<div class="item-row">Tables <input id="ltable" type="number" value="0"></div>
+<div class="item">Sofa <input id="sofa" type="number" value="0"></div>
+<div class="item">Chairs <input id="chairs" type="number" value="0"></div>
+<div class="item">TV <input id="tv" type="number" value="0"></div>
+<div class="item">Tables <input id="ltable" type="number" value="0"></div>
 </div>
 
 <div class="room">
 <h3>Bedroom</h3>
-
-<div class="item-row">Beds <input id="bed" type="number" value="0"></div>
-<div class="item-row">Wardrobes <input id="wardrobe" type="number" value="0"></div>
-<div class="item-row">Dressers <input id="dresser" type="number" value="0"></div>
+<div class="item">Beds <input id="bed" type="number" value="0"></div>
+<div class="item">Wardrobes <input id="wardrobe" type="number" value="0"></div>
+<div class="item">Dressers <input id="dresser" type="number" value="0"></div>
 </div>
 
 <div class="room">
 <h3>Kitchen</h3>
-
-<div class="item-row">Fridge <input id="fridge" type="number" value="0"></div>
-<div class="item-row">Washing Machine <input id="wash" type="number" value="0"></div>
-<div class="item-row">Boxes <input id="kboxes" type="number" value="0"></div>
+<div class="item">Fridge <input id="fridge" type="number" value="0"></div>
+<div class="item">Washing Machine <input id="wash" type="number" value="0"></div>
+<div class="item">Boxes <input id="kboxes" type="number" value="0"></div>
 </div>
 
 <div class="room">
 <h3>Garden</h3>
-
-<div class="item-row">Garden Chairs <input id="gchairs" type="number" value="0"></div>
-<div class="item-row">Garden Table <input id="gtable" type="number" value="0"></div>
+<div class="item">Garden Chairs <input id="gchairs" type="number" value="0"></div>
+<div class="item">Garden Tables <input id="gtable" type="number" value="0"></div>
 </div>
 </div>
 
 <!-- BOXES -->
 <div class="card">
-<h2 class="section-title">Boxes & Packing</h2>
+<h2 class="section-title">Packing Boxes</h2>
 
 <div class="grid">
 <input id="small" type="number" placeholder="Small Boxes">
@@ -245,16 +242,16 @@ margin-top:8px;
 <h2 class="section-title">Dismantle & Assembly</h2>
 
 <div class="grid">
-<input id="dismantle" type="number" placeholder="Items to dismantle">
-<input id="assemble" type="number" placeholder="Items to assemble">
+<input id="dismantle" type="number" placeholder="Items to Dismantle">
+<input id="assemble" type="number" placeholder="Items to Assemble">
 </div>
 </div>
 
-<!-- PRICE -->
+<!-- CALCULATE -->
 <div class="card">
-<h2 class="section-title">Calculate Price</h2>
+<h2 class="section-title">Price Calculator</h2>
 
-<button class="btn" onclick="calc()">Calculate</button>
+<button class="btn" onclick="calc()">Calculate Price</button>
 
 <div id="result"></div>
 <div class="price" id="price"></div>
@@ -262,8 +259,8 @@ margin-top:8px;
 
 </div>
 
-<!-- FLOAT -->
-<a class="float whatsapp" href="https://wa.me/447312814746">💬</a>
+<!-- FLOATING BUTTONS -->
+<a class="float whatsapp" href="https://wa.me/447312814746" target="_blank">💬</a>
 <a class="float email" href="mailto:admmoving@yahoo.com">✉️</a>
 
 <!-- FOOTER -->
@@ -272,7 +269,7 @@ margin-top:8px;
 <p>📞 07312 814746</p>
 <p>📧 admmoving@yahoo.com</p>
 <p>UK Nationwide Removals • Packing • Assembly • Storage</p>
-<p class="small">© 2026 ADM Moving LTD - All Rights Reserved</p>
+<p class="small">© 2026 ADM Moving LTD</p>
 </footer>
 
 <script>
@@ -304,7 +301,7 @@ v("wardbox")*1.8;
 let dismantle = v("dismantle") * 10;
 let assemble = v("assemble") * 12;
 
-let distance = Math.floor(Math.random()*100)+10;
+let distance = Math.floor(Math.random()*120)+10;
 
 let price = (volume * 25) + (distance * 1.2) + dismantle + assemble;
 
