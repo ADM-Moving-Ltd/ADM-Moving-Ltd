@@ -3,139 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Professional Removals System V6</title>
+<title>ADM Moving LTD - Smart Inventory V6</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-
 body{
-background:#0b1220;
-color:white;
+margin:0;
+font-family:Poppins;
+background:linear-gradient(135deg,#0b1f3a,#1e3a8a,#0ea5e9);
+color:#111;
 }
 
-/* HERO IMAGE */
-.hero{
-height:360px;
-background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
+header{
+background:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80') center/cover;
+height:50vh;
 display:flex;
 align-items:center;
 justify-content:center;
+color:white;
 text-align:center;
+position:relative;
 }
 
-.hero h1{
-font-size:44px;
+header::after{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.6);
 }
 
-.hero p{
-opacity:0.85;
-margin-top:10px;
+header h1{
+z-index:1;
+font-size:50px;
 }
 
-/* HEADER / LOGO */
-header{
-text-align:center;
-padding:20px;
-background:#0f172a;
+section{
+background:white;
+margin:20px;
+padding:25px;
+border-radius:18px;
 }
 
-.logo{
-font-size:34px;
-font-weight:700;
-letter-spacing:2px;
-}
+h2{color:#0b1f3a;}
 
-.logo span{color:#22c55e;}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-/* CARD */
-.card{
-background:#111c33;
-padding:20px;
-border-radius:14px;
-margin-top:20px;
-}
-
-/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:10px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:12px;
 }
 
-input,select,textarea{
-width:100%;
-padding:10px;
-margin-top:5px;
-border-radius:8px;
-border:none;
-background:#0b1220;
-color:white;
-}
-
-textarea{min-height:70px;}
-
-/* SECTION TITLE */
-.section-title{
-color:#22c55e;
-margin-bottom:10px;
-}
-
-/* ROOM */
-.room{
-margin-top:10px;
+.card{
+background:#f1f5f9;
 padding:12px;
-background:#0b1220;
-border-radius:10px;
+border-radius:12px;
+cursor:pointer;
+transition:0.2s;
 }
 
-.item{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin:6px 0;
+.card:hover{
+transform:scale(1.02);
+background:#e2e8f0;
 }
 
-.item input{
-width:80px;
-text-align:center;
+.summary{
+background:#0b1f3a;
+color:white;
+padding:20px;
+border-radius:12px;
+margin-top:15px;
 }
 
-/* BUTTON */
 button{
+background:#16a34a;
+color:white;
 padding:14px;
 border:none;
+width:100%;
 border-radius:10px;
-font-weight:700;
+font-size:16px;
 cursor:pointer;
 }
 
-.btn{background:#22c55e;color:white;}
-.btn:hover{background:#16a34a;}
+button:hover{background:#15803d;}
 
-/* PRICE */
-.price{
-font-size:28px;
-font-weight:700;
-color:#22c55e;
-margin-top:10px;
-}
-
-/* FLOAT */
 .float{
 position:fixed;
+bottom:20px;
 right:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.float a{
 width:55px;
 height:55px;
 border-radius:50%;
@@ -143,176 +104,126 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:22px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 }
 
-.whatsapp{bottom:20px;background:#25d366;}
-.email{bottom:90px;background:#3b82f6;}
-
-/* FOOTER */
-footer{
-margin-top:40px;
-padding:30px;
-background:#0f172a;
-text-align:center;
-}
-
-.small{font-size:12px;opacity:0.7;margin-top:8px;}
+.w{background:#25d366;}
+.e{background:#2563eb;}
 
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-<div>
-<h1>🚚 Professional UK Removals Service</h1>
-<p>Fast • Safe • Reliable House & Office Moving</p>
-</div>
-</div>
-
-<!-- HEADER -->
 <header>
-<div class="logo">ADM <span>MOVING LTD</span></div>
-<p>Full Booking & Inventory System</p>
+<h1>ADM MOVING LTD<br>Smart Moving System</h1>
 </header>
 
-<div class="container">
-
-<!-- MOVE DETAILS -->
-<div class="card">
-<h2 class="section-title">Move Details</h2>
+<section>
+<h2>Select Items</h2>
 
 <div class="grid">
-<input id="from" placeholder="Moving From Address">
-<input id="to" placeholder="Moving To Address">
-<input type="date" id="date">
-</div>
-</div>
 
-<!-- INVENTORY -->
-<div class="card">
-<h2 class="section-title">Inventory (Rooms + Items Quantity)</h2>
+<div class="card" onclick="addItem('Sofa',3)">🛋 Sofa (3 m³)</div>
+<div class="card" onclick="addItem('Corner Sofa',5)">🛋 Corner Sofa (5 m³)</div>
+<div class="card" onclick="addItem('Bed',2.5)">🛏 Bed (2.5 m³)</div>
+<div class="card" onclick="addItem('Wardrobe',4)">🚪 Wardrobe (4 m³)</div>
+<div class="card" onclick="addItem('Dining Table',2)">🍽 Dining Table (2 m³)</div>
+<div class="card" onclick="addItem('Chair',0.3)">🪑 Chair (0.3 m³)</div>
+<div class="card" onclick="addItem('Fridge',1.8)">❄️ Fridge (1.8 m³)</div>
+<div class="card" onclick="addItem('Washing Machine',1.2)">🧺 Washing Machine (1.2 m³)</div>
 
-<div class="room">
-<h3>Living Room</h3>
-<div class="item">Sofa <input id="sofa" type="number" value="0"></div>
-<div class="item">Chairs <input id="chairs" type="number" value="0"></div>
-<div class="item">TV <input id="tv" type="number" value="0"></div>
-<div class="item">Tables <input id="ltable" type="number" value="0"></div>
-</div>
-
-<div class="room">
-<h3>Bedroom</h3>
-<div class="item">Beds <input id="bed" type="number" value="0"></div>
-<div class="item">Wardrobes <input id="wardrobe" type="number" value="0"></div>
-<div class="item">Dressers <input id="dresser" type="number" value="0"></div>
-</div>
-
-<div class="room">
-<h3>Kitchen</h3>
-<div class="item">Fridge <input id="fridge" type="number" value="0"></div>
-<div class="item">Washing Machine <input id="wash" type="number" value="0"></div>
-<div class="item">Boxes <input id="kboxes" type="number" value="0"></div>
-</div>
-
-<div class="room">
-<h3>Garden</h3>
-<div class="item">Garden Chairs <input id="gchairs" type="number" value="0"></div>
-<div class="item">Garden Tables <input id="gtable" type="number" value="0"></div>
-</div>
-</div>
-
-<!-- BOXES -->
-<div class="card">
-<h2 class="section-title">Packing Boxes</h2>
-
-<div class="grid">
-<input id="small" type="number" placeholder="Small Boxes">
-<input id="medium" type="number" placeholder="Medium Boxes">
-<input id="large" type="number" placeholder="Large Boxes">
-<input id="wardbox" type="number" placeholder="Wardrobe Boxes">
-</div>
-</div>
-
-<!-- DISMANTLE -->
-<div class="card">
-<h2 class="section-title">Dismantle & Assembly</h2>
-
-<div class="grid">
-<input id="dismantle" type="number" placeholder="Items to Dismantle">
-<input id="assemble" type="number" placeholder="Items to Assemble">
-</div>
-</div>
-
-<!-- CALCULATE -->
-<div class="card">
-<h2 class="section-title">Price Calculator</h2>
-
-<button class="btn" onclick="calc()">Calculate Price</button>
-
-<div id="result"></div>
-<div class="price" id="price"></div>
-</div>
+<div class="card" onclick="addItem('Small Box',0.1)">📦 Small Box</div>
+<div class="card" onclick="addItem('Medium Box',0.15)">📦 Medium Box</div>
+<div class="card" onclick="addItem('Large Box',0.25)">📦 Large Box</div>
 
 </div>
+</section>
 
-<!-- FLOATING BUTTONS -->
-<a class="float whatsapp" href="https://wa.me/447312814746" target="_blank">💬</a>
-<a class="float email" href="mailto:admmoving@yahoo.com">✉️</a>
+<section>
+<h2>Distance (Miles)</h2>
+<input type="number" placeholder="Enter miles" oninput="setMiles(this.value)" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;">
+</section>
 
-<!-- FOOTER -->
-<footer>
-<h3>ADM Moving LTD</h3>
-<p>📞 07312 814746</p>
-<p>📧 admmoving@yahoo.com</p>
-<p>UK Nationwide Removals • Packing • Assembly • Storage</p>
-<p class="small">© 2026 ADM Moving LTD</p>
-</footer>
+<section>
+<h2>Inventory Summary</h2>
+<div class="summary" id="summary">No items selected</div>
+
+<button onclick="calculate()">Calculate Total Price</button>
+
+<div class="summary" id="result"></div>
+</section>
 
 <script>
 
-function v(id){
-return parseFloat(document.getElementById(id).value) || 0;
+let inventory = {};
+let miles = 0;
+
+function addItem(name,volume){
+
+if(!inventory[name]){
+inventory[name] = {qty:0, volume:volume};
 }
 
-function calc(){
+inventory[name].qty += 1;
+updateSummary();
+}
 
-let volume =
-v("sofa")*1.5 +
-v("chairs")*0.2 +
-v("tv")*0.3 +
-v("ltable")*1 +
-v("bed")*1.2 +
-v("wardrobe")*2 +
-v("dresser")*1 +
-v("fridge")*1.5 +
-v("wash")*1.2 +
-v("kboxes")*0.1 +
-v("gchairs")*0.3 +
-v("gtable")*1.2 +
-v("small")*0.1 +
-v("medium")*0.15 +
-v("large")*0.25 +
-v("wardbox")*1.8;
+function updateSummary(){
 
-let dismantle = v("dismantle") * 10;
-let assemble = v("assemble") * 12;
+let html = "";
+let total = 0;
 
-let distance = Math.floor(Math.random()*120)+10;
+for(let key in inventory){
+let item = inventory[key];
+let itemTotal = item.qty * item.volume;
+total += itemTotal;
 
-let price = (volume * 25) + (distance * 1.2) + dismantle + assemble;
+html += key + " x" + item.qty + " = " + itemTotal.toFixed(2) + " m³<br>";
+}
+
+if(total === 0){
+document.getElementById("summary").innerHTML = "No items selected";
+return;
+}
+
+html += "<hr>Total Volume: " + total.toFixed(2) + " m³";
+
+document.getElementById("summary").innerHTML = html;
+}
+
+function setMiles(value){
+miles = parseFloat(value) || 0;
+}
+
+function calculate(){
+
+let volume = 0;
+
+for(let key in inventory){
+volume += inventory[key].qty * inventory[key].volume;
+}
+
+let volumePrice = volume * 28;
+let distancePrice = miles * 1.50;
+
+let totalPrice = volumePrice + distancePrice;
 
 document.getElementById("result").innerHTML =
-"Volume: " + volume.toFixed(2) + " m³ | Distance: " + distance + " km";
-
-document.getElementById("price").innerHTML =
-"Total Price: £" + price.toFixed(2);
+"Volume: " + volume.toFixed(2) + " m³<br>" +
+"Miles: " + miles.toFixed(1) + "<br>" +
+"Volume Cost (£28/m³): £" + volumePrice.toFixed(2) + "<br>" +
+"Distance Cost (£1.50/mile): £" + distancePrice.toFixed(2) + "<br><br>" +
+"<b>Total Price: £" + totalPrice.toFixed(2) + "</b>";
 }
 
 </script>
+
+<div class="float">
+<a class="w" href="https://wa.me/447312814746">💬</a>
+<a class="e" href="mailto:admmoving@yahoo.com">✉️</a>
+</div>
 
 </body>
 </html>
