@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Smart Booking System V4</title>
+<title>ADM Moving LTD | Premium Removals System</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -11,15 +11,15 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Poppins,sans-serif;
-background:#f3f6ff;
+background:#f4f7ff;
 color:#1f2937;
 }
 
 /* HEADER */
 header{
-background:linear-gradient(135deg,#081c3a,#0b2a52);
+background:linear-gradient(135deg,#071a33,#0b2f5c);
 color:white;
-padding:25px 10%;
+padding:30px 8%;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -28,38 +28,39 @@ justify-content:space-between;
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:15px;
 }
 
 .logo-box{
-width:45px;
-height:45px;
+width:70px;
+height:70px;
 background:#22c55e;
-border-radius:10px;
+border-radius:16px;
 display:flex;
 align-items:center;
 justify-content:center;
+font-size:26px;
 font-weight:800;
-color:white;
-font-size:18px;
 }
 
-nav a{
-color:white;
-margin:0 12px;
-text-decoration:none;
-font-weight:600;
+header h1{
+font-size:28px;
 }
 
+header small{
+opacity:0.8;
+}
+
+/* HERO */
 .hero{
-position:relative;
 height:85vh;
+background:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80') center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-background:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80') center/cover;
+position:relative;
 }
 
 .hero::before{
@@ -71,11 +72,11 @@ background:rgba(0,0,0,0.55);
 
 .hero-content{
 position:relative;
-max-width:800px;
+max-width:900px;
 }
 
-.hero h1{
-font-size:52px;
+.hero h2{
+font-size:56px;
 margin-bottom:15px;
 }
 
@@ -86,85 +87,68 @@ opacity:0.9;
 
 .btn{
 margin-top:20px;
+padding:14px 26px;
 background:#22c55e;
 border:none;
-padding:14px 26px;
-border-radius:10px;
-font-weight:700;
 color:white;
+font-weight:700;
+border-radius:10px;
 cursor:pointer;
-transition:0.3s;
 }
 
-.btn:hover{background:#16a34a;transform:scale(1.03)}
-
+/* SECTIONS */
 section{
-padding:70px 10%;
+padding:70px 8%;
 }
 
 .title{
 text-align:center;
 font-size:36px;
-margin-bottom:25px;
-color:#0b2a52;
+margin-bottom:30px;
+color:#0b2f5c;
 }
 
-/* CARDS */
+/* INVENTORY */
+.category{
+margin-bottom:35px;
+background:white;
+padding:20px;
+border-radius:14px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.category h3{
+margin-bottom:15px;
+color:#0b2f5c;
+}
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:10px;
 }
 
-.card{
-background:white;
-padding:22px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{transform:translateY(-6px)}
-
-.icon{
-font-size:30px;
-margin-bottom:10px;
-}
-
-/* FORM */
-input,select{
-width:100%;
-padding:12px;
-margin:6px 0;
-border-radius:8px;
-border:1px solid #ccc;
-}
-
-table{
-width:100%;
-background:white;
-border-collapse:collapse;
-margin-top:15px;
-border-radius:12px;
-overflow:hidden;
-}
-
-th{
-background:#0b2a52;
-color:white;
-padding:12px;
-}
-
-td{
+.item{
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:10px;
 border-bottom:1px solid #eee;
 }
 
+input{
+width:60px;
+padding:6px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+/* RESULT */
 .result{
 font-size:20px;
 font-weight:700;
-margin-top:15px;
-color:#0b2a52;
+margin-top:20px;
+color:#0b2f5c;
 }
 
 /* FLOATING */
@@ -179,21 +163,12 @@ align-items:center;
 justify-content:center;
 color:white;
 font-size:22px;
-box-shadow:0 5px 15px rgba(0,0,0,0.25);
 text-decoration:none;
 }
 
 .whatsapp{bottom:20px;background:#25d366}
 .email{bottom:90px;background:#2563eb}
 
-/* ADMIN */
-.admin{
-background:white;
-padding:20px;
-border-radius:12px;
-margin-top:20px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
 </style>
 </head>
 
@@ -203,93 +178,106 @@ box-shadow:0 8px 20px rgba(0,0,0,0.08);
 <div class="logo">
 <div class="logo-box">ADM</div>
 <div>
-<h2>ADM Moving LTD</h2>
-<small>Professional UK Removals</small>
+<h1>ADM Moving LTD</h1>
+<small>Professional UK Removals & Packing Service</small>
 </div>
 </div>
-
-<nav>
-<a href="#services">Services</a>
-<a href="#booking">Booking</a>
-<a href="#admin">Admin</a>
-</nav>
 </header>
 
 <section class="hero">
 <div class="hero-content">
-<h1>Fast, Safe & Reliable Moving Service</h1>
-<p>Instant quotes based on real distance + inventory volume</p>
-<button class="btn" onclick="document.getElementById('booking').scrollIntoView()">Get Quote</button>
-</div>
-</section>
-
-<section id="services">
-<h2 class="title">Our Services</h2>
-
-<div class="grid">
-<div class="card"><div class="icon">🏠</div><b>House Removals</b><p>Full UK home moving service.</p></div>
-<div class="card"><div class="icon">📦</div><b>Packing</b><p>Professional packing service.</p></div>
-<div class="card"><div class="icon">🚚</div><b>Transport</b><p>Nationwide secure transport.</p></div>
-<div class="card"><div class="icon">🛠️</div><b>Dismantling</b><p>Furniture assembly & disassembly.</p></div>
+<h2>Fast & Reliable Moving Across The UK</h2>
+<p>Full household + garden inventory system with instant price calculation</p>
+<button class="btn" onclick="document.getElementById('booking').scrollIntoView()">Start Quote</button>
 </div>
 </section>
 
 <section id="booking">
-<h2 class="title">Booking System</h2>
+
+<h2 class="title">Full Inventory System</h2>
 
 <input id="from" placeholder="Moving From Address">
 <input id="to" placeholder="Moving To Address">
 
-<h3 style="margin-top:20px;">Inventory</h3>
+<!-- LIVING ROOM -->
+<div class="category">
+<h3>Living Room</h3>
+<div class="item">Sofa <input id="sofa" type="number" value="0"></div>
+<div class="item">Corner Sofa <input id="corner" type="number" value="0"></div>
+<div class="item">TV <input id="tv" type="number" value="0"></div>
+<div class="item">Coffee Table <input id="coffee" type="number" value="0"></div>
+<div class="item">Armchair <input id="chair" type="number" value="0"></div>
+</div>
 
-<table>
-<tr><th>Item</th><th>Qty</th><th>m³</th></tr>
+<!-- KITCHEN -->
+<div class="category">
+<h3>Kitchen</h3>
+<div class="item">Fridge <input id="fridge" type="number" value="0"></div>
+<div class="item">Freezer <input id="freezer" type="number" value="0"></div>
+<div class="item">Dining Table <input id="table" type="number" value="0"></div>
+<div class="item">Dining Chairs <input id="dchairs" type="number" value="0"></div>
+<div class="item">Washing Machine <input id="wash" type="number" value="0"></div>
+</div>
 
-<tr><td>Sofa</td><td><input id="sofa" type="number" value="0"></td><td>1.5</td></tr>
-<tr><td>Wardrobe</td><td><input id="wardrobe" type="number" value="0"></td><td>2.0</td></tr>
-<tr><td>Bed</td><td><input id="bed" type="number" value="0"></td><td>1.2</td></tr>
-<tr><td>Small Boxes</td><td><input id="small" type="number" value="0"></td><td>0.1</td></tr>
-<tr><td>Medium Boxes</td><td><input id="medium" type="number" value="0"></td><td>0.15</td></tr>
-<tr><td>Large Boxes</td><td><input id="large" type="number" value="0"></td><td>0.25</td></tr>
-</table>
+<!-- BEDROOM -->
+<div class="category">
+<h3>Bedroom</h3>
+<div class="item">Bed <input id="bed" type="number" value="0"></div>
+<div class="item">Wardrobe <input id="wardrobe" type="number" value="0"></div>
+<div class="item">Bedside Table <input id="side" type="number" value="0"></div>
+<div class="item">Chest of Drawers <input id="drawers" type="number" value="0"></div>
+</div>
 
-<button class="btn" onclick="calculate()">Calculate Quote</button>
+<!-- BATHROOM -->
+<div class="category">
+<h3>Bathroom</h3>
+<div class="item">Cabinet <input id="bathcab" type="number" value="0"></div>
+<div class="item">Mirror <input id="mirror" type="number" value="0"></div>
+<div class="item">Laundry Basket <input id="laundry" type="number" value="0"></div>
+</div>
+
+<!-- OFFICE -->
+<div class="category">
+<h3>Office</h3>
+<div class="item">Desk <input id="desk" type="number" value="0"></div>
+<div class="item">Office Chair <input id="ochair" type="number" value="0"></div>
+<div class="item">PC Setup <input id="pc" type="number" value="0"></div>
+</div>
+
+<!-- GARDEN -->
+<div class="category">
+<h3>Garden / Outdoor</h3>
+<div class="item">Garden Table <input id="gtable" type="number" value="0"></div>
+<div class="item">BBQ <input id="bbq" type="number" value="0"></div>
+<div class="item">Garden Chairs <input id="gchair" type="number" value="0"></div>
+<div class="item">Bike <input id="bike" type="number" value="0"></div>
+</div>
+
+<button class="btn" onclick="calculate()">Calculate Price</button>
 
 <div class="result" id="result"></div>
 
-<input id="name" placeholder="Full Name">
-<input id="phone" placeholder="Phone">
-<input id="email" placeholder="Email">
-
-<button class="btn" onclick="saveBooking()">Confirm Booking</button>
 </section>
 
-<section id="admin">
-<h2 class="title">Admin Dashboard</h2>
-<div class="admin" id="adminList"></div>
-</section>
-
-<a class="floating whatsapp" href="https://wa.me/447312814746" target="_blank">💬</a>
+<a class="floating whatsapp" href="https://wa.me/447312814746">💬</a>
 <a class="floating email" href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
-async function getCoords(addr){
-let r = await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+addr);
-let d = await r.json();
-if(!d[0]) return null;
-return [parseFloat(d[0].lat), parseFloat(d[0].lon)];
+async function getCoords(a){
+let r=await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+a);
+let d=await r.json();
+if(!d[0])return null;
+return [parseFloat(d[0].lat),parseFloat(d[0].lon)];
 }
 
 function km(a,b,c,d){
 const R=6371;
-let dLat=(c-a)*Math.PI/180;
-let dLon=(d-b)*Math.PI/180;
-let x=Math.sin(dLat/2)**2 + Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(dLon/2)**2;
-return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
+let x=(c-a)*Math.PI/180;
+let y=(d-b)*Math.PI/180;
+let z=Math.sin(x/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)**2;
+return R*2*Math.atan2(Math.sqrt(z),Math.sqrt(1-z));
 }
-
-let lastQuote={};
 
 async function calculate(){
 
@@ -301,54 +289,18 @@ if(!a||!b){alert("Address not found");return;}
 let distance=km(a[0],a[1],b[0],b[1]);
 
 let volume=
-(sofa.value*1.5)+
-(wardrobe.value*2)+
-(bed.value*1.2)+
-(small.value*0.1)+
-(medium.value*0.15)+
-(large.value*0.25);
+(sofa.value*1.5)+(corner.value*3)+(tv.value*0.5)+(coffee.value*0.6)+(chair.value*0.5)+
+(fridge.value*1.5)+(freezer.value*1.5)+(table.value*1.8)+(dchairs.value*0.2)+(wash.value*1.2)+
+(bed.value*1.5)+(wardrobe.value*2)+(side.value*0.5)+(drawers.value*1.2)+
+(bathcab.value*0.6)+(mirror.value*0.2)+(laundry.value*0.4)+
+(desk.value*1.2)+(ochair.value*0.4)+(pc.value*0.8)+
+(gtable.value*1.5)+(bbq.value*1.8)+(gchair.value*0.3)+(bike.value*0.5);
 
-let price=(volume*25)+(distance*1.5);
+let price=(volume*25)+(distance*1.6);
 
 result.innerHTML=
 "Distance: "+distance.toFixed(1)+" km | Volume: "+volume.toFixed(2)+" m³ | Price: £"+price.toFixed(2);
-
-lastQuote={distance,volume,price};
 }
-
-function saveBooking(){
-
-let list=JSON.parse(localStorage.getItem("bookings")||"[]");
-
-list.push({
-name:name.value,
-phone:phone.value,
-email:email.value,
-from:from.value,
-to:to.value,
-price:lastQuote.price
-});
-
-localStorage.setItem("bookings",JSON.stringify(list));
-
-loadAdmin();
-alert("Booking saved");
-}
-
-function loadAdmin(){
-
-let list=JSON.parse(localStorage.getItem("bookings")||"[]");
-
-adminList.innerHTML=list.map(b=>
-`<div class="card">
-<b>${b.name}</b><br>
-${b.from} → ${b.to}<br>
-Price: £${b.price.toFixed(2)}
-</div>`
-).join("");
-}
-
-loadAdmin();
 
 </script>
 
