@@ -1,251 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Booking System</title>
+<section id="services" class="section">
+  <div class="container">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <h2>Our Services</h2>
 
-<style>
-body{
-margin:0;
-font-family:Poppins;
-background:linear-gradient(135deg,#0b1f3a,#1e3a8a,#111827);
-color:white;
-}
+    <div class="grid">
 
-header{
-text-align:center;
-padding:25px;
-background:rgba(0,0,0,0.4);
-}
+      <div class="card">
+        <h3>House Removals</h3>
+        <p>Full home moving services across the UK, safe and efficient.</p>
+      </div>
 
-.logo{
-font-size:38px;
-font-weight:700;
-}
+      <div class="card">
+        <h3>Furniture Assembly</h3>
+        <p>We dismantle and reassemble all types of furniture.</p>
+      </div>
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
+      <div class="card">
+        <h3>Packing Service</h3>
+        <p>Professional packing and protection of all belongings.</p>
+      </div>
 
-.card{
-background:white;
-color:black;
-padding:20px;
-border-radius:14px;
-margin-top:20px;
-}
+      <div class="card">
+        <h3>Waste Removal</h3>
+        <p>Fast and responsible disposal of unwanted items.</p>
+      </div>
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:10px;
-}
+    </div>
+  </div>
+</section>
 
-input,textarea{
-width:100%;
-padding:10px;
-margin-top:5px;
-border-radius:8px;
-border:1px solid #ccc;
-}
+<section id="about" class="section alt">
+  <div class="container">
 
-button{
-width:100%;
-padding:15px;
-background:#22c55e;
-border:none;
-color:white;
-font-weight:bold;
-border-radius:10px;
-margin-top:15px;
-cursor:pointer;
-}
+    <h2>Why Choose ADM Moving LTD?</h2>
 
-.summary{
-background:#0f172a;
-color:white;
-padding:15px;
-margin-top:15px;
-border-radius:10px;
-}
+    <ul class="list">
+      <li>Fully insured removals service</li>
+      <li>Friendly and trained team</li>
+      <li>Affordable pricing</li>
+      <li>UK wide coverage</li>
+      <li>Fast response and flexible booking</li>
+    </ul>
 
-.floating{
-position:fixed;
-bottom:20px;
-right:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
+  </div>
+</section>
 
-.floating a{
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-text-decoration:none;
-font-size:22px;
-}
+<section id="gallery" class="section">
+  <div class="container">
 
-.whatsapp{background:#25d366;}
-.email{background:#3b82f6;}
-</style>
-</head>
+    <h2>Gallery</h2>
 
-<body>
+    <div class="grid">
+      <div class="img-box">Image 1</div>
+      <div class="img-box">Image 2</div>
+      <div class="img-box">Image 3</div>
+      <div class="img-box">Image 4</div>
+    </div>
 
-<header>
-<div class="logo">🚚 ADM MOVING LTD</div>
-<p>Booking System V2 FIXED</p>
-</header>
+  </div>
+</section>
 
-<div class="container">
+<section id="contact" class="section alt">
+  <div class="container">
 
-<div class="card">
-<h2>Client Details</h2>
-<div class="grid">
-<input id="name" placeholder="Full Name">
-<input id="phone" placeholder="Phone">
-<input id="email" placeholder="Email">
-<input id="date" type="date">
-</div>
-</div>
+    <h2>Contact Us</h2>
 
-<div class="card">
-<h2>Move Addresses</h2>
-<input id="from" placeholder="Moving From">
-<input id="to" placeholder="Moving To">
-</div>
+    <p>Phone & WhatsApp: 07312 814746</p>
+    <p>Email: admmoving@yahoo.com</p>
+    <p>Based in Corby, covering all UK</p>
 
-<div class="card">
-<h2>Inventory (m³)</h2>
+  </div>
+</section>
 
-<h3>Living</h3>
-Sofa <input id="sofa" type="number" value="0">
-Chair <input id="chair" type="number" value="0">
-TV <input id="tv" type="number" value="0">
-
-<h3>Bedroom</h3>
-Bed <input id="bed" type="number" value="0">
-Wardrobe <input id="wardrobe" type="number" value="0">
-Desk <input id="desk" type="number" value="0">
-
-<h3>Kitchen</h3>
-Fridge <input id="fridge" type="number" value="0">
-Table <input id="table" type="number" value="0">
-
-<h3>Garden</h3>
-Bike <input id="bike" type="number" value="0">
-
-<h3>Boxes</h3>
-Small <input id="small" type="number" value="0">
-Medium <input id="medium" type="number" value="0">
-Large <input id="large" type="number" value="0">
-
-<textarea id="extra" placeholder="Extra items not listed"></textarea>
-
-<button onclick="calculate()">Calculate Price</button>
-
-<div class="summary" id="summary">Fill details and calculate</div>
-</div>
-
-<div class="card">
-<h2>Booking</h2>
-<button onclick="send()">Request Booking</button>
-</div>
-
-</div>
-
-<div class="floating">
-<a class="whatsapp" href="https://wa.me/447312814746">💬</a>
-<a class="email" href="mailto:admmoving@yahoo.com">✉️</a>
-</div>
-
-<script>
-
-const m3 = {
-sofa:1.5, chair:0.3, tv:0.2,
-bed:1.2, wardrobe:2.0, desk:1.0,
-fridge:1.5, table:1.0,
-bike:0.5,
-small:0.1, medium:0.15, large:0.25
-};
-
-let miles = 0;
-
-async function getCoords(addr){
-let r = await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+addr);
-let d = await r.json();
-if(!d[0]) return null;
-return [parseFloat(d[0].lat), parseFloat(d[0].lon)];
-}
-
-function distance(a,b){
-const R=3959;
-const dLat=(b[0]-a[0])*Math.PI/180;
-const dLon=(b[1]-a[1])*Math.PI/180;
-
-const x =
-Math.sin(dLat/2)**2 +
-Math.cos(a[0]*Math.PI/180) *
-Math.cos(b[0]*Math.PI/180) *
-Math.sin(dLon/2)**2;
-
-return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
-}
-
-async function calculate(){
-
-let a = await getCoords(from.value);
-let b = await getCoords(to.value);
-
-if(!a || !b){
-alert("Address not found");
-return;
-}
-
-miles = distance(a,b);
-
-let volume =
-sofa.value*m3.sofa +
-chair.value*m3.chair +
-tv.value*m3.tv +
-bed.value*m3.bed +
-wardrobe.value*m3.wardrobe +
-desk.value*m3.desk +
-fridge.value*m3.fridge +
-table.value*m3.table +
-bike.value*m3.bike +
-small.value*m3.small +
-medium.value*m3.medium +
-large.value*m3.large;
-
-let price = (miles * 1.50) + (volume * 25);
-
-summary.innerHTML =
-"Distance: " + miles.toFixed(1) + " miles<br>" +
-"Volume: " + volume.toFixed(2) + " m³<br>" +
-"Price: £" + price.toFixed(2);
-}
-
-function send(){
-alert(
-"Booking Sent\n" +
-"Name: " + name.value + "\n" +
-"Phone: " + phone.value + "\n" +
-"Email: " + email.value
-);
-}
-
-</script>
-
-</body>
-</html>
+<footer>
+  <div class="container">
+    <p>© 2026 ADM Moving LTD. All rights reserved.</p>
+  </div>
+</footer>
