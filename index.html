@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD | Business System V4</title>
+<title>ADM Moving LTD | System V4.1</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -12,26 +12,24 @@
 body{
 margin:0;
 font-family:Poppins,sans-serif;
-background:
-linear-gradient(rgba(5,15,35,0.85),rgba(5,15,35,0.85)),
-url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-attachment:fixed;
+background:linear-gradient(135deg,#0b1f3a,#1e3a8a,#2563eb);
 color:#1f2937;
 }
 
+/* HEADER */
 header{
 background:#071a33;
 color:white;
 text-align:center;
-padding:30px;
+padding:25px;
 }
 
 .logo{
-font-size:48px;
+font-size:46px;
 font-weight:800;
 }
 
+/* NAV */
 nav{
 background:#0f2b52;
 padding:12px;
@@ -48,20 +46,23 @@ text-decoration:none;
 font-weight:600;
 }
 
+/* HERO */
 .hero{
 text-align:center;
 color:white;
-padding:80px 20px;
+padding:70px 20px;
 }
 
 .hero h1{font-size:52px;}
 .hero p{max-width:700px;margin:auto;font-size:18px;}
 
+/* SECTIONS */
 section{
-padding:60px 10%;
-background:rgba(255,255,255,0.95);
+background:white;
 margin:20px;
+padding:60px 10%;
 border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 .title{
@@ -70,6 +71,7 @@ font-size:34px;
 margin-bottom:25px;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -77,28 +79,28 @@ gap:15px;
 }
 
 .box{
-background:white;
+background:#f8fafc;
 padding:15px;
 border-radius:12px;
-box-shadow:0 6px 18px rgba(0,0,0,0.1);
+border:1px solid #e5e7eb;
 }
 
 label{
 font-weight:600;
-font-size:14px;
+font-size:13px;
 display:block;
-margin-top:10px;
+margin-top:8px;
 }
 
 input,select,textarea{
 width:100%;
-padding:10px;
+padding:8px;
 margin-top:5px;
 border-radius:8px;
-border:1px solid #ccc;
+border:1px solid #cbd5e1;
 }
 
-textarea{min-height:80px;}
+textarea{min-height:70px;}
 
 button{
 width:100%;
@@ -122,22 +124,13 @@ margin-top:20px;
 
 .price{
 text-align:center;
-font-size:34px;
+font-size:36px;
 font-weight:800;
 color:#16a34a;
 margin-top:10px;
 }
 
-.ads{
-text-align:center;
-background:#111827;
-color:white;
-padding:15px;
-margin:20px;
-border-radius:12px;
-font-size:14px;
-}
-
+/* FLOATING */
 .floating{
 position:fixed;
 right:20px;
@@ -169,7 +162,7 @@ text-decoration:none;
 
 <header>
 <div class="logo">🚚 ADM MOVING LTD</div>
-<p>Professional UK Removals System V4</p>
+<p>Full UK Removals System</p>
 </header>
 
 <nav>
@@ -179,11 +172,9 @@ text-decoration:none;
 </nav>
 
 <div class="hero">
-<h1>Full Smart Moving System</h1>
-<p>Calculate volume, distance, boxes, dismantling, waiting time & price instantly</p>
+<h1>Smart Moving Calculator</h1>
+<p>Rooms • Boxes • Distance • Price • Everything in one system</p>
 </div>
-
-<div class="ads">🚛 Special Offer: Book this week & get 10% OFF long distance moves</div>
 
 <!-- BOOKING -->
 <section id="booking">
@@ -212,16 +203,16 @@ text-decoration:none;
 </div>
 
 <div class="box">
-<label>Boxes Needed</label>
-Small <input id="b1" type="number" value="0">
-Medium <input id="b2" type="number" value="0">
-Large <input id="b3" type="number" value="0">
+<label>Boxes</label>
+Small Boxes <input id="b1" type="number" value="0">
+Medium Boxes <input id="b2" type="number" value="0">
+Large Boxes <input id="b3" type="number" value="0">
 Wardrobe Boxes <input id="b4" type="number" value="0">
 
 <label>Dismantle & Assembly</label>
 <select id="dismantle">
 <option value="0">No</option>
-<option value="30">Yes (+£30)</option>
+<option value="40">Yes (+£40)</option>
 </select>
 
 <label>Extra Notes</label>
@@ -233,39 +224,65 @@ Wardrobe Boxes <input id="b4" type="number" value="0">
 
 <!-- INVENTORY -->
 <section id="inventory">
-<h2 class="title">Inventory (Rooms + Custom Items)</h2>
+<h2 class="title">Inventory (Expanded Rooms)</h2>
 
 <div class="grid">
 
+<!-- LIVING ROOM -->
 <div class="box">
 <h3>Living Room</h3>
 Sofa <input id="sofa" type="number" value="0">
-TV <input id="tv" type="number" value="0">
+Corner Sofa <input id="corner" type="number" value="0">
 Armchair <input id="chair" type="number" value="0">
+TV <input id="tv" type="number" value="0">
+TV Unit <input id="tvunit" type="number" value="0">
+Coffee Table <input id="coffee" type="number" value="0">
+Bookcase <input id="book" type="number" value="0">
 Extra Items <textarea id="livingExtra"></textarea>
 </div>
 
+<!-- BEDROOM -->
 <div class="box">
 <h3>Bedroom</h3>
 Bed <input id="bed" type="number" value="0">
 Wardrobe <input id="wardrobe" type="number" value="0">
 Mattress <input id="mattress" type="number" value="0">
+Chest of Drawers <input id="drawers" type="number" value="0">
+Bedside Table <input id="bedside" type="number" value="0">
 Extra Items <textarea id="bedExtra"></textarea>
 </div>
 
+<!-- KITCHEN -->
 <div class="box">
 <h3>Kitchen</h3>
-Fridge <input id="fridge" type="number" value="0">
+Fridge Freezer <input id="fridge" type="number" value="0">
 Washing Machine <input id="wash" type="number" value="0">
-Table <input id="table" type="number" value="0">
+Dishwasher <input id="dish" type="number" value="0">
+Oven <input id="oven" type="number" value="0">
+Dining Table <input id="table" type="number" value="0">
+Kitchen Chairs <input id="kchair" type="number" value="0">
+Microwave <input id="micro" type="number" value="0">
 Extra Items <textarea id="kitchenExtra"></textarea>
 </div>
 
+<!-- BATHROOM -->
 <div class="box">
-<h3>Bathroom / Garden</h3>
-Bicycle <input id="bike" type="number" value="0">
-Garden Items <input id="garden" type="number" value="0">
+<h3>Bathroom</h3>
+Boxes <input id="bathbox" type="number" value="0">
+Laundry Basket <input id="laundry" type="number" value="0">
+Mirror <input id="mirror" type="number" value="0">
+Cabinet <input id="cabinet" type="number" value="0">
 Extra Items <textarea id="bathExtra"></textarea>
+</div>
+
+<!-- GARDEN -->
+<div class="box">
+<h3>Garden</h3>
+Bicycle <input id="bike" type="number" value="0">
+Garden Table <input id="gardenTable" type="number" value="0">
+Garden Chairs <input id="gardenChair" type="number" value="0">
+Lawnmower <input id="mower" type="number" value="0">
+Extra Items <textarea id="gardenExtra"></textarea>
 </div>
 
 </div>
@@ -286,6 +303,7 @@ Extra Items <textarea id="bathExtra"></textarea>
 </p>
 </section>
 
+<!-- FLOATING BUTTONS -->
 <div class="floating">
 <a class="whatsapp" href="https://wa.me/447312814746">💬</a>
 <a class="email" href="mailto:admmoving@yahoo.com">✉️</a>
@@ -293,12 +311,20 @@ Extra Items <textarea id="bathExtra"></textarea>
 
 <script>
 
-/* volumes */
+/* VOLUME VALUES */
 const v = {
-sofa:1.8,tv:0.3,chair:0.5,
-bed:1.5,wardrobe:2.2,mattress:1,
-fridge:1.2,wash:1.0,table:1.5,
-bike:0.6,garden:1.4,
+sofa:1.8, corner:2.5, chair:0.5, tv:0.3, tvunit:0.8,
+coffee:0.6, book:1.2,
+
+bed:1.5, wardrobe:2.2, mattress:1, drawers:1.1, bedside:0.3,
+
+fridge:1.3, wash:1.0, dish:0.9, oven:1.0, table:1.5,
+kchair:0.2, micro:0.3,
+
+bathbox:0.1, laundry:0.4, mirror:0.5, cabinet:0.8,
+
+bike:0.6, gardenTable:1.2, gardenChair:0.3, mower:1.0,
+
 b1:0.1,b2:0.15,b3:0.25,b4:0.6
 };
 
@@ -307,16 +333,17 @@ function calc(){
 let total = 0;
 
 for(let k in v){
-total += v[k] * (+document.getElementById(k).value || 0);
+let el = document.getElementById(k);
+if(el) total += v[k] * (+el.value || 0);
 }
 
 let distance = Math.floor(Math.random()*180)+20;
 let wait = +document.getElementById("wait").value;
 
-let price = (total*28) + (distance*1.3) + (wait*15) + (+document.getElementById("dismantle").value);
+let price = (total*30) + (distance*1.4) + (wait*12) + (+document.getElementById("dismantle").value);
 
 document.getElementById("out").innerHTML =
-"Volume: " + total.toFixed(2) + " m³ | Distance: " + distance + " miles";
+"Total Volume: " + total.toFixed(2) + " m³ | Distance: " + distance + " miles";
 
 document.getElementById("price").innerHTML =
 "£" + price.toFixed(2);
