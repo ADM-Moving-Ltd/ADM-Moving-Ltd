@@ -3,245 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ADM Moving LTD | Business System v2</title>
+<title>ADM Moving LTD | Business System V3</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<script>
-(function(){
-emailjs.init("YOUR_PUBLIC_KEY");
-})();
-</script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#eef3fb;color:#1f2937;scroll-behavior:smooth;}
 
-body{background:#eef3fb;color:#1f2937;}
+/* HEADER */
+header{background:#081c3a;color:white;text-align:center;padding:20px;}
 
-header{
-background:#081c3a;color:white;text-align:center;padding:20px;
-}
+/* NAV */
+nav{background:#10284d;text-align:center;padding:12px;position:sticky;top:0;}
+nav a{color:white;margin:0 12px;text-decoration:none;font-weight:600;}
+nav a:hover{color:#22c55e}
 
-nav{
-background:#10284d;text-align:center;padding:12px;position:sticky;top:0;
-}
-
-nav a{
-color:white;margin:0 15px;text-decoration:none;font-weight:600;
-}
-
+/* HERO */
 .hero{
-height:80vh;
-background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:white;
+height:85vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1600585154526-990dced4db0d') center/cover;
+display:flex;align-items:center;justify-content:center;text-align:center;color:white;
+padding:20px;
 }
 
-section{padding:60px 10%;}
+.hero h1{font-size:48px;}
+.btn{background:#22c55e;padding:14px 30px;color:white;text-decoration:none;border-radius:10px;margin-top:15px;display:inline-block}
 
-.box{
-background:white;padding:25px;border-radius:12px;max-width:900px;margin:auto;
-}
+/* SECTIONS */
+section{padding:70px 10%;}
+h2{text-align:center;margin-bottom:25px;color:#10284d}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);}
+
+/* BOOKING */
+.booking-box{background:white;padding:25px;border-radius:15px;max-width:1100px;margin:auto;box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
 
 input,select,textarea{
-width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #ccc;
+width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;
 }
 
-button{
-width:100%;padding:15px;background:#22c55e;color:white;border:none;
-border-radius:10px;font-weight:700;cursor:pointer;
+textarea{min-height:100px}
+
+/* INVENTORY */
+table{width:100%;margin-top:20px;border-collapse:collapse;}
+th{background:#10284d;color:white;padding:10px;}
+td{padding:10px;border-bottom:1px solid #ddd;}
+
+button{background:#22c55e;color:white;border:none;padding:14px;border-radius:10px;width:100%;cursor:pointer;font-weight:700}
+
+/* FLOAT */
+.email-float, .whatsapp-float{
+position:fixed;width:55px;height:55px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;
 }
 
-button:hover{background:#16a34a;}
-
-#map{height:350px;margin-top:20px;border-radius:12px;}
-
-.result{
-font-size:22px;margin-top:15px;font-weight:700;color:#081c3a;
-}
-
-footer{
-background:#081c3a;color:white;text-align:center;padding:20px;
-}
+.whatsapp-float{background:#25d366;bottom:20px;right:20px;}
+.email-float{background:#2563eb;bottom:85px;right:20px;}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>🚚 ADM Moving LTD</h1>
-<p>Business System v2 - Automated Booking Platform</p>
+<h1>ADM Moving LTD</h1>
+<p>Professional UK Removals System V3</p>
 </header>
 
 <nav>
+<a href="#services">Services</a>
 <a href="#booking">Booking</a>
-<a href="#map">Map</a>
+<a href="#inventory">Inventory</a>
 </nav>
 
-<div class="hero">
+<section class="hero">
 <div>
-<h1>Smart Booking System</h1>
-<p>Instant price • Distance • Email automation</p>
+<h1>Smart Moving System</h1>
+<p>Instant pricing + automatic booking email system</p>
+<a class="btn" href="#booking">Start Booking</a>
 </div>
-</div>
+</section>
 
-<!-- BOOKING -->
+<section id="services">
+<h2>Services</h2>
+<div class="grid">
+<div class="card">House Removals</div>
+<div class="card">Packing Service</div>
+<div class="card">Furniture Assembly</div>
+<div class="card">Office Moves</div>
+</div>
+</section>
+
 <section id="booking">
+<h2>Booking System V3</h2>
 
-<div class="box">
-
-<h2>Book Your Move</h2>
+<div class="booking-box">
 
 <form id="form">
 
+<div class="form-grid">
 <input name="name" placeholder="Full Name" required>
-<input name="phone" placeholder="Phone Number" required>
+<input name="phone" placeholder="Phone" required>
 <input name="email" placeholder="Email" required>
+<input type="date" name="date" id="moveDate" required>
 
-<input type="date" name="date" id="date" required>
+<input id="from" placeholder="From Address" required>
+<input id="to" placeholder="To Address" required>
+</div>
 
-<input name="from" id="from" placeholder="Moving From" required>
-<input name="to" id="to" placeholder="Moving To" required>
+<h3 style="margin-top:20px;">Inventory</h3>
 
-<textarea name="details" placeholder="Extra details"></textarea>
+<table>
+<tr><th>Item</th><th>Qty</th></tr>
+<tr><td>Sofa</td><td><input id="sofa" type="number" value="0"></td></tr>
+<tr><td>Bed</td><td><input id="bed" type="number" value="0"></td></tr>
+<tr><td>Wardrobe</td><td><input id="wardrobe" type="number" value="0"></td></tr>
+<tr><td>Boxes</td><td><input id="boxes" type="number" value="0"></td></tr>
+</table>
 
-<h3>Inventory</h3>
+<button type="button" onclick="calculatePrice()">Calculate Price</button>
 
-<input type="number" id="sofa" placeholder="Sofa" value="0">
-<input type="number" id="bed" placeholder="Bed" value="0">
-<input type="number" id="wardrobe" placeholder="Wardrobe" value="0">
-<input type="number" id="boxes" placeholder="Boxes" value="0">
+<h2 id="result"></h2>
 
-<button type="button" onclick="calculate()">Calculate Price</button>
-
-<div class="result" id="result">Price: £0</div>
-
-<button type="submit">Confirm Booking</button>
+<button type="submit">Send Booking</button>
 
 </form>
 
 </div>
-
 </section>
 
-<!-- MAP -->
-<section>
-<h2 style="text-align:center;">Route Map</h2>
-<div id="map"></div>
+<section id="inventory">
+<h2>Inventory System</h2>
+<p style="text-align:center;">Simple tracking system integrated into pricing engine.</p>
 </section>
 
-<footer>
-© 2026 ADM Moving LTD
-</footer>
+<a class="whatsapp-float" href="https://wa.me/447312814746">💬</a>
+<a class="email-float" href="mailto:admmoving@yahoo.com">✉️</a>
 
 <script>
 
-/* MAP INIT */
-let map = L.map('map').setView([51.5,-0.12],6);
+/* PRICE SYSTEM V3 */
+function calculatePrice(){
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-attribution:'OSM'
-}).addTo(map);
+let sofa = Number(document.getElementById("sofa").value);
+let bed = Number(document.getElementById("bed").value);
+let wardrobe = Number(document.getElementById("wardrobe").value);
+let boxes = Number(document.getElementById("boxes").value);
 
-let m1,m2,line;
+let volume =
+sofa*1.5 + bed*1.2 + wardrobe*2 + boxes*0.1;
 
-/* GEO */
-async function geo(addr){
-let r = await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+addr);
-let d = await r.json();
-if(!d[0]) return null;
-return [parseFloat(d[0].lat),parseFloat(d[0].lon)];
+let price = volume * 28;
+
+document.getElementById("result").innerText =
+"Estimated Price: £" + price.toFixed(2);
 }
 
-/* DISTANCE */
-function dist(a,b,c,d){
-const R=3959;
-const dLat=(c-a)*Math.PI/180;
-const dLon=(d-b)*Math.PI/180;
-const x=Math.sin(dLat/2)**2 +
-Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*
-Math.sin(dLon/2)**2;
-return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
-}
+/* EMAILJS (BOOKING SYSTEM) */
+(function(){
+emailjs.init("YOUR_PUBLIC_KEY");
+})();
 
-/* PRICE CALC */
-async function calculate(){
-
-let from=document.getElementById("from").value;
-let to=document.getElementById("to").value;
-
-let a=await geo(from);
-let b=await geo(to);
-
-if(!a||!b){
-alert("Invalid address");
-return;
-}
-
-if(m1) map.removeLayer(m1);
-if(m2) map.removeLayer(m2);
-if(line) map.removeLayer(line);
-
-m1=L.marker(a).addTo(map);
-m2=L.marker(b).addTo(map);
-line=L.polyline([a,b],{color:"blue"}).addTo(map);
-
-map.fitBounds(line.getBounds());
-
-let miles=dist(a[0],a[1],b[0],b[1]);
-
-let volume=
-(+sofa.value*1.5)+(+bed.value*1.2)+(+wardrobe.value*2)+(+boxes.value*0.1);
-
-let price=(volume*25)+(miles*1.2);
-
-document.getElementById("result").innerText=
-"Estimated: £"+price.toFixed(2)+" | "+miles.toFixed(1)+" miles";
-
-window.lastPrice = price;
-window.lastMiles = miles;
-}
-
-/* BOOKING + EMAILJS */
-document.getElementById("form").addEventListener("submit",function(e){
+document.getElementById("form").addEventListener("submit", function(e){
 e.preventDefault();
 
-let ref = "ADM-"+Date.now();
-
-let data={
-ref:ref,
+let data = {
 name:this.name.value,
 phone:this.phone.value,
 email:this.email.value,
 date:this.date.value,
 from:this.from.value,
-to:this.to.value,
-details:this.details.value,
-price:window.lastPrice || 0,
-miles:window.lastMiles || 0
+to:this.to.value
 };
 
-/* save backup */
-localStorage.setItem(ref,JSON.stringify(data));
-
-/* send to owner */
-emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",data);
-
-/* send confirmation */
-emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_CONFIRM",data);
-
-alert("Booking confirmed. Ref: "+ref);
+emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",data)
+.then(() => {
+alert("Booking sent successfully!");
 this.reset();
+})
+.catch(() => {
+alert("Error sending booking");
+});
 });
 
 </script>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 </body>
 </html>
