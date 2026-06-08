@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD - Smart Inventory V6</title>
+<title>ADM Moving LTD | Booking System</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -11,83 +11,70 @@
 body{
 margin:0;
 font-family:Poppins;
-background:linear-gradient(135deg,#0b1f3a,#1e3a8a,#0ea5e9);
-color:#111;
+background:linear-gradient(135deg,#0b1f3a,#1e3a8a,#111827);
+color:white;
 }
 
 header{
-background:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80') center/cover;
-height:50vh;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
 text-align:center;
-position:relative;
-}
-
-header::after{
-content:'';
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
-}
-
-header h1{
-z-index:1;
-font-size:50px;
-}
-
-section{
-background:white;
-margin:20px;
 padding:25px;
-border-radius:18px;
+background:rgba(0,0,0,0.4);
 }
 
-h2{color:#0b1f3a;}
+.logo{
+font-size:38px;
+font-weight:700;
+}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:12px;
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
 }
 
 .card{
-background:#f1f5f9;
-padding:12px;
-border-radius:12px;
-cursor:pointer;
-transition:0.2s;
-}
-
-.card:hover{
-transform:scale(1.02);
-background:#e2e8f0;
-}
-
-.summary{
-background:#0b1f3a;
-color:white;
+background:white;
+color:black;
 padding:20px;
-border-radius:12px;
-margin-top:15px;
+border-radius:14px;
+margin-top:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:8px;
+border:1px solid #ccc;
 }
 
 button{
-background:#16a34a;
-color:white;
-padding:14px;
-border:none;
 width:100%;
+padding:15px;
+background:#22c55e;
+border:none;
+color:white;
+font-weight:bold;
 border-radius:10px;
-font-size:16px;
+margin-top:15px;
 cursor:pointer;
 }
 
-button:hover{background:#15803d;}
+.summary{
+background:#0f172a;
+color:white;
+padding:15px;
+margin-top:15px;
+border-radius:10px;
+}
 
-.float{
+.floating{
 position:fixed;
 bottom:20px;
 right:20px;
@@ -96,134 +83,169 @@ flex-direction:column;
 gap:10px;
 }
 
-.float a{
+.floating a{
 width:55px;
 height:55px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:22px;
 color:white;
 text-decoration:none;
+font-size:22px;
 }
 
-.w{background:#25d366;}
-.e{background:#2563eb;}
-
+.whatsapp{background:#25d366;}
+.email{background:#3b82f6;}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>ADM MOVING LTD<br>Smart Moving System</h1>
+<div class="logo">🚚 ADM MOVING LTD</div>
+<p>Booking System V2 FIXED</p>
 </header>
 
-<section>
-<h2>Select Items</h2>
+<div class="container">
 
+<div class="card">
+<h2>Client Details</h2>
 <div class="grid">
+<input id="name" placeholder="Full Name">
+<input id="phone" placeholder="Phone">
+<input id="email" placeholder="Email">
+<input id="date" type="date">
+</div>
+</div>
 
-<div class="card" onclick="addItem('Sofa',3)">🛋 Sofa (3 m³)</div>
-<div class="card" onclick="addItem('Corner Sofa',5)">🛋 Corner Sofa (5 m³)</div>
-<div class="card" onclick="addItem('Bed',2.5)">🛏 Bed (2.5 m³)</div>
-<div class="card" onclick="addItem('Wardrobe',4)">🚪 Wardrobe (4 m³)</div>
-<div class="card" onclick="addItem('Dining Table',2)">🍽 Dining Table (2 m³)</div>
-<div class="card" onclick="addItem('Chair',0.3)">🪑 Chair (0.3 m³)</div>
-<div class="card" onclick="addItem('Fridge',1.8)">❄️ Fridge (1.8 m³)</div>
-<div class="card" onclick="addItem('Washing Machine',1.2)">🧺 Washing Machine (1.2 m³)</div>
+<div class="card">
+<h2>Move Addresses</h2>
+<input id="from" placeholder="Moving From">
+<input id="to" placeholder="Moving To">
+</div>
 
-<div class="card" onclick="addItem('Small Box',0.1)">📦 Small Box</div>
-<div class="card" onclick="addItem('Medium Box',0.15)">📦 Medium Box</div>
-<div class="card" onclick="addItem('Large Box',0.25)">📦 Large Box</div>
+<div class="card">
+<h2>Inventory (m³)</h2>
+
+<h3>Living</h3>
+Sofa <input id="sofa" type="number" value="0">
+Chair <input id="chair" type="number" value="0">
+TV <input id="tv" type="number" value="0">
+
+<h3>Bedroom</h3>
+Bed <input id="bed" type="number" value="0">
+Wardrobe <input id="wardrobe" type="number" value="0">
+Desk <input id="desk" type="number" value="0">
+
+<h3>Kitchen</h3>
+Fridge <input id="fridge" type="number" value="0">
+Table <input id="table" type="number" value="0">
+
+<h3>Garden</h3>
+Bike <input id="bike" type="number" value="0">
+
+<h3>Boxes</h3>
+Small <input id="small" type="number" value="0">
+Medium <input id="medium" type="number" value="0">
+Large <input id="large" type="number" value="0">
+
+<textarea id="extra" placeholder="Extra items not listed"></textarea>
+
+<button onclick="calculate()">Calculate Price</button>
+
+<div class="summary" id="summary">Fill details and calculate</div>
+</div>
+
+<div class="card">
+<h2>Booking</h2>
+<button onclick="send()">Request Booking</button>
+</div>
 
 </div>
-</section>
 
-<section>
-<h2>Distance (Miles)</h2>
-<input type="number" placeholder="Enter miles" oninput="setMiles(this.value)" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;">
-</section>
-
-<section>
-<h2>Inventory Summary</h2>
-<div class="summary" id="summary">No items selected</div>
-
-<button onclick="calculate()">Calculate Total Price</button>
-
-<div class="summary" id="result"></div>
-</section>
+<div class="floating">
+<a class="whatsapp" href="https://wa.me/447312814746">💬</a>
+<a class="email" href="mailto:admmoving@yahoo.com">✉️</a>
+</div>
 
 <script>
 
-let inventory = {};
+const m3 = {
+sofa:1.5, chair:0.3, tv:0.2,
+bed:1.2, wardrobe:2.0, desk:1.0,
+fridge:1.5, table:1.0,
+bike:0.5,
+small:0.1, medium:0.15, large:0.25
+};
+
 let miles = 0;
 
-function addItem(name,volume){
-
-if(!inventory[name]){
-inventory[name] = {qty:0, volume:volume};
+async function getCoords(addr){
+let r = await fetch("https://nominatim.openstreetmap.org/search?format=json&q="+addr);
+let d = await r.json();
+if(!d[0]) return null;
+return [parseFloat(d[0].lat), parseFloat(d[0].lon)];
 }
 
-inventory[name].qty += 1;
-updateSummary();
+function distance(a,b){
+const R=3959;
+const dLat=(b[0]-a[0])*Math.PI/180;
+const dLon=(b[1]-a[1])*Math.PI/180;
+
+const x =
+Math.sin(dLat/2)**2 +
+Math.cos(a[0]*Math.PI/180) *
+Math.cos(b[0]*Math.PI/180) *
+Math.sin(dLon/2)**2;
+
+return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
 }
 
-function updateSummary(){
+async function calculate(){
 
-let html = "";
-let total = 0;
+let a = await getCoords(from.value);
+let b = await getCoords(to.value);
 
-for(let key in inventory){
-let item = inventory[key];
-let itemTotal = item.qty * item.volume;
-total += itemTotal;
-
-html += key + " x" + item.qty + " = " + itemTotal.toFixed(2) + " m³<br>";
-}
-
-if(total === 0){
-document.getElementById("summary").innerHTML = "No items selected";
+if(!a || !b){
+alert("Address not found");
 return;
 }
 
-html += "<hr>Total Volume: " + total.toFixed(2) + " m³";
+miles = distance(a,b);
 
-document.getElementById("summary").innerHTML = html;
-}
+let volume =
+sofa.value*m3.sofa +
+chair.value*m3.chair +
+tv.value*m3.tv +
+bed.value*m3.bed +
+wardrobe.value*m3.wardrobe +
+desk.value*m3.desk +
+fridge.value*m3.fridge +
+table.value*m3.table +
+bike.value*m3.bike +
+small.value*m3.small +
+medium.value*m3.medium +
+large.value*m3.large;
 
-function setMiles(value){
-miles = parseFloat(value) || 0;
-}
+let price = (miles * 1.50) + (volume * 25);
 
-function calculate(){
-
-let volume = 0;
-
-for(let key in inventory){
-volume += inventory[key].qty * inventory[key].volume;
-}
-
-let volumePrice = volume * 28;
-let distancePrice = miles * 1.50;
-
-let totalPrice = volumePrice + distancePrice;
-
-document.getElementById("result").innerHTML =
+summary.innerHTML =
+"Distance: " + miles.toFixed(1) + " miles<br>" +
 "Volume: " + volume.toFixed(2) + " m³<br>" +
-"Miles: " + miles.toFixed(1) + "<br>" +
-"Volume Cost (£28/m³): £" + volumePrice.toFixed(2) + "<br>" +
-"Distance Cost (£1.50/mile): £" + distancePrice.toFixed(2) + "<br><br>" +
-"<b>Total Price: £" + totalPrice.toFixed(2) + "</b>";
+"Price: £" + price.toFixed(2);
+}
+
+function send(){
+alert(
+"Booking Sent\n" +
+"Name: " + name.value + "\n" +
+"Phone: " + phone.value + "\n" +
+"Email: " + email.value
+);
 }
 
 </script>
-
-<div class="float">
-<a class="w" href="https://wa.me/447312814746">💬</a>
-<a class="e" href="mailto:admmoving@yahoo.com">✉️</a>
-</div>
 
 </body>
 </html>
