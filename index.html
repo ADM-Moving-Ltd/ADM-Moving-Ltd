@@ -1,72 +1,106 @@
-/* NAVBAR */
-.navbar{
-    background:#0f8fdb;
-    color:white;
-    padding:15px 0;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+<body>
 
-.nav-container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="container nav-container">
+        <h1 class="logo">ADM Moving LTD</h1>
 
-.navbar a{
-    color:white;
-    margin-left:15px;
-    text-decoration:none;
-    font-weight:500;
-}
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#quote">Quote</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
 
-/* HERO */
-.hero{
-    height:70vh;
-    background:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h2>Reliable Removals Across the UK</h2>
+            <p>Fast, safe and affordable moving services</p>
+            <a href="#quote" class="hero-btn">Get a Free Quote</a>
+        </div>
+    </div>
+</section>
 
-.hero-overlay{
-    background:rgba(0,0,0,0.5);
-    width:100%;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+<!-- SERVICES -->
+<section id="services" class="section">
+    <div class="container">
 
-.hero-content{
-    color:white;
-}
+        <h2>Our Services</h2>
 
-.hero-btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
-    background:#0f8fdb;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-}
+        <div class="services-grid">
 
-/* SERVICES */
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-    gap:20px;
-    margin-top:30px;
-}
+            <div class="service-card">
+                <h3>House Removals</h3>
+                <p>Full home moving service with care and efficiency.</p>
+            </div>
 
-.service-card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.08);
-    text-align:center;
-}
+            <div class="service-card">
+                <h3>Office Moves</h3>
+                <p>Professional business relocation with minimal downtime.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Man & Van</h3>
+                <p>Flexible transport for small or urgent moves.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- QUOTE -->
+<section id="quote" class="section quote-section">
+  <div class="container">
+
+    <h2>Get a Free Quote</h2>
+
+    <form class="quote-form">
+
+      <div class="form-grid">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Moving From">
+        <input type="text" placeholder="Moving To">
+        <input type="date">
+      </div>
+
+      <textarea placeholder="Additional Information"></textarea>
+
+      <button type="submit">Request Quote</button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+
+    <h2>Contact Us</h2>
+
+    <div class="contact-box">
+        <p><strong>Phone:</strong> 07312 814746</p>
+        <p><strong>Email:</strong> admmoving@yahoo.com</p>
+        <p><strong>Based in:</strong> Corby, UK</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 ADM Moving LTD. All rights reserved.</p>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/447312814746" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
