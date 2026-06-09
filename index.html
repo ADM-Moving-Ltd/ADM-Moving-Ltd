@@ -13,20 +13,22 @@
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="container nav-container">
+
     <div class="logo">ADM Moving LTD</div>
+
+    <div class="menu-toggle">☰</div>
 
     <nav>
       <a href="#services">Services</a>
       <a href="#quote">Quote</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Premium Moving Services Across the UK</h1>
@@ -35,7 +37,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="section">
   <div class="container">
 
@@ -59,27 +60,27 @@
       </div>
 
     </div>
+
   </div>
 </section>
 
-<!-- QUOTE -->
-<section id="quote" class="section alt">
+<section id="quote" class="section">
   <div class="container">
 
     <h2 class="section-title">Get a Free Quote</h2>
 
-    <form class="form">
+    <form class="form" id="quoteForm">
 
       <div class="grid-form">
-        <input type="text" placeholder="Full Name" required>
-        <input type="text" placeholder="Phone Number" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="text" placeholder="Moving From">
-        <input type="text" placeholder="Moving To">
-        <input type="date">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="from" placeholder="Moving From">
+        <input type="text" name="to" placeholder="Moving To">
+        <input type="date" name="date">
       </div>
 
-      <textarea placeholder="Additional Information"></textarea>
+      <textarea name="message" placeholder="Additional Information"></textarea>
 
       <button type="submit">Request Quote</button>
 
@@ -88,7 +89,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
   <div class="container">
 
@@ -103,15 +103,22 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 ADM Moving LTD. All rights reserved.</p>
 </footer>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/447312814746" target="_blank">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<script>
+const menu = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".navbar nav");
+
+menu.addEventListener("click", () => {
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+});
+</script>
 
 </body>
 </html>
