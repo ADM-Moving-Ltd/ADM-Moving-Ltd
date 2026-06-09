@@ -1,4 +1,6 @@
-/* NAVBAR */
+body{
+    background:green !important;
+}/* NAVBAR */
 .navbar{
     background:#0f8fdb;
     color:white;
