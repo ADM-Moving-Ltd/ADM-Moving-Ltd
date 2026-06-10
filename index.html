@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,76 +9,246 @@
 
 <meta name="description" content="Professional removals company based in Corby. House removals, office relocations, furniture transport and man and van services across the UK.">
 
-<link rel="stylesheet" href="css/Style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-hero {
-  ```css
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:"Segoe UI",Arial,sans-serif;
+background:#f4f7fb;
+color:#1b1b1b;
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.navbar{
+background:rgba(40,199,111,0.95);
+padding:15px 0;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+color:white;
+font-size:28px;
+font-weight:800;
+letter-spacing:1px;
+}
+
+.navbar nav{
+display:flex;
+gap:20px;
+}
+
+.navbar nav a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.hero{
+min-height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+color:white;
 background:
-linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80") !important;
-background-size:cover !important;
-background-position:center !important;
-background-repeat:no-repeat !important;
-```
-
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  min-height: 85vh !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  color: white !important;
-  padding: 2rem !important;
-  position: relative !important;
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80");
+background-size:cover;
+background-position:center;
 }
 
-.hero-content {
-  max-width: 800px;
-  position: relative;
-  z-index: 2;
+.hero-content{
+max-width:800px;
 }
 
-.hero h1 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  margin-bottom: 1.2rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
 }
 
-.hero p {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  margin-bottom: 2.2rem;
-  line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+.hero p{
+font-size:20px;
+margin-bottom:30px;
 }
 
-.btn-primary {
-  background-color: #00b341;
-  color: white;
-  padding: 1rem 2.2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: background 0.3s ease;
-  display: inline-block;
-  border: none;
+.btn-primary{
+display:inline-block;
+background:#28c76f;
+color:white;
+padding:15px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.btn-primary:hover {
-  background-color: #009936;
+.btn-primary:hover{
+background:#1fa85b;
 }
+
+.section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+font-weight:800;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.card i{
+font-size:40px;
+color:#28c76f;
+margin-bottom:15px;
+}
+
+.form{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.grid-form{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+input,
+textarea{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+textarea{
+margin-top:15px;
+min-height:140px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:15px;
+border:none;
+background:#28c76f;
+color:white;
+font-weight:bold;
+border-radius:50px;
+cursor:pointer;
+}
+
+.contact{
+text-align:center;
+font-size:18px;
+}
+
+.contact p{
+margin-bottom:15px;
+}
+
+.contact i{
+color:#28c76f;
+}
+
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
+
+.grid-form{
+grid-template-columns:1fr;
+}
+
+.nav-container{
+flex-direction:column;
+gap:15px;
+}
+
+.navbar nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header class="navbar">
 <div class="container nav-container">
-<span style="font-size: 24px; font-weight: bold; color: white;">ADM Moving LTD</span>
+
+<div class="logo">
+ADM Moving LTD
+</div>
+
 <nav>
 <a href="#services">Services</a>
 <a href="#why">Why Us</a>
@@ -85,109 +256,152 @@ background-repeat:no-repeat !important;
 <a href="#quote">Quote</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </div>
 </header>
 
 <section class="hero">
 <div class="hero-content">
+
 <h1>Professional Moving Services Across The UK</h1>
-<p>Reliable House Removals, Office Relocations and Man & Van Services. Fast, Safe and Affordable.</p>
+
+<p>
+Reliable House Removals, Office Relocations and Man & Van Services.
+Fast, Safe and Affordable.
+</p>
+
 <a href="#quote" class="btn-primary">Get Free Quote</a>
+
 </div>
 </section>
 
 <section id="services" class="section">
 <div class="container">
+
 <h2 class="section-title">Our Services</h2>
+
 <div class="grid">
+
 <div class="card">
 <i class="fas fa-home"></i>
 <h3>House Removals</h3>
 <p>Professional home moving services with care and protection.</p>
 </div>
+
 <div class="card">
 <i class="fas fa-building"></i>
 <h3>Office Relocations</h3>
-<p>Efficient office moves with minimal disruption.</p>
+<p>Efficient office relocation with minimal disruption.</p>
 </div>
+
 <div class="card">
 <i class="fas fa-truck"></i>
 <h3>Man & Van</h3>
 <p>Flexible transport solutions for small and large jobs.</p>
 </div>
+
 </div>
+
 </div>
 </section>
 
 <section id="why" class="section">
 <div class="container">
+
 <h2 class="section-title">Why Choose ADM Moving LTD?</h2>
+
 <div class="grid">
+
 <div class="card">
 <i class="fas fa-shield-alt"></i>
 <h3>Fully Insured</h3>
 <p>Your belongings are protected throughout the move.</p>
 </div>
+
 <div class="card">
 <i class="fas fa-clock"></i>
 <h3>Reliable Service</h3>
 <p>Always on time and committed to customer satisfaction.</p>
 </div>
+
 <div class="card">
 <i class="fas fa-pound-sign"></i>
 <h3>Affordable Prices</h3>
-<p>Competitive rates with no hidden costs.</p>
+<p>Competitive prices with no hidden costs.</p>
 </div>
+
 </div>
+
 </div>
 </section>
 
 <section id="reviews" class="section">
 <div class="container">
+
 <h2 class="section-title">Customer Reviews</h2>
+
 <div class="grid">
+
 <div class="card">
 ⭐⭐⭐⭐⭐
 <p>Excellent service and very professional.</p>
 </div>
+
 <div class="card">
 ⭐⭐⭐⭐⭐
 <p>Fast, friendly and reliable.</p>
 </div>
+
 <div class="card">
 ⭐⭐⭐⭐⭐
 <p>Highly recommended for removals and transport.</p>
 </div>
+
 </div>
+
 </div>
 </section>
 
 <section id="quote" class="section">
 <div class="container">
+
 <h2 class="section-title">Get A Free Quote</h2>
-<form class="form" id="quoteForm">
+
+<form class="form">
+
 <div class="grid-form">
+
 <input type="text" placeholder="Full Name" required>
 <input type="text" placeholder="Phone Number" required>
 <input type="email" placeholder="Email Address" required>
 <input type="text" placeholder="Moving From">
 <input type="text" placeholder="Moving To">
 <input type="date">
+
 </div>
+
 <textarea placeholder="Additional Information"></textarea>
+
 <button type="submit">Request Quote</button>
+
 </form>
+
 </div>
 </section>
 
 <section id="contact" class="section">
 <div class="container">
+
 <h2 class="section-title">Contact Us</h2>
+
 <div class="contact">
+
 <p><i class="fas fa-phone"></i> 07312 814746</p>
 <p><i class="fas fa-envelope"></i> admmoving@yahoo.com</p>
 <p><i class="fas fa-location-dot"></i> Corby, Northamptonshire</p>
+
 </div>
+
 </div>
 </section>
 
@@ -201,3 +415,4 @@ background-repeat:no-repeat !important;
 
 </body>
 </html>
+
