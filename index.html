@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ADM Moving LTD | Removals & Man and Van UK</title>
-
-<meta name="description" content="Professional house removals, office moves and man and van services across the UK. Instant quotes and online booking available.">
+<title>ADM Moving LTD | Booking Pro System</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -16,14 +14,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
+font-family:Arial;
 }
 
 body{
-font-family:Arial, sans-serif;
-background:#f4f7fb;
-color:#1b1b1b;
-line-height:1.6;
+background:#f5f7fb;
+color:#222;
 }
 
 .container{
@@ -43,56 +39,41 @@ z-index:1000;
 
 .navbar a{
 color:white;
-text-decoration:none;
 margin:0 10px;
+text-decoration:none;
 font-weight:600;
 }
 
 /* HERO */
 .hero{
-height:85vh;
+height:75vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
 url("https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg");
 background-size:cover;
-background-position:center;
-padding:20px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:50px;
 }
 
 .hero p{
-font-size:20px;
-margin:15px 0;
+margin-top:10px;
 }
 
-.btn{
-background:#28c76f;
-color:white;
-padding:12px 22px;
-border-radius:25px;
-text-decoration:none;
-display:inline-block;
-font-weight:bold;
-}
-
-/* SECTIONS */
+/* SECTION */
 .section{
-padding:80px 0;
+padding:70px 0;
 }
 
 .title{
 text-align:center;
-font-size:34px;
-margin-bottom:40px;
-font-weight:800;
+font-size:30px;
+margin-bottom:30px;
 }
 
 /* GRID */
@@ -106,23 +87,17 @@ gap:20px;
 .card{
 background:white;
 padding:20px;
-border-radius:14px;
+border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-text-align:center;
-transition:0.2s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-}
-
-/* BUTTONS */
+/* BUTTON */
 button{
-padding:10px 12px;
-margin:5px;
-border:none;
 background:#28c76f;
 color:white;
+border:none;
+padding:10px 12px;
+margin:5px;
 border-radius:8px;
 cursor:pointer;
 font-weight:600;
@@ -132,26 +107,48 @@ button:hover{
 background:#1fa85b;
 }
 
-/* FORM */
-input,textarea,select{
+/* INPUT */
+input,select,textarea{
 width:100%;
 padding:10px;
 margin-top:10px;
-border:1px solid #ddd;
 border-radius:8px;
+border:1px solid #ddd;
 }
 
 /* CALCULATOR */
 .calc{
 background:white;
 padding:20px;
-border-radius:14px;
+border-radius:12px;
 }
 
+/* RESULT */
 .result{
-margin-top:15px;
+margin-top:10px;
 font-weight:bold;
-font-size:16px;
+}
+
+/* BOOKING CALENDAR */
+.calendar{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:8px;
+margin-top:15px;
+}
+
+.day{
+padding:10px;
+text-align:center;
+border-radius:8px;
+background:#eee;
+cursor:pointer;
+font-weight:600;
+}
+
+.day.selected{
+background:#28c76f;
+color:white;
 }
 
 /* WHATSAPP */
@@ -167,15 +164,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 color:white;
-font-size:26px;
-}
-
-/* SUCCESS MESSAGE */
-.success{
-display:none;
-color:green;
-margin-top:10px;
-font-weight:bold;
+font-size:25px;
+text-decoration:none;
 }
 
 /* FOOTER */
@@ -186,6 +176,13 @@ background:#111;
 color:white;
 }
 
+.success{
+display:none;
+color:green;
+font-weight:bold;
+margin-top:10px;
+}
+
 </style>
 </head>
 
@@ -193,69 +190,51 @@ color:white;
 
 <div class="navbar">
 <div class="container">
-<a href="#services">Services</a>
+<div style="color:white;font-weight:bold;">ADM Moving LTD</div>
+<div>
 <a href="#calc">Calculator</a>
 <a href="#booking">Booking</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
+</div>
 
+<!-- HERO -->
 <section class="hero">
 <div>
-<h1>Professional Removals UK</h1>
-<p>Fast, safe & affordable moving services</p>
-<a class="btn" href="#booking">Get Free Quote</a>
-</div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-<div class="container">
-<h2 class="title">Services</h2>
-
-<div class="grid">
-<div class="card"><i class="fas fa-home"></i><h3>House Removals</h3></div>
-<div class="card"><i class="fas fa-building"></i><h3>Office Moves</h3></div>
-<div class="card"><i class="fas fa-truck"></i><h3>Man & Van</h3></div>
-</div>
-
+<h1>PRO Booking System</h1>
+<p>Instant quotes + Smart booking calendar</p>
 </div>
 </section>
 
 <!-- CALCULATOR -->
 <section id="calc" class="section">
 <div class="container">
-<h2 class="title">Instant Quote Calculator</h2>
+<h2 class="title">Moving Calculator</h2>
 
 <div class="calc">
 
-<h3>Select Items</h3>
+<button onclick="add(3)">Sofa</button>
+<button onclick="add(3)">Bed</button>
+<button onclick="add(1)">Chair</button>
+<button onclick="add(2.5)">Wardrobe</button>
+<button onclick="add(0.2)">Box</button>
 
-<button onclick="addItem(3)">Sofa</button>
-<button onclick="addItem(3)">Bed</button>
-<button onclick="addItem(1)">Chair</button>
-<button onclick="addItem(2.5)">Wardrobe</button>
-<button onclick="addItem(0.2)">Box</button>
+<p>Volume: <b><span id="vol">0</span> m³</b></p>
 
-<p style="margin-top:10px;">Volume: <b><span id="vol">0</span> m³</b></p>
+<input type="number" id="distance" placeholder="Distance (miles)">
 
-<h3>Distance (miles)</h3>
-<input type="number" id="distance" placeholder="Enter distance">
-
-<h3>Van Type</h3>
-<select id="van" onchange="updateCalc()">
+<select id="van" onchange="calc()">
 <option value="1">Small Van</option>
 <option value="1.3">Medium Van</option>
 <option value="1.6">Large Van</option>
 </select>
 
 <div class="result">
-Base cost: £<span id="base">0</span><br>
-Distance cost: £<span id="dist">0</span><br>
-Total: £<span id="total">0</span>
+Base: £<span id="base">0</span><br>
+Distance: £<span id="dist">0</span><br>
+TOTAL: £<span id="total">0</span>
 </div>
-
-<button onclick="resetCalc()">Reset</button>
 
 </div>
 </div>
@@ -264,28 +243,31 @@ Total: £<span id="total">0</span>
 <!-- BOOKING -->
 <section id="booking" class="section">
 <div class="container">
-<h2 class="title">Book Your Move</h2>
 
-<form id="form" class="card"
-action="https://formsubmit.co/admmoving@yahoo.com"
-method="POST">
+<h2 class="title">Smart Booking Calendar</h2>
 
-<input type="hidden" name="_captcha" value="false">
+<div class="card">
 
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="text" name="phone" placeholder="Phone Number" required>
-<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" id="name" placeholder="Full Name">
+<input type="text" id="phone" placeholder="Phone">
 
-<input type="text" name="from" placeholder="Moving From" required>
-<input type="text" name="to" placeholder="Moving To" required>
+<h4>Select Day</h4>
+<div class="calendar" id="calendar"></div>
 
-<textarea name="message" placeholder="Extra details"></textarea>
+<h4>Select Time</h4>
+<select id="time">
+<option>08:00-10:00</option>
+<option>10:00-12:00</option>
+<option>12:00-14:00</option>
+<option>14:00-16:00</option>
+<option>16:00-18:00</option>
+</select>
 
-<button type="submit">Send Booking</button>
+<button onclick="sendBooking()">Confirm Booking</button>
 
-<p id="success" class="success">Request sent successfully. We will contact you soon.</p>
+<p id="msg" class="success">Booking sent successfully</p>
 
-</form>
+</div>
 
 </div>
 </section>
@@ -296,9 +278,8 @@ method="POST">
 <h2 class="title">Contact</h2>
 
 <div class="card">
-<p><i class="fas fa-phone"></i> 07312 814746</p>
-<p><i class="fas fa-envelope"></i> admmoving@yahoo.com</p>
-<p><i class="fas fa-location-dot"></i> Corby, UK</p>
+<p>Phone: 07312 814746</p>
+<p>Email: admmoving@yahoo.com</p>
 </div>
 
 </div>
@@ -308,55 +289,128 @@ method="POST">
 © 2026 ADM Moving LTD
 </footer>
 
-<a class="whatsapp" href="https://wa.me/447312814746" target="_blank">
+<a class="whatsapp" id="wa" target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
 
+/* ---------------- CALCULATOR ---------------- */
+
 let volume = 0;
 let base = 0;
 
-function addItem(v){
+function add(v){
 volume += v;
 base += v * 45;
-updateCalc();
+calc();
 }
 
-function updateCalc(){
+function calc(){
+let dist = document.getElementById("distance").value || 0;
+let van = document.getElementById("van").value;
 
-let dist = parseFloat(document.getElementById("distance").value || 0);
-let van = parseFloat(document.getElementById("van").value);
-
-let distCost = dist * 2.4;
-
-let total = (base + distCost) * van;
+let dCost = dist * 2.3;
+let total = (base + dCost) * van;
 
 document.getElementById("vol").innerText = volume.toFixed(1);
 document.getElementById("base").innerText = base.toFixed(0);
-document.getElementById("dist").innerText = distCost.toFixed(0);
+document.getElementById("dist").innerText = dCost.toFixed(0);
 document.getElementById("total").innerText = total.toFixed(0);
+
+/* update whatsapp */
+let msg =
+`Hi, I need a quote. Volume ${volume.toFixed(1)}m³, Total £${total.toFixed(0)}`;
+
+document.getElementById("wa").href =
+"https://wa.me/447312814746?text=" + encodeURIComponent(msg);
 }
 
-document.getElementById("distance").addEventListener("input", updateCalc);
+document.getElementById("distance").addEventListener("input", calc);
 
-function resetCalc(){
-volume = 0;
-base = 0;
+/* reset not added to keep code clean */
 
-document.getElementById("vol").innerText = 0;
-document.getElementById("base").innerText = 0;
-document.getElementById("dist").innerText = 0;
-document.getElementById("total").innerText = 0;
+/* ---------------- CALENDAR ---------------- */
 
-document.getElementById("distance").value = "";
+let selectedDate = null;
+let booked = JSON.parse(localStorage.getItem("bookedDates") || "[]");
+
+function generateCalendar(){
+
+let cal = document.getElementById("calendar");
+cal.innerHTML = "";
+
+let today = new Date();
+
+for(let i=0;i<14;i++){
+let d = new Date();
+d.setDate(today.getDate()+i);
+
+let dateStr = d.toISOString().split("T")[0];
+
+let div = document.createElement("div");
+div.className = "day";
+
+if(booked.includes(dateStr)){
+div.style.background = "#ccc";
+div.style.pointerEvents = "none";
+div.innerText = "Booked";
+}else{
+div.innerText = dateStr;
+div.onclick = ()=>{
+selectedDate = dateStr;
+
+document.querySelectorAll(".day").forEach(x=>x.classList.remove("selected"));
+div.classList.add("selected");
+};
 }
 
-document.getElementById("form").addEventListener("submit", function(){
-setTimeout(()=>{
-document.getElementById("success").style.display = "block";
-}, 700);
+cal.appendChild(div);
+}
+}
+
+generateCalendar();
+
+/* ---------------- BOOKING ---------------- */
+
+function sendBooking(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let time = document.getElementById("time").value;
+
+if(!name || !phone || !selectedDate){
+alert("Complete all fields");
+return;
+}
+
+/* save booked date */
+booked.push(selectedDate);
+localStorage.setItem("bookedDates", JSON.stringify(booked));
+
+/* whatsapp */
+let msg =
+`BOOKING:%0AName: ${name}%0APhone: ${phone}%0ADate: ${selectedDate}%0ATime: ${time}`;
+
+window.open("https://wa.me/447312814746?text="+msg, "_blank");
+
+/* email */
+fetch("https://formsubmit.co/admmoving@yahoo.com", {
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:name,
+phone:phone,
+date:selectedDate,
+time:time
+})
 });
+
+document.getElementById("msg").style.display = "block";
+
+/* refresh calendar */
+generateCalendar();
+}
 
 </script>
 
