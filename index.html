@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ADM Moving LTD | Booking Pro System</title>
+<title>ADM Moving LTD | Smart Booking System</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -18,56 +18,59 @@ font-family:Arial;
 }
 
 body{
-background:#f5f7fb;
+background:#eef2f6;
 color:#222;
 }
 
+/* NAV */
+.navbar{
+background:#28c76f;
+padding:14px 0;
+}
+
+.navbar .container{
+width:90%;
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:600;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg");
+background-size:cover;
+background-position:center;
+height:70vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{font-size:48px;}
+.hero p{margin-top:10px;font-size:18px;}
+
+/* LAYOUT */
 .container{
 width:90%;
 max-width:1100px;
 margin:auto;
 }
 
-/* NAV */
-.navbar{
-background:#28c76f;
-padding:15px;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.navbar a{
-color:white;
-margin:0 10px;
-text-decoration:none;
-font-weight:600;
-}
-
-/* HERO */
-.hero{
-height:75vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url("https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg");
-background-size:cover;
-}
-
-.hero h1{
-font-size:50px;
-}
-
-.hero p{
-margin-top:10px;
-}
-
-/* SECTION */
 .section{
-padding:70px 0;
+padding:60px 0;
 }
 
 .title{
@@ -76,10 +79,10 @@ font-size:30px;
 margin-bottom:30px;
 }
 
-/* GRID */
-.grid{
+/* DASHBOARD */
+.dashboard{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:1fr 1fr;
 gap:20px;
 }
 
@@ -91,7 +94,7 @@ border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* BUTTON */
+/* CALC BUTTONS */
 button{
 background:#28c76f;
 color:white;
@@ -103,12 +106,8 @@ cursor:pointer;
 font-weight:600;
 }
 
-button:hover{
-background:#1fa85b;
-}
-
-/* INPUT */
-input,select,textarea{
+/* INPUTS */
+input,select{
 width:100%;
 padding:10px;
 margin-top:10px;
@@ -116,34 +115,21 @@ border-radius:8px;
 border:1px solid #ddd;
 }
 
-/* CALCULATOR */
-.calc{
-background:white;
-padding:20px;
-border-radius:12px;
-}
-
-/* RESULT */
-.result{
-margin-top:10px;
-font-weight:bold;
-}
-
-/* BOOKING CALENDAR */
+/* CALENDAR */
 .calendar{
 display:grid;
 grid-template-columns:repeat(7,1fr);
-gap:8px;
-margin-top:15px;
+gap:6px;
+margin-top:10px;
 }
 
 .day{
-padding:10px;
+background:#f0f0f0;
+padding:8px;
+font-size:12px;
 text-align:center;
-border-radius:8px;
-background:#eee;
+border-radius:6px;
 cursor:pointer;
-font-weight:600;
 }
 
 .day.selected{
@@ -151,11 +137,17 @@ background:#28c76f;
 color:white;
 }
 
+/* RESULT */
+.result{
+margin-top:10px;
+font-weight:600;
+}
+
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
-right:20px;
-bottom:20px;
+right:18px;
+bottom:18px;
 width:55px;
 height:55px;
 background:#25D366;
@@ -164,23 +156,15 @@ display:flex;
 align-items:center;
 justify-content:center;
 color:white;
-font-size:25px;
-text-decoration:none;
+font-size:24px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-background:#111;
-color:white;
+/* MOBILE */
+@media(max-width:900px){
+.dashboard{
+grid-template-columns:1fr;
 }
-
-.success{
-display:none;
-color:green;
-font-weight:bold;
-margin-top:10px;
+.hero h1{font-size:32px;}
 }
 
 </style>
@@ -192,27 +176,30 @@ margin-top:10px;
 <div class="container">
 <div style="color:white;font-weight:bold;">ADM Moving LTD</div>
 <div>
-<a href="#calc">Calculator</a>
-<a href="#booking">Booking</a>
+<a href="#dash">System</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
 <div>
-<h1>PRO Booking System</h1>
-<p>Instant quotes + Smart booking calendar</p>
+<h1>Smart Booking System</h1>
+<p>Quotes + Calendar + Instant WhatsApp</p>
 </div>
 </section>
 
-<!-- CALCULATOR -->
-<section id="calc" class="section">
+<section id="dash" class="section">
 <div class="container">
-<h2 class="title">Moving Calculator</h2>
 
-<div class="calc">
+<h2 class="title">Booking Dashboard</h2>
+
+<div class="dashboard">
+
+<!-- LEFT: CALCULATOR -->
+<div class="card">
+
+<h3>Calculator</h3>
 
 <button onclick="add(3)">Sofa</button>
 <button onclick="add(3)">Bed</button>
@@ -220,7 +207,7 @@ margin-top:10px;
 <button onclick="add(2.5)">Wardrobe</button>
 <button onclick="add(0.2)">Box</button>
 
-<p>Volume: <b><span id="vol">0</span> m³</b></p>
+<p style="margin-top:10px;">Volume: <b><span id="vol">0</span> m³</b></p>
 
 <input type="number" id="distance" placeholder="Distance (miles)">
 
@@ -237,57 +224,46 @@ TOTAL: £<span id="total">0</span>
 </div>
 
 </div>
-</div>
-</section>
 
-<!-- BOOKING -->
-<section id="booking" class="section">
-<div class="container">
-
-<h2 class="title">Smart Booking Calendar</h2>
-
+<!-- RIGHT: BOOKING -->
 <div class="card">
 
-<input type="text" id="name" placeholder="Full Name">
+<h3>Booking Calendar</h3>
+
+<input type="text" id="name" placeholder="Name">
 <input type="text" id="phone" placeholder="Phone">
 
-<h4>Select Day</h4>
 <div class="calendar" id="calendar"></div>
 
-<h4>Select Time</h4>
 <select id="time">
-<option>08:00-10:00</option>
-<option>10:00-12:00</option>
-<option>12:00-14:00</option>
-<option>14:00-16:00</option>
-<option>16:00-18:00</option>
+<option>08-10</option>
+<option>10-12</option>
+<option>12-14</option>
+<option>14-16</option>
+<option>16-18</option>
 </select>
 
-<button onclick="sendBooking()">Confirm Booking</button>
+<button onclick="book()">Confirm Booking</button>
 
-<p id="msg" class="success">Booking sent successfully</p>
+<p id="msg" style="display:none;color:green;font-weight:bold;margin-top:10px;">
+Booked successfully
+</p>
+
+</div>
 
 </div>
 
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
 <div class="container">
-<h2 class="title">Contact</h2>
-
 <div class="card">
 <p>Phone: 07312 814746</p>
 <p>Email: admmoving@yahoo.com</p>
 </div>
-
 </div>
 </section>
-
-<footer>
-© 2026 ADM Moving LTD
-</footer>
 
 <a class="whatsapp" id="wa" target="_blank">
 <i class="fab fa-whatsapp"></i>
@@ -295,121 +271,91 @@ TOTAL: £<span id="total">0</span>
 
 <script>
 
-/* ---------------- CALCULATOR ---------------- */
-
-let volume = 0;
-let base = 0;
+/* CALC */
+let vol=0,base=0;
 
 function add(v){
-volume += v;
-base += v * 45;
+vol+=v;
+base+=v*45;
 calc();
 }
 
 function calc(){
-let dist = document.getElementById("distance").value || 0;
-let van = document.getElementById("van").value;
 
-let dCost = dist * 2.3;
-let total = (base + dCost) * van;
+let d=document.getElementById("distance").value||0;
+let v=document.getElementById("van").value;
 
-document.getElementById("vol").innerText = volume.toFixed(1);
-document.getElementById("base").innerText = base.toFixed(0);
-document.getElementById("dist").innerText = dCost.toFixed(0);
-document.getElementById("total").innerText = total.toFixed(0);
+let dist=d*2.2;
+let total=(base+dist)*v;
 
-/* update whatsapp */
-let msg =
-`Hi, I need a quote. Volume ${volume.toFixed(1)}m³, Total £${total.toFixed(0)}`;
+document.getElementById("vol").innerText=vol.toFixed(1);
+document.getElementById("base").innerText=base.toFixed(0);
+document.getElementById("dist").innerText=dist.toFixed(0);
+document.getElementById("total").innerText=total.toFixed(0);
 
-document.getElementById("wa").href =
-"https://wa.me/447312814746?text=" + encodeURIComponent(msg);
+document.getElementById("wa").href=
+"https://wa.me/447312814746?text="+
+encodeURIComponent(`Quote: ${vol.toFixed(1)}m³ total £${total.toFixed(0)}`);
 }
 
-document.getElementById("distance").addEventListener("input", calc);
+document.getElementById("distance").addEventListener("input",calc);
 
-/* reset not added to keep code clean */
+/* CALENDAR */
+let booked=JSON.parse(localStorage.getItem("b")||"[]");
+let sel=null;
 
-/* ---------------- CALENDAR ---------------- */
+function gen(){
 
-let selectedDate = null;
-let booked = JSON.parse(localStorage.getItem("bookedDates") || "[]");
+let c=document.getElementById("calendar");
+c.innerHTML="";
 
-function generateCalendar(){
-
-let cal = document.getElementById("calendar");
-cal.innerHTML = "";
-
-let today = new Date();
+let t=new Date();
 
 for(let i=0;i<14;i++){
-let d = new Date();
-d.setDate(today.getDate()+i);
+let d=new Date();
+d.setDate(t.getDate()+i);
+let ds=d.toISOString().split("T")[0];
 
-let dateStr = d.toISOString().split("T")[0];
+let el=document.createElement("div");
+el.className="day";
 
-let div = document.createElement("div");
-div.className = "day";
-
-if(booked.includes(dateStr)){
-div.style.background = "#ccc";
-div.style.pointerEvents = "none";
-div.innerText = "Booked";
+if(booked.includes(ds)){
+el.innerText="X";
+el.style.opacity="0.4";
 }else{
-div.innerText = dateStr;
-div.onclick = ()=>{
-selectedDate = dateStr;
-
-document.querySelectorAll(".day").forEach(x=>x.classList.remove("selected"));
-div.classList.add("selected");
-};
+el.innerText=ds.slice(5);
+el.onclick=()=>{sel=ds;document.querySelectorAll(".day").forEach(x=>x.classList.remove("selected"));el.classList.add("selected");};
 }
 
-cal.appendChild(div);
+c.appendChild(el);
 }
 }
 
-generateCalendar();
+gen();
 
-/* ---------------- BOOKING ---------------- */
+/* BOOK */
+function book(){
 
-function sendBooking(){
+let n=document.getElementById("name").value;
+let p=document.getElementById("phone").value;
+let t=document.getElementById("time").value;
 
-let name = document.getElementById("name").value;
-let phone = document.getElementById("phone").value;
-let time = document.getElementById("time").value;
+if(!n||!p||!sel)return alert("Fill all");
 
-if(!name || !phone || !selectedDate){
-alert("Complete all fields");
-return;
-}
+booked.push(sel);
+localStorage.setItem("b",JSON.stringify(booked));
 
-/* save booked date */
-booked.push(selectedDate);
-localStorage.setItem("bookedDates", JSON.stringify(booked));
+window.open(`https://wa.me/447312814746?text=${encodeURIComponent("Booking "+n+" "+sel+" "+t)}`);
 
-/* whatsapp */
-let msg =
-`BOOKING:%0AName: ${name}%0APhone: ${phone}%0ADate: ${selectedDate}%0ATime: ${time}`;
-
-window.open("https://wa.me/447312814746?text="+msg, "_blank");
-
-/* email */
-fetch("https://formsubmit.co/admmoving@yahoo.com", {
+fetch("https://formsubmit.co/admmoving@yahoo.com",{
 method:"POST",
 headers:{"Content-Type":"application/json"},
-body:JSON.stringify({
-name:name,
-phone:phone,
-date:selectedDate,
-time:time
-})
+body:JSON.stringify({name:n,phone:p,date:sel,time:t})
 });
 
-document.getElementById("msg").style.display = "block";
+document.getElementById("msg").style.display="block";
 
-/* refresh calendar */
-generateCalendar();
+gen();
 }
 
 </script>
