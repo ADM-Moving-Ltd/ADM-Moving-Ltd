@@ -31,7 +31,6 @@ body {
     line-height: 1.6;
 }
 
-/* NAVBAR */
 .navbar {
     background: var(--primary);
     padding: 18px 0;
@@ -96,7 +95,6 @@ body {
     width: 100%;
 }
 
-/* HERO SECTION */
 .hero {
     background: linear-gradient(rgba(30, 41, 59, 0.75), rgba(30, 41, 59, 0.75)),
                 url("https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg");
@@ -175,7 +173,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* CONTAINER */
 .container {
     width: 92%;
     max-width: 1200px;
@@ -206,7 +203,6 @@ body {
     border-radius: 2px;
 }
 
-/* DASHBOARD GRID */
 .dashboard {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -214,7 +210,6 @@ body {
     margin-bottom: 60px;
 }
 
-/* CARDS */
 .card {
     background: white;
     padding: 35px;
@@ -255,7 +250,6 @@ body {
     font-size: 26px;
 }
 
-/* SECTIUNI OBIECTE */
 .section-title-items {
     font-size: 18px;
     font-weight: 600;
@@ -327,7 +321,6 @@ body {
     font-weight: bold;
 }
 
-/* SERVICII SUPLIMENTARE */
 .extra-services {
     margin: 25px 0;
     padding: 18px;
@@ -412,7 +405,6 @@ body {
     border: 2px solid #bbf7d0;
 }
 
-/* INPUTS */
 input, select {
     width: 100%;
     padding: 14px 16px;
@@ -430,7 +422,6 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 3px rgba(40, 199, 111, 0.1);
 }
 
-/* RESULT BOX */
 .result-box {
     background: linear-gradient(135deg, #f0fdf4, #ecfccb);
     padding: 22px;
@@ -459,7 +450,6 @@ input:focus, select:focus, textarea:focus {
     border-top: 2px dashed #bbf7d0;
 }
 
-/* CALENDAR COMPLET */
 .calendar-container {
     background: #f8fafc;
     border-radius: 14px;
@@ -566,7 +556,6 @@ input:focus, select:focus, textarea:focus {
     text-decoration: line-through;
 }
 
-/* BOOK BUTTON */
 .book-btn {
     width: 100%;
     padding: 16px;
@@ -603,7 +592,6 @@ input:focus, select:focus, textarea:focus {
     border: 2px solid #bbf7d0;
 }
 
-/* SERVICES SECTION */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -652,7 +640,6 @@ input:focus, select:focus, textarea:focus {
     line-height: 1.7;
 }
 
-/* CONTACT SECTION */
 .contact-card {
     background: white;
     padding: 40px;
@@ -689,7 +676,6 @@ input:focus, select:focus, textarea:focus {
     justify-content: center;
 }
 
-/* WHATSAPP FLOATING */
 .whatsapp {
     position: fixed;
     right: 25px;
@@ -713,7 +699,6 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
 }
 
-/* FOOTER */
 footer {
     background: var(--secondary);
     color: white;
@@ -734,45 +719,24 @@ footer {
     font-size: 14px;
 }
 
-/* RESPONSIVE */
 @media(max-width: 900px) {
     .dashboard {
         grid-template-columns: 1fr;
     }
-    
-    .nav-links {
-        gap: 15px;
-    }
-    
-    .logo {
-        font-size: 20px;
-    }
-    
-    .card {
-        padding: 25px;
-    }
+    .nav-links { gap: 15px; }
+    .logo { font-size: 20px; }
+    .card { padding: 25px; }
 }
 
 @media(max-width: 600px) {
-    .nav-links a {
-        font-size: 14px;
-    }
-    
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .service-row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    .nav-links a { font-size: 14px; }
+    .hero h1 { font-size: 32px; }
+    .service-row { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
-
 <body>
-
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
 <div class="navbar">
     <div class="container">
         <div class="logo">
@@ -810,23 +774,17 @@ footer {
         <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fa-solid fa-home"></i>
-                </div>
+                <div class="service-icon"><i class="fa-solid fa-home"></i></div>
                 <h4>House Moving</h4>
                 <p>Complete house relocation with professional packing and safe transportation</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fa-solid fa-building"></i>
-                </div>
+                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
                 <h4>Office Moving</h4>
                 <p>Efficient office relocation to minimize downtime and keep your business running</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fa-solid fa-box"></i>
-                </div>
+                <div class="service-icon"><i class="fa-solid fa-box"></i></div>
                 <h4>Packing Service</h4>
                 <p>Professional packing materials and service to protect your belongings</p>
             </div>
@@ -840,307 +798,120 @@ footer {
         <h2 class="section-title">Smart Booking System</h2>
         <div class="dashboard">
 
-            <!-- LEFT: CALCULATOR CU SECTIUNI SI SERVICII SUPLIMENTARE -->
+            <!-- LEFT: CALCULATOR -->
             <div class="card">
                 <h3><i class="fa-solid fa-calculator"></i> Moving Cost Calculator</h3>
                 
-                <!-- SECTIUNEA LIVING -->
-                <h4 class="section-title-items">
-                    <i class="fa-solid fa-couch"></i> Living Room
-                </h4>
+                <!-- Living Room -->
+                <h4 class="section-title-items"><i class="fa-solid fa-couch"></i> Living Room</h4>
                 <div class="items-grid">
-                    <button class="item-btn" data-volume="3" data-name="Sofa">
-                        <i class="fa-solid fa-couch"></i>
-                        Sofa
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="2" data-name="Coffee Table">
-                        <i class="fa-solid fa-table"></i>
-                        Coffee Table
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.5" data-name="TV Unit">
-                        <i class="fa-solid fa-tv"></i>
-                        TV Unit
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.5" data-name="TV">
-                        <i class="fa-solid fa-tv"></i>
-                        TV
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1" data-name="Armchair">
-                        <i class="fa-solid fa-chair"></i>
-                        Armchair
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.8" data-name="Bookshelf">
-                        <i class="fa-solid fa-book"></i>
-                        Bookshelf
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.3" data-name="Lamp">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        Lamp
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.1" data-name="Picture">
-                        <i class="fa-solid fa-image"></i>
-                        Picture
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
+                    <button class="item-btn" data-volume="3" data-name="Sofa"><i class="fa-solid fa-couch"></i>Sofa<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="2" data-name="Coffee Table"><i class="fa-solid fa-table"></i>Coffee Table<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.5" data-name="TV Unit"><i class="fa-solid fa-tv"></i>TV Unit<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.5" data-name="TV"><i class="fa-solid fa-tv"></i>TV<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1" data-name="Armchair"><i class="fa-solid fa-chair"></i>Armchair<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.8" data-name="Bookshelf"><i class="fa-solid fa-book"></i>Bookshelf<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.3" data-name="Lamp"><i class="fa-solid fa-lightbulb"></i>Lamp<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.1" data-name="Picture"><i class="fa-solid fa-image"></i>Picture<span class="item-count" style="display:none">0</span></button>
                 </div>
 
-                <!-- SECTIUNEA DORMITOR -->
-                <h4 class="section-title-items">
-                    <i class="fa-solid fa-bed"></i> Bedroom
-                </h4>
+                <!-- Bedroom -->
+                <h4 class="section-title-items"><i class="fa-solid fa-bed"></i> Bedroom</h4>
                 <div class="items-grid">
-                    <button class="item-btn" data-volume="3" data-name="Double Bed">
-                        <i class="fa-solid fa-bed"></i>
-                        Double Bed
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="2.5" data-name="Wardrobe">
-                        <i class="fa-solid fa-wardrobe"></i>
-                        Wardrobe
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.8" data-name="Dresser">
-                        <i class="fa-solid fa-chair"></i>
-                        Dresser
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1" data-name="Nightstand">
-                        <i class="fa-solid fa-table"></i>
-                        Nightstand
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1" data-name="Single Bed">
-                        <i class="fa-solid fa-bed"></i>
-                        Single Bed
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.5" data-name="Mirror">
-                        <i class="fa-solid fa-mirror"></i>
-                        Mirror
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.2" data-name="Storage Box">
-                        <i class="fa-solid fa-box"></i>
-                        Storage Box
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
+                    <button class="item-btn" data-volume="3" data-name="Double Bed"><i class="fa-solid fa-bed"></i>Double Bed<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="2.5" data-name="Wardrobe"><i class="fa-solid fa-wardrobe"></i>Wardrobe<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.8" data-name="Dresser"><i class="fa-solid fa-chair"></i>Dresser<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1" data-name="Nightstand"><i class="fa-solid fa-table"></i>Nightstand<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1" data-name="Single Bed"><i class="fa-solid fa-bed"></i>Single Bed<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.5" data-name="Mirror"><i class="fa-solid fa-mirror"></i>Mirror<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.2" data-name="Storage Box"><i class="fa-solid fa-box"></i>Storage Box<span class="item-count" style="display:none">0</span></button>
                 </div>
 
-                <!-- SECTIUNEA BUCATARIE -->
-                <h4 class="section-title-items">
-                    <i class="fa-solid fa-kitchen-set"></i> Kitchen
-                </h4>
+                <!-- Kitchen -->
+                <h4 class="section-title-items"><i class="fa-solid fa-kitchen-set"></i> Kitchen</h4>
                 <div class="items-grid">
-                    <button class="item-btn" data-volume="2" data-name="Fridge Freezer">
-                        <i class="fa-solid fa-refrigerator"></i>
-                        Fridge Freezer
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.8" data-name="Washing Machine">
-                        <i class="fa-solid fa-washing-machine"></i>
-                        Washing Machine
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.5" data-name="Oven">
-                        <i class="fa-solid fa-fire-burner"></i>
-                        Oven
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.2" data-name="Dining Table">
-                        <i class="fa-solid fa-table"></i>
-                        Dining Table
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1" data-name="Chair">
-                        <i class="fa-solid fa-chair"></i>
-                        Chair
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1" data-name="Microwave">
-                        <i class="fa-solid fa-microwave"></i>
-                        Microwave
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.8" data-name="Dishwasher">
-                        <i class="fa-solid fa-shower"></i>
-                        Dishwasher
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.2" data-name="Kitchen Box">
-                        <i class="fa-solid fa-utensils"></i>
-                        Kitchen Box
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
+                    <button class="item-btn" data-volume="2" data-name="Fridge Freezer"><i class="fa-solid fa-refrigerator"></i>Fridge Freezer<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.8" data-name="Washing Machine"><i class="fa-solid fa-washing-machine"></i>Washing Machine<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.5" data-name="Oven"><i class="fa-solid fa-fire-burner"></i>Oven<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.2" data-name="Dining Table"><i class="fa-solid fa-table"></i>Dining Table<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1" data-name="Chair"><i class="fa-solid fa-chair"></i>Chair<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1" data-name="Microwave"><i class="fa-solid fa-microwave"></i>Microwave<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.8" data-name="Dishwasher"><i class="fa-solid fa-shower"></i>Dishwasher<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.2" data-name="Kitchen Box"><i class="fa-solid fa-utensils"></i>Kitchen Box<span class="item-count" style="display:none">0</span></button>
                 </div>
 
-                <!-- SECTIUNEA BAIE -->
-                <h4 class="section-title-items">
-                    <i class="fa-solid fa-bath"></i> Bathroom
-                </h4>
+                <!-- Bathroom -->
+                <h4 class="section-title-items"><i class="fa-solid fa-bath"></i> Bathroom</h4>
                 <div class="items-grid">
-                    <button class="item-btn" data-volume="0.5" data-name="Cabinet">
-                        <i class="fa-solid fa-box"></i>
-                        Cabinet
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.3" data-name="Mirror">
-                        <i class="fa-solid fa-mirror"></i>
-                        Mirror
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.2" data-name="Laundry Basket">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                        Laundry Basket
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.2" data-name="Bathroom Box">
-                        <i class="fa-solid fa-box"></i>
-                        Bathroom Box
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
+                    <button class="item-btn" data-volume="0.5" data-name="Cabinet"><i class="fa-solid fa-box"></i>Cabinet<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.3" data-name="Mirror"><i class="fa-solid fa-mirror"></i>Mirror<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.2" data-name="Laundry Basket"><i class="fa-solid fa-basket-shopping"></i>Laundry Basket<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.2" data-name="Bathroom Box"><i class="fa-solid fa-box"></i>Bathroom Box<span class="item-count" style="display:none">0</span></button>
                 </div>
 
-                <!-- SECTIUNEA GRADINA -->
-                <h4 class="section-title-items">
-                    <i class="fa-solid fa-tree"></i> Garden & Outdoor
-                </h4>
+                <!-- Garden -->
+                <h4 class="section-title-items"><i class="fa-solid fa-tree"></i> Garden & Outdoor</h4>
                 <div class="items-grid">
-                    <button class="item-btn" data-volume="2.5" data-name="Garden Table">
-                        <i class="fa-solid fa-table"></i>
-                        Garden Table
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.2" data-name="Garden Chair">
-                        <i class="fa-solid fa-chair"></i>
-                        Garden Chair
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="2" data-name="BBQ Grill">
-                        <i class="fa-solid fa-fire"></i>
-                        BBQ Grill
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1.5" data-name="Tool Box">
-                        <i class="fa-solid fa-screwdriver"></i>
-                        Tool Box
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="1" data-name="Plant Pot">
-                        <i class="fa-solid fa-seedling"></i>
-                        Plant Pot
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.8" data-name="Lawn Mower">
-                        <i class="fa-solid fa-truck-pickup"></i>
-                        Lawn Mower
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
+                    <button class="item-btn" data-volume="2.5" data-name="Garden Table"><i class="fa-solid fa-table"></i>Garden Table<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.2" data-name="Garden Chair"><i class="fa-solid fa-chair"></i>Garden Chair<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="2" data-name="BBQ Grill"><i class="fa-solid fa-fire"></i>BBQ Grill<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1.5" data-name="Tool Box"><i class="fa-solid fa-screwdriver"></i>Tool Box<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="1" data-name="Plant Pot"><i class="fa-solid fa-seedling"></i>Plant Pot<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.8" data-name="Lawn Mower"><i class="fa-solid fa-truck-pickup"></i>Lawn Mower<span class="item-count" style="display:none">0</span></button>
                 </div>
 
-                <!-- SECTIUNEA ALTE OBIECTE -->
-                <h4 class="section-title-items">
-                    <i class="fa-solid fa-box-open"></i> General Items
-                </h4>
+                <!-- General -->
+                <h4 class="section-title-items"><i class="fa-solid fa-box-open"></i> General Items</h4>
                 <div class="items-grid">
-                    <button class="item-btn" data-volume="1" data-name="Desk">
-                        <i class="fa-solid fa-laptop"></i>
-                        Desk
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.8" data-name="Vacuum Cleaner">
-                        <i class="fa-solid fa-vacuum"></i>
-                        Vacuum
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.2" data-name="Large Box">
-                        <i class="fa-solid fa-box"></i>
-                        Large Box
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.15" data-name="Medium Box">
-                        <i class="fa-solid fa-box"></i>
-                        Medium Box
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
-                    <button class="item-btn" data-volume="0.1" data-name="Small Box">
-                        <i class="fa-solid fa-box"></i>
-                        Small Box
-                        <span class="item-count" style="display:none">0</span>
-                    </button>
+                    <button class="item-btn" data-volume="1" data-name="Desk"><i class="fa-solid fa-laptop"></i>Desk<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.8" data-name="Vacuum Cleaner"><i class="fa-solid fa-vacuum"></i>Vacuum<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.2" data-name="Large Box"><i class="fa-solid fa-box"></i>Large Box<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.15" data-name="Medium Box"><i class="fa-solid fa-box"></i>Medium Box<span class="item-count" style="display:none">0</span></button>
+                    <button class="item-btn" data-volume="0.1" data-name="Small Box"><i class="fa-solid fa-box"></i>Small Box<span class="item-count" style="display:none">0</span></button>
                 </div>
 
-                <!-- SERVICII SUPLIMENTARE -->
+                <!-- Extra Services -->
                 <div class="extra-services">
-                    <h4 class="section-title-items" style="margin-top:0;">
-                        <i class="fa-solid fa-plus-circle"></i> Additional Services
-                    </h4>
-
-                    <!-- Asamblare & Dezasamblare -->
+                    <h4 class="section-title-items" style="margin-top:0;"><i class="fa-solid fa-plus-circle"></i> Additional Services</h4>
                     <div class="service-row">
-                        <span class="service-label">
-                            <i class="fa-solid fa-hammer"></i> Assembly & Dismantling
-                        </span>
+                        <span class="service-label"><i class="fa-solid fa-hammer"></i> Assembly & Dismantling</span>
                         <input type="number" id="dismantleCount" class="input-sm" min="0" value="0" oninput="calc()">
                         <span class="service-price">£25.00 each</span>
                     </div>
-
-                    <!-- Cutii -->
                     <div class="service-row">
-                        <span class="service-label">
-                            <i class="fa-solid fa-box"></i> Small Boxes
-                        </span>
+                        <span class="service-label"><i class="fa-solid fa-box"></i> Small Boxes</span>
                         <input type="number" id="smallBoxes" class="input-sm" min="0" value="0" oninput="calc()">
                         <span class="service-price">£2.50 each</span>
                     </div>
-
                     <div class="service-row">
-                        <span class="service-label">
-                            <i class="fa-solid fa-box"></i> Medium Boxes
-                        </span>
+                        <span class="service-label"><i class="fa-solid fa-box"></i> Medium Boxes</span>
                         <input type="number" id="mediumBoxes" class="input-sm" min="0" value="0" oninput="calc()">
                         <span class="service-price">£3.50 each</span>
                     </div>
-
                     <div class="service-row">
-                        <span class="service-label">
-                            <i class="fa-solid fa-box"></i> Large Boxes
-                        </span>
+                        <span class="service-label"><i class="fa-solid fa-box"></i> Large Boxes</span>
                         <input type="number" id="largeBoxes" class="input-sm" min="0" value="0" oninput="calc()">
                         <span class="service-price">£4.50 each</span>
                     </div>
-
-                    <!-- Ambalare & Deambalare -->
                     <div class="service-row">
-                        <span class="service-label">
-                            <i class="fa-solid fa-hand-holding-box"></i> Packing & Unpacking Service
-                        </span>
+                        <span class="service-label"><i class="fa-solid fa-hand-holding-box"></i> Packing Service</span>
                         <select id="packingService" onchange="calc()">
                             <option value="0">No</option>
                             <option value="1">Yes - £1.20 per box</option>
                         </select>
                     </div>
-                    <p class="packing-note">* Packing cost calculated based on total number of boxes selected above</p>
+                    <p class="packing-note">* Packing cost based on total boxes selected</p>
                 </div>
 
-                <!-- OBIECTE SUPLIMENTARE -->
                 <div class="extra-items">
                     <label><i class="fa-solid fa-pen"></i> Extra Items / Notes:</label>
-                    <textarea id="extraItems" placeholder="List any other items or special requirements here..."></textarea>
+                    <textarea id="extraItems" placeholder="List other items or special needs..."></textarea>
                 </div>
 
-                <div class="volume-display">
-                    Total Volume: <b><span id="vol">0</span> m³</b>
-                </div>
+                <div class="volume-display">Total Volume: <b><span id="vol">0</span> m³</b></div>
 
                 <label><i class="fa-solid fa-road"></i> Distance (miles)</label>
-                <input type="number" id="distance" placeholder="Enter distance in miles" oninput="calc()">
+                <input type="number" id="distance" placeholder="Enter distance" oninput="calc()">
 
                 <label><i class="fa-solid fa-truck"></i> Van Size</label>
                 <select id="van" onchange="calc()">
@@ -1150,42 +921,24 @@ footer {
                 </select>
 
                 <div class="result-box">
-                    <div class="result-row">
-                        <span>Base Price (per m³):</span>
-                        <span>£<span id="base">0</span></span>
-                    </div>
-                    <div class="result-row">
-                        <span>Distance Cost (£1.50/mile):</span>
-                        <span>£<span id="dist">0</span></span>
-                    </div>
-                    <div class="result-row extra" id="dismantleRow" style="display:none;">
-                        <span>Assembly & Dismantling:</span>
-                        <span>£<span id="dismantleCost">0</span></span>
-                    </div>
-                    <div class="result-row extra" id="boxesRow" style="display:none;">
-                        <span>Boxes Cost:</span>
-                        <span>£<span id="boxesCost">0</span></span>
-                    </div>
-                    <div class="result-row extra" id="packingRow" style="display:none;">
-                        <span>Packing & Unpacking:</span>
-                        <span>£<span id="packingCost">0</span></span>
-                    </div>
-                    <div class="result-row total">
-                        <span>Total Estimate:</span>
-                        <span>£<span id="total">0</span></span>
-                    </div>
+                    <div class="result-row"><span>Base Price:</span><span>£<span id="base">0</span></span></div>
+                    <div class="result-row"><span>Distance Cost:</span><span>£<span id="dist">0</span></span></div>
+                    <div class="result-row extra" id="dismantleRow" style="display:none;"><span>Assembly:</span><span>£<span id="dismantleCost">0</span></span></div>
+                    <div class="result-row extra" id="boxesRow" style="display:none;"><span>Boxes:</span><span>£<span id="boxesCost">0</span></span></div>
+                    <div class="result-row extra" id="packingRow" style="display:none;"><span>Packing:</span><span>£<span id="packingCost">0</span></span></div>
+                    <div class="result-row total"><span>Total Estimate:</span><span>£<span id="total">0</span></span></div>
                 </div>
             </div>
 
-            <!-- RIGHT: BOOKING CU CALENDAR COMPLET -->
+            <!-- RIGHT: BOOKING -->
             <div class="card">
                 <h3><i class="fa-solid fa-calendar-check"></i> Book Your Move</h3>
 
                 <label><i class="fa-solid fa-user"></i> Full Name</label>
-                <input type="text" id="name" placeholder="Enter your full name">
+                <input type="text" id="name" placeholder="Your full name">
 
                 <label><i class="fa-solid fa-phone"></i> Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your phone number">
+                <input type="text" id="phone" placeholder="Your phone number">
 
                 <label><i class="fa-solid fa-calendar-days"></i> Select Date</label>
                 <div class="calendar-container">
@@ -1195,33 +948,20 @@ footer {
                         <button class="calendar-nav" onclick="nextMonth()">&gt;</button>
                     </div>
                     <div class="weekdays">
-                        <div class="weekday">Mon</div>
-                        <div class="weekday">Tue</div>
-                        <div class="weekday">Wed</div>
-                        <div class="weekday">Thu</div>
-                        <div class="weekday">Fri</div>
-                        <div class="weekday">Sat</div>
-                        <div class="weekday">Sun</div>
+                        <div class="weekday">Mon</div><div class="weekday">Tue</div><div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div><div class="weekday">Fri</div><div class="weekday">Sat</div><div class="weekday">Sun</div>
                     </div>
                     <div class="calendar" id="calendar"></div>
                 </div>
 
                 <label><i class="fa-solid fa-clock"></i> Preferred Time</label>
                 <select id="time">
-                    <option>08:00 - 10:00</option>
-                    <option>10:00 - 12:00</option>
-                    <option>12:00 - 14:00</option>
-                    <option>14:00 - 16:00</option>
-                    <option>16:00 - 18:00</option>
+                    <option>08:00 - 10:00</option><option>10:00 - 12:00</option><option>12:00 - 14:00</option>
+                    <option>14:00 - 16:00</option><option>16:00 - 18:00</option>
                 </select>
 
-                <button class="book-btn" onclick="book()">
-                    <i class="fa-solid fa-check-circle"></i> Confirm Booking
-                </button>
-
-                <div id="msg" class="success-msg">
-                    <i class="fa-solid fa-check-circle"></i> Booking confirmed! We will contact you shortly.
-                </div>
+                <button class="book-btn" onclick="book()"><i class="fa-solid fa-check-circle"></i> Confirm Booking</button>
+                <div id="msg" class="success-msg">Booking confirmed! We will contact you shortly.</div>
             </div>
         </div>
     </div>
@@ -1232,35 +972,22 @@ footer {
     <div class="container">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-card">
-            <h3 style="margin-bottom: 30px; color: var(--secondary);">Contact Information</h3>
+            <h3 style="margin-bottom:30px; color:var(--secondary);">Contact Information</h3>
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>07312 814746</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>admmoving@yahoo.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Kettering, Northamptonshire</span>
-                </div>
+                <div class="contact-item"><i class="fa-solid fa-phone"></i><span>07312 814746</span></div>
+                <div class="contact-item"><i class="fa-solid fa-envelope"></i><span>admmoving@yahoo.com</span></div>
+                <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Corby, Northamptonshire</span></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" id="wa" target="_blank" title="Chat on WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
+<a class="whatsapp" id="wa" target="_blank" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-content">
-            <h3 style="margin-bottom: 15px;">ADM Moving LTD</h3>
+            <h3>ADM Moving LTD</h3>
             <p>Professional moving services across the United Kingdom</p>
         </div>
         <div class="footer-bottom">
@@ -1268,12 +995,12 @@ footer {
         </div>
     </div>
 </footer>
-
 <script>
-/* CALCULATOR LOGIC */
 let vol = 0, base = 0;
 let itemCounts = {};
 let currentDate = new Date();
+let selectedDate = null;
+
 const PRICE_PER_MILE = 1.50;
 const PRICE_DISMANTLE = 25.00;
 const PRICE_SMALL_BOX = 2.50;
@@ -1281,25 +1008,23 @@ const PRICE_MEDIUM_BOX = 3.50;
 const PRICE_LARGE_BOX = 4.50;
 const PRICE_PACKING_PER_BOX = 1.20;
 
-// Initializare contori
+// Butoane obiecte
 document.querySelectorAll('.item-btn').forEach(btn => {
     const name = btn.dataset.name;
     itemCounts[name] = 0;
-    
     btn.addEventListener('click', () => {
         const volume = parseFloat(btn.dataset.volume);
         const countEl = btn.querySelector('.item-count');
-        
         itemCounts[name]++;
         countEl.textContent = itemCounts[name];
         countEl.style.display = 'flex';
-        
         vol += volume;
         base += volume * 45;
         calc();
     });
 });
 
+// Calcul total
 function calc() {
     let d = parseFloat(document.getElementById("distance").value) || 0;
     let v = parseFloat(document.getElementById("van").value) || 1;
@@ -1333,13 +1058,91 @@ function calc() {
     document.getElementById("boxesRow").style.display = boxesCost > 0 ? "flex" : "none";
     document.getElementById("packingRow").style.display = packingCost > 0 ? "flex" : "none";
 
+    // Link WhatsApp
     const itemsList = Object.entries(itemCounts)
         .filter(([_, count]) => count > 0)
         .map(([name, count]) => `${count}x ${name}`)
         .join(', ');
     
     const extra = document.getElementById("extraItems").value.trim();
+    const dateStr = selectedDate ? selectedDate.toLocaleDateString('en-GB') : 'Not selected';
+    const time = document.getElementById("time").value;
 
     document.getElementById("wa").href =
         "https://wa.me/447312814746?text=" +
-        encodeURIComponent(`Hello! I need a quote:\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\n\n--- Additional Services ---\nAssembly/Dismantling: ${dismantleCount} items (£${dismantleCost.toFixed(2)
+        encodeURIComponent(`Hello! I need a quote:\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\nDate: ${dateStr}\nTime: ${time}\n\n--- Costs ---\nVolume: ${vol.toFixed(1)}m³\nBase: £${base.toFixed(0)}\nDistance: £${dist.toFixed(2)}\nAssembly: £${dismantleCost.toFixed(2)}\nBoxes: £${boxesCost.toFixed(2)}\nPacking: £${packingCost.toFixed(2)}\nTOTAL: £${total.toFixed(0)}`);
+}
+
+// Calendar
+function renderCalendar() {
+    const month = currentDate.getMonth();
+    const year = currentDate.getFullYear();
+    const firstDay = new Date(year, month, 1).getDay() || 7;
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const prevDays = firstDay - 1;
+    const today = new Date();
+
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    document.getElementById("calendarTitle").textContent = `${months[month]} ${year}`;
+
+    const calendarEl = document.getElementById("calendar");
+    calendarEl.innerHTML = '';
+
+    for (let i = 0; i < prevDays; i++) {
+        const dayEl = document.createElement('div');
+        dayEl.className = 'day other-month';
+        const prevDate = new Date(year, month, -prevDays + i + 1);
+        dayEl.textContent = prevDate.getDate();
+        calendarEl.appendChild(dayEl);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+        const dayEl = document.createElement('div');
+        const date = new Date(year, month, d);
+        const isPast = date < new Date(today.setHours(0,0,0,0));
+        const isToday = date.toDateString() === new Date().toDateString();
+        const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+
+        dayEl.className = `day ${isPast ? 'unavailable' : ''} ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}`;
+        dayEl.textContent = d;
+
+        if (!isPast) {
+            dayEl.addEventListener('click', () => {
+                document.querySelectorAll('.day').forEach(el => el.classList.remove('selected'));
+                dayEl.classList.add('selected');
+                selectedDate = date;
+                calc();
+            });
+        }
+        calendarEl.appendChild(dayEl);
+    }
+
+    const totalCells = prevDays + daysInMonth;
+    const nextDays = totalCells <= 35 ? 35 - totalCells : 42 - totalCells;
+    for (let i = 1; i <= nextDays; i++) {
+        const dayEl = document.createElement('div');
+        dayEl.className = 'day other-month';
+        dayEl.textContent = i;
+        calendarEl.appendChild(dayEl);
+    }
+}
+
+function prevMonth() {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+}
+
+function nextMonth() {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+}
+
+function book() {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    if (!name || !phone || !selectedDate) {
+        alert("Please fill your name, phone number and select a date!");
+        return;
+    }
+    document.getElementById("msg").style.display = "block";
+    calc();
