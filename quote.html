@@ -3,10 +3,538 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moving Volume Calculator | ADM Moving LTD</title>
+
+<title>ADM Moving LTD - Volume Calculator</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+color:#222;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+padding:20px;
+}
+
+header{
+background:linear-gradient(135deg,#0b5ed7,#084298);
+color:white;
+padding:40px;
+border-radius:15px;
+margin-bottom:30px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+opacity:.95;
+}
+
+.results{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-bottom:40px;
+}
+
+.result-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.result-card h3{
+margin-bottom:10px;
+color:#666;
+}
+
+.result-value{
+font-size:28px;
+font-weight:bold;
+color:#0b5ed7;
+}
+
+.section-title{
+margin:40px 0 20px;
+font-size:28px;
+color:#0b5ed7;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:18px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#666;
+margin-bottom:15px;
+}
+
+.controls{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+}
+
+.controls button{
+width:40px;
+height:40px;
+border:none;
+border-radius:50%;
+background:#0b5ed7;
+color:white;
+font-size:20px;
+cursor:pointer;
+}
+
+.controls span{
+font-size:20px;
+font-weight:bold;
+width:30px;
+display:inline-block;
+}
+
+.quote-form{
+margin-top:50px;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.quote-form h2{
+margin-bottom:20px;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.quote-form input,
+.quote-form textarea{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.quote-form textarea{
+height:120px;
+}
+
+.submit-btn{
+margin-top:20px;
+width:100%;
+padding:15px;
+background:#0b5ed7;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+header h1{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1>ADM Moving LTD</h1>
+<p>Professional Moving Volume Calculator</p>
+</header>
+
+<div class="results">
+
+<div class="result-card">
+<h3>Total Volume</h3>
+<div class="result-value" id="totalVolume">0.00 m³</div>
+</div>
+
+<div class="result-card">
+<h3>Vehicle</h3>
+<div class="result-value" id="vehicle">Small Van</div>
+</div>
+
+<div class="result-card">
+<h3>Crew</h3>
+<div class="result-value" id="crew">1 Mover</div>
+</div>
+
+<div class="result-card">
+<h3>Estimated Price</h3>
+<div class="result-value" id="price">£100 - £200</div>
+</div>
+
+</div>
+
+<h2 class="section-title">🛋️ Living Room</h2>
+
+<div class="grid">
+    <div class="card">
+<h3>3 Seater Sofa</h3>
+<p>2.0 m³</p>
+<div class="controls">
+<button onclick="changeQty('sofa3',-1)">-</button>
+<span id="sofa3">0</span>
+<button onclick="changeQty('sofa3',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>2 Seater Sofa</h3>
+<p>1.6 m³</p>
+<div class="controls">
+<button onclick="changeQty('sofa2',-1)">-</button>
+<span id="sofa2">0</span>
+<button onclick="changeQty('sofa2',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Corner Sofa</h3>
+<p>3.5 m³</p>
+<div class="controls">
+<button onclick="changeQty('cornerSofa',-1)">-</button>
+<span id="cornerSofa">0</span>
+<button onclick="changeQty('cornerSofa',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Armchair</h3>
+<p>0.8 m³</p>
+<div class="controls">
+<button onclick="changeQty('armchair',-1)">-</button>
+<span id="armchair">0</span>
+<button onclick="changeQty('armchair',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>TV Stand</h3>
+<p>1.0 m³</p>
+<div class="controls">
+<button onclick="changeQty('tvstand',-1)">-</button>
+<span id="tvstand">0</span>
+<button onclick="changeQty('tvstand',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>55 Inch TV</h3>
+<p>0.4 m³</p>
+<div class="controls">
+<button onclick="changeQty('tv55',-1)">-</button>
+<span id="tv55">0</span>
+<button onclick="changeQty('tv55',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Coffee Table</h3>
+<p>0.5 m³</p>
+<div class="controls">
+<button onclick="changeQty('coffee',-1)">-</button>
+<span id="coffee">0</span>
+<button onclick="changeQty('coffee',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Bookcase</h3>
+<p>1.5 m³</p>
+<div class="controls">
+<button onclick="changeQty('bookcase',-1)">-</button>
+<span id="bookcase">0</span>
+<button onclick="changeQty('bookcase',1)">+</button>
+</div>
+</div>
+
+</div>
+
+<h2 class="section-title">🛏️ Bedroom</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>King Size Bed</h3>
+<p>2.0 m³</p>
+<div class="controls">
+<button onclick="changeQty('kingBed',-1)">-</button>
+<span id="kingBed">0</span>
+<button onclick="changeQty('kingBed',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Double Bed</h3>
+<p>1.5 m³</p>
+<div class="controls">
+<button onclick="changeQty('doubleBed',-1)">-</button>
+<span id="doubleBed">0</span>
+<button onclick="changeQty('doubleBed',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Single Bed</h3>
+<p>1.0 m³</p>
+<div class="controls">
+<button onclick="changeQty('singleBed',-1)">-</button>
+<span id="singleBed">0</span>
+<button onclick="changeQty('singleBed',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Wardrobe 2 Door</h3>
+<p>2.0 m³</p>
+<div class="controls">
+<button onclick="changeQty('wardrobe2',-1)">-</button>
+<span id="wardrobe2">0</span>
+<button onclick="changeQty('wardrobe2',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Wardrobe 3 Door</h3>
+<p>3.0 m³</p>
+<div class="controls">
+<button onclick="changeQty('wardrobe3',-1)">-</button>
+<span id="wardrobe3">0</span>
+<button onclick="changeQty('wardrobe3',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Chest Of Drawers</h3>
+<p>0.8 m³</p>
+<div class="controls">
+<button onclick="changeQty('drawers',-1)">-</button>
+<span id="drawers">0</span>
+<button onclick="changeQty('drawers',1)">+</button>
+</div>
+</div>
+
+</div>
+
+<h2 class="section-title">🍽️ Kitchen</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Fridge Freezer</h3>
+<p>1.3 m³</p>
+<div class="controls">
+<button onclick="changeQty('fridge',-1)">-</button>
+<span id="fridge">0</span>
+<button onclick="changeQty('fridge',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Washing Machine</h3>
+<p>0.5 m³</p>
+<div class="controls">
+<button onclick="changeQty('washer',-1)">-</button>
+<span id="washer">0</span>
+<button onclick="changeQty('washer',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Dishwasher</h3>
+<p>0.5 m³</p>
+<div class="controls">
+<button onclick="changeQty('dishwasher',-1)">-</button>
+<span id="dishwasher">0</span>
+<button onclick="changeQty('dishwasher',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Dining Table</h3>
+<p>1.2 m³</p>
+<div class="controls">
+<button onclick="changeQty('table',-1)">-</button>
+<span id="table">0</span>
+<button onclick="changeQty('table',1)">+</button>
+</div>
+</div>
+
+</div>
+<h2 class="section-title">🚲 Garage</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Bicycle</h3>
+<p>0.6 m³</p>
+<div class="controls">
+<button onclick="changeQty('bike',-1)">-</button>
+<span id="bike">0</span>
+<button onclick="changeQty('bike',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Tool Box</h3>
+<p>0.3 m³</p>
+<div class="controls">
+<button onclick="changeQty('toolbox',-1)">-</button>
+<span id="toolbox">0</span>
+<button onclick="changeQty('toolbox',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Lawn Mower</h3>
+<p>0.8 m³</p>
+<div class="controls">
+<button onclick="changeQty('mower',-1)">-</button>
+<span id="mower">0</span>
+<button onclick="changeQty('mower',1)">+</button>
+</div>
+</div>
+
+</div>
+
+<h2 class="section-title">🌳 Garden</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Garden Table</h3>
+<p>1.0 m³</p>
+<div class="controls">
+<button onclick="changeQty('gardenTable',-1)">-</button>
+<span id="gardenTable">0</span>
+<button onclick="changeQty('gardenTable',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Garden Chair</h3>
+<p>0.2 m³</p>
+<div class="controls">
+<button onclick="changeQty('gardenChair',-1)">-</button>
+<span id="gardenChair">0</span>
+<button onclick="changeQty('gardenChair',1)">+</button>
+</div>
+</div>
+
+<div class="card">
+<h3>BBQ</h3>
+<p>0.8 m³</p>
+<div class="controls">
+<button onclick="changeQty('bbq',-1)">-</button>
+<span id="bbq">0</span>
+<button onclick="changeQty('bbq',1)">+</button>
+</div>
+</div>
+
+</div>
+
+<div class="quote-form">
+
+<h2>Request a Quote</h2>
+
+<div class="form-grid">
+
+<div>
+<input type="text" placeholder="Full Name">
+</div>
+
+<div>
+<input type="tel" placeholder="Phone Number">
+</div>
+
+<div>
+<input type="email" placeholder="Email Address">
+</div>
+
+<div>
+<input type="date">
+</div>
+
+<div>
+<input type="text" placeholder="Moving From">
+</div>
+
+<div>
+<input type="text" placeholder="Moving To">
+</div>
+
+</div>
+
+<textarea placeholder="Additional Information"></textarea>
+
+<button class="submit-btn">
+Request Quote
+</button>
+
+</div>
+
+</div>
+
 <script>
 
 const items = {
+
 sofa3:{qty:0,volume:2},
 sofa2:{qty:0,volume:1.6},
 cornerSofa:{qty:0,volume:3.5},
@@ -21,7 +549,21 @@ doubleBed:{qty:0,volume:1.5},
 singleBed:{qty:0,volume:1},
 wardrobe2:{qty:0,volume:2},
 wardrobe3:{qty:0,volume:3},
-drawers:{qty:0,volume:0.8}
+drawers:{qty:0,volume:0.8},
+
+fridge:{qty:0,volume:1.3},
+washer:{qty:0,volume:0.5},
+dishwasher:{qty:0,volume:0.5},
+table:{qty:0,volume:1.2},
+
+bike:{qty:0,volume:0.6},
+toolbox:{qty:0,volume:0.3},
+mower:{qty:0,volume:0.8},
+
+gardenTable:{qty:0,volume:1},
+gardenChair:{qty:0,volume:0.2},
+bbq:{qty:0,volume:0.8}
+
 };
 
 function changeQty(item,value){
@@ -87,510 +629,6 @@ document.getElementById("price").innerHTML =
 price;
 }
 
-</script>
-
-</div>
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
-    margin:0;
-    padding:20px;
-}
-
-.container{
-    max-width:1400px;
-    margin:auto;
-}
-
-h1{
-    text-align:center;
-    color:#0b5ed7;
-    margin-bottom:5px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:30px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-    gap:15px;
-    margin-bottom:40px;
-}
-
-.card{
-    background:white;
-    border-radius:12px;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
-
-.card h3{
-    margin:0 0 10px;
-}
-
-.card button{
-    width:40px;
-    height:40px;
-    border:none;
-    border-radius:50%;
-    background:#0b5ed7;
-    color:white;
-    cursor:pointer;
-    font-size:20px;
-}
-
-.card span{
-    display:inline-block;
-    width:40px;
-    font-weight:bold;
-}
-
-.results{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-bottom:40px;
-}
-
-.result-card{
-    background:white;
-    border-radius:12px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
-
-.result-card div{
-    font-size:24px;
-    font-weight:bold;
-    color:#0b5ed7;
-}
-
-h2{
-    color:#222;
-    margin-top:40px;
-}
-</head>
-
-<body>
-    <div class="container">
-
-<h1>ADM Moving LTD</h1>
-<p class="subtitle">Professional Moving Volume Calculator</p>
-
-<div class="results">
-
-<div class="result-card">
-<h3>Total Volume</h3>
-<div id="totalVolume">0.00 m³</div>
-</div>
-
-<div class="result-card">
-<h3>Vehicle</h3>
-<div id="vehicle">Small Van</div>
-</div>
-
-<div class="result-card">
-<h3>Crew</h3>
-<div id="crew">1 Mover</div>
-</div>
-
-<div class="result-card">
-<h3>Estimated Price</h3>
-<div id="price">£0 - £0</div>
-</div>
-
-</div>
-
-<h2>🛋️ Living Room</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>3 Seater Sofa</h3>
-<p>2.0 m³</p>
-<button onclick="changeQty('sofa3',-1)">-</button>
-<span id="sofa3">0</span>
-<button onclick="changeQty('sofa3',1)">+</button>
-</div>
-
-<div class="card">
-<h3>2 Seater Sofa</h3>
-<p>1.6 m³</p>
-<button onclick="changeQty('sofa2',-1)">-</button>
-<span id="sofa2">0</span>
-<button onclick="changeQty('sofa2',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Corner Sofa</h3>
-<p>3.5 m³</p>
-<button onclick="changeQty('cornerSofa',-1)">-</button>
-<span id="cornerSofa">0</span>
-<button onclick="changeQty('cornerSofa',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Armchair</h3>
-<p>0.8 m³</p>
-<button onclick="changeQty('armchair',-1)">-</button>
-<span id="armchair">0</span>
-<button onclick="changeQty('armchair',1)">+</button>
-</div>
-
-<div class="card">
-<h3>TV Stand</h3>
-<p>1.0 m³</p>
-<button onclick="changeQty('tvstand',-1)">-</button>
-<span id="tvstand">0</span>
-<button onclick="changeQty('tvstand',1)">+</button>
-</div>
-
-<div class="card">
-<h3>55 Inch TV</h3>
-<p>0.4 m³</p>
-<button onclick="changeQty('tv55',-1)">-</button>
-<span id="tv55">0</span>
-<button onclick="changeQty('tv55',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Coffee Table</h3>
-<p>0.5 m³</p>
-<button onclick="changeQty('coffee',-1)">-</button>
-<span id="coffee">0</span>
-<button onclick="changeQty('coffee',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Bookcase</h3>
-<p>1.5 m³</p>
-<button onclick="changeQty('bookcase',-1)">-</button>
-<span id="bookcase">0</span>
-<button onclick="changeQty('bookcase',1)">+</button>
-</div>
-
-</div>
-
-<h2>🛏️ Bedroom</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>King Size Bed</h3>
-<p>2.0 m³</p>
-<button onclick="changeQty('kingBed',-1)">-</button>
-<span id="kingBed">0</span>
-<button onclick="changeQty('kingBed',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Double Bed</h3>
-<p>1.5 m³</p>
-<button onclick="changeQty('doubleBed',-1)">-</button>
-<span id="doubleBed">0</span>
-<button onclick="changeQty('doubleBed',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Single Bed</h3>
-<p>1.0 m³</p>
-<button onclick="changeQty('singleBed',-1)">-</button>
-<span id="singleBed">0</span>
-<button onclick="changeQty('singleBed',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Wardrobe 2 Door</h3>
-<p>2.0 m³</p>
-<button onclick="changeQty('wardrobe2',-1)">-</button>
-<span id="wardrobe2">0</span>
-<button onclick="changeQty('wardrobe2',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Wardrobe 3 Door</h3>
-<p>3.0 m³</p>
-<button onclick="changeQty('wardrobe3',-1)">-</button>
-<span id="wardrobe3">0</span>
-<button onclick="changeQty('wardrobe3',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Chest Of Drawers</h3>
-<p>0.8 m³</p>
-<button onclick="changeQty('drawers',-1)">-</button>
-<span id="drawers">0</span>
-<button onclick="changeQty('drawers',1)">+</button>
-</div>
-
-</div>
-    <div class="container">
-
-<h1>ADM Moving LTD</h1>
-<p class="subtitle">Professional Moving Volume Calculator</p>
-
-<div class="results">
-
-<div class="result-card">
-<h3>Total Volume</h3>
-<div id="totalVolume">0.00 m³</div>
-</div>
-
-<div class="result-card">
-<h3>Vehicle</h3>
-<div id="vehicle">Small Van</div>
-</div>
-
-<div class="result-card">
-<h3>Crew</h3>
-<div id="crew">1 Mover</div>
-</div>
-
-<div class="result-card">
-<h3>Estimated Price</h3>
-<div id="price">£0 - £0</div>
-</div>
-
-</div>
-
-<h2>🛋️ Living Room</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>3 Seater Sofa</h3>
-<p>2.0 m³</p>
-<button onclick="changeQty('sofa3',-1)">-</button>
-<span id="sofa3">0</span>
-<button onclick="changeQty('sofa3',1)">+</button>
-</div>
-
-<div class="card">
-<h3>2 Seater Sofa</h3>
-<p>1.6 m³</p>
-<button onclick="changeQty('sofa2',-1)">-</button>
-<span id="sofa2">0</span>
-<button onclick="changeQty('sofa2',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Corner Sofa</h3>
-<p>3.5 m³</p>
-<button onclick="changeQty('cornerSofa',-1)">-</button>
-<span id="cornerSofa">0</span>
-<button onclick="changeQty('cornerSofa',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Armchair</h3>
-<p>0.8 m³</p>
-<button onclick="changeQty('armchair',-1)">-</button>
-<span id="armchair">0</span>
-<button onclick="changeQty('armchair',1)">+</button>
-</div>
-
-<div class="card">
-<h3>TV Stand</h3>
-<p>1.0 m³</p>
-<button onclick="changeQty('tvstand',-1)">-</button>
-<span id="tvstand">0</span>
-<button onclick="changeQty('tvstand',1)">+</button>
-</div>
-
-<div class="card">
-<h3>55'' TV</h3>
-<p>0.4 m³</p>
-<button onclick="changeQty('tv55',-1)">-</button>
-<span id="tv55">0</span>
-<button onclick="changeQty('tv55',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Coffee Table</h3>
-<p>0.5 m³</p>
-<button onclick="changeQty('coffee',-1)">-</button>
-<span id="coffee">0</span>
-<button onclick="changeQty('coffee',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Bookcase</h3>
-<p>1.5 m³</p>
-<button onclick="changeQty('bookcase',-1)">-</button>
-<span id="bookcase">0</span>
-<button onclick="changeQty('bookcase',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Side Table</h3>
-<p>0.3 m³</p>
-<button onclick="changeQty('sideTable',-1)">-</button>
-<span id="sideTable">0</span>
-<button onclick="changeQty('sideTable',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Floor Lamp</h3>
-<p>0.2 m³</p>
-<button onclick="changeQty('lamp',-1)">-</button>
-<span id="lamp">0</span>
-<button onclick="changeQty('lamp',1)">+</button>
-</div>
-
-</div>
-
-<h2>🛏️ Bedroom</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>King Size Bed</h3>
-<p>2.0 m³</p>
-<button onclick="changeQty('kingBed',-1)">-</button>
-<span id="kingBed">0</span>
-<button onclick="changeQty('kingBed',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Double Bed</h3>
-<p>1.5 m³</p>
-<button onclick="changeQty('doubleBed',-1)">-</button>
-<span id="doubleBed">0</span>
-<button onclick="changeQty('doubleBed',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Single Bed</h3>
-<p>1.0 m³</p>
-<button onclick="changeQty('singleBed',-1)">-</button>
-<span id="singleBed">0</span>
-<button onclick="changeQty('singleBed',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Wardrobe 2 Door</h3>
-<p>2.0 m³</p>
-<button onclick="changeQty('wardrobe2',-1)">-</button>
-<span id="wardrobe2">0</span>
-<button onclick="changeQty('wardrobe2',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Wardrobe 3 Door</h3>
-<p>3.0 m³</p>
-<button onclick="changeQty('wardrobe3',-1)">-</button>
-<span id="wardrobe3">0</span>
-<button onclick="changeQty('wardrobe3',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Chest Of Drawers</h3>
-<p>0.8 m³</p>
-<button onclick="changeQty('drawers',-1)">-</button>
-<span id="drawers">0</span>
-<button onclick="changeQty('drawers',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Bedside Cabinet</h3>
-<p>0.2 m³</p>
-<button onclick="changeQty('bedside',-1)">-</button>
-<span id="bedside">0</span>
-<button onclick="changeQty('bedside',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Dressing Table</h3>
-<p>0.7 m³</p>
-<button onclick="changeQty('dressing',-1)">-</button>
-<span id="dressing">0</span>
-<button onclick="changeQty('dressing',1)">+</button>
-</div>
-
-<div class="card">
-<h3>Mirror</h3>
-<p>0.2 m³</p>
-<button onclick="changeQty('mirror',-1)">-</button>
-<span id="mirror">0</span>
-<button onclick="changeQty('mirror',1)">+</button>
-</div>
-
-</div>
-        
-
-<div class="container">
-
-<h1>Moving Volume Calculator</h1>
-
-<p>Select the quantity of items you need moved.</p>
-
-<div class="item">
-<span>Sofa (2.0 m³)</span>
-<input type="number" min="0" value="0" data-volume="2">
-</div>
-
-<div class="item">
-<span>Armchair (0.8 m³)</span>
-<input type="number" min="0" value="0" data-volume="0.8">
-</div>
-
-<div class="item">
-<span>Double Bed (1.5 m³)</span>
-<input type="number" min="0" value="0" data-volume="1.5">
-</div>
-
-<div class="item">
-<span>Wardrobe (2.5 m³)</span>
-<input type="number" min="0" value="0" data-volume="2.5">
-</div>
-
-<div class="item">
-<span>Dining Table (1.2 m³)</span>
-<input type="number" min="0" value="0" data-volume="1.2">
-</div>
-
-<div class="item">
-<span>Fridge Freezer (1.3 m³)</span>
-<input type="number" min="0" value="0" data-volume="1.3">
-</div>
-
-<div class="item">
-<span>Washing Machine (0.5 m³)</span>
-<input type="number" min="0" value="0" data-volume="0.5">
-</div>
-
-<div class="item">
-<span>Boxes (0.1 m³ each)</span>
-<input type="number" min="0" value="0" data-volume="0.1">
-</div>
-
-<button onclick="calculateVolume()">Calculate Volume</button>
-
-<div class="result" id="result">
-Total Volume: 0 m³
-</div>
-
-</div>
-
-<script>
-function calculateVolume() {
-
-let total = 0;
-
-document.querySelectorAll('input[type="number"]').forEach(input => {
-    total += parseFloat(input.dataset.volume) * parseInt(input.value || 0);
-});
-
-document.getElementById('result').innerHTML =
-'Total Volume: ' + total.toFixed(2) + ' m³';
-
-}
 </script>
 
 </body>
