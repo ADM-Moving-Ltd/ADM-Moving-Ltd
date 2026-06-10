@@ -255,12 +255,15 @@ body {
     font-size: 26px;
 }
 
-/* CALCULATOR BUTTONS */
+/* CALCULATOR - LISTA OBIECTE */
 .items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 12px;
     margin-bottom: 25px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
 .item-btn {
@@ -271,12 +274,13 @@ body {
     border-radius: 12px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    position: relative;
 }
 
 .item-btn i {
@@ -292,6 +296,22 @@ body {
 
 .item-btn:active {
     transform: scale(0.98);
+}
+
+.item-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary);
+    color: white;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .volume-display {
@@ -348,27 +368,94 @@ input:focus, select:focus {
     border-top: 2px dashed #bbf7d0;
 }
 
-/* CALENDAR */
+/* CALENDAR COMPLET */
+.calendar-container {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid var(--light-gray);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-nav {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-nav:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+.calendar-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--gray);
+    padding: 6px;
+}
+
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    margin: 25px 0;
+    gap: 6px;
 }
 
 .day {
-    background: #f8fafc;
-    padding: 14px 8px;
+    background: white;
+    padding: 12px 6px;
     font-size: 14px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
+    position: relative;
 }
 
-.day:hover:not(.unavailable) {
+.day.other-month {
+    color: #cbd5e1;
+    background: #f1f5f9;
+    cursor: default;
+}
+
+.day.today {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.day:hover:not(.unavailable):not(.other-month) {
     border-color: var(--primary);
     background: #f0fdf4;
     transform: scale(1.05);
@@ -584,12 +671,11 @@ footer {
         font-size: 32px;
     }
     
-    .calendar {
-        gap: 6px;
+    .items-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
     
-    .day {
-        padding: 10px 5px;
+    .item-btn {
         font-size: 12px;
     }
 }
@@ -666,30 +752,111 @@ footer {
         <h2 class="section-title">Smart Booking System</h2>
         <div class="dashboard">
 
-            <!-- LEFT: CALCULATOR -->
+            <!-- LEFT: CALCULATOR CU OBIECTE MAI MULTE -->
             <div class="card">
                 <h3><i class="fa-solid fa-calculator"></i> Moving Cost Calculator</h3>
                 
-                <div class="items-grid">
-                    <button class="item-btn" onclick="add(3)">
+                <div class="items-grid" id="itemsGrid">
+                    <!-- Obiecte mari -->
+                    <button class="item-btn" data-volume="3" data-name="Sofa">
                         <i class="fa-solid fa-couch"></i>
                         Sofa
+                        <span class="item-count" style="display:none">0</span>
                     </button>
-                    <button class="item-btn" onclick="add(3)">
+                    <button class="item-btn" data-volume="3" data-name="Bed">
                         <i class="fa-solid fa-bed"></i>
                         Bed
+                        <span class="item-count" style="display:none">0</span>
                     </button>
-                    <button class="item-btn" onclick="add(1)">
-                        <i class="fa-solid fa-chair"></i>
-                        Chair
-                    </button>
-                    <button class="item-btn" onclick="add(2.5)">
+                    <button class="item-btn" data-volume="2.5" data-name="Wardrobe">
                         <i class="fa-solid fa-wardrobe"></i>
                         Wardrobe
+                        <span class="item-count" style="display:none">0</span>
                     </button>
-                    <button class="item-btn" onclick="add(0.2)">
+                    <button class="item-btn" data-volume="2" data-name="Dining Table">
+                        <i class="fa-solid fa-table"></i>
+                        Dining Table
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="2" data-name="Fridge">
+                        <i class="fa-solid fa-refrigerator"></i>
+                        Fridge
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="1.8" data-name="Washing Machine">
+                        <i class="fa-solid fa-washing-machine"></i>
+                        Washing Machine
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="1.5" data-name="TV">
+                        <i class="fa-solid fa-tv"></i>
+                        TV
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="1.2" data-name="Dresser">
+                        <i class="fa-solid fa-chair"></i>
+                        Dresser
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="1" data-name="Chair">
+                        <i class="fa-solid fa-chair"></i>
+                        Chair
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="1" data-name="Desk">
+                        <i class="fa-solid fa-laptop"></i>
+                        Desk
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="1" data-name="Microwave">
+                        <i class="fa-solid fa-microwave"></i>
+                        Microwave
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.8" data-name="Bookshelf">
+                        <i class="fa-solid fa-book"></i>
+                        Bookshelf
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.5" data-name="Vacuum Cleaner">
+                        <i class="fa-solid fa-vacuum"></i>
+                        Vacuum
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.3" data-name="Lamp">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Lamp
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.2" data-name="Box">
                         <i class="fa-solid fa-box"></i>
                         Box
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.2" data-name="Kitchen Box">
+                        <i class="fa-solid fa-utensils"></i>
+                        Kitchen Box
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.2" data-name="Clothes Box">
+                        <i class="fa-solid fa-shirt"></i>
+                        Clothes Box
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.15" data-name="Small Box">
+                        <i class="fa-solid fa-box-open"></i>
+                        Small Box
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.1" data-name="Picture Frame">
+                        <i class="fa-solid fa-image"></i>
+                        Picture
+                        <span class="item-count" style="display:none">0</span>
+                    </button>
+                    <button class="item-btn" data-volume="0.1" data-name="Mirror">
+                        <i class="fa-solid fa-mirror"></i>
+                        Mirror
+                        <span class="item-count" style="display:none">0</span>
                     </button>
                 </div>
 
@@ -723,7 +890,7 @@ footer {
                 </div>
             </div>
 
-            <!-- RIGHT: BOOKING -->
+            <!-- RIGHT: BOOKING CU CALENDAR COMPLET -->
             <div class="card">
                 <h3><i class="fa-solid fa-calendar-check"></i> Book Your Move</h3>
 
@@ -734,7 +901,23 @@ footer {
                 <input type="text" id="phone" placeholder="Enter your phone number">
 
                 <label><i class="fa-solid fa-calendar-days"></i> Select Date</label>
-                <div class="calendar" id="calendar"></div>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" onclick="prevMonth()">&lt;</button>
+                        <div class="calendar-title" id="calendarTitle"></div>
+                        <button class="calendar-nav" onclick="nextMonth()">&gt;</button>
+                    </div>
+                    <div class="weekdays">
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+                        <div class="weekday">Sun</div>
+                    </div>
+                    <div class="calendar" id="calendar"></div>
+                </div>
 
                 <label><i class="fa-solid fa-clock"></i> Preferred Time</label>
                 <select id="time">
@@ -800,14 +983,28 @@ footer {
 </footer>
 
 <script>
-/* CALCULATOR LOGIC */
+/* CALCULATOR LOGIC CU NUMAR DE OBIECTE */
 let vol = 0, base = 0;
+let itemCounts = {};
 
-function add(v) {
-    vol += v;
-    base += v * 45;
-    calc();
-}
+// Initializare contori
+document.querySelectorAll('.item-btn').forEach(btn => {
+    const name = btn.dataset.name;
+    itemCounts[name] = 0;
+    
+    btn.addEventListener('click', () => {
+        const volume = parseFloat(btn.dataset.volume);
+        const countEl = btn.querySelector('.item-count');
+        
+        itemCounts[name]++;
+        countEl.textContent = itemCounts[name];
+        countEl.style.display = 'flex';
+        
+        vol += volume;
+        base += volume * 45;
+        calc();
+    });
+});
 
 function calc() {
     let d = document.getElementById("distance").value || 0;
@@ -821,49 +1018,121 @@ function calc() {
     document.getElementById("dist").innerText = dist.toFixed(0);
     document.getElementById("total").innerText = total.toFixed(0);
 
+    // Generare mesaj WhatsApp cu lista obiectelor
+    const itemsList = Object.entries(itemCounts)
+        .filter(([_, count]) => count > 0)
+        .map(([name, count]) => `${count}x ${name}`)
+        .join(', ');
+
     document.getElementById("wa").href =
         "https://wa.me/447312814746?text=" +
-        encodeURIComponent(`Hello! I need a quote: Volume ${vol.toFixed(1)}m³, Distance ${d} miles, Total estimate £${total.toFixed(0)}`);
+        encodeURIComponent(`Hello! I need a quote:\nItems: ${itemsList || 'None selected'}\nVolume: ${vol.toFixed(1)}m³\nDistance: ${d} miles\nTotal estimate: £${total.toFixed(0)}`);
 }
 
 document.getElementById("distance").addEventListener("input", calc);
 
-/* CALENDAR LOGIC */
+/* CALENDAR COMPLET - ALEGE LUNA SI ANUL */
 let booked = JSON.parse(localStorage.getItem("b") || "[]");
 let sel = null;
+let currentDate = new Date();
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
 
-function gen() {
-    let c = document.getElementById("calendar");
-    c.innerHTML = "";
+const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
 
-    let t = new Date();
+function generateCalendar() {
+    const calendarEl = document.getElementById("calendar");
+    const titleEl = document.getElementById("calendarTitle");
+    calendarEl.innerHTML = "";
+    titleEl.textContent = `${months[currentMonth]} ${currentYear}`;
 
-    for (let i = 0; i < 14; i++) {
-        let d = new Date();
-        d.setDate(t.getDate() + i);
-        let ds = d.toISOString().split("T")[0];
-        let displayDate = ds.slice(5).replace("-", "/");
+    // Prima zi din luna
+    const firstDay = new Date(currentYear, currentMonth, 1);
+    let firstDayIndex = firstDay.getDay() - 1;
+    if (firstDayIndex < 0) firstDayIndex = 6;
 
-        let el = document.createElement("div");
-        el.className = "day";
+    // Ultima zi din luna curenta
+    const lastDay = new Date(currentYear, currentMonth + 1, 0);
+    const daysInMonth = lastDay.getDate();
 
-        if (booked.includes(ds)) {
-            el.innerText = displayDate + "\n✗";
-            el.classList.add("unavailable");
+    // Ultima zi din luna anterioara
+    const lastDayPrevMonth = new Date(currentYear, currentMonth, 0);
+    const daysInPrevMonth = lastDayPrevMonth.getDate();
+
+    // Adaugam zilele din luna anterioara
+    for (let i = firstDayIndex; i > 0; i--) {
+        const dayEl = document.createElement("div");
+        dayEl.className = "day other-month";
+        dayEl.textContent = daysInPrevMonth - i + 1;
+        calendarEl.appendChild(dayEl);
+    }
+
+    // Adaugam zilele din luna curenta
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayEl = document.createElement("div");
+        const currentDayDate = new Date(currentYear, currentMonth, day);
+        const dateStr = currentDayDate.toISOString().split("T")[0];
+        
+        dayEl.className = "day";
+        dayEl.textContent = day;
+
+        // Ziua de azi
+        if (currentDayDate.getTime() === today.getTime()) {
+            dayEl.classList.add("today");
+        }
+
+        // Zile indisponibile sau din trecut
+        if (currentDayDate < today || booked.includes(dateStr)) {
+            dayEl.classList.add("unavailable");
+            dayEl.textContent += " ✗";
         } else {
-            el.innerText = displayDate;
-            el.onclick = () => {
-                sel = ds;
+            dayEl.onclick = () => {
+                sel = dateStr;
                 document.querySelectorAll(".day").forEach(x => x.classList.remove("selected"));
-                el.classList.add("selected");
+                dayEl.classList.add("selected");
             };
         }
 
-        c.appendChild(el);
+        calendarEl.appendChild(dayEl);
+    }
+
+    // Adaugam zilele din luna urmatoare pentru a completa grid-ul
+    const totalDays = calendarEl.children.length;
+    const remainingDays = 42 - totalDays; // 6 linii x 7 zile
+
+    for (let i = 1; i <= remainingDays; i++) {
+        const dayEl = document.createElement("div");
+        dayEl.className = "day other-month";
+        dayEl.textContent = i;
+        calendarEl.appendChild(dayEl);
     }
 }
 
-gen();
+function prevMonth() {
+    currentMonth--;
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    generateCalendar();
+}
+
+function nextMonth() {
+    currentMonth++;
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    generateCalendar();
+}
+
+generateCalendar();
 
 /* BOOKING LOGIC */
 function book() {
@@ -872,14 +1141,19 @@ function book() {
     let t = document.getElementById("time").value;
 
     if (!n || !p || !sel) {
-        alert("Please fill in all fields and select a date!");
+        alert("Please fill in all fields and select a valid date!");
         return;
     }
 
     booked.push(sel);
     localStorage.setItem("b", JSON.stringify(booked));
 
-    const message = `New Booking Request:\nName: ${n}\nPhone: ${p}\nDate: ${sel}\nTime: ${t}\nEstimated Volume: ${vol.toFixed(1)}m³\nTotal Estimate: £${document.getElementById("total").innerText}`;
+    const itemsList = Object.entries(itemCounts)
+        .filter(([_, count]) => count > 0)
+        .map(([name, count]) => `${count}x ${name}`)
+        .join(', ');
+
+    const message = `New Booking Request:\nName: ${n}\nPhone: ${p}\nDate: ${sel}\nTime: ${t}\nItems: ${itemsList || 'None selected'}\nEstimated Volume: ${vol.toFixed(1)}m³\nTotal Estimate: £${document.getElementById("total").innerText}`;
     
     window.open(`https://wa.me/447312814746?text=${encodeURIComponent(message)}`);
 
@@ -891,13 +1165,14 @@ function book() {
             phone: p,
             date: sel,
             time: t,
+            items: itemsList,
             volume: vol.toFixed(1),
             total: document.getElementById("total").innerText
         })
     });
 
     document.getElementById("msg").style.display = "block";
-    gen();
+    generateCalendar();
     setTimeout(() => document.getElementById("msg").style.display = "none", 5000);
 }
 </script>
