@@ -363,6 +363,8 @@ body {
     padding: 8px;
     text-align: center;
     margin: 0;
+    border: 2px solid var(--light-gray);
+    border-radius: 6px;
 }
 
 .packing-note {
@@ -1271,8 +1273,9 @@ footer {
 /* CALCULATOR LOGIC */
 let vol = 0, base = 0;
 let itemCounts = {};
-const PRICE_PER_MILE = 1.50; // £1.50 per mile
-const PRICE_DISMANTLE = 25.00; // £25 per item
+let currentDate = new Date();
+const PRICE_PER_MILE = 1.50;
+const PRICE_DISMANTLE = 25.00;
 const PRICE_SMALL_BOX = 2.50;
 const PRICE_MEDIUM_BOX = 3.50;
 const PRICE_LARGE_BOX = 4.50;
@@ -1301,11 +1304,9 @@ function calc() {
     let d = parseFloat(document.getElementById("distance").value) || 0;
     let v = parseFloat(document.getElementById("van").value) || 1;
 
-    // Calcul preț de bază și distanță
     let dist = d * PRICE_PER_MILE;
     let subtotal = base + dist;
 
-    // Calcul servicii suplimentare
     let dismantleCount = parseInt(document.getElementById("dismantleCount").value) || 0;
     let dismantleCost = dismantleCount * PRICE_DISMANTLE;
 
@@ -1318,10 +1319,8 @@ function calc() {
     let packingService = parseInt(document.getElementById("packingService").value) || 0;
     let packingCost = packingService ? (totalBoxes * PRICE_PACKING_PER_BOX) : 0;
 
-    // Total final
     let total = (subtotal * v) + dismantleCost + boxesCost + packingCost;
 
-    // Afișare rezultate
     document.getElementById("vol").innerText = vol.toFixed(1);
     document.getElementById("base").innerText = base.toFixed(0);
     document.getElementById("dist").innerText = dist.toFixed(2);
@@ -1330,12 +1329,10 @@ function calc() {
     document.getElementById("packingCost").innerText = packingCost.toFixed(2);
     document.getElementById("total").innerText = total.toFixed(0);
 
-    // Afișare/ascundere rânduri servicii suplimentare
     document.getElementById("dismantleRow").style.display = dismantleCost > 0 ? "flex" : "none";
     document.getElementById("boxesRow").style.display = boxesCost > 0 ? "flex" : "none";
     document.getElementById("packingRow").style.display = packingCost > 0 ? "flex" : "none";
 
-    // Generare mesaj WhatsApp
     const itemsList = Object.entries(itemCounts)
         .filter(([_, count]) => count > 0)
         .map(([name, count]) => `${count}x ${name}`)
@@ -1345,4 +1342,4 @@ function calc() {
 
     document.getElementById("wa").href =
         "https://wa.me/447312814746?text=" +
-        encodeURIComponent(`Hello! I need a quote:\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\n\n--- Additional Services ---\nAssembly/Dism
+        encodeURIComponent(`Hello! I need a quote:\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\n\n--- Additional Services ---\nAssembly/Dismantling: ${dismantleCount} items (£${dismantleCost.toFixed(2)
