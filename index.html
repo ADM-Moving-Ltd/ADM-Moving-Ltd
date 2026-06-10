@@ -9,25 +9,30 @@
 <meta name="description" content="Professional removals company based in Corby. House removals, office relocations, furniture transport and man and van services across the UK.">
 
 <link rel="stylesheet" href="css/Style.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<!-- Stilul de fundal care va funcționa sigur -->
 <style>
-/* Am adăugat stilul pentru fundalul cu van */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-              url("https://images.unsplash.com/photo-1587732415865-0907a1b9d93b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
+              url("https://images.unsplash.com/photo-1601584115119-2bc690067929?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  min-height: 85vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: white !important;
+  padding: 2rem !important;
+  position: relative !important;
 }
 
 .hero-content {
   max-width: 800px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -53,6 +58,7 @@
   font-size: 1.1rem;
   transition: background 0.3s ease;
   display: inline-block;
+  border: none;
 }
 
 .btn-primary:hover {
@@ -64,7 +70,6 @@
 <body>
 
 <header class="navbar">
-
 <div class="container nav-container">
 <span style="font-size: 24px; font-weight: bold; color: white;">ADM Moving LTD</span>
 <nav>
@@ -74,173 +79,110 @@
 <a href="#quote">Quote</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </div>
-
 </header>
 
 <section class="hero">
-
 <div class="hero-content">
-
 <h1>Professional Moving Services Across The UK</h1>
-
-<p>
-Reliable House Removals, Office Relocations and Man & Van Services.
-Fast, Safe and Affordable.
-</p>
-
+<p>Reliable House Removals, Office Relocations and Man & Van Services. Fast, Safe and Affordable.</p>
 <a href="#quote" class="btn-primary">Get Free Quote</a>
-
 </div>
-
 </section>
 
 <section id="services" class="section">
-
 <div class="container">
-
 <h2 class="section-title">Our Services</h2>
-
 <div class="grid">
-
 <div class="card">
 <i class="fas fa-home"></i>
 <h3>House Removals</h3>
 <p>Professional home moving services with care and protection.</p>
 </div>
-
 <div class="card">
 <i class="fas fa-building"></i>
 <h3>Office Relocations</h3>
 <p>Efficient office moves with minimal disruption.</p>
 </div>
-
 <div class="card">
 <i class="fas fa-truck"></i>
 <h3>Man & Van</h3>
 <p>Flexible transport solutions for small and large jobs.</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
 <section id="why" class="section">
-
 <div class="container">
-
 <h2 class="section-title">Why Choose ADM Moving LTD?</h2>
-
 <div class="grid">
-
 <div class="card">
 <i class="fas fa-shield-alt"></i>
 <h3>Fully Insured</h3>
 <p>Your belongings are protected throughout the move.</p>
 </div>
-
 <div class="card">
 <i class="fas fa-clock"></i>
 <h3>Reliable Service</h3>
 <p>Always on time and committed to customer satisfaction.</p>
 </div>
-
 <div class="card">
 <i class="fas fa-pound-sign"></i>
 <h3>Affordable Prices</h3>
 <p>Competitive rates with no hidden costs.</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
 <section id="reviews" class="section">
-
 <div class="container">
-
 <h2 class="section-title">Customer Reviews</h2>
-
 <div class="grid">
-
 <div class="card">
 ⭐⭐⭐⭐⭐
 <p>Excellent service and very professional.</p>
 </div>
-
 <div class="card">
 ⭐⭐⭐⭐⭐
 <p>Fast, friendly and reliable.</p>
 </div>
-
 <div class="card">
 ⭐⭐⭐⭐⭐
 <p>Highly recommended for removals and transport.</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
 <section id="quote" class="section">
-
 <div class="container">
-
 <h2 class="section-title">Get A Free Quote</h2>
-
 <form class="form" id="quoteForm">
-
 <div class="grid-form">
-
 <input type="text" placeholder="Full Name" required>
-
 <input type="text" placeholder="Phone Number" required>
-
 <input type="email" placeholder="Email Address" required>
-
 <input type="text" placeholder="Moving From">
-
 <input type="text" placeholder="Moving To">
-
 <input type="date">
-
 </div>
-
 <textarea placeholder="Additional Information"></textarea>
-
 <button type="submit">Request Quote</button>
-
 </form>
-
 </div>
-
 </section>
 
 <section id="contact" class="section">
-
 <div class="container">
-
 <h2 class="section-title">Contact Us</h2>
-
 <div class="contact">
-
 <p><i class="fas fa-phone"></i> 07312 814746</p>
-
 <p><i class="fas fa-envelope"></i> admmoving@yahoo.com</p>
-
 <p><i class="fas fa-location-dot"></i> Corby, Northamptonshire</p>
-
 </div>
-
 </div>
-
 </section>
 
 <footer>
