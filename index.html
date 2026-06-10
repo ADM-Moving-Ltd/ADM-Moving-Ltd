@@ -38,7 +38,6 @@ padding:15px 0;
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 .nav-container{
@@ -68,7 +67,7 @@ justify-content:center;
 text-align:center;
 color:white;
 background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 url("https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg");
 background-size:cover;
 background-position:center;
@@ -94,6 +93,40 @@ text-decoration:none;
 font-weight:bold;
 }
 
+.section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+button{
+padding:8px 12px;
+margin:5px;
+border:none;
+background:#28c76f;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -106,6 +139,7 @@ font-weight:bold;
 <nav>
 <a href="#services">Services</a>
 <a href="#why">Why Us</a>
+<a href="#calculator">Calculator</a>
 <a href="#reviews">Reviews</a>
 <a href="#quote">Quote</a>
 <a href="#contact">Contact</a>
@@ -116,89 +150,93 @@ font-weight:bold;
 
 <section class="hero">
 <div class="hero-content">
-
 <h1>Professional Moving Services Across The UK</h1>
-<p>Reliable House Removals, Office Relocations and Man & Van Services.</p>
-
+<p>Fast, safe and affordable removals services.</p>
 <a href="#quote" class="btn-primary">Get Free Quote</a>
-
 </div>
 </section>
+<!-- SERVICES -->
 <section id="services" class="section">
 <div class="container">
 
 <h2 class="section-title">Our Services</h2>
 
 <div class="grid">
-
-<div class="card">
-<i class="fas fa-home"></i>
-<h3>House Removals</h3>
-<p>Professional home moving services with care.</p>
+<div class="card">House Removals</div>
+<div class="card">Office Relocations</div>
+<div class="card">Man & Van</div>
 </div>
 
-<div class="card">
-<i class="fas fa-building"></i>
-<h3>Office Relocations</h3>
-<p>Efficient office moves with minimal disruption.</p>
-</div>
-
-<div class="card">
-<i class="fas fa-truck"></i>
-<h3>Man & Van</h3>
-<p>Flexible transport for all job sizes.</p>
-</div>
-
-</div>
 </div>
 </section>
 
-
+<!-- WHY -->
 <section id="why" class="section">
 <div class="container">
 
-<h2 class="section-title">Why Choose Us?</h2>
+<h2 class="section-title">Why Choose Us</h2>
 
 <div class="grid">
-
-<div class="card">
-<i class="fas fa-shield-alt"></i>
-<h3>Fully Insured</h3>
-<p>Your items are protected.</p>
+<div class="card">Fully Insured</div>
+<div class="card">Reliable Service</div>
+<div class="card">Affordable Prices</div>
 </div>
 
-<div class="card">
-<i class="fas fa-clock"></i>
-<h3>Reliable</h3>
-<p>Always on time service.</p>
-</div>
-
-<div class="card">
-<i class="fas fa-pound-sign"></i>
-<h3>Affordable</h3>
-<p>No hidden costs.</p>
-</div>
-
-</div>
 </div>
 </section>
 
+<!-- CALCULATOR -->
+<section id="calculator" class="section">
+<div class="container">
 
+<h2 class="section-title">Moving Volume Calculator</h2>
+
+<div class="card">
+
+<h3>Living Room</h3>
+<button onclick="add(3)">3-Seater Sofa</button>
+<button onclick="add(2)">2-Seater Sofa</button>
+<button onclick="add(1)">Armchair</button>
+
+<h3>Bedroom</h3>
+<button onclick="add(3)">Double Bed</button>
+<button onclick="add(2.5)">Wardrobe</button>
+<button onclick="add(0.3)">Bedside Table</button>
+
+<h3>Kitchen</h3>
+<button onclick="add(0.2)">Box</button>
+<button onclick="add(1)">Fridge</button>
+
+<h3>Garden</h3>
+<button onclick="add(1)">Bike</button>
+<button onclick="add(2)">Tools</button>
+
+<hr style="margin:15px 0;">
+
+<h3>Total Volume: <span id="total">0</span> m³</h3>
+
+<button onclick="resetCalc()">Reset</button>
+
+</div>
+
+</div>
+</section>
+
+<!-- REVIEWS -->
 <section id="reviews" class="section">
 <div class="container">
 
 <h2 class="section-title">Customer Reviews</h2>
 
 <div class="grid">
-
-<div class="card">⭐⭐⭐⭐⭐<p>Very professional service.</p></div>
-<div class="card">⭐⭐⭐⭐⭐<p>Fast and reliable.</p></div>
-<div class="card">⭐⭐⭐⭐⭐<p>Highly recommended.</p></div>
-
+<div class="card">⭐⭐⭐⭐⭐ Great service</div>
+<div class="card">⭐⭐⭐⭐⭐ Fast and reliable</div>
+<div class="card">⭐⭐⭐⭐⭐ Highly recommended</div>
 </div>
 
 </div>
 </section>
+<!-- QUOTE -->
 <section id="quote" class="section">
 <div class="container">
 
@@ -209,51 +247,61 @@ font-weight:bold;
 <input type="hidden" name="_subject" value="New Quote Request - ADM Moving LTD">
 <input type="hidden" name="_captcha" value="false">
 
-<div class="grid-form">
-
 <input type="text" name="name" placeholder="Full Name" required>
-<input type="text" name="phone" placeholder="Phone Number" required>
-<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="phone" placeholder="Phone Number">
+<input type="email" name="email" placeholder="Email Address">
 <input type="text" name="from" placeholder="Moving From">
 <input type="text" name="to" placeholder="Moving To">
 <input type="date" name="date">
 
-</div>
-
 <textarea name="message" placeholder="Additional Information"></textarea>
 
-<button type="submit">Request Quote</button>
+<button type="submit">Send Quote</button>
 
 </form>
 
 </div>
 </section>
 
-
+<!-- CONTACT -->
 <section id="contact" class="section">
 <div class="container">
 
-<h2 class="section-title">Contact Us</h2>
+<h2 class="section-title">Contact</h2>
 
-<div class="contact">
-
-<p><i class="fas fa-phone"></i> 07312 814746</p>
-<p><i class="fas fa-envelope"></i> admmoving@yahoo.com</p>
-<p><i class="fas fa-location-dot"></i> Corby, Northamptonshire</p>
-
-</div>
+<p>Phone: 07312 814746</p>
+<p>Email: admmoving@yahoo.com</p>
+<p>Location: Corby, UK</p>
 
 </div>
 </section>
 
-
-<footer>
-<p>© 2026 ADM Moving LTD. All Rights Reserved.</p>
+<!-- FOOTER -->
+<footer style="text-align:center;padding:20px;background:#111;color:white;">
+© 2026 ADM Moving LTD
 </footer>
 
-<a class="whatsapp" href="https://wa.me/447312814746" target="_blank">
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/447312814746">
 <i class="fab fa-whatsapp"></i>
 </a>
+
+<!-- CALCULATOR SCRIPT -->
+<script>
+
+let total = 0;
+
+function add(v){
+total += v;
+document.getElementById("total").innerText = total.toFixed(1);
+}
+
+function resetCalc(){
+total = 0;
+document.getElementById("total").innerText = total.toFixed(1);
+}
+
+</script>
 
 </body>
 </html>
