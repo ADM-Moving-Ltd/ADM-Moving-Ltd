@@ -1008,19 +1008,38 @@ const PRICE_MEDIUM_BOX = 3.50;
 const PRICE_LARGE_BOX = 4.50;
 const PRICE_PACKING_PER_BOX = 1.20;
 
-// Butoane obiecte
+// Butoane obiecte - MODIFICAT
 document.querySelectorAll('.item-btn').forEach(btn => {
     const name = btn.dataset.name;
+    const volumePerItem = parseFloat(btn.dataset.volume);
+    const countEl = btn.querySelector('.item-count');
+    
     itemCounts[name] = 0;
+
     btn.addEventListener('click', () => {
-        const volume = parseFloat(btn.dataset.volume);
-        const countEl = btn.querySelector('.item-count');
-        itemCounts[name]++;
-        countEl.textContent = itemCounts[name];
-        countEl.style.display = 'flex';
-        vol += volume;
-        base += volume * 45;
+        if (itemCounts[name] === 0) {
+            // Dacă e 0, adaugă 1
+            itemCounts[name] = 1;
+            vol += volumePerItem;
+            base += volumePerItem * 45;
+        } else {
+            // Dacă e deja adăugat, scade 1
+            itemCounts[name]--;
+            vol -= volumePerItem;
+            base -= volumePerItem * 45;
+        }
+
+        // Actualizează afișarea
+        if (itemCounts[name] > 0) {
+            countEl.textContent = itemCounts[name];
+            countEl.style.display = 'flex';
+        } else {
+            countEl.style.display = 'none';
+        }
+
         calc();
+    });
+});
     });
 });
 
