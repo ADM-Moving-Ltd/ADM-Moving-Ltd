@@ -3,361 +3,903 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ADM Moving LTD | Smart Booking System</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-body{
-background:#eef2f6;
-color:#222;
+:root {
+    --primary: #28c76f;
+    --primary-dark: #22a85d;
+    --secondary: #1e293b;
+    --light: #f8fafc;
+    --gray: #64748b;
+    --light-gray: #e2e8f0;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
 }
 
-/* NAV */
-.navbar{
-background:#28c76f;
-padding:14px 0;
+body {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e6edf5 100%);
+    color: var(--secondary);
+    line-height: 1.6;
 }
 
-.navbar .container{
-width:90%;
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* NAVBAR */
+.navbar {
+    background: var(--primary);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
-.navbar a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-weight:600;
+.navbar .container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* HERO */
-.hero{
-background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url("https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg");
-background-size:cover;
-background-position:center;
-height:70vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.hero h1{font-size:48px;}
-.hero p{margin-top:10px;font-size:18px;}
-
-/* LAYOUT */
-.container{
-width:90%;
-max-width:1100px;
-margin:auto;
+.logo i {
+    font-size: 28px;
 }
 
-.section{
-padding:60px 0;
+.nav-links {
+    display: flex;
+    gap: 30px;
 }
 
-.title{
-text-align:center;
-font-size:30px;
-margin-bottom:30px;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: var(--transition);
+    position: relative;
 }
 
-/* DASHBOARD */
-.dashboard{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: var(--transition);
 }
 
-/* CARD */
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+.nav-links a:hover {
+    color: #f0fdf4;
 }
 
-/* CALC BUTTONS */
-button{
-background:#28c76f;
-color:white;
-border:none;
-padding:10px 12px;
-margin:5px;
-border-radius:8px;
-cursor:pointer;
-font-weight:600;
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(30, 41, 59, 0.75), rgba(30, 41, 59, 0.75)),
+                url("https://images.pexels.com/photos/7464707/pexels-photo-7464707.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 60px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: clamp(18px, 2vw, 22px);
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 8px 20px rgba(40, 199, 111, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(40, 199, 111, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* CONTAINER */
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(28px, 3vw, 36px);
+    margin-bottom: 50px;
+    position: relative;
+    color: var(--secondary);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* DASHBOARD GRID */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-bottom: 60px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), #34d399);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card h3 i {
+    color: var(--primary);
+    font-size: 26px;
+}
+
+/* CALCULATOR BUTTONS */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.item-btn {
+    background: #f8fafc;
+    color: var(--secondary);
+    border: 2px solid transparent;
+    padding: 14px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-btn i {
+    font-size: 22px;
+    color: var(--primary);
+}
+
+.item-btn:hover {
+    border-color: var(--primary);
+    background: #f0fdf4;
+    transform: translateY(-2px);
+}
+
+.item-btn:active {
+    transform: scale(0.98);
+}
+
+.volume-display {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary);
+    border-left: 4px solid var(--primary);
 }
 
 /* INPUTS */
-input,select{
-width:100%;
-padding:10px;
-margin-top:10px;
-border-radius:8px;
-border:1px solid #ddd;
+input, select {
+    width: 100%;
+    padding: 15px 18px;
+    margin: 12px 0 22px;
+    border-radius: 12px;
+    border: 2px solid var(--light-gray);
+    font-size: 16px;
+    transition: var(--transition);
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(40, 199, 111, 0.1);
+}
+
+/* RESULT BOX */
+.result-box {
+    background: linear-gradient(135deg, #f0fdf4, #ecfccb);
+    padding: 22px;
+    border-radius: 14px;
+    border-left: 5px solid var(--primary);
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.result-row.total {
+    font-size: 22px;
+    font-weight: 700;
+    color: #166534;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed #bbf7d0;
 }
 
 /* CALENDAR */
-.calendar{
-display:grid;
-grid-template-columns:repeat(7,1fr);
-gap:6px;
-margin-top:10px;
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin: 25px 0;
 }
 
-.day{
-background:#f0f0f0;
-padding:8px;
-font-size:12px;
-text-align:center;
-border-radius:6px;
-cursor:pointer;
+.day {
+    background: #f8fafc;
+    padding: 14px 8px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    border: 2px solid transparent;
 }
 
-.day.selected{
-background:#28c76f;
-color:white;
+.day:hover:not(.unavailable) {
+    border-color: var(--primary);
+    background: #f0fdf4;
+    transform: scale(1.05);
 }
 
-/* RESULT */
-.result{
-margin-top:10px;
-font-weight:600;
+.day.selected {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(40, 199, 111, 0.3);
 }
 
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-right:18px;
-bottom:18px;
-width:55px;
-height:55px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:24px;
+.day.unavailable {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f1f5f9;
+    text-decoration: line-through;
 }
 
-/* MOBILE */
-@media(max-width:900px){
-.dashboard{
-grid-template-columns:1fr;
-}
-.hero h1{font-size:32px;}
+/* BOOK BUTTON */
+.book-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
 }
 
+.book-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(40, 199, 111, 0.3);
+}
+
+.success-msg {
+    display: none;
+    background: #f0fdf4;
+    color: #166534;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+    border: 2px solid #bbf7d0;
+}
+
+/* SERVICES SECTION */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: #f0fdf4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.service-icon i {
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.service-card h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--secondary);
+}
+
+.service-card p {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+/* CONTACT SECTION */
+.contact-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
+    color: var(--secondary);
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    background: #f0fdf4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* WHATSAPP FLOATING */
+.whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.whatsapp:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* FOOTER */
+footer {
+    background: var(--secondary);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .card {
+        padding: 25px;
+    }
+}
+
+@media(max-width: 600px) {
+    .nav-links a {
+        font-size: 14px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .calendar {
+        gap: 6px;
+    }
+    
+    .day {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
-<div class="container">
-<div style="color:white;font-weight:bold;">ADM Moving LTD</div>
-<div>
-<a href="#dash">System</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
+    <div class="container">
+        <div class="logo">
+            <i class="fa-solid fa-truck-moving"></i>
+            ADM Moving LTD
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#dash">Booking</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
 </div>
 
-<section class="hero">
-<div>
-<h1>Smart Booking System</h1>
-<p>Quotes + Calendar + Instant WhatsApp</p>
-</div>
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Professional Moving Services</h1>
+        <p>Get instant quotes, book online and move with confidence across the UK</p>
+        <div class="hero-buttons">
+            <a href="#dash" class="btn btn-primary">
+                <i class="fa-solid fa-calculator"></i> Get Quote
+            </a>
+            <a href="#contact" class="btn btn-outline">
+                <i class="fa-solid fa-phone"></i> Call Us
+            </a>
+        </div>
+    </div>
 </section>
 
+<!-- SERVICES -->
+<section class="section" id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-home"></i>
+                </div>
+                <h4>House Moving</h4>
+                <p>Complete house relocation with professional packing and safe transportation</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <h4>Office Moving</h4>
+                <p>Efficient office relocation to minimize downtime and keep your business running</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+                <h4>Packing Service</h4>
+                <p>Professional packing materials and service to protect your belongings</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING DASHBOARD -->
 <section id="dash" class="section">
-<div class="container">
+    <div class="container">
+        <h2 class="section-title">Smart Booking System</h2>
+        <div class="dashboard">
 
-<h2 class="title">Booking Dashboard</h2>
+            <!-- LEFT: CALCULATOR -->
+            <div class="card">
+                <h3><i class="fa-solid fa-calculator"></i> Moving Cost Calculator</h3>
+                
+                <div class="items-grid">
+                    <button class="item-btn" onclick="add(3)">
+                        <i class="fa-solid fa-couch"></i>
+                        Sofa
+                    </button>
+                    <button class="item-btn" onclick="add(3)">
+                        <i class="fa-solid fa-bed"></i>
+                        Bed
+                    </button>
+                    <button class="item-btn" onclick="add(1)">
+                        <i class="fa-solid fa-chair"></i>
+                        Chair
+                    </button>
+                    <button class="item-btn" onclick="add(2.5)">
+                        <i class="fa-solid fa-wardrobe"></i>
+                        Wardrobe
+                    </button>
+                    <button class="item-btn" onclick="add(0.2)">
+                        <i class="fa-solid fa-box"></i>
+                        Box
+                    </button>
+                </div>
 
-<div class="dashboard">
+                <div class="volume-display">
+                    Total Volume: <b><span id="vol">0</span> m³</b>
+                </div>
 
-<!-- LEFT: CALCULATOR -->
-<div class="card">
+                <label><i class="fa-solid fa-road"></i> Distance (miles)</label>
+                <input type="number" id="distance" placeholder="Enter distance in miles">
 
-<h3>Calculator</h3>
+                <label><i class="fa-solid fa-truck"></i> Van Size</label>
+                <select id="van" onchange="calc()">
+                    <option value="1">Small Van - Up to 8m³</option>
+                    <option value="1.3">Medium Van - Up to 14m³</option>
+                    <option value="1.6">Large Van - Up to 20m³</option>
+                </select>
 
-<button onclick="add(3)">Sofa</button>
-<button onclick="add(3)">Bed</button>
-<button onclick="add(1)">Chair</button>
-<button onclick="add(2.5)">Wardrobe</button>
-<button onclick="add(0.2)">Box</button>
+                <div class="result-box">
+                    <div class="result-row">
+                        <span>Base Price:</span>
+                        <span>£<span id="base">0</span></span>
+                    </div>
+                    <div class="result-row">
+                        <span>Distance Cost:</span>
+                        <span>£<span id="dist">0</span></span>
+                    </div>
+                    <div class="result-row total">
+                        <span>Total Estimate:</span>
+                        <span>£<span id="total">0</span></span>
+                    </div>
+                </div>
+            </div>
 
-<p style="margin-top:10px;">Volume: <b><span id="vol">0</span> m³</b></p>
+            <!-- RIGHT: BOOKING -->
+            <div class="card">
+                <h3><i class="fa-solid fa-calendar-check"></i> Book Your Move</h3>
 
-<input type="number" id="distance" placeholder="Distance (miles)">
+                <label><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name">
 
-<select id="van" onchange="calc()">
-<option value="1">Small Van</option>
-<option value="1.3">Medium Van</option>
-<option value="1.6">Large Van</option>
-</select>
+                <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+                <input type="text" id="phone" placeholder="Enter your phone number">
 
-<div class="result">
-Base: £<span id="base">0</span><br>
-Distance: £<span id="dist">0</span><br>
-TOTAL: £<span id="total">0</span>
-</div>
+                <label><i class="fa-solid fa-calendar-days"></i> Select Date</label>
+                <div class="calendar" id="calendar"></div>
 
-</div>
+                <label><i class="fa-solid fa-clock"></i> Preferred Time</label>
+                <select id="time">
+                    <option>08:00 - 10:00</option>
+                    <option>10:00 - 12:00</option>
+                    <option>12:00 - 14:00</option>
+                    <option>14:00 - 16:00</option>
+                    <option>16:00 - 18:00</option>
+                </select>
 
-<!-- RIGHT: BOOKING -->
-<div class="card">
+                <button class="book-btn" onclick="book()">
+                    <i class="fa-solid fa-check-circle"></i> Confirm Booking
+                </button>
 
-<h3>Booking Calendar</h3>
-
-<input type="text" id="name" placeholder="Name">
-<input type="text" id="phone" placeholder="Phone">
-
-<div class="calendar" id="calendar"></div>
-
-<select id="time">
-<option>08-10</option>
-<option>10-12</option>
-<option>12-14</option>
-<option>14-16</option>
-<option>16-18</option>
-</select>
-
-<button onclick="book()">Confirm Booking</button>
-
-<p id="msg" style="display:none;color:green;font-weight:bold;margin-top:10px;">
-Booked successfully
-</p>
-
-</div>
-
-</div>
-
-</div>
+                <div id="msg" class="success-msg">
+                    <i class="fa-solid fa-check-circle"></i> Booking confirmed! We will contact you shortly.
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
-<div class="container">
-<div class="card">
-<p>Phone: 07312 814746</p>
-<p>Email: admmoving@yahoo.com</p>
-</div>
-</div>
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-card">
+            <h3 style="margin-bottom: 30px; color: var(--secondary);">Contact Information</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>07312 814746</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>admmoving@yahoo.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Kettering, Northamptonshire</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<a class="whatsapp" id="wa" target="_blank">
-<i class="fab fa-whatsapp"></i>
+<!-- WHATSAPP -->
+<a class="whatsapp" id="wa" target="_blank" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <h3 style="margin-bottom: 15px;">ADM Moving LTD</h3>
+            <p>Professional moving services across the United Kingdom</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ADM Moving LTD. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
 <script>
+/* CALCULATOR LOGIC */
+let vol = 0, base = 0;
 
-/* CALC */
-let vol=0,base=0;
-
-function add(v){
-vol+=v;
-base+=v*45;
-calc();
+function add(v) {
+    vol += v;
+    base += v * 45;
+    calc();
 }
 
-function calc(){
+function calc() {
+    let d = document.getElementById("distance").value || 0;
+    let v = document.getElementById("van").value;
 
-let d=document.getElementById("distance").value||0;
-let v=document.getElementById("van").value;
+    let dist = d * 2.2;
+    let total = (base + dist) * v;
 
-let dist=d*2.2;
-let total=(base+dist)*v;
+    document.getElementById("vol").innerText = vol.toFixed(1);
+    document.getElementById("base").innerText = base.toFixed(0);
+    document.getElementById("dist").innerText = dist.toFixed(0);
+    document.getElementById("total").innerText = total.toFixed(0);
 
-document.getElementById("vol").innerText=vol.toFixed(1);
-document.getElementById("base").innerText=base.toFixed(0);
-document.getElementById("dist").innerText=dist.toFixed(0);
-document.getElementById("total").innerText=total.toFixed(0);
-
-document.getElementById("wa").href=
-"https://wa.me/447312814746?text="+
-encodeURIComponent(`Quote: ${vol.toFixed(1)}m³ total £${total.toFixed(0)}`);
+    document.getElementById("wa").href =
+        "https://wa.me/447312814746?text=" +
+        encodeURIComponent(`Hello! I need a quote: Volume ${vol.toFixed(1)}m³, Distance ${d} miles, Total estimate £${total.toFixed(0)}`);
 }
 
-document.getElementById("distance").addEventListener("input",calc);
+document.getElementById("distance").addEventListener("input", calc);
 
-/* CALENDAR */
-let booked=JSON.parse(localStorage.getItem("b")||"[]");
-let sel=null;
+/* CALENDAR LOGIC */
+let booked = JSON.parse(localStorage.getItem("b") || "[]");
+let sel = null;
 
-function gen(){
+function gen() {
+    let c = document.getElementById("calendar");
+    c.innerHTML = "";
 
-let c=document.getElementById("calendar");
-c.innerHTML="";
+    let t = new Date();
 
-let t=new Date();
+    for (let i = 0; i < 14; i++) {
+        let d = new Date();
+        d.setDate(t.getDate() + i);
+        let ds = d.toISOString().split("T")[0];
+        let displayDate = ds.slice(5).replace("-", "/");
 
-for(let i=0;i<14;i++){
-let d=new Date();
-d.setDate(t.getDate()+i);
-let ds=d.toISOString().split("T")[0];
+        let el = document.createElement("div");
+        el.className = "day";
 
-let el=document.createElement("div");
-el.className="day";
+        if (booked.includes(ds)) {
+            el.innerText = displayDate + "\n✗";
+            el.classList.add("unavailable");
+        } else {
+            el.innerText = displayDate;
+            el.onclick = () => {
+                sel = ds;
+                document.querySelectorAll(".day").forEach(x => x.classList.remove("selected"));
+                el.classList.add("selected");
+            };
+        }
 
-if(booked.includes(ds)){
-el.innerText="X";
-el.style.opacity="0.4";
-}else{
-el.innerText=ds.slice(5);
-el.onclick=()=>{sel=ds;document.querySelectorAll(".day").forEach(x=>x.classList.remove("selected"));el.classList.add("selected");};
-}
-
-c.appendChild(el);
-}
+        c.appendChild(el);
+    }
 }
 
 gen();
 
-/* BOOK */
-function book(){
+/* BOOKING LOGIC */
+function book() {
+    let n = document.getElementById("name").value.trim();
+    let p = document.getElementById("phone").value.trim();
+    let t = document.getElementById("time").value;
 
-let n=document.getElementById("name").value;
-let p=document.getElementById("phone").value;
-let t=document.getElementById("time").value;
+    if (!n || !p || !sel) {
+        alert("Please fill in all fields and select a date!");
+        return;
+    }
 
-if(!n||!p||!sel)return alert("Fill all");
+    booked.push(sel);
+    localStorage.setItem("b", JSON.stringify(booked));
 
-booked.push(sel);
-localStorage.setItem("b",JSON.stringify(booked));
+    const message = `New Booking Request:\nName: ${n}\nPhone: ${p}\nDate: ${sel}\nTime: ${t}\nEstimated Volume: ${vol.toFixed(1)}m³\nTotal Estimate: £${document.getElementById("total").innerText}`;
+    
+    window.open(`https://wa.me/447312814746?text=${encodeURIComponent(message)}`);
 
-window.open(`https://wa.me/447312814746?text=${encodeURIComponent("Booking "+n+" "+sel+" "+t)}`);
+    fetch("https://formsubmit.co/admmoving@yahoo.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: n,
+            phone: p,
+            date: sel,
+            time: t,
+            volume: vol.toFixed(1),
+            total: document.getElementById("total").innerText
+        })
+    });
 
-fetch("https://formsubmit.co/admmoving@yahoo.com",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({name:n,phone:p,date:sel,time:t})
-});
-
-document.getElementById("msg").style.display="block";
-
-gen();
+    document.getElementById("msg").style.display = "block";
+    gen();
+    setTimeout(() => document.getElementById("msg").style.display = "none", 5000);
 }
-
 </script>
 
 </body>
