@@ -327,6 +327,51 @@ body {
     font-weight: bold;
 }
 
+/* SERVICII SUPLIMENTARE */
+.extra-services {
+    margin: 25px 0;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid var(--light-gray);
+}
+
+.service-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.service-label {
+    font-weight: 500;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-price {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.input-sm {
+    width: 80px;
+    padding: 8px;
+    text-align: center;
+    margin: 0;
+}
+
+.packing-note {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 8px;
+    font-style: italic;
+}
+
 .extra-items {
     margin-top: 20px;
     padding: 15px;
@@ -396,6 +441,11 @@ input:focus, select:focus, textarea:focus {
     justify-content: space-between;
     margin: 10px 0;
     font-size: 17px;
+}
+
+.result-row.extra {
+    color: #15803d;
+    font-style: italic;
 }
 
 .result-row.total {
@@ -709,6 +759,11 @@ footer {
     .hero h1 {
         font-size: 32px;
     }
+
+    .service-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 </style>
 </head>
@@ -783,7 +838,7 @@ footer {
         <h2 class="section-title">Smart Booking System</h2>
         <div class="dashboard">
 
-            <!-- LEFT: CALCULATOR CU SECTIUNI -->
+            <!-- LEFT: CALCULATOR CU SECTIUNI SI SERVICII SUPLIMENTARE -->
             <div class="card">
                 <h3><i class="fa-solid fa-calculator"></i> Moving Cost Calculator</h3>
                 
@@ -1019,6 +1074,59 @@ footer {
                     </button>
                 </div>
 
+                <!-- SERVICII SUPLIMENTARE -->
+                <div class="extra-services">
+                    <h4 class="section-title-items" style="margin-top:0;">
+                        <i class="fa-solid fa-plus-circle"></i> Additional Services
+                    </h4>
+
+                    <!-- Asamblare & Dezasamblare -->
+                    <div class="service-row">
+                        <span class="service-label">
+                            <i class="fa-solid fa-hammer"></i> Assembly & Dismantling
+                        </span>
+                        <input type="number" id="dismantleCount" class="input-sm" min="0" value="0" oninput="calc()">
+                        <span class="service-price">£25.00 each</span>
+                    </div>
+
+                    <!-- Cutii -->
+                    <div class="service-row">
+                        <span class="service-label">
+                            <i class="fa-solid fa-box"></i> Small Boxes
+                        </span>
+                        <input type="number" id="smallBoxes" class="input-sm" min="0" value="0" oninput="calc()">
+                        <span class="service-price">£2.50 each</span>
+                    </div>
+
+                    <div class="service-row">
+                        <span class="service-label">
+                            <i class="fa-solid fa-box"></i> Medium Boxes
+                        </span>
+                        <input type="number" id="mediumBoxes" class="input-sm" min="0" value="0" oninput="calc()">
+                        <span class="service-price">£3.50 each</span>
+                    </div>
+
+                    <div class="service-row">
+                        <span class="service-label">
+                            <i class="fa-solid fa-box"></i> Large Boxes
+                        </span>
+                        <input type="number" id="largeBoxes" class="input-sm" min="0" value="0" oninput="calc()">
+                        <span class="service-price">£4.50 each</span>
+                    </div>
+
+                    <!-- Ambalare & Deambalare -->
+                    <div class="service-row">
+                        <span class="service-label">
+                            <i class="fa-solid fa-hand-holding-box"></i> Packing & Unpacking Service
+                        </span>
+                        <select id="packingService" onchange="calc()">
+                            <option value="0">No</option>
+                            <option value="1">Yes - £1.20 per box</option>
+                        </select>
+                    </div>
+                    <p class="packing-note">* Packing cost calculated based on total number of boxes selected above</p>
+                </div>
+
                 <!-- OBIECTE SUPLIMENTARE -->
                 <div class="extra-items">
                     <label><i class="fa-solid fa-pen"></i> Extra Items / Notes:</label>
@@ -1030,7 +1138,7 @@ footer {
                 </div>
 
                 <label><i class="fa-solid fa-road"></i> Distance (miles)</label>
-                <input type="number" id="distance" placeholder="Enter distance in miles">
+                <input type="number" id="distance" placeholder="Enter distance in miles" oninput="calc()">
 
                 <label><i class="fa-solid fa-truck"></i> Van Size</label>
                 <select id="van" onchange="calc()">
@@ -1041,12 +1149,24 @@ footer {
 
                 <div class="result-box">
                     <div class="result-row">
-                        <span>Base Price:</span>
+                        <span>Base Price (per m³):</span>
                         <span>£<span id="base">0</span></span>
                     </div>
                     <div class="result-row">
                         <span>Distance Cost (£1.50/mile):</span>
                         <span>£<span id="dist">0</span></span>
+                    </div>
+                    <div class="result-row extra" id="dismantleRow" style="display:none;">
+                        <span>Assembly & Dismantling:</span>
+                        <span>£<span id="dismantleCost">0</span></span>
+                    </div>
+                    <div class="result-row extra" id="boxesRow" style="display:none;">
+                        <span>Boxes Cost:</span>
+                        <span>£<span id="boxesCost">0</span></span>
+                    </div>
+                    <div class="result-row extra" id="packingRow" style="display:none;">
+                        <span>Packing & Unpacking:</span>
+                        <span>£<span id="packingCost">0</span></span>
                     </div>
                     <div class="result-row total">
                         <span>Total Estimate:</span>
@@ -1152,6 +1272,11 @@ footer {
 let vol = 0, base = 0;
 let itemCounts = {};
 const PRICE_PER_MILE = 1.50; // £1.50 per mile
+const PRICE_DISMANTLE = 25.00; // £25 per item
+const PRICE_SMALL_BOX = 2.50;
+const PRICE_MEDIUM_BOX = 3.50;
+const PRICE_LARGE_BOX = 4.50;
+const PRICE_PACKING_PER_BOX = 1.20;
 
 // Initializare contori
 document.querySelectorAll('.item-btn').forEach(btn => {
@@ -1176,14 +1301,39 @@ function calc() {
     let d = parseFloat(document.getElementById("distance").value) || 0;
     let v = parseFloat(document.getElementById("van").value) || 1;
 
-    // Calcul cu preț de £1.50 pe milă
+    // Calcul preț de bază și distanță
     let dist = d * PRICE_PER_MILE;
-    let total = (base + dist) * v;
+    let subtotal = base + dist;
 
+    // Calcul servicii suplimentare
+    let dismantleCount = parseInt(document.getElementById("dismantleCount").value) || 0;
+    let dismantleCost = dismantleCount * PRICE_DISMANTLE;
+
+    let smallBoxes = parseInt(document.getElementById("smallBoxes").value) || 0;
+    let mediumBoxes = parseInt(document.getElementById("mediumBoxes").value) || 0;
+    let largeBoxes = parseInt(document.getElementById("largeBoxes").value) || 0;
+    let totalBoxes = smallBoxes + mediumBoxes + largeBoxes;
+    let boxesCost = (smallBoxes * PRICE_SMALL_BOX) + (mediumBoxes * PRICE_MEDIUM_BOX) + (largeBoxes * PRICE_LARGE_BOX);
+
+    let packingService = parseInt(document.getElementById("packingService").value) || 0;
+    let packingCost = packingService ? (totalBoxes * PRICE_PACKING_PER_BOX) : 0;
+
+    // Total final
+    let total = (subtotal * v) + dismantleCost + boxesCost + packingCost;
+
+    // Afișare rezultate
     document.getElementById("vol").innerText = vol.toFixed(1);
     document.getElementById("base").innerText = base.toFixed(0);
     document.getElementById("dist").innerText = dist.toFixed(2);
+    document.getElementById("dismantleCost").innerText = dismantleCost.toFixed(2);
+    document.getElementById("boxesCost").innerText = boxesCost.toFixed(2);
+    document.getElementById("packingCost").innerText = packingCost.toFixed(2);
     document.getElementById("total").innerText = total.toFixed(0);
+
+    // Afișare/ascundere rânduri servicii suplimentare
+    document.getElementById("dismantleRow").style.display = dismantleCost > 0 ? "flex" : "none";
+    document.getElementById("boxesRow").style.display = boxesCost > 0 ? "flex" : "none";
+    document.getElementById("packingRow").style.display = packingCost > 0 ? "flex" : "none";
 
     // Generare mesaj WhatsApp
     const itemsList = Object.entries(itemCounts)
@@ -1195,151 +1345,4 @@ function calc() {
 
     document.getElementById("wa").href =
         "https://wa.me/447312814746?text=" +
-        encodeURIComponent(`Hello! I need a quote:\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\n\nTotal Volume: ${vol.toFixed(1)}m³\nDistance: ${d} miles\nDistance cost: £${dist.toFixed(2)}\nVan size: ${v == 1 ? 'Small' : v == 1.3 ? 'Medium' : 'Large'}\n\nTotal estimate: £${total.toFixed(0)}`);
-}
-
-document.getElementById("distance").addEventListener("input", calc);
-document.getElementById("extraItems").addEventListener("input", calc);
-
-/* CALENDAR COMPLET */
-let booked = JSON.parse(localStorage.getItem("b") || "[]");
-let sel = null;
-let currentDate = new Date();
-let currentMonth = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
-
-const months = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];
-
-function generateCalendar() {
-    const calendarEl = document.getElementById("calendar");
-    const titleEl = document.getElementById("calendarTitle");
-    calendarEl.innerHTML = "";
-    titleEl.textContent = `${months[currentMonth]} ${currentYear}`;
-
-    const firstDay = new Date(currentYear, currentMonth, 1);
-    let firstDayIndex = firstDay.getDay() - 1;
-    if (firstDayIndex < 0) firstDayIndex = 6;
-
-    const lastDay = new Date(currentYear, currentMonth + 1, 0);
-    const daysInMonth = lastDay.getDate();
-
-    const lastDayPrevMonth = new Date(currentYear, currentMonth, 0);
-    const daysInPrevMonth = lastDayPrevMonth.getDate();
-
-    for (let i = firstDayIndex; i > 0; i--) {
-        const dayEl = document.createElement("div");
-        dayEl.className = "day other-month";
-        dayEl.textContent = daysInPrevMonth - i + 1;
-        calendarEl.appendChild(dayEl);
-    }
-
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    for (let day = 1; day <= daysInMonth; day++) {
-        const dayEl = document.createElement("div");
-        const currentDayDate = new Date(currentYear, currentMonth, day);
-        const dateStr = currentDayDate.toISOString().split("T")[0];
-        
-        dayEl.className = "day";
-        dayEl.textContent = day;
-
-        if (currentDayDate.getTime() === today.getTime()) {
-            dayEl.classList.add("today");
-        }
-
-        if (currentDayDate < today || booked.includes(dateStr)) {
-            dayEl.classList.add("unavailable");
-            dayEl.textContent += " ✗";
-        } else {
-            dayEl.onclick = () => {
-                sel = dateStr;
-                document.querySelectorAll(".day").forEach(x => x.classList.remove("selected"));
-                dayEl.classList.add("selected");
-            };
-        }
-
-        calendarEl.appendChild(dayEl);
-    }
-
-    const totalDays = calendarEl.children.length;
-    const remainingDays = 42 - totalDays;
-
-    for (let i = 1; i <= remainingDays; i++) {
-        const dayEl = document.createElement("div");
-        dayEl.className = "day other-month";
-        dayEl.textContent = i;
-        calendarEl.appendChild(dayEl);
-    }
-}
-
-function prevMonth() {
-    currentMonth--;
-    if (currentMonth < 0) {
-        currentMonth = 11;
-        currentYear--;
-    }
-    generateCalendar();
-}
-
-function nextMonth() {
-    currentMonth++;
-    if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-    }
-    generateCalendar();
-}
-
-generateCalendar();
-
-/* BOOKING LOGIC */
-function book() {
-    let n = document.getElementById("name").value.trim();
-    let p = document.getElementById("phone").value.trim();
-    let t = document.getElementById("time").value;
-    let extra = document.getElementById("extraItems").value.trim();
-
-    if (!n || !p || !sel) {
-        alert("Please fill in all fields and select a valid date!");
-        return;
-    }
-
-    booked.push(sel);
-    localStorage.setItem("b", JSON.stringify(booked));
-
-    const itemsList = Object.entries(itemCounts)
-        .filter(([_, count]) => count > 0)
-        .map(([name, count]) => `${count}x ${name}`)
-        .join(', ');
-
-    const message = `New Booking Request:\nName: ${n}\nPhone: ${p}\nDate: ${sel}\nTime: ${t}\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\n\nEstimated Volume: ${vol.toFixed(1)}m³\nTotal Estimate: £${document.getElementById("total").innerText}`;
-    
-    window.open(`https://wa.me/447312814746?text=${encodeURIComponent(message)}`);
-
-    fetch("https://formsubmit.co/admmoving@yahoo.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            name: n,
-            phone: p,
-            date: sel,
-            time: t,
-            items: itemsList,
-            extra: extra,
-            volume: vol.toFixed(1),
-            total: document.getElementById("total").innerText
-        })
-    });
-
-    document.getElementById("msg").style.display = "block";
-    generateCalendar();
-    setTimeout(() => document.getElementById("msg").style.display = "none", 5000);
-}
-</script>
-
-</body>
-</html>
+        encodeURIComponent(`Hello! I need a quote:\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\n\n--- Additional Services ---\nAssembly/Dism
