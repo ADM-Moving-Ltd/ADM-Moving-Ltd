@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Volume Calculator | ADM Moving LTD</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background:#f5f5f5;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+input[type="number"]{
+    width:70px;
+    padding:5px;
+}
+
+.result{
+    margin-top:30px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#0b5ed7;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#0b5ed7;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+button:hover{
+    background:#0849a6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Moving Volume Calculator</h1>
+
+<p>Select the quantity of items you need moved.</p>
+
+<div class="item">
+<span>Sofa (2.0 m³)</span>
+<input type="number" min="0" value="0" data-volume="2">
+</div>
+
+<div class="item">
+<span>Armchair (0.8 m³)</span>
+<input type="number" min="0" value="0" data-volume="0.8">
+</div>
+
+<div class="item">
+<span>Double Bed (1.5 m³)</span>
+<input type="number" min="0" value="0" data-volume="1.5">
+</div>
+
+<div class="item">
+<span>Wardrobe (2.5 m³)</span>
+<input type="number" min="0" value="0" data-volume="2.5">
+</div>
+
+<div class="item">
+<span>Dining Table (1.2 m³)</span>
+<input type="number" min="0" value="0" data-volume="1.2">
+</div>
+
+<div class="item">
+<span>Fridge Freezer (1.3 m³)</span>
+<input type="number" min="0" value="0" data-volume="1.3">
+</div>
+
+<div class="item">
+<span>Washing Machine (0.5 m³)</span>
+<input type="number" min="0" value="0" data-volume="0.5">
+</div>
+
+<div class="item">
+<span>Boxes (0.1 m³ each)</span>
+<input type="number" min="0" value="0" data-volume="0.1">
+</div>
+
+<button onclick="calculateVolume()">Calculate Volume</button>
+
+<div class="result" id="result">
+Total Volume: 0 m³
+</div>
+
+</div>
+
+<script>
+function calculateVolume() {
+
+let total = 0;
+
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    total += parseFloat(input.dataset.volume) * parseInt(input.value || 0);
+});
+
+document.getElementById('result').innerHTML =
+'Total Volume: ' + total.toFixed(2) + ' m³';
+
+}
+</script>
+
+</body>
+</html>
