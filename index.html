@@ -32,34 +32,38 @@
             .transition-custom {
                 transition: all 0.3s ease;
             }
+            .badge-green {
+                background-color: #E6F9E9;
+                color: #22A846;
+            }
         }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-white">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="https://via.placeholder.com/50x50" alt="ADM Moving Logo" class="h-12 w-auto">
+                <img src="https://via.placeholder.com/40x40" alt="ADM Moving Logo" class="h-10 w-auto">
                 <div>
-                    <h1 class="text-[clamp(1.2rem,2vw,1.8rem)] font-bold text-primary">ADM MOVING LTD</h1>
+                    <h1 class="text-[clamp(1.2rem,2vw,1.5rem)] font-bold text-primary">ADM MOVING LTD</h1>
                     <p class="text-sm text-grayText">Moving You With Care</p>
                 </div>
             </div>
 
             <nav class="mt-3 md:mt-0">
                 <ul class="flex flex-wrap gap-6 text-sm font-medium">
-                    <li><a href="#" class="text-primary hover:text-secondary transition-custom">HOME</a></li>
-                    <li><a href="#" class="hover:text-secondary transition-custom">SERVICES</a></li>
-                    <li><a href="#" class="hover:text-secondary transition-custom">WHY CHOOSE US</a></li>
-                    <li><a href="#" class="hover:text-secondary transition-custom">GALLERY</a></li>
-                    <li><a href="#" class="hover:text-secondary transition-custom">REVIEWS</a></li>
-                    <li><a href="#" class="hover:text-secondary transition-custom">CONTACT</a></li>
+                    <li><a href="#" class="text-primary font-semibold">HOME</a></li>
+                    <li><a href="#" class="text-grayText hover:text-primary transition-custom">SERVICES</a></li>
+                    <li><a href="#" class="text-grayText hover:text-primary transition-custom">WHY CHOOSE US</a></li>
+                    <li><a href="#" class="text-grayText hover:text-primary transition-custom">GALLERY</a></li>
+                    <li><a href="#" class="text-grayText hover:text-primary transition-custom">REVIEWS</a></li>
+                    <li><a href="#" class="text-grayText hover:text-primary transition-custom">CONTACT</a></li>
                 </ul>
             </nav>
 
-            <div class="mt-3 md:mt-0 flex items-center gap-3">
+            <div class="mt-3 md:mt-0">
                 <a href="tel:07312814746" class="bg-secondary text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-opacity-90 transition-custom">
                     <i class="fa fa-phone"></i> 07312 814746
                 </a>
@@ -68,19 +72,19 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-lightBlue to-white py-16 relative overflow-hidden">
+    <section class="bg-lightBlue py-12 relative overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="z-10">
-                    <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-semibold">PROFESSIONAL & RELIABLE</span>
-                    <h2 class="text-[clamp(2rem,4vw,3.5rem)] font-bold mt-4 text-shadow">
+                    <span class="badge-green px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">PROFESSIONAL & RELIABLE</span>
+                    <h2 class="text-[clamp(2rem,4vw,3.2rem)] font-bold leading-tight">
                         <span class="text-primary">ADM MOVING</span> <span class="text-secondary">LTD</span>
                     </h2>
-                    <p class="text-xl mt-2 text-grayText">Professional House Removals Across the UK</p>
-                    <p class="mt-4 text-grayText leading-relaxed">
+                    <p class="text-lg text-grayText mt-3 mb-4">Professional House Removals Across the UK</p>
+                    <p class="text-grayText leading-relaxed mb-8">
                         Reliable, affordable and stress-free moving services. Whether you are moving a single item, an apartment or a full house, our experienced team is ready to help anywhere in the UK.
                     </p>
-                    <div class="mt-8 flex flex-wrap gap-4">
+                    <div class="flex flex-wrap gap-4 mb-8">
                         <a href="tel:07312814746" class="bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-custom">
                             <i class="fa fa-phone mr-2"></i> 07312 814746
                         </a>
@@ -88,7 +92,7 @@
                             GET A FREE QUOTE →
                         </a>
                     </div>
-                    <div class="mt-8 flex flex-wrap gap-6 text-sm">
+                    <div class="flex flex-wrap gap-6 text-sm text-grayText">
                         <div class="flex items-center gap-2"><i class="fa fa-shield text-primary"></i> Fully Insured</div>
                         <div class="flex items-center gap-2"><i class="fa fa-globe text-primary"></i> UK Wide Service</div>
                         <div class="flex items-center gap-2"><i class="fa fa-tag text-primary"></i> Affordable Prices</div>
@@ -96,9 +100,9 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <img src="https://via.placeholder.com/600x400" alt="ADM Moving Van" class="w-full rounded-xl shadow-xl">
-                    <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg hidden md:block">
-                        <img src="https://via.placeholder.com/120x80" alt="Boxes" class="rounded">
+                    <img src="https://via.placeholder.com/550x350" alt="ADM Moving Van" class="w-full rounded-lg shadow-md">
+                    <div class="absolute -bottom-3 -right-3 bg-white p-2 rounded-md shadow-md">
+                        <img src="https://via.placeholder.com/100x70" alt="Boxes" class="rounded">
                     </div>
                 </div>
             </div>
@@ -109,46 +113,46 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h3 class="text-sm text-secondary font-semibold">WHAT WE OFFER</h3>
+                <h3 class="text-sm text-secondary font-semibold tracking-wider">WHAT WE OFFER</h3>
                 <h2 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-primary mt-1">Our Moving Services</h2>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
                 <!-- Service Item -->
-                <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-custom">
-                    <img src="https://via.placeholder.com/80x80" alt="House Removals" class="mx-auto mb-3">
-                    <h4 class="font-semibold text-sm">House Removals</h4>
-                    <p class="text-xs text-grayText mt-1">Local or long distance, we move safely</p>
+                <div class="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-custom">
+                    <img src="https://via.placeholder.com/60x60" alt="House Removals" class="mx-auto mb-3">
+                    <h4 class="font-bold text-sm mb-1">House Removals</h4>
+                    <p class="text-xs text-grayText">Local or long distance, we move safely</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-custom">
-                    <img src="https://via.placeholder.com/80x80" alt="Furniture Assembly" class="mx-auto mb-3">
-                    <h4 class="font-semibold text-sm">Furniture Assembly & Disassembly</h4>
-                    <p class="text-xs text-grayText mt-1">Dismantle and reassemble with care</p>
+                <div class="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-custom">
+                    <img src="https://via.placeholder.com/60x60" alt="Furniture Assembly" class="mx-auto mb-3">
+                    <h4 class="font-bold text-sm mb-1">Furniture Assembly & Disassembly</h4>
+                    <p class="text-xs text-grayText">Dismantle and reassemble with care</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-custom">
-                    <img src="https://via.placeholder.com/80x80" alt="Packing Services" class="mx-auto mb-3">
-                    <h4 class="font-semibold text-sm">Packing Services</h4>
-                    <p class="text-xs text-grayText mt-1">High-quality materials for your items</p>
+                <div class="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-custom">
+                    <img src="https://via.placeholder.com/60x60" alt="Packing Services" class="mx-auto mb-3">
+                    <h4 class="font-bold text-sm mb-1">Packing Services</h4>
+                    <p class="text-xs text-grayText">High-quality materials for your items</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-custom">
-                    <img src="https://via.placeholder.com/80x80" alt="Unpacking Services" class="mx-auto mb-3">
-                    <h4 class="font-semibold text-sm">Unpacking Services</h4>
-                    <p class="text-xs text-grayText mt-1">Place everything exactly where you want</p>
+                <div class="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-custom">
+                    <img src="https://via.placeholder.com/60x60" alt="Unpacking Services" class="mx-auto mb-3">
+                    <h4 class="font-bold text-sm mb-1">Unpacking Services</h4>
+                    <p class="text-xs text-grayText">Place everything exactly where you want</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-custom">
-                    <img src="https://via.placeholder.com/80x80" alt="Waste Removal" class="mx-auto mb-3">
-                    <h4 class="font-semibold text-sm">Waste & Unwanted Item Removal</h4>
-                    <p class="text-xs text-grayText mt-1">Dispose responsibly</p>
+                <div class="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-custom">
+                    <img src="https://via.placeholder.com/60x60" alt="Waste Removal" class="mx-auto mb-3">
+                    <h4 class="font-bold text-sm mb-1">Waste & Unwanted Item Removal</h4>
+                    <p class="text-xs text-grayText">Dispose responsibly</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-custom">
-                    <img src="https://via.placeholder.com/80x80" alt="Long Distance" class="mx-auto mb-3">
-                    <h4 class="font-semibold text-sm">Long Distance Moves</h4>
-                    <p class="text-xs text-grayText mt-1">Anywhere in the UK</p>
+                <div class="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-custom">
+                    <img src="https://via.placeholder.com/60x60" alt="Long Distance" class="mx-auto mb-3">
+                    <h4 class="font-bold text-sm mb-1">Long Distance Moves</h4>
+                    <p class="text-xs text-grayText">Anywhere in the UK</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-custom">
-                    <img src="https://via.placeholder.com/80x80" alt="Man and Van" class="mx-auto mb-3">
-                    <h4 class="font-semibold text-sm">Man and Van Services</h4>
-                    <p class="text-xs text-grayText mt-1">Perfect for small moves & deliveries</p>
+                <div class="bg-white rounded-lg shadow-sm p-4 text-center hover:shadow-md transition-custom">
+                    <img src="https://via.placeholder.com/60x60" alt="Man and Van" class="mx-auto mb-3">
+                    <h4 class="font-bold text-sm mb-1">Man and Van Services</h4>
+                    <p class="text-xs text-grayText">Perfect for small moves & deliveries</p>
                 </div>
             </div>
         </div>
@@ -159,10 +163,10 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div>
-                    <img src="https://via.placeholder.com/500x350" alt="Moving Team" class="w-full rounded-xl shadow-md">
+                    <img src="https://via.placeholder.com/500x350" alt="Moving Team" class="w-full rounded-lg shadow-sm">
                 </div>
                 <div>
-                    <h3 class="text-sm text-secondary font-semibold">WHY CHOOSE US</h3>
+                    <h3 class="text-sm text-secondary font-semibold tracking-wider">WHY CHOOSE US</h3>
                     <h2 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-primary mt-1">Why Choose ADM Moving LTD?</h2>
                     <ul class="mt-6 space-y-3">
                         <li class="flex items-start gap-3">
@@ -199,7 +203,7 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h3 class="text-sm text-secondary font-semibold">OUR WORK</h3>
+                <h3 class="text-sm text-secondary font-semibold tracking-wider">OUR WORK</h3>
                 <h2 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-primary mt-1">Recent Moves</h2>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -218,7 +222,7 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Quote Form -->
-                <div class="bg-primary text-white p-8 rounded-xl shadow-lg">
+                <div class="bg-primary text-white p-8 rounded-lg shadow-md">
                     <h2 class="text-2xl font-bold mb-2">Get Your Free Quote</h2>
                     <p class="text-white/80 mb-6">Fill in the form and we will get back to you with the best price!</p>
                     <form>
@@ -242,7 +246,7 @@
                 </div>
 
                 <!-- Contact Info -->
-                <div class="bg-lightBlue/50 p-8 rounded-xl shadow-lg">
+                <div class="bg-lightBlue/50 p-8 rounded-lg shadow-md">
                     <h2 class="text-2xl font-bold text-primary mb-4">Contact Us</h2>
                     <p class="text-grayText mb-6">We are here to help. Get in touch with us anytime!</p>
                     <ul class="space-y-4 mb-8">
@@ -318,7 +322,7 @@
                 </div>
             </div>
             <div class="border-t border-white/20 mt-8 pt-6 text-center text-xs">
-                <p>© 2024 ADM Moving LTD. All Rights Reserved. | Designed for professional removals services</p>
+                <p>© 2024 ADM Moving LTD. All Rights Reserved. | Moving You With Care</p>
             </div>
         </div>
     </footer>
