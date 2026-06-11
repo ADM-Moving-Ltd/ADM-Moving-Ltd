@@ -783,481 +783,199 @@ footer {
     </div>
 </div>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADM Moving LTD</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
 <!-- HERO -->
 <section class="hero" id="home">
     <div class="hero-content">
         <h1>Professional Moving Services</h1>
         <p>Get instant quotes, book online and move with confidence across the UK</p>
         <div class="hero-buttons">
-            <a href="#dash" class="btn btn-primary">
-                <i class="fa-solid fa-calculator"></i> Get Quote
-            </a>
-            <a href="#contact" class="btn btn-outline">
-                <i class="fa-solid fa-phone"></i> Call Us
-            </a>
+            <a href="#dash">Get Quote</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
-    <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-home"></i></div>
-                <h4>House Moving</h4>
-                <p>Complete house relocation with professional packing and safe transportation</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
-                <h4>Office Moving</h4>
-                <p>Efficient office relocation to minimize downtime and keep your business running</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-box"></i></div>
-                <h4>Packing Service</h4>
-                <p>Professional packing materials and service to protect your belongings</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- BOOKING DASHBOARD -->
 <section id="dash" class="section">
-    <div class="container">
-        <h2 class="section-title">Smart Booking System</h2>
-        <div class="dashboard">
+<div class="container">
+<div class="dashboard">
 
-          <!-- LEFT: CALCULATOR -->
+<!-- LEFT -->
 <div class="card">
-    <h3><i class="fa-solid fa-calculator"></i> Moving Cost Calculator</h3>
+    <h3>Moving Cost Calculator</h3>
 
-    <!-- Living Room -->
-    <h4 class="section-title-items"><i class="fa-solid fa-couch"></i> Living Room</h4>
-    <div class="items-grid">
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-couch"></i> Sofa</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="3" data-name="Sofa">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="3" data-name="Sofa">+</button>
-            </div>
-        </div>
-
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-table"></i> Coffee Table</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="2" data-name="Coffee Table">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="2" data-name="Coffee Table">+</button>
-            </div>
-        </div>
-
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-tv"></i> TV Unit</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="1.5" data-name="TV Unit">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="1.5" data-name="TV Unit">+</button>
-            </div>
-        </div>
-
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-tv"></i> TV</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="1.5" data-name="TV">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="1.5" data-name="TV">+</button>
-            </div>
+    <div class="item-control">
+        <span>Sofa</span>
+        <div class="item-buttons">
+            <button class="btn-minus" data-volume="3" data-name="Sofa">−</button>
+            <span class="item-count">0</span>
+            <button class="btn-plus" data-volume="3" data-name="Sofa">+</button>
         </div>
     </div>
 
-    <!-- Bedroom -->
-    <h4 class="section-title-items"><i class="fa-solid fa-bed"></i> Bedroom</h4>
-    <div class="items-grid">
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-bed"></i> Double Bed</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="3" data-name="Double Bed">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="3" data-name="Double Bed">+</button>
-            </div>
+    <div class="item-control">
+        <span>TV</span>
+        <div class="item-buttons">
+            <button class="btn-minus" data-volume="1.5" data-name="TV">−</button>
+            <span class="item-count">0</span>
+            <button class="btn-plus" data-volume="1.5" data-name="TV">+</button>
         </div>
     </div>
 
-    <!-- Kitchen -->
-    <h4 class="section-title-items"><i class="fa-solid fa-kitchen-set"></i> Kitchen</h4>
-    <div class="items-grid">
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-refrigerator"></i> Fridge Freezer</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="2" data-name="Fridge Freezer">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="2" data-name="Fridge Freezer">+</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bathroom -->
-    <h4 class="section-title-items"><i class="fa-solid fa-bath"></i> Bathroom</h4>
-    <div class="items-grid">
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-box"></i> Cabinet</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="0.5" data-name="Cabinet">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="0.5" data-name="Cabinet">+</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Garden -->
-    <h4 class="section-title-items"><i class="fa-solid fa-tree"></i> Garden & Outdoor</h4>
-    <div class="items-grid">
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-table"></i> Garden Table</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="2.5" data-name="Garden Table">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="2.5" data-name="Garden Table">+</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- General -->
-    <h4 class="section-title-items"><i class="fa-solid fa-box-open"></i> General Items</h4>
-    <div class="items-grid">
-        <div class="item-control">
-            <span class="item-name"><i class="fa-solid fa-laptop"></i> Desk</span>
-            <div class="item-buttons">
-                <button class="btn-minus" data-volume="1" data-name="Desk">−</button>
-                <span class="item-count">0</span>
-                <button class="btn-plus" data-volume="1" data-name="Desk">+</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Extra Services -->
-    <div class="extra-services">
-        <h4 class="section-title-items" style="margin-top:0;">
-            <i class="fa-solid fa-plus-circle"></i> Additional Services
-        </h4>
-
-        <div class="service-row">
-            <span class="service-label">Assembly & Dismantling</span>
-            <input type="number" id="dismantleCount" min="0" value="0" oninput="calc()">
-            <span class="service-price">£25.00 each</span>
-        </div>
-
-        <div class="service-row">
-            <span class="service-label">Small Boxes</span>
-            <input type="number" id="smallBoxes" min="0" value="0" oninput="calc()">
-            <span class="service-price">£2.50 each</span>
-        </div>
-
-        <div class="service-row">
-            <span class="service-label">Medium Boxes</span>
-            <input type="number" id="mediumBoxes" min="0" value="0" oninput="calc()">
-            <span class="service-price">£3.50 each</span>
-        </div>
-
-        <div class="service-row">
-            <span class="service-label">Large Boxes</span>
-            <input type="number" id="largeBoxes" min="0" value="0" oninput="calc()">
-            <span class="service-price">£4.50 each</span>
-        </div>
-
-        <div class="service-row">
-            <span class="service-label">Packing Service</span>
-            <select id="packingService" onchange="calc()">
-                <option value="0">No</option>
-                <option value="1">Yes - £1.20 per box</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="volume-display">
-        Total Volume: <b><span id="vol">0</span> m³</b>
-    </div>
-
-    <input type="number" id="distance" placeholder="Distance (miles)" oninput="calc()">
+    <input id="distance" type="number" placeholder="Distance" oninput="calc()">
 
     <select id="van" onchange="calc()">
-        <option value="1">Small Van</option>
-        <option value="1.3">Medium Van</option>
-        <option value="1.6">Large Van</option>
+        <option value="1">Small</option>
+        <option value="1.3">Medium</option>
+        <option value="1.6">Large</option>
     </select>
 
-    <div class="result-box">
-        <div>Total: £<span id="total">0</span></div>
+    <div>
+        Volume: <span id="vol">0</span> m³
+    </div>
+
+    <div>
+        Total: £<span id="total">0</span>
     </div>
 </div>
 
-<!-- RIGHT SIDE -->
+<!-- RIGHT -->
 <div class="card">
     <h3>Book Your Move</h3>
 
-    <input type="text" id="name" placeholder="Name">
-    <input type="tel" id="phone" placeholder="Phone">
-    <input type="email" id="email" placeholder="Email">
+    <input id="name" placeholder="Name">
+    <input id="phone" placeholder="Phone">
+    <input id="email" placeholder="Email">
 
-    <select id="time">
-        <option>07:00</option>
-        <option>08:00</option>
-        <option>09:00</option>
-    </select>
-
-    <div class="calendar-container">
-        <div id="calendar"></div>
-    </div>
+    <div id="calendar"></div>
 
     <button onclick="book()">Confirm Booking</button>
-</div> 
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact-card">
-            <h3>Get In Touch</h3>
-            <p>We are here to help with all your moving needs. Contact us anytime.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+44 7312 814746</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>admmoving@yahoo.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Corby, Northamptonshire, UK</span>
-                </div>
-            </div>
-        </div>
+    <div id="msg" style="display:none;color:green;">
+        Booking sent successfully
     </div>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="logo" style="justify-content:center; margin-bottom:15px;">
-                <i class="fa-solid fa-truck-moving"></i>
-                ADM Moving LTD
-            </div>
-            <p>Professional and reliable moving services across the UK</p>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 ADM Moving LTD. All rights reserved.
-        </div>
-    </div>
-</footer>
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+</section>
 
 <script>
-let vol = 0, base = 0;
+let vol = 0;
+let base = 0;
 let itemCounts = {};
 let currentDate = new Date();
 let selectedDate = null;
 
-const PRICE_PER_MILE = 1.50;
-const PRICE_DISMANTLE = 25.00;
-const PRICE_SMALL_BOX = 2.50;
-const PRICE_MEDIUM_BOX = 3.50;
-const PRICE_LARGE_BOX = 4.50;
-const PRICE_PACKING_PER_BOX = 1.20;
+const PRICE_PER_MILE = 1.5;
 
-// Controale + / - pentru obiecte
-document.addEventListener('click', function(e) {
+// ITEM CLICK
+document.addEventListener("click", function(e) {
     const btn = e.target;
-    if (!btn.dataset.volume) return;
+    if (!btn.classList.contains("btn-plus") && !btn.classList.contains("btn-minus")) return;
 
     const name = btn.dataset.name;
-    const volumePerItem = parseFloat(btn.dataset.volume);
-    const countEl = btn.parentElement.querySelector('.item-count');
+    const volume = parseFloat(btn.dataset.volume);
 
     if (!itemCounts[name]) itemCounts[name] = 0;
 
-    if (btn.classList.contains('btn-plus')) {
-        itemCounts[name]++;
-        vol += volumePerItem;
-        base += volumePerItem * 45;
-    }
+    const countEl = btn.parentElement.querySelector(".item-count");
 
-    if (btn.classList.contains('btn-minus') && itemCounts[name] > 0) {
+    if (btn.classList.contains("btn-plus")) {
+        itemCounts[name]++;
+        vol += volume;
+        base += volume * 45;
+    } else if (itemCounts[name] > 0) {
         itemCounts[name]--;
-        vol -= volumePerItem;
-        base -= volumePerItem * 45;
+        vol -= volume;
+        base -= volume * 45;
     }
 
     countEl.textContent = itemCounts[name];
     calc();
 });
 
-// Calcul total
+// CALC
 function calc() {
     let d = parseFloat(document.getElementById("distance").value) || 0;
     let v = parseFloat(document.getElementById("van").value) || 1;
 
-    let dist = d * PRICE_PER_MILE;
-    let subtotal = base + dist;
-
-    let dismantleCount = parseInt(document.getElementById("dismantleCount").value) || 0;
-    let dismantleCost = dismantleCount * PRICE_DISMANTLE;
-
-    let smallBoxes = parseInt(document.getElementById("smallBoxes").value) || 0;
-    let mediumBoxes = parseInt(document.getElementById("mediumBoxes").value) || 0;
-    let largeBoxes = parseInt(document.getElementById("largeBoxes").value) || 0;
-    let totalBoxes = smallBoxes + mediumBoxes + largeBoxes;
-    let boxesCost = (smallBoxes * PRICE_SMALL_BOX) + (mediumBoxes * PRICE_MEDIUM_BOX) + (largeBoxes * PRICE_LARGE_BOX);
-
-    let packingService = parseInt(document.getElementById("packingService").value) || 0;
-    let packingCost = packingService ? (totalBoxes * PRICE_PACKING_PER_BOX) : 0;
-
-    let total = (subtotal * v) + dismantleCost + boxesCost + packingCost;
+    let total = (base + (d * PRICE_PER_MILE)) * v;
 
     document.getElementById("vol").innerText = vol.toFixed(1);
-    document.getElementById("base").innerText = base.toFixed(0);
-    document.getElementById("dist").innerText = dist.toFixed(2);
-    document.getElementById("dismantleCost").innerText = dismantleCost.toFixed(2);
-    document.getElementById("boxesCost").innerText = boxesCost.toFixed(2);
-    document.getElementById("packingCost").innerText = packingCost.toFixed(2);
     document.getElementById("total").innerText = total.toFixed(0);
-
-    document.getElementById("dismantleRow").style.display = dismantleCost > 0 ? "flex" : "none";
-    document.getElementById("boxesRow").style.display = boxesCost > 0 ? "flex" : "none";
-    document.getElementById("packingRow").style.display = packingCost > 0 ? "flex" : "none";
-
-    // Link WhatsApp
-    const itemsList = Object.entries(itemCounts)
-        .filter(([_, count]) => count > 0)
-        .map(([name, count]) => `${count}x ${name}`)
-        .join(', ');
-    
-    const extra = document.getElementById("extraItems").value.trim();
-    const dateStr = selectedDate ? selectedDate.toLocaleDateString('en-GB') : 'Not selected';
-    const time = document.getElementById("time").value;
-
-    document.getElementById("wa").href =
-        "https://wa.me/447312814746?text=" +
-        encodeURIComponent(`Hello! I need a quote:\n\nItems: ${itemsList || 'None selected'}\nExtra info: ${extra || 'None'}\nDate: ${dateStr}\nTime: ${time}\n\n--- Costs ---\nVolume: ${vol.toFixed(1)}m³\nBase: £${base.toFixed(0)}\nDistance: £${dist.toFixed(2)}\nAssembly: £${dismantleCost.toFixed(2)}\nBoxes: £${boxesCost.toFixed(2)}\nPacking: £${packingCost.toFixed(2)}\nTOTAL: £${total.toFixed(0)}`);
 }
 
-// Calendar
+// CALENDAR
 function renderCalendar() {
-    const month = currentDate.getMonth();
+    const cal = document.getElementById("calendar");
+    cal.innerHTML = "";
+
     const year = currentDate.getFullYear();
-    const firstDay = new Date(year, month, 1).getDay() || 7;
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const prevDays = firstDay - 1;
-    const today = new Date();
-    today.setHours(0,0,0,0);
+    const month = currentDate.getMonth();
 
-    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    document.getElementById("calendarTitle").textContent = `${months[month]} ${year}`;
+    const days = new Date(year, month + 1, 0).getDate();
 
-    const calendarEl = document.getElementById("calendar");
-    calendarEl.innerHTML = '';
+    for (let i = 1; i <= days; i++) {
+        const day = document.createElement("div");
+        day.textContent = i;
 
-    for (let i = 0; i < prevDays; i++) {
-        const dayEl = document.createElement('div');
-        dayEl.className = 'day other-month';
-        const prevDate = new Date(year, month, -prevDays + i + 1);
-        dayEl.textContent = prevDate.getDate();
-        calendarEl.appendChild(dayEl);
-    }
+        const date = new Date(year, month, i);
+        const today = new Date();
+        today.setHours(0,0,0,0);
 
-    for (let d = 1; d <= daysInMonth; d++) {
-        const dayEl = document.createElement('div');
-        const date = new Date(year, month, d);
-        const isPast = date < today;
-        const isToday = date.toDateString() === today.toDateString();
-        const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
-
-        dayEl.className = `day ${isPast ? 'unavailable' : ''} ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''}`;
-        dayEl.textContent = d;
-
-        if (!isPast) {
-            dayEl.addEventListener('click', () => {
-                document.querySelectorAll('.day').forEach(el => el.classList.remove('selected'));
-                dayEl.classList.add('selected');
+        if (date < today) {
+            day.style.opacity = "0.3";
+        } else {
+            day.onclick = () => {
                 selectedDate = date;
-                calc();
-            });
+                renderCalendar();
+            };
         }
-        calendarEl.appendChild(dayEl);
-    }
 
-    const totalCells = prevDays + daysInMonth;
-    const nextDays = totalCells <= 35 ? 35 - totalCells : 42 - totalCells;
-    for (let i = 1; i <= nextDays; i++) {
-        const dayEl = document.createElement('div');
-        dayEl.className = 'day other-month';
-        dayEl.textContent = i;
-        calendarEl.appendChild(dayEl);
+        if (selectedDate && selectedDate.getDate() === i) {
+            day.style.background = "#4CAF50";
+            day.style.color = "#fff";
+        }
+
+        cal.appendChild(day);
     }
 }
 
-function prevMonth() {
-    currentDate.setMonth(currentDate.getMonth() - 1);
-    renderCalendar();
-}
-
-function nextMonth() {
-    currentDate.setMonth(currentDate.getMonth() + 1);
-    renderCalendar();
-}
-
+// BOOK
 function book() {
-
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
 
     if (!name || !phone || !selectedDate) {
-        alert("Please fill your name, phone number and select a date!");
+        alert("Fill all fields + select date");
         return;
     }
 
-    const bookingDate = selectedDate.toLocaleDateString('en-GB');
-    const bookingTime = document.getElementById("time").value;
-
-    emailjs.send(
-        "service_h4eoz48",
-        "template_01mylzs",
-        {
-            name: name,
-            phone: phone,
-            email: email,
-            date: bookingDate,
-            time: bookingTime
-        }
-    )
-    .then(function() {
-        document.getElementById("msg").style.display = "block";
-    })
-    .catch(function(error) {
-        console.log(error);
-        alert("Booking could not be sent.");
-    });
-}
+    document.getElementById("msg").style.display = "block";
 }
 
-// Inițializare la încărcare pagină
 window.onload = function() {
     renderCalendar();
     calc();
 };
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-emailjs.init({
-    publicKey: "rWnJNR9pMWg8bBMLM"
-});
 </script>
 
 </body>
