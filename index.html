@@ -3,274 +3,250 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Moving LTD - Booking System</title>
+<title>ADM Moving LTD | Pro Booking System</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-body{margin:0;font-family:Arial;background:#f5f7fb;}
-.container{width:92%;max-width:1200px;margin:auto;}
+body{margin:0;font-family:Arial;background:#f4f7fb;color:#111}
 
-.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px;}
-
-.card{background:white;padding:20px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
-
-.section-title{font-weight:bold;margin:15px 0;}
-
-.item-control{display:flex;justify-content:space-between;align-items:center;margin:8px 0;background:#f1f5f9;padding:10px;border-radius:8px;}
-
-.item-buttons{display:flex;gap:10px;align-items:center;}
-
-.btn-plus,.btn-minus{width:28px;height:28px;cursor:pointer;}
-
-.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:10px;}
-
-.calendar .day{padding:10px;text-align:center;background:#eee;cursor:pointer;border-radius:6px;}
-
-.calendar .selected{background:#28c76f;color:white;}
-
-input,select,textarea{
-width:100%;
-padding:10px;
-margin:6px 0;
-border-radius:8px;
-border:1px solid #ccc;
+.hero{
+height:75vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg");
+background-size:cover;
+display:flex;align-items:center;justify-content:center;
+color:white;text-align:center
 }
 
-.summary{
-background:#eefaf2;
-padding:10px;
-border-radius:8px;
-margin-top:10px;
-font-size:14px;
+.container{width:95%;max-width:1200px;margin:auto}
+.section{padding:50px 0}
+
+.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+
+.category{margin-top:15px;border-top:1px solid #eee;padding-top:10px}
+
+.item{display:flex;justify-content:space-between;margin:6px 0}
+
+.btn{padding:4px 10px;border:none;cursor:pointer;border-radius:6px}
+.plus{background:#22c55e;color:white}
+.minus{background:#ef4444;color:white}
+
+input,select{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ddd}
+
+.result{margin-top:15px;background:#ecfdf5;padding:12px;border-radius:10px}
+
+.calendar-header{
+display:flex;justify-content:space-between;align-items:center;margin-bottom:10px
 }
+
+.daygrid{
+display:grid;grid-template-columns:repeat(7,1fr);gap:5px
+}
+
+.day{
+padding:10px;background:#f1f5f9;text-align:center;border-radius:6px;cursor:pointer
+}
+
+.day.disabled{opacity:0.3;pointer-events:none}
+.day.selected{background:#22c55e;color:white}
+
+.actions a{
+display:inline-block;margin-top:10px;padding:10px 12px;
+color:white;text-decoration:none;border-radius:8px
+}
+.wa{background:#25d366}
+.mail{background:#3b82f6}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="hero">
+<div>
+<h1>ADM Moving LTD</h1>
+<p>Professional Booking & Quote System</p>
+</div>
+</div>
 
+<div class="section">
+<div class="container">
 <div class="dashboard">
 
-<!-- LEFT: CALCULATOR -->
+<!-- CALCULATOR -->
 <div class="card">
+<h2>Inventory</h2>
 
-<h2>Moving Items</h2>
-
-<div class="section-title">Living Room</div>
-
-<div class="item-control">
-<span>Sofa</span>
-<div class="item-buttons">
-<button class="btn-minus" data-name="Sofa" data-volume="3">-</button>
-<span class="item-count">0</span>
-<button class="btn-plus" data-name="Sofa" data-volume="3">+</button>
-</div>
+<div class="category">
+<div class="item">Sofa <div><button class="btn minus" onclick="change('Sofa',-3)">-</button> <span id="Sofa">0</span> <button class="btn plus" onclick="change('Sofa',3)">+</button></div></div>
+<div class="item">TV <div><button class="btn minus" onclick="change('TV',-1.5)">-</button> <span id="TV">0</span> <button class="btn plus" onclick="change('TV',1.5)">+</button></div></div>
+<div class="item">Bed <div><button class="btn minus" onclick="change('Bed',-3)">-</button> <span id="Bed">0</span> <button class="btn plus" onclick="change('Bed',3)">+</button></div></div>
 </div>
 
-<div class="item-control">
-<span>TV</span>
-<div class="item-buttons">
-<button class="btn-minus" data-name="TV" data-volume="1.5">-</button>
-<span class="item-count">0</span>
-<button class="btn-plus" data-name="TV" data-volume="1.5">+</button>
-</div>
-</div>
+<div class="category">
+<h4>Extras</h4>
+<input id="dismantle" type="number" placeholder="Dismantle (£25)">
+<input id="small" type="number" placeholder="Small boxes">
+<input id="medium" type="number" placeholder="Medium boxes">
+<input id="large" type="number" placeholder="Large boxes">
 
-<div class="section-title">Bedroom</div>
-
-<div class="item-control">
-<span>Bed</span>
-<div class="item-buttons">
-<button class="btn-minus" data-name="Bed" data-volume="3.5">-</button>
-<span class="item-count">0</span>
-<button class="btn-plus" data-name="Bed" data-volume="3.5">+</button>
-</div>
+<select id="packing">
+<option value="0">No packing</option>
+<option value="1">Packing service</option>
+</select>
 </div>
 
-<div class="section-title">Kitchen</div>
-
-<div class="item-control">
-<span>Fridge</span>
-<div class="item-buttons">
-<button class="btn-minus" data-name="Fridge" data-volume="2.5">-</button>
-<span class="item-count">0</span>
-<button class="btn-plus" data-name="Fridge" data-volume="2.5">+</button>
-</div>
-</div>
-
-<input id="distance" placeholder="Distance (miles)" oninput="calc()">
-
-<select id="van" onchange="calc()">
-<option value="1">Small Van</option>
-<option value="1.3">Medium Van</option>
-<option value="1.6">Large Van</option>
+<input id="distance" type="number" placeholder="Distance (miles)">
+<select id="van">
+<option value="1">Small van</option>
+<option value="1.3">Medium van</option>
+<option value="1.6">Large van</option>
 </select>
 
-<div class="summary">
-Volume: <span id="vol">0</span> m³ <br>
+<div class="result">
+Volume: <span id="vol">0</span> m³<br>
 Total: £<span id="total">0</span>
 </div>
 
 </div>
 
-<!-- RIGHT: BOOKING -->
+<!-- BOOKING -->
 <div class="card">
+<h2>Booking</h2>
 
-<h2>Customer Details</h2>
-
-<input id="name" placeholder="Full Name">
+<input id="name" placeholder="Name">
 <input id="phone" placeholder="Phone">
 <input id="email" placeholder="Email">
+<input id="pickup" placeholder="Pickup address">
+<input id="dropoff" placeholder="Dropoff address">
 
-<textarea id="pickup" placeholder="Pickup Address"></textarea>
-<textarea id="dropoff" placeholder="Dropoff Address"></textarea>
+<select id="time">
+<option>07:00</option>
+<option>09:00</option>
+<option>12:00</option>
+<option>15:00</option>
+</select>
 
-<div class="section-title">Select Date</div>
+<div class="calendar-header">
+<button onclick="prevMonth()">◀</button>
+<h3 id="monthLabel"></h3>
+<button onclick="nextMonth()">▶</button>
+</div>
 
-<div id="calendar" class="calendar"></div>
+<div class="daygrid" id="calendar"></div>
 
-<button onclick="book()" style="margin-top:10px;width:100%;padding:12px;background:#28c76f;color:white;border:none;border-radius:8px;">
-Confirm Booking
-</button>
-
-<p id="msg" style="display:none;color:green;">Booking sent successfully</p>
-
+<div class="actions">
+<a class="wa" id="wa" target="_blank">WhatsApp</a>
+<a class="mail" id="mail">Email</a>
 </div>
 
 </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</div>
+</div>
+</div>
 
 <script>
-emailjs.init("rWnJNR9pMWg8bBMLM");
+let items={}, selectedDate=null;
+let now=new Date();
 
-let vol=0;
-let base=0;
-let items={};
-let selectedDate=null;
+const PR={mile:1.5};
 
-const PRICE_PER_MILE=1.5;
-
-/* ITEMS */
-document.addEventListener("click",(e)=>{
-if(!e.target.dataset.name)return;
-
-let name=e.target.dataset.name;
-let v=parseFloat(e.target.dataset.volume);
-
-if(!items[name])items[name]=0;
-
-let parent=e.target.parentElement;
-let count=parent.querySelector(".item-count");
-
-if(e.target.classList.contains("btn-plus")){
-items[name]++;vol+=v;base+=v*45;
-}
-
-if(e.target.classList.contains("btn-minus")&&items[name]>0){
-items[name]--;vol-=v;base-=v*45;
-}
-
-count.textContent=items[name];
+function change(n,v){
+if(!items[n])items[n]={q:0,v:Math.abs(v)};
+if(v>0){items[n].q++;items[n].v=v}
+else if(items[n].q>0)items[n].q--;
+document.getElementById(n).innerText=items[n].q;
 calc();
-});
-
-/* CALC */
-function calc(){
-let d=document.getElementById("distance").value||0;
-let van=document.getElementById("van").value||1;
-
-let total=(base+d*PRICE_PER_MILE)*van;
-
-document.getElementById("vol").innerText=vol.toFixed(1);
-document.getElementById("total").innerText=total.toFixed(0);
 }
 
-/* CALENDAR (ZI LUNĂ AN REAL) */
-function renderCalendar(){
+function calc(){
+let vol=0,base=0;
+
+for(let k in items){
+vol+=items[k].q*items[k].v;
+base+=items[k].q*items[k].v*40;
+}
+
+let d=+distance.value||0;
+let van=+document.getElementById("van").value;
+
+let dismantle=+document.getElementById("dismantle").value||0;
+let small=+small.value||0;
+let medium=+medium.value||0;
+let large=+large.value||0;
+
+let boxes=small+medium+large;
+let packing=+document.getElementById("packing").value;
+
+let total=(base+d*PR.mile)*van +
+dismantle*25 +
+small*2.5 +
+medium*3.5 +
+large*4.5 +
+(packing?boxes*1.2:0);
+
+volEl.innerText=vol.toFixed(1);
+totalEl.innerText=total.toFixed(0);
+
+update(total,vol);
+}
+
+function update(total,vol){
+let msg=
+`Move:
+${name.value}
+${phone.value}
+${pickup.value} -> ${dropoff.value}
+Date: ${selectedDate?selectedDate.toDateString():"-"}
+Time: ${time.value}
+Vol: ${vol.toFixed(1)}m3
+Total: £${total.toFixed(0)}`;
+
+wa.href="https://wa.me/447312814746?text="+encodeURIComponent(msg);
+mail.href="mailto:admmoving@yahoo.com?subject=Move&body="+encodeURIComponent(msg);
+
+// GOOGLE SHEETS (OPTIONAL)
+fetch("YOUR_GOOGLE_SCRIPT_URL",{ // <-- aici pui webhook
+method:"POST",
+body:JSON.stringify({msg})
+}).catch(()=>{});
+}
+
+/* CALENDAR */
+function render(){
 let cal=document.getElementById("calendar");
 cal.innerHTML="";
 
-let now=new Date();
 let y=now.getFullYear();
 let m=now.getMonth();
+
+monthLabel.innerText=now.toLocaleString('en',{month:'long'})+" "+y;
 
 let days=new Date(y,m+1,0).getDate();
 let today=new Date();today.setHours(0,0,0,0);
 
 for(let i=1;i<=days;i++){
-let d=document.createElement("div");
-d.className="day";
-d.textContent=i+" "+(m+1)+" "+y;
+let d=new Date(y,m,i);
+let div=document.createElement("div");
+div.className="day";
+div.innerText=i;
 
-let date=new Date(y,m,i);
+if(d<today)div.classList.add("disabled");
+else div.onclick=()=>{selectedDate=d;render();calc();};
 
-if(date<today){
-d.style.opacity="0.3";
-}else{
-d.onclick=()=>{
-selectedDate=date;
-renderCalendar();
-};
-}
+if(selectedDate && selectedDate.getDate()==i)div.classList.add("selected");
 
-if(selectedDate&&selectedDate.getDate()==i)d.classList.add("selected");
-
-cal.appendChild(d);
+cal.appendChild(div);
 }
 }
 
-/* BOOK */
-function book(){
+function nextMonth(){now.setMonth(now.getMonth()+1);render()}
+function prevMonth(){now.setMonth(now.getMonth()-1);render()}
 
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let email=document.getElementById("email").value;
-let pickup=document.getElementById("pickup").value;
-let dropoff=document.getElementById("dropoff").value;
-
-if(!name||!phone||!pickup||!dropoff||!selectedDate){
-alert("Please complete all fields");
-return;
-}
-
-let itemsList=Object.entries(items)
-.filter(([k,v])=>v>0)
-.map(([k,v])=>`${v}x ${k}`)
-.join(", ");
-
-let msg=
-`NEW MOVING BOOKING
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-
-Pickup: ${pickup}
-Dropoff: ${dropoff}
-
-Date: ${selectedDate.toLocaleDateString("en-GB")}
-
-Items: ${itemsList}
-
-Volume: ${vol.toFixed(1)}m³
-Total: £${document.getElementById("total").innerText}`;
-
-/* WHATSAPP */
-window.open("https://wa.me/447312814746?text="+encodeURIComponent(msg));
-
-/* EMAIL */
-emailjs.send("service_h4eoz48","template_01mylzs",{
-name,phone,email,message:msg
-});
-
-document.getElementById("msg").style.display="block";
-}
-
-/* INIT */
-window.onload=()=>{renderCalendar();calc();};
+render();calc();
 </script>
 
 </body>
