@@ -1236,6 +1236,8 @@ footer {
 
                 <label><i class="fa-solid fa-phone"></i> Phone Number</label>
                 <input type="tel" id="phone" placeholder="Your phone number">
+                <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+<input type="email" id="email" placeholder="Your email address">
 
                 <label><i class="fa-solid fa-clock"></i> Preferred Time</label>
                 <select id="time">
@@ -1482,14 +1484,38 @@ function nextMonth() {
 }
 
 function book() {
+
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+
     if (!name || !phone || !selectedDate) {
         alert("Please fill your name, phone number and select a date!");
         return;
     }
-    document.getElementById("msg").style.display = "block";
-    calc();
+
+    const bookingDate = selectedDate.toLocaleDateString('en-GB');
+    const bookingTime = document.getElementById("time").value;
+
+    emailjs.send(
+        "service_h4eoz48",
+        "template_01mylzs",
+        {
+            name: name,
+            phone: phone,
+            email: email,
+            date: bookingDate,
+            time: bookingTime
+        }
+    )
+    .then(function() {
+        document.getElementById("msg").style.display = "block";
+    })
+    .catch(function(error) {
+        console.log(error);
+        alert("Booking could not be sent.");
+    });
+}
 }
 
 // Inițializare la încărcare pagină
@@ -1499,5 +1525,13 @@ window.onload = function() {
 };
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "rWnJNR9pMWg8bBMLM"
+});
+</script>
+
 </body>
-</html> 
+</html>
