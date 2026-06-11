@@ -45,7 +45,7 @@
     <header class="bg-white shadow-sm py-4">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center gap-3">
-                <!-- ✅ LOGO DOAR CU DUBĂ - CORECT, SIGUR -->
+                <!-- ✅ LOGO DOAR CU DUBĂ -->
                 <img src="https://cdn-icons-png.flaticon.com/128/1059/1059177.png" alt="ADM Moving Logo" class="h-10 w-auto">
                 <div>
                     <h1 class="text-[clamp(1.2rem,2vw,1.5rem)] font-bold text-primary">ADM MOVING LTD</h1>
@@ -196,31 +196,66 @@
         </div>
     </section>
 
-    <!-- Contact Us -->
+    <!-- Contact Us + Formular functional pe WhatsApp si Email -->
     <section id="quote" class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-primary text-white p-8 rounded-lg shadow-md">
                     <h2 class="text-2xl font-bold mb-2">Get Your Free Quote</h2>
                     <p class="text-white/80 mb-6">Fill in the form and we will get back to you with the best price!</p>
-                    <form>
+                    
+                    <!-- ✅ FORMULAR REPARAT - Trimite pe WhatsApp + Email -->
+                    <form id="quoteForm">
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="text" placeholder="Your Name" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30">
-                            <input type="tel" placeholder="Phone Number" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30">
+                            <input type="text" id="nume" placeholder="Your Name" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="tel" id="telefon" placeholder="Phone Number" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="email" placeholder="Email Address" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30">
-                            <input type="text" placeholder="Moving From" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30">
+                            <input type="email" id="email" placeholder="Email Address" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="text" id="de_la" placeholder="Moving From" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="text" placeholder="Moving To" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30">
-                            <input type="date" class="p-3 rounded-lg bg-white/20 border border-white/30 text-white/80 focus:outline-none focus:bg-white/30">
+                            <input type="text" id="la" placeholder="Moving To" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="date" id="data" class="p-3 rounded-lg bg-white/20 border border-white/30 text-white/80 focus:outline-none focus:bg-white/30" required>
                         </div>
-                        <textarea placeholder="Tell us more about your move..." rows="4" class="w-full p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30 mb-4"></textarea>
+                        <textarea id="mesaj" placeholder="Tell us more about your move..." rows="4" class="w-full p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30 mb-4"></textarea>
+                        
+                        <!-- ✅ BUTON CARE TRIMITE PE WHATSAPP + SE DESCHIDE EMAIL-UL -->
                         <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-3 rounded-lg transition-custom">
                             SEND MY REQUEST →
                         </button>
                     </form>
+
+                    <script>
+                        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+                            e.preventDefault(); // Opreste trimiterea default
+
+                            // Ia datele din formular
+                            const nume = document.getElementById('nume').value;
+                            const telefon = document.getElementById('telefon').value;
+                            const email = document.getElementById('email').value;
+                            const de_la = document.getElementById('de_la').value;
+                            const la = document.getElementById('la').value;
+                            const data = document.getElementById('data').value;
+                            const mesaj = document.getElementById('mesaj').value || "Fără detalii suplimentare";
+
+                            // Construieste textul pentru WhatsApp
+                            const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
+                            
+                            // Construieste linkul pentru WhatsApp (numarul tau: 07312814746)
+                            const linkWhatsApp = `https://wa.me/447312814746?text=${textWhatsApp}`;
+                            
+                            // Construieste linkul pentru Email
+                            const subiectEmail = "Cerere oferta mutare - ADM Moving";
+                            const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\nDe mutat din: ${de_la}\nMutat la: ${la}\nData: ${data}\nDetalii: ${mesaj}`;
+                            const linkEmail = `mailto:admmoving@yahoo.com?subject=${encodeURIComponent(subiectEmail)}&body=${encodeURIComponent(corpEmail)}`;
+
+                            // Deschide intai WhatsApp, apoi Email
+                            window.open(linkWhatsApp, '_blank');
+                            window.open(linkEmail, '_blank');
+                        });
+                    </script>
+
                 </div>
 
                 <div class="bg-lightBlue/50 p-8 rounded-lg shadow-md">
