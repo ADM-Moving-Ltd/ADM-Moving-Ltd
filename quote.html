@@ -44,7 +44,6 @@
                     <h2 class="text-2xl font-bold mb-2">Get Your Free Quote</h2>
                     <p class="text-white/80 mb-6">Fill in the form and we will get back to you with the best price!</p>
                     
-                    <!-- 🔽 ASTA ESTE FORMULARUL TAU, EXACT CA INAINTE, DAR REPARAT 🔽 -->
                     <form id="quoteForm">
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
                             <input type="text" id="nume" placeholder="Your Name" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
@@ -80,12 +79,10 @@
                             const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
                             const linkWhatsApp = `https://wa.me/447312814746?text=${textWhatsApp}`;
                             
-                            // ✅ ADRESA CORECTA AICI: info@admmovingltd.com
                             const subiectEmail = "Cerere oferta mutare - ADM Moving";
                             const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\nDe mutat din: ${de_la}\nMutat la: ${la}\nData: ${data}\nDetalii: ${mesaj}`;
                             const linkEmail = `mailto:info@admmovingltd.com?subject=${encodeURIComponent(subiectEmail)}&body=${encodeURIComponent(corpEmail)}`;
 
-                            // Deschide intai WhatsApp, apoi Email
                             window.open(linkWhatsApp, '_blank');
                             setTimeout(function() {
                                 window.open(linkEmail, '_blank');
@@ -93,8 +90,6 @@
                             }, 300);
                         });
                     </script>
-                    <!-- 🔼 AICI SE TERMINA FORMULARUL 🔼 -->
-
                 </div>
 
                 <div class="bg-lightBlue/50 p-8 rounded-lg shadow-md">
@@ -105,7 +100,6 @@
                             <i class="fa fa-phone text-primary text-lg"></i>
                             <a href="tel:07312814746" class="hover:text-primary">07312 814746</a>
                         </li>
-                        <!-- ✅ ADRESA CORECTA AFISATA AICI -->
                         <li class="flex items-center gap-3">
                             <i class="fa fa-envelope text-primary text-lg"></i>
                             <a href="mailto:info@admmovingltd.com" class="hover:text-primary">info@admmovingltd.com</a>
