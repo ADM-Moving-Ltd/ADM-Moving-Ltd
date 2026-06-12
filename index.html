@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Quote - ADM Moving LTD</title>
+    <title>ADM Moving LTD - Professional Moving Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -32,103 +32,218 @@
             .transition-custom {
                 transition: all 0.3s ease;
             }
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
         }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-white">
 
-    <section class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <h1 class="text-2xl font-bold text-primary">ADM <span class="text-secondary">Moving</span></h1>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a href="#home" class="font-medium hover:text-primary transition-custom">Home</a>
+                <a href="#services" class="font-medium hover:text-primary transition-custom">Services</a>
+                <a href="#about" class="font-medium hover:text-primary transition-custom">About Us</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-custom">Contact</a>
+                <a href="quote.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-custom">Get Quote</a>
+            </div>
+            <button class="md:hidden text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-primary/5 to-secondary/5 min-h-screen flex items-center section-padding">
         <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-primary leading-tight text-shadow">
+                        Reliable Moving Services Across UK
+                    </h2>
+                    <p class="text-grayText text-lg mt-4 mb-8 max-w-xl">
+                        Professional, safe and affordable moving solutions for homes and businesses. We take care of your belongings as if they were ours.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="quote.html" class="bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-3 rounded-lg text-lg transition-custom shadow-lg">
+                            Get Free Quote
+                        </a>
+                        <a href="#contact" class="bg-white hover:bg-gray-100 text-primary border-2 border-primary font-semibold px-8 py-3 rounded-lg text-lg transition-custom shadow-lg">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1059/1059177.png" alt="Moving Truck" class="w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-lightBlue/30 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-custom">
+                    <i class="fa fa-home text-primary text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Home Removals</h3>
+                    <p class="text-grayText">Complete house moving service, from small flats to large family homes. We handle everything carefully.</p>
+                </div>
+                <div class="bg-lightBlue/30 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-custom">
+                    <i class="fa fa-building text-primary text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Office Removals</h3>
+                    <p class="text-grayText">Minimal disruption to your business. Fast and secure transport of office equipment and furniture.</p>
+                </div>
+                <div class="bg-lightBlue/30 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-custom">
+                    <i class="fa fa-archive text-primary text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Packing & Storage</h3>
+                    <p class="text-grayText">Professional packing materials and service. Secure storage solutions available for short or long term.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-4">Why Choose ADM Moving?</h2>
+                    <p class="text-grayText mb-4">
+                        With years of experience in the moving industry, we have built a reputation for reliability, efficiency, and excellent customer service.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span>Fully insured and licensed</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span>Professional, trained staff</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span>Transparent pricing, no hidden fees</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span>Available 7 days a week</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3406/3406572.png" alt="Our Team" class="w-full rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Form Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Contact Us / Get Quote</h2>
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- FORMULARUL - ACUM ESTE CORECT ȘI FUNCTIONEAZĂ -->
                 <div class="bg-primary text-white p-8 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-bold mb-2">Get Your Free Quote</h2>
-                    <p class="text-white/80 mb-6">Fill in the form and we will get back to you with the best price!</p>
+                    <h3 class="text-2xl font-bold mb-2">Send us a Message</h3>
+                    <p class="text-white/80 mb-6">Fill in your details and we will get back to you immediately!</p>
                     
-                    <!-- 🔽 ASTA ESTE FORMULARUL TAU, EXACT CA INAINTE, DAR REPARAT 🔽 -->
-                    <form id="quoteForm">
+                    <form id="contactForm">
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
                             <input type="text" id="nume" placeholder="Your Name" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                             <input type="tel" id="telefon" placeholder="Phone Number" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
                             <input type="email" id="email" placeholder="Email Address" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
-                            <input type="text" id="de_la" placeholder="Moving From" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="text" id="subiect" placeholder="Subject" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="text" id="la" placeholder="Moving To" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
-                            <input type="date" id="data" class="p-3 rounded-lg bg-white/20 border border-white/30 text-white/80 focus:outline-none focus:bg-white/30" required>
-                        </div>
-                        <textarea id="mesaj" placeholder="Tell us more about your move..." rows="4" class="w-full p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30 mb-4"></textarea>
+                        <textarea id="mesaj" placeholder="Your Message..." rows="5" class="w-full p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30 mb-4"></textarea>
                         
                         <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-3 rounded-lg transition-custom">
-                            SEND MY REQUEST →
+                            SEND MESSAGE →
                         </button>
                     </form>
 
                     <script>
-                        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+                        document.getElementById('contactForm').addEventListener('submit', function(e) {
                             e.preventDefault();
 
                             const nume = document.getElementById('nume').value;
                             const telefon = document.getElementById('telefon').value;
                             const email = document.getElementById('email').value;
-                            const de_la = document.getElementById('de_la').value;
-                            const la = document.getElementById('la').value;
-                            const data = document.getElementById('data').value;
-                            const mesaj = document.getElementById('mesaj').value || "Fără detalii suplimentare";
+                            const subiect = document.getElementById('subiect').value;
+                            const mesaj = document.getElementById('mesaj').value;
 
-                            const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
+                            // Trimite intai pe WhatsApp
+                            const textWhatsApp = `Mesaj de pe site ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0ASubiect: ${subiect}%0AMesaj: ${mesaj}`;
                             const linkWhatsApp = `https://wa.me/447312814746?text=${textWhatsApp}`;
                             
-                            // ✅ ADRESA CORECTA AICI: info@admmovingltd.com
-                            const subiectEmail = "Cerere oferta mutare - ADM Moving";
-                            const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\nDe mutat din: ${de_la}\nMutat la: ${la}\nData: ${data}\nDetalii: ${mesaj}`;
+                            // Trimite si pe EMAIL - ADRESA CORECTA: info@admmovingltd.com
+                            const subiectEmail = "Mesaj de contact: " + subiect;
+                            const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\n\nMesaj:\n${mesaj}`;
                             const linkEmail = `mailto:info@admmovingltd.com?subject=${encodeURIComponent(subiectEmail)}&body=${encodeURIComponent(corpEmail)}`;
 
-                            // Deschide intai WhatsApp, apoi Email
+                            // Actiune: deschide ambele
                             window.open(linkWhatsApp, '_blank');
                             setTimeout(function() {
                                 window.open(linkEmail, '_blank');
-                                alert('✅ Cerere trimisă!');
+                                alert('✅ Mesaj trimis cu succes! Va multumim!');
                             }, 300);
                         });
                     </script>
-                    <!-- 🔼 AICI SE TERMINA FORMULARUL 🔼 -->
-
                 </div>
 
+                <!-- Datele de contact - CU ADRESA CORECTA -->
                 <div class="bg-lightBlue/50 p-8 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-bold text-primary mb-4">Contact Us</h2>
-                    <p class="text-grayText mb-6">We are here to help. Get in touch with us anytime!</p>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Our Contact Details</h3>
+                    <p class="text-grayText mb-6">You can also reach us directly using the information below:</p>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center gap-3">
-                            <i class="fa fa-phone text-primary text-lg"></i>
-                            <a href="tel:07312814746" class="hover:text-primary">07312 814746</a>
-                        </li>
-                        <!-- ✅ ADRESA CORECTA AFISATA AICI -->
-                        <li class="flex items-center gap-3">
-                            <i class="fa fa-envelope text-primary text-lg"></i>
-                            <a href="mailto:info@admmovingltd.com" class="hover:text-primary">info@admmovingltd.com</a>
+                            <i class="fa fa-phone text-primary text-xl"></i>
+                            <a href="tel:07312814746" class="hover:text-primary text-lg">07312 814746</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa fa-map-marker text-primary text-lg"></i>
-                            <span>Corby, Northamptonshire</span>
+                            <i class="fa fa-envelope text-primary text-xl"></i>
+                            <!-- 🔴 ADRESA CORECTA PUSA AICI -->
+                            <a href="mailto:info@admmovingltd.com" class="hover:text-primary text-lg">info@admmovingltd.com</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fa fa-globe text-primary text-lg"></i>
-                            <span>We work across the Entire UK</span>
+                            <i class="fa fa-map-marker text-primary text-xl"></i>
+                            <span class="text-lg">Corby, Northamptonshire, UK</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa fa-clock-o text-primary text-xl"></i>
+                            <span class="text-lg">Mon - Sun: 8:00 - 20:00</span>
                         </li>
                     </ul>
-                    <div class="w-full h-40 bg-white rounded-lg shadow-inner flex items-center justify-center p-2">
-                        <img src="https://cdn-icons-png.flaticon.com/128/1683/1683633.png" alt="Map of United Kingdom" class="w-full h-full object-contain">
-                    </div>
-                    <a href="https://wa.me/447312814746" target="_blank" class="mt-6 inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-custom">
-                        <i class="fa fa-whatsapp"></i> Message us on WhatsApp
+                    
+                    <a href="https://wa.me/447312814746" target="_blank" class="inline-flex items-center gap-2 bg-green-500 text-white px-5 py-3 rounded-lg hover:bg-green-600 transition-custom text-lg font-medium">
+                        <i class="fa fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2026 ADM Moving LTD. All rights reserved.</p>
+            <p class="text-white/70 mt-2">Professional moving services across England and entire UK.</p>
+            <!-- 🔴 ADRESA CORECTA SI IN JOSUL PAGINII -->
+            <p class="mt-2">Email: <a href="mailto:info@admmovingltd.com" class="underline">info@admmovingltd.com</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
