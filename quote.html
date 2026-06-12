@@ -84,8 +84,14 @@
                             const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\nDe mutat din: ${de_la}\nMutat la: ${la}\nData: ${data}\nDetalii: ${mesaj}`;
                             const linkEmail = `mailto:info@admmovingltd.com?subject=${encodeURIComponent(subiectEmail)}&body=${encodeURIComponent(corpEmail)}`;
 
-                            window.open(linkWhatsApp, '_blank');
-                            window.open(linkEmail, '_blank');
+                           // Deschide WhatsApp
+window.open(linkWhatsApp, '_blank');
+
+// Așteaptă puțin, apoi deschide și emailul
+setTimeout(function() {
+    window.open(linkEmail, '_blank');
+    alert('✅ Cerere trimisă! Dacă nu s-a deschis emailul, verifică sus la notificări sau în browser.');
+}, 300);
                         });
                     </script>
 
