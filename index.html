@@ -15,7 +15,8 @@
                         secondary: '#34C759',
                         lightBlue: '#E6F2F8',
                         darkBlue: '#003F6B',
-                        grayText: '#666666'
+                        grayText: '#666666',
+                        bgColor: '#f0f4f8' // Culoare de fundal gri deschis
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -39,7 +40,8 @@
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-white">
+<!-- Am schimbat bg-white cu bg-bgColor -->
+<body class="font-sans text-gray-800 bg-bgColor">
 
     <!-- Header / Navbar -->
     <header class="bg-white shadow-sm py-4">
@@ -107,7 +109,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-bgColor">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h3 class="text-sm text-secondary font-semibold tracking-wider">WHAT WE OFFER</h3>
