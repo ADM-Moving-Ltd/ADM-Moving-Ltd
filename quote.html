@@ -15,7 +15,9 @@
                         secondary: '#34C759',
                         lightBlue: '#E6F2F8',
                         darkBlue: '#003F6B',
-                        grayText: '#666666'
+                        grayText: '#666666',
+                        // Am adăugat o culoare nouă pentru fundal
+                        bgColor: '#f0f4f8' // Poți schimba această valoare cu orice cod de culoare
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -35,7 +37,8 @@
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-white">
+<!-- Am schimbat clasa bg-white cu bg-bgColor pentru a aplica noua culoare -->
+<body class="font-sans text-gray-800 bg-bgColor">
 
     <section class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5 min-h-screen">
         <div class="container mx-auto px-4">
