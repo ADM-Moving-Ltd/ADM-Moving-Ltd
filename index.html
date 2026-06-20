@@ -196,7 +196,7 @@
         </div>
     </section>
 
-    <!-- Contact Us + Formular TRIMITE DIRECT PE EMAIL -->
+    <!-- Contact Us + Formular DOAR EMAIL, FARA EROARE -->
     <section id="quote" class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8">
@@ -204,25 +204,20 @@
                     <h2 class="text-2xl font-bold mb-2">Get Your Free Quote</h2>
                     <p class="text-white/80 mb-6">Fill in the form and we will get back to you with the best price!</p>
                     
-                    <form id="quoteForm" action="https://formspree.io/f/xvgzgjdy" method="POST">
+                    <form id="quoteForm">
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="text" name="nume" placeholder="Your Name" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
-                            <input type="tel" name="telefon" placeholder="Phone Number" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="text" id="nume" placeholder="Your Name" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="tel" id="telefon" placeholder="Phone Number" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="email" name="email" placeholder="Your Email Address" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
-                            <input type="text" name="de_la" placeholder="Moving From" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="email" id="email" placeholder="Your Email Address" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="text" id="de_la" placeholder="Moving From" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="text" name="la" placeholder="Moving To" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
-                            <input type="date" name="data" class="p-3 rounded-lg bg-white/20 border border-white/30 text-white/80 focus:outline-none focus:bg-white/30" required>
+                            <input type="text" id="la" placeholder="Moving To" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="date" id="data" class="p-3 rounded-lg bg-white/20 border border-white/30 text-white/80 focus:outline-none focus:bg-white/30" required>
                         </div>
-                        <textarea name="mesaj" placeholder="Tell us more about your move..." rows="4" class="w-full p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30 mb-4"></textarea>
-
-                        <!-- Adresa ta de email, unde se trimite tot -->
-                        <input type="hidden" name="_replyto" value="info@admmovingltd.com">
-                        <input type="hidden" name="_to" value="info@admmovingltd.com">
-                        <input type="hidden" name="_subject" value="Cerere oferta noua - ADM Moving">
+                        <textarea id="mesaj" placeholder="Tell us more about your move..." rows="4" class="w-full p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30 mb-4"></textarea>
                         
                         <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-3 rounded-lg transition-custom">
                             SEND MY REQUEST →
@@ -230,10 +225,37 @@
                     </form>
 
                     <script>
-                        // Mesaj confirmare, fara erori
                         const form = document.getElementById('quoteForm');
                         form.addEventListener('submit', function(e) {
-                            alert('✅ Cerere trimisă cu succes la info@admmovingltd.com! Vei fi contactat curând.');
+                            e.preventDefault();
+
+                            // Luam toate datele
+                            const nume = document.getElementById('nume').value.trim();
+                            const telefon = document.getElementById('telefon').value.trim();
+                            const email_client = document.getElementById('email').value.trim();
+                            const de_la = document.getElementById('de_la').value.trim();
+                            const la = document.getElementById('la').value.trim();
+                            const data = document.getElementById('data').value.trim();
+                            const mesaj = document.getElementById('mesaj').value.trim() || "No additional details";
+
+                            // Facem textul emailului
+                            const subiect = encodeURIComponent("New quote request - ADM Moving LTD");
+                            const continut = encodeURIComponent(
+`Name: ${nume}
+Phone: ${telefon}
+Email: ${email_client}
+Moving from: ${de_la}
+Moving to: ${la}
+Date: ${data}
+Message: ${mesaj}`
+                            );
+
+                            // Deschidem direct emailul catre tine
+                            window.location.href = `mailto:info@admmovingltd.com?subject=${subiect}&body=${continut}`;
+
+                            // Mesaj confirmare in engleza
+                            alert('✅ Request sent successfully! We will contact you shortly.');
+                            form.reset();
                         });
                     </script>
 
