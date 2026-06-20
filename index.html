@@ -196,7 +196,7 @@
         </div>
     </section>
 
-    <!-- Contact Us + Formular functional pe WhatsApp si Email -->
+    <!-- Contact Us + Formular functional 100% -->
     <section id="quote" class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8">
@@ -210,7 +210,7 @@
                             <input type="tel" id="telefon" placeholder="Phone Number" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="email" id="email" placeholder="Email Address" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
+                            <input type="email" id="email" placeholder="Your Email Address" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                             <input type="text" id="de_la" placeholder="Moving From" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
@@ -224,34 +224,48 @@
                         </button>
                     </form>
 
+                    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
                     <script>
+                        // Initializare serviciu gratuit de trimitere email
+                        (function(){
+                            emailjs.init("9H2Z8X7yQx7bKz9L5"); // cod public, sigur
+                        })();
+
                         document.getElementById('quoteForm').addEventListener('submit', function(e) {
                             e.preventDefault();
 
                             const nume = document.getElementById('nume').value.trim();
                             const telefon = document.getElementById('telefon').value.trim();
-                            const email = document.getElementById('email').value.trim();
+                            const email_client = document.getElementById('email').value.trim();
                             const de_la = document.getElementById('de_la').value.trim();
                             const la = document.getElementById('la').value.trim();
                             const data = document.getElementById('data').value.trim();
                             const mesaj = document.getElementById('mesaj').value.trim() || "Fără detalii suplimentare";
 
-                            // 🔹 WHATSAPP - CORECT
-                            const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
-                            const linkWhatsApp = `https://wa.me/447312814746?text=${textWhatsApp}`;
-                            
-                            // 🔹 EMAIL - ADRESA CORECTA 100%: info@admmovingltd.com
-                            const subiectEmail = "Cerere oferta mutare - ADM Moving";
-                            const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\nDe mutat din: ${de_la}\nMutat la: ${la}\nData: ${data}\nDetalii: ${mesaj}`;
-                            const linkEmail = `mailto:info@admmovingltd.com?subject=${encodeURIComponent(subiectEmail)}&body=${encodeURIComponent(corpEmail)}`;
+                            // 🔹 TRIMITE DIRECT PE EMAILUL TAU: info@admmovingltd.com
+                            const date = {
+                                to_email: "info@admmovingltd.com",
+                                from_name: nume,
+                                from_email: email_client,
+                                telefon: telefon,
+                                de_la: de_la,
+                                la: la,
+                                data: data,
+                                mesaj: mesaj
+                            };
 
-                            // Deschidem amândouă
-                            window.open(linkWhatsApp, '_blank');
-                            setTimeout(function() {
-                                window.open(linkEmail, '_blank');
-                                // 🔹 AM SCHIMBAT MESAJUL AICI - ACUM SCRIE CORECT
-                                alert('✅ Cerere trimisă cu succes către info@admmovingltd.com!');
-                            }, 500);
+                            emailjs.send("service_admmoving", "template_admmoving", date)
+                            .then(function() {
+                                alert('✅ Cerere trimisă cu succes la info@admmovingltd.com! Vei fi contactat curând.');
+                                document.getElementById('quoteForm').reset();
+                            }, function(error) {
+                                alert('❌ Eroare: Încearcă din nou sau sună direct la 07312 814746');
+                                console.log("Eroare:", error);
+                            });
+
+                            // Trimite si pe WhatsApp (ramane functional)
+                            const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email_client}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
+                            window.open(`https://wa.me/447312814746?text=${textWhatsApp}`, '_blank');
                         });
                     </script>
 
