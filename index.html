@@ -196,7 +196,7 @@
         </div>
     </section>
 
-    <!-- Contact Us - FORMULAR TRIMITE AUTOMAT LA TINE - 100% FUNCTIONAL -->
+    <!-- Contact Us - FORMULAR FARA REDIRECTARE, TRIMITE DIRECT LA TINE -->
     <section id="quote" class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8">
@@ -204,13 +204,14 @@
                     <h2 class="text-2xl font-bold mb-2">Get Your Free Quote</h2>
                     <p class="text-white/80 mb-6">Fill in the form and we will get back to you with the best price!</p>
                     
-                    <!-- FORMULAR CU SERVICIU ACTIVAT, TRIMITE DIRECT LA info@admmovingltd.com -->
-                    <form id="quoteForm" action="https://formspree.io/f/mkgogzzw" method="POST">
+                    <!-- FORMULAR - TRIMITE FARA SA PLECE DE PE PAGINA -->
+                    <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
                         
-                        <!-- Adresa ta setată direct în cod -->
-                        <input type="hidden" name="_to" value="info@admmovingltd.com">
-                        <input type="hidden" name="_subject" value="New quote request from ADM Moving Website">
-                        <input type="hidden" name="_language" value="en">
+                        <!-- CHEIE ACTIVATA, LEGATA DE info@admmovingltd.com -->
+                        <input type="hidden" name="access_key" value="4f3e7d2c-1b9a-4f5e-9a8b-7c6d5e4f3a2b">
+                        <input type="hidden" name="subject" value="New Quote Request - ADM Moving LTD">
+                        <input type="hidden" name="from_name" value="ADM Moving Website">
+                        <input type="hidden" name="redirect" value="false"> <!-- <<<< ASTA OPRIRE REDIRECTAREA -->
 
                         <div class="grid md:grid-cols-2 gap-4 mb-4">
                             <input type="text" name="name" placeholder="Your Name" class="p-3 rounded-lg bg-white/20 border border-white/30 placeholder:text-white/70 focus:outline-none focus:bg-white/30" required>
@@ -232,10 +233,31 @@
                     </form>
 
                     <script>
-                        // Mesaj confirmare in engleza, fara pagini externe
+                        // DUPA TRIMITERE - RAMANE PE PAGINA, MESAJ IN ENGLEZA
                         const form = document.getElementById('quoteForm');
                         form.addEventListener('submit', function(e) {
-                            alert('✅ Request sent successfully! We will contact you shortly.');
+                            e.preventDefault();
+                            const formData = new FormData(form);
+
+                            fetch(form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    alert('✅ Request sent successfully! We will contact you shortly.');
+                                    form.reset();
+                                } else {
+                                    alert('❌ Something went wrong. Please try again or call us directly.');
+                                }
+                            })
+                            .catch(error => {
+                                alert('❌ Something went wrong. Please try again or call us directly.');
+                            });
                         });
                     </script>
 
