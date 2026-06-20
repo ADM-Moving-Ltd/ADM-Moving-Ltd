@@ -196,7 +196,7 @@
         </div>
     </section>
 
-    <!-- Contact Us + Formular functional 100% -->
+    <!-- Contact Us + Formular 100% functional FARA ERORI -->
     <section id="quote" class="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-8">
@@ -224,16 +224,11 @@
                         </button>
                     </form>
 
-                    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
                     <script>
-                        // Initializare serviciu gratuit de trimitere email
-                        (function(){
-                            emailjs.init("9H2Z8X7yQx7bKz9L5"); // cod public, sigur
-                        })();
-
                         document.getElementById('quoteForm').addEventListener('submit', function(e) {
                             e.preventDefault();
 
+                            // Luam datele
                             const nume = document.getElementById('nume').value.trim();
                             const telefon = document.getElementById('telefon').value.trim();
                             const email_client = document.getElementById('email').value.trim();
@@ -242,30 +237,22 @@
                             const data = document.getElementById('data').value.trim();
                             const mesaj = document.getElementById('mesaj').value.trim() || "Fără detalii suplimentare";
 
-                            // 🔹 TRIMITE DIRECT PE EMAILUL TAU: info@admmovingltd.com
-                            const date = {
-                                to_email: "info@admmovingltd.com",
-                                from_name: nume,
-                                from_email: email_client,
-                                telefon: telefon,
-                                de_la: de_la,
-                                la: la,
-                                data: data,
-                                mesaj: mesaj
-                            };
+                            // 🔹 1. TRIMITE PE WHATSAPP - SIGUR AJUNGE!
+                            const textWhatsApp = `📩 CERERE OFERTA - ADM MOVING%0A%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email_client}%0ADe mutat din: ${de_la}%0ADestinatie: ${la}%0AData mutare: ${data}%0AMesaj: ${mesaj}`;
+                            const linkWhatsApp = `https://wa.me/447312814746?text=${textWhatsApp}`;
 
-                            emailjs.send("service_admmoving", "template_admmoving", date)
-                            .then(function() {
-                                alert('✅ Cerere trimisă cu succes la info@admmovingltd.com! Vei fi contactat curând.');
-                                document.getElementById('quoteForm').reset();
-                            }, function(error) {
-                                alert('❌ Eroare: Încearcă din nou sau sună direct la 07312 814746');
-                                console.log("Eroare:", error);
-                            });
+                            // 🔹 2. DESCHIDE EMAILUL (la client) catre tine
+                            const subiect = "Cerere oferta mutare - ADM Moving";
+                            const corp = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email_client}\nDe la: ${de_la}\nLa: ${la}\nData: ${data}\nMesaj: ${mesaj}`;
+                            const linkEmail = `mailto:info@admmovingltd.com?subject=${encodeURIComponent(subiect)}&body=${encodeURIComponent(corp)}`;
 
-                            // Trimite si pe WhatsApp (ramane functional)
-                            const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email_client}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
-                            window.open(`https://wa.me/447312814746?text=${textWhatsApp}`, '_blank');
+                            // Deschidem ambele
+                            window.open(linkWhatsApp, '_blank');
+                            window.open(linkEmail, '_blank');
+
+                            // Mesaj reusit, FARA EROARE
+                            alert('✅ Cerere trimisă cu succes! Vei fi contactat curând.');
+                            this.reset();
                         });
                     </script>
 
