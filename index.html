@@ -236,19 +236,21 @@
                             const data = document.getElementById('data').value.trim();
                             const mesaj = document.getElementById('mesaj').value.trim() || "Fără detalii suplimentare";
 
-                            // Trimite pe WhatsApp - numar corect
+                            // 🔹 WHATSAPP - CORECT
                             const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
                             const linkWhatsApp = `https://wa.me/447312814746?text=${textWhatsApp}`;
                             
-                            // Trimite pe EMAIL - ADRESA CORECTA: info@admmovingltd.com
+                            // 🔹 EMAIL - ADRESA CORECTA 100%: info@admmovingltd.com
                             const subiectEmail = "Cerere oferta mutare - ADM Moving";
                             const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\nDe mutat din: ${de_la}\nMutat la: ${la}\nData: ${data}\nDetalii: ${mesaj}`;
                             const linkEmail = `mailto:info@admmovingltd.com?subject=${encodeURIComponent(subiectEmail)}&body=${encodeURIComponent(corpEmail)}`;
 
+                            // Deschidem amândouă
                             window.open(linkWhatsApp, '_blank');
                             setTimeout(function() {
                                 window.open(linkEmail, '_blank');
-                                alert('✅ Cerere trimisă cu succes!');
+                                // 🔹 AM SCHIMBAT MESAJUL AICI - ACUM SCRIE CORECT
+                                alert('✅ Cerere trimisă cu succes către info@admmovingltd.com!');
                             }, 500);
                         });
                     </script>
