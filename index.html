@@ -16,7 +16,7 @@
                         lightBlue: '#E6F2F8',
                         darkBlue: '#003F6B',
                         grayText: '#666666',
-                        bgColor: '#f0f4f8' // Culoare de fundal gri deschis
+                        bgColor: '#f0f4f8'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -40,7 +40,6 @@
         }
     </style>
 </head>
-<!-- Am schimbat bg-white cu bg-bgColor -->
 <body class="font-sans text-gray-800 bg-bgColor">
 
     <!-- Header / Navbar -->
@@ -229,19 +228,19 @@
                         document.getElementById('quoteForm').addEventListener('submit', function(e) {
                             e.preventDefault();
 
-                            const nume = document.getElementById('nume').value;
-                            const telefon = document.getElementById('telefon').value;
-                            const email = document.getElementById('email').value;
-                            const de_la = document.getElementById('de_la').value;
-                            const la = document.getElementById('la').value;
-                            const data = document.getElementById('data').value;
-                            const mesaj = document.getElementById('mesaj').value || "Fără detalii suplimentare";
+                            const nume = document.getElementById('nume').value.trim();
+                            const telefon = document.getElementById('telefon').value.trim();
+                            const email = document.getElementById('email').value.trim();
+                            const de_la = document.getElementById('de_la').value.trim();
+                            const la = document.getElementById('la').value.trim();
+                            const data = document.getElementById('data').value.trim();
+                            const mesaj = document.getElementById('mesaj').value.trim() || "Fără detalii suplimentare";
 
-                            // Trimite pe WhatsApp - CORECT
+                            // Trimite pe WhatsApp - numar corect
                             const textWhatsApp = `Cerere oferta ADM Moving:%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0ADe mutat din: ${de_la}%0AMutat la: ${la}%0AData: ${data}%0ADetalii: ${mesaj}`;
                             const linkWhatsApp = `https://wa.me/447312814746?text=${textWhatsApp}`;
                             
-                            // ✅ ADRESA CORECTA DE EMAIL AICI: info@admmovingltd.com
+                            // Trimite pe EMAIL - ADRESA CORECTA: info@admmovingltd.com
                             const subiectEmail = "Cerere oferta mutare - ADM Moving";
                             const corpEmail = `Nume: ${nume}\nTelefon: ${telefon}\nEmail: ${email}\nDe mutat din: ${de_la}\nMutat la: ${la}\nData: ${data}\nDetalii: ${mesaj}`;
                             const linkEmail = `mailto:info@admmovingltd.com?subject=${encodeURIComponent(subiectEmail)}&body=${encodeURIComponent(corpEmail)}`;
@@ -250,7 +249,7 @@
                             setTimeout(function() {
                                 window.open(linkEmail, '_blank');
                                 alert('✅ Cerere trimisă cu succes!');
-                            }, 300);
+                            }, 500);
                         });
                     </script>
 
@@ -264,7 +263,6 @@
                             <i class="fa fa-phone text-primary text-lg"></i>
                             <a href="tel:07312814746" class="hover:text-primary">07312 814746</a>
                         </li>
-                        <!-- ✅ ADRESA CORECTA AFISATA AICI -->
                         <li class="flex items-center gap-3">
                             <i class="fa fa-envelope text-primary text-lg"></i>
                             <a href="mailto:info@admmovingltd.com" class="hover:text-primary">info@admmovingltd.com</a>
@@ -326,7 +324,6 @@
                     <h4 class="text-white font-semibold mb-3">Contact Info</h4>
                     <ul class="space-y-2 text-sm">
                         <li>📞 07312 814746</li>
-                        <!-- ✅ ADRESA CORECTA SI IN JOS -->
                         <li>✉️ info@admmovingltd.com</li>
                         <li>📍 Corby, Northamptonshire</li>
                         <li>🌍 Entire UK Coverage</li>
